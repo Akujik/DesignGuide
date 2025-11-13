@@ -482,6 +482,36 @@
                             </div>
                         </div>
                     </div>
+                    <div class="component-code">
+                        <button class="copy-button" data-code="hero-colors">复制代码</button>
+                        <pre><code id="hero-colors-code" class="language-css">/* Hero 区域颜色规范 */
+:root {
+  /* 主渐变色 */
+  --color-accent-base: #c5f955;
+  --color-accent-support-highlight: #ff97c2;
+  --color-accent-support-base: #ff3e8f;
+
+  /* 背景色 */
+  --color-bg-base: #181818;
+  --color-bg-sub: #242424;
+  --color-bg-tertiary: #2e2e2e;
+
+  /* 文字色 */
+  --color-label-base: #ffffff;
+  --color-label-secondary: #b3b3b3;
+  --color-label-soft: #808080;
+}
+
+/* 渐变定义 */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-base) 0%,
+    var(--color-accent-support-highlight) 50%,
+    var(--color-accent-support-base) 100%
+  );
+}</code></pre>
+                    </div>
                 </div>
 
                 <div class="component-showcase">
@@ -507,6 +537,46 @@
                                 <span class="spacing-value">7.5rem / 120px</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="component-code">
+                        <button class="copy-button" data-code="hero-spacing">复制代码</button>
+                        <pre><code id="hero-spacing-code" class="language-css">/* Hero 区域间距规范 */
+:root {
+  /* 基础间距单位 */
+  --spacing-unit: 0.25rem; /* 4px */
+
+  /* Hero 区域专用间距 */
+  --hero-header-height-mobile: 3rem; /* 48px */
+  --hero-header-height-desktop: 4.5rem; /* 72px */
+  --hero-section-padding: 7.5rem; /* 120px */
+  --hero-content-gap: 3rem; /* 48px */
+  --hero-feature-gap: 2rem; /* 32px */
+}
+
+/* Hero 组件间距样式 */
+.hero-header {
+  height: var(--hero-header-height-mobile);
+}
+
+@media (min-width: 768px) {
+  .hero-header {
+    height: var(--hero-header-height-desktop);
+  }
+}
+
+.hero-fullscreen,
+.hero-split,
+.hero-feature {
+  padding: var(--hero-section-padding) var(--container-padding);
+}
+
+.hero-content > * + * {
+  margin-top: var(--hero-content-gap);
+}
+
+.hero-feature-grid {
+  gap: var(--hero-feature-gap);
+}</code></pre>
                     </div>
                 </div>
             </section>

@@ -107,6 +107,49 @@
                             </div>
                         </div>
                     </div>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span class="code-title">基础卡片代码示例</span>
+                            <button class="code-copy-btn" data-code="basic-card">复制代码</button>
+                        </div>
+                        <div class="code-wrapper">
+                            <pre><code class="language-html">&lt;!-- 基础卡片 --&gt;
+&lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+        &lt;h3 class="card-title"&gt;基础卡片&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+        &lt;p&gt;这是一个标准的卡片组件，用于展示相关信息的集合。卡片可以包含标题、内容和操作区域。&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-footer"&gt;
+        &lt;button class="button button-primary button-small"&gt;查看详情&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 带头像的卡片 --&gt;
+&lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+        &lt;div class="flex justify-between items-start"&gt;
+            &lt;h3 class="card-title"&gt;带头像的卡片&lt;/h3&gt;
+            &lt;span class="tag tag-primary"&gt;新功能&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+        &lt;div class="flex items-center gap-md mb-md"&gt;
+            &lt;div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-full);"&gt;&lt;/div&gt;
+            &lt;div&gt;
+                &lt;div style="font-weight: var(--font-weight-medium);"&gt;John Doe&lt;/div&gt;
+                &lt;div style="font-size: var(--text-sm); color: var(--color-label-soft);"&gt;产品经理&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;p&gt;卡片可以包含用户信息、状态标签和丰富的内容结构。&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-footer"&gt;
+        &lt;button class="button button-secondary button-small"&gt;了解更多&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -154,6 +197,32 @@
                             </div>
                         </div>
                     </div>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span class="code-title">3D模型卡片代码示例</span>
+                            <button class="code-copy-btn" data-code="model-card">复制代码</button>
+                        </div>
+                        <div class="code-wrapper">
+                            <pre><code class="language-html">&lt;!-- 3D模型卡片 --&gt;
+&lt;div class="card card-model"&gt;
+    &lt;div class="card-media"&gt;
+        &lt;div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--text-lg);"&gt;
+            3D 模型预览
+        &lt;/div&gt;
+        &lt;div class="model-overlay"&gt;
+            &lt;button class="button button-primary button-small"&gt;查看 3D&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content" style="padding: var(--p-lg);"&gt;
+        &lt;h3 class="card-title"&gt;幻想战士&lt;/h3&gt;
+        &lt;div class="flex items-center justify-between mt-sm"&gt;
+            &lt;span class="tag tag-default"&gt;角色&lt;/span&gt;
+            &lt;span style="font-size: var(--text-xs); color: var(--color-label-soft);"&gt;2小时前&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -183,6 +252,33 @@
                                 <span style="font-size: var(--text-xs); color: var(--color-label-muted);">5分钟阅读</span>
                             </div>
                         </article>
+                    </div>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span class="code-title">文章卡片代码示例</span>
+                            <button class="code-copy-btn" data-code="blog-card">复制代码</button>
+                        </div>
+                        <div class="code-wrapper">
+                            <pre><code class="language-html">&lt;!-- 文章卡片 --&gt;
+&lt;article class="card"&gt;
+    &lt;div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 16/9; margin: calc(var(--p-2xl) * -1); margin-bottom: var(--m-lg);"&gt;&lt;/div&gt;
+    &lt;div class="card-header"&gt;
+        &lt;div class="tag tag-primary mb-sm"&gt;教程&lt;/div&gt;
+        &lt;h3 class="card-title"&gt;开始使用 3D 建模&lt;/h3&gt;
+        &lt;p class="card-subtitle"&gt;学习 3D 建模的基础知识和创建你的第一个精彩 3D 资产&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+        &lt;p style="margin: 0;"&gt;探索 3D 建模的精彩世界，从基础概念到高级技术...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-footer"&gt;
+        &lt;div class="flex items-center gap-md"&gt;
+            &lt;div style="width: 24px; height: 24px; background: var(--color-bg-border); border-radius: var(--radius-full);"&gt;&lt;/div&gt;
+            &lt;span style="font-size: var(--text-sm); color: var(--color-label-soft);"&gt;John Doe&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;span style="font-size: var(--text-xs); color: var(--color-label-muted);"&gt;5分钟阅读&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -221,6 +317,42 @@
                                     <div style="font-size: var(--text-sm); color: var(--color-accent-base); font-weight: var(--font-weight-medium);">$120k - $180k</div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span class="code-title">招聘卡片代码示例</span>
+                            <button class="code-copy-btn" data-code="job-card">复制代码</button>
+                        </div>
+                        <div class="code-wrapper">
+                            <pre><code class="language-html">&lt;!-- 招聘卡片 --&gt;
+&lt;div class="card" style="border-left: 4px solid var(--color-accent-base);"&gt;
+    &lt;div class="card-header"&gt;
+        &lt;div class="flex justify-between items-start"&gt;
+            &lt;div&gt;
+                &lt;h3 class="card-title"&gt;高级前端开发工程师&lt;/h3&gt;
+                &lt;p class="card-subtitle" style="margin-top: var(--p-xs);"&gt;Meshy AI&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;span class="tag tag-success"&gt;全职&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+        &lt;p&gt;我们正在寻找经验丰富的前端开发工程师加入我们的团队...&lt;/p&gt;
+        &lt;div class="flex flex-wrap gap-sm mt-md"&gt;
+            &lt;span class="tag tag-default"&gt;React&lt;/span&gt;
+            &lt;span class="tag tag-default"&gt;TypeScript&lt;/span&gt;
+            &lt;span class="tag tag-default"&gt;3D 图形&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card-footer"&gt;
+        &lt;div class="flex justify-between items-center"&gt;
+            &lt;div&gt;
+                &lt;div style="font-size: var(--text-sm); color: var(--color-label-soft);"&gt;旧金山, CA&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div style="font-size: var(--text-sm); color: var(--color-accent-base); font-weight: var(--font-weight-medium);"$120k - $180k&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
                         </div>
                     </div>
                 </div>
@@ -294,6 +426,29 @@
                                 <div class="stats-label">团队规模</div>
                                 <div class="stats-change negative">-2.1%</div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span class="code-title">统计卡片代码示例</span>
+                            <button class="code-copy-btn" data-code="stats-card">复制代码</button>
+                        </div>
+                        <div class="code-wrapper">
+                            <pre><code class="language-html">&lt;!-- 统计卡片 --&gt;
+&lt;div class="card card-stats text-center"&gt;
+    &lt;div class="stats-icon" style="margin: 0 auto var(--m-lg); width: 48px; height: 48px; background-color: var(--color-accent-bg); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-accent-base);"&gt;
+        &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+            &lt;path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/&gt;
+        &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="stats-content"&gt;
+        &lt;div class="stats-value" style="font-size: var(--text-3xl); font-weight: var(--font-weight-bold); color: var(--color-label-title);"&gt;12,543&lt;/div&gt;
+        &lt;div class="stats-label"&gt;总模型数&lt;/div&gt;
+        &lt;div class="stats-change positive"&gt;+12.5%&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 其他统计卡片采用相同结构，只需更改图标、数值和标签 --&gt;</code></pre>
                         </div>
                     </div>
                 </div>

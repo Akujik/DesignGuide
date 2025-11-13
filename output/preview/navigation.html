@@ -151,6 +151,106 @@
                         </nav>
                     </div>
                 </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;nav class="nav"&gt;
+  &lt;div class="nav-brand"&gt;
+    &lt;a href="#" class="brand-link"&gt;
+      &lt;div style="width: 32px; height: 32px; background: var(--color-accent-base); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-bg-base); font-weight: bold; font-size: var(--text-sm);"&gt;M&lt;/div&gt;
+      &lt;span class="brand-text"&gt;Meshy&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;ul class="nav-menu"&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a href="#" class="nav-link"&gt;模型&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a href="#" class="nav-link"&gt;教程&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a href="#" class="nav-link"&gt;定价&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a href="#" class="nav-link active"&gt;资源&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div class="nav-actions"&gt;
+    &lt;a href="#" class="button button-ghost"&gt;登录&lt;/a&gt;
+    &lt;a href="#" class="button button-primary"&gt;开始使用&lt;/a&gt;
+    &lt;button class="button button-icon mobile-menu-toggle"&gt;
+      &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+        &lt;line x1="3" y1="12" x2="21" y2="12"/&gt;
+        &lt;line x1="3" y1="6" x2="21" y2="6"/&gt;
+        &lt;line x1="3" y1="18" x2="21" y2="18"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;nav class="nav"&gt;
+  &lt;div class="nav-brand"&gt;
+    &lt;a href="#" class="brand-link"&gt;
+      &lt;div style="width: 32px; height: 32px; background: var(--color-accent-base); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-bg-base); font-weight: bold; font-size: var(--text-sm);"&gt;M&lt;/div&gt;
+      &lt;span class="brand-text"&gt;Meshy&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;ul class="nav-menu"&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a href="#" class="nav-link"&gt;模型&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item nav-dropdown"&gt;
+      &lt;button class="nav-link nav-dropdown-toggle"&gt;
+        资源
+        &lt;svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+          &lt;path d="M6 9l6 6 6-6"/&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; min-width: 200px; background: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-sm); box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 50;"&gt;
+        &lt;a href="#" class="dropdown-item"&gt;博客&lt;/a&gt;
+        &lt;a href="#" class="dropdown-item"&gt;文档&lt;/a&gt;
+        &lt;a href="#" class="dropdown-item"&gt;API 参考&lt;/a&gt;
+        &lt;a href="#" class="dropdown-item"&gt;社区&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a href="#" class="nav-link"&gt;定价&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div class="nav-actions"&gt;
+    &lt;a href="#" class="button button-primary"&gt;开始使用&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+                    </div>
+                </div>
             </section>
 
             <!-- Sidebar Navigation -->
@@ -262,6 +362,120 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;div style="display: flex; max-width: 800px; border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden;"&gt;
+  &lt;div class="sidebar" style="width: 280px; height: 500px;"&gt;
+    &lt;div class="sidebar-header"&gt;
+      &lt;div class="sidebar-brand"&gt;
+        &lt;div style="width: 24px; height: 24px; background: var(--color-accent-base); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-bg-base); font-weight: bold; font-size: var(--text-xs);"&gt;M&lt;/div&gt;
+        &lt;span class="sidebar-title"&gt;控制台&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;button class="sidebar-toggle" aria-label="Toggle sidebar"&gt;
+        &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+          &lt;line x1="18" y1="6" x2="6" y2="18"/&gt;
+          &lt;line x1="6" y1="6" x2="18" y2="18"/&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;nav class="sidebar-nav"&gt;
+      &lt;div class="nav-section"&gt;
+        &lt;h3 class="nav-section-title"&gt;主要&lt;/h3&gt;
+        &lt;ul class="nav-list"&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a href="#" class="nav-link nav-active"&gt;
+              &lt;svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+                &lt;path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/&gt;
+                &lt;polyline points="9,22 9,12 15,12 15,22"/&gt;
+              &lt;/svg&gt;
+              &lt;span&gt;仪表板&lt;/span&gt;
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a href="#" class="nav-link"&gt;
+              &lt;svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+                &lt;path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/&gt;
+              &lt;/svg&gt;
+              &lt;span&gt;我的模型&lt;/span&gt;
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a href="#" class="nav-link"&gt;
+              &lt;svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+                &lt;circle cx="12" cy="12" r="10"/&gt;
+                &lt;line x1="12" y1="8" x2="12" y2="16"/&gt;
+                &lt;line x1="8" y1="12" x2="16" y2="12"/&gt;
+              &lt;/svg&gt;
+              &lt;span&gt;创建新模型&lt;/span&gt;
+              &lt;span class="nav-badge"&gt;Pro&lt;/span&gt;
+            &lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+
+      &lt;div class="nav-section"&gt;
+        &lt;h3 class="nav-section-title"&gt;资源&lt;/h3&gt;
+        &lt;ul class="nav-list"&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a href="#" class="nav-link"&gt;
+              &lt;svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+                &lt;path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/&gt;
+                &lt;path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/&gt;
+              &lt;/svg&gt;
+              &lt;span&gt;教程&lt;/span&gt;
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a href="#" class="nav-link"&gt;
+              &lt;svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+                &lt;path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/&gt;
+                &lt;polyline points="14,2 14,8 20,8"/&gt;
+                &lt;line x1="16" y1="13" x2="8" y2="13"/&gt;
+                &lt;line x1="16" y1="17" x2="8" y2="17"/&gt;
+                &lt;polyline points="10,9 9,9 8,9"/&gt;
+              &lt;/svg&gt;
+              &lt;span&gt;API 文档&lt;/span&gt;
+            &lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="sidebar-footer"&gt;
+      &lt;div class="user-profile"&gt;
+        &lt;div style="width: 32px; height: 32px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-full);"&gt;&lt;/div&gt;
+        &lt;div class="user-info"&gt;
+          &lt;div class="user-name"&gt;John Doe&lt;/div&gt;
+          &lt;div class="user-plan"&gt;Pro Plan&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button class="user-menu-toggle" aria-label="User menu"&gt;
+          &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+            &lt;path d="M6 9l6 6 6-6"/&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style="flex: 1; padding: var(--p-2xl); background: var(--color-bg-base);"&gt;
+    &lt;h3 style="margin: 0 0 var(--p-lg) 0; color: var(--color-label-title);"&gt;主内容区域&lt;/h3&gt;
+    &lt;p style="color: var(--color-label-soft);"&gt;这里是仪表板的主要内容显示区域...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
             </section>
 
             <!-- Breadcrumb Navigation -->
@@ -297,6 +511,43 @@
                     </div>
                 </div>
 
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;nav class="breadcrumb" aria-label="Breadcrumb"&gt;
+  &lt;ol class="breadcrumb-list"&gt;
+    &lt;li class="breadcrumb-item"&gt;
+      &lt;a href="#" class="breadcrumb-link"&gt;
+        &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+          &lt;path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/&gt;
+          &lt;polyline points="9,22 9,12 15,12 15,22"/&gt;
+        &lt;/svg&gt;
+        &lt;span class="sr-only"&gt;首页&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb-item"&gt;
+      &lt;a href="#" class="breadcrumb-link"&gt;模型&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb-item"&gt;
+      &lt;a href="#" class="breadcrumb-link"&gt;角色&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb-item breadcrumb-current" aria-current="page"&gt;
+      幻想战士
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+                    </div>
+                </div>
+
                 <div class="component-showcase">
                     <h3 class="component-showcase-title">简单面包屑</h3>
                     <div class="component-preview">
@@ -313,6 +564,34 @@
                                 </li>
                             </ol>
                         </nav>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;nav class="breadcrumb" aria-label="Breadcrumb"&gt;
+  &lt;ol class="breadcrumb-list"&gt;
+    &lt;li class="breadcrumb-item"&gt;
+      &lt;a href="#" class="breadcrumb-link"&gt;首页&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb-item"&gt;
+      &lt;a href="#" class="breadcrumb-link"&gt;设置&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb-item breadcrumb-current" aria-current="page"&gt;
+      账户信息
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
                     </div>
                 </div>
             </section>
@@ -351,6 +630,44 @@
                     </div>
                 </div>
 
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;div class="tabs"&gt;
+  &lt;nav class="tab-nav" role="tablist" aria-label="模型设置"&gt;
+    &lt;button class="tab-button tab-active" role="tab" aria-selected="true"&gt;
+      常规
+    &lt;/button&gt;
+    &lt;button class="tab-button" role="tab" aria-selected="false"&gt;
+      高级
+    &lt;/button&gt;
+    &lt;button class="tab-button" role="tab" aria-selected="false"&gt;
+      导出
+    &lt;/button&gt;
+    &lt;button class="tab-button" role="tab" aria-selected="false"&gt;
+      权限
+    &lt;/button&gt;
+  &lt;/nav&gt;
+
+  &lt;div class="tab-panels"&gt;
+    &lt;div class="tab-panel"&gt;
+      &lt;h4&gt;常规设置&lt;/h4&gt;
+      &lt;p&gt;这里是模型的常规设置内容，包括基本参数和配置选项。&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+
                 <div class="component-showcase">
                     <h3 class="component-showcase-title">带图标的标签页</h3>
                     <div class="component-preview">
@@ -385,6 +702,52 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;div class="tabs"&gt;
+  &lt;nav class="tab-nav" role="tablist"&gt;
+    &lt;button class="tab-button tab-active" role="tab" aria-selected="true"&gt;
+      &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: var(--gap-xs);"&gt;
+        &lt;path d="M12 2L2 7l10 5 10-5-10-5z"/&gt;
+        &lt;path d="M2 17l10 5 10-5M2 12l10 5 10-5"/&gt;
+      &lt;/svg&gt;
+      模型信息
+    &lt;/button&gt;
+    &lt;button class="tab-button" role="tab" aria-selected="false"&gt;
+      &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: var(--gap-xs);"&gt;
+        &lt;circle cx="12" cy="12" r="3"/&gt;
+        &lt;path d="M12 1v6m0 6v6m4.22-13.22l4.24 4.24M1.54 9.96l4.24 4.24m12.44 0l4.24 4.24M1.54 14.04l4.24-4.24"/&gt;
+      &lt;/svg&gt;
+      材质设置
+    &lt;/button&gt;
+    &lt;button class="tab-button" role="tab" aria-selected="false"&gt;
+      &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: var(--gap-xs);"&gt;
+        &lt;path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/&gt;
+      &lt;/svg&gt;
+      渲染设置
+    &lt;/button&gt;
+  &lt;/nav&gt;
+
+  &lt;div class="tab-panels"&gt;
+    &lt;div class="tab-panel"&gt;
+      &lt;h4&gt;模型信息&lt;/h4&gt;
+      &lt;p&gt;查看和编辑模型的基本信息和元数据。&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
                     </div>
                 </div>
             </section>
@@ -433,6 +796,54 @@
                     </div>
                 </div>
 
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;nav class="pagination" aria-label="Pagination"&gt;
+  &lt;button class="pagination-button pagination-prev" disabled&gt;
+    &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+      &lt;path d="M15 18l-6-6 6-6"/&gt;
+    &lt;/svg&gt;
+    上一页
+  &lt;/button&gt;
+
+  &lt;ol class="pagination-list"&gt;
+    &lt;li class="pagination-item"&gt;
+      &lt;button class="pagination-page pagination-current" aria-current="page"&gt;1&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li class="pagination-item"&gt;
+      &lt;button class="pagination-page"&gt;2&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li class="pagination-item"&gt;
+      &lt;button class="pagination-page"&gt;3&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li class="pagination-item"&gt;
+      &lt;span class="pagination-ellipsis"&gt;...&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="pagination-item"&gt;
+      &lt;button class="pagination-page"&gt;12&lt;/button&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;button class="pagination-button pagination-next"&gt;
+    下一页
+    &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+      &lt;path d="M9 18l6-6-6-6"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+                    </div>
+                </div>
+
                 <div class="component-showcase">
                     <h3 class="component-showcase-title">紧凑分页</h3>
                     <div class="component-preview">
@@ -455,6 +866,40 @@
                                 </li>
                             </ol>
                         </nav>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;nav class="pagination" aria-label="Pagination"&gt;
+  &lt;ol class="pagination-list"&gt;
+    &lt;li class="pagination-item"&gt;
+      &lt;button class="pagination-page pagination-current" aria-current="page"&gt;1&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li class="pagination-item"&gt;
+      &lt;button class="pagination-page"&gt;2&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li class="pagination-item"&gt;
+      &lt;button class="pagination-page"&gt;3&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li class="pagination-item"&gt;
+      &lt;button class="pagination-page"&gt;4&lt;/button&gt;
+    &lt;/li&gt;
+    &lt;li class="pagination-item"&gt;
+      &lt;button class="pagination-page"&gt;5&lt;/button&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
                     </div>
                 </div>
             </section>
@@ -508,6 +953,60 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;div class="steps"&gt;
+  &lt;div class="steps-container"&gt;
+    &lt;div class="step step-completed"&gt;
+      &lt;div class="step-indicator"&gt;
+        &lt;svg class="step-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+          &lt;path d="M20 6L9 17l-5-5"/&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+      &lt;div class="step-content"&gt;
+        &lt;div class="step-title"&gt;上传模型&lt;/div&gt;
+        &lt;div class="step-description"&gt;选择你的 3D 模型文件&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="step step-current"&gt;
+      &lt;div class="step-indicator"&gt;
+        &lt;span class="step-number"&gt;2&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="step-content"&gt;
+        &lt;div class="step-title"&gt;配置设置&lt;/div&gt;
+        &lt;div class="step-description"&gt;调整质量和格式选项&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="step"&gt;
+      &lt;div class="step-indicator"&gt;
+        &lt;span class="step-number"&gt;3&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="step-content"&gt;
+        &lt;div class="step-title"&gt;生成&lt;/div&gt;
+        &lt;div class="step-description"&gt;处理并创建你的模型&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="step-progress"&gt;
+    &lt;div class="step-progress-bar" style="width: 50%;"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
             </section>
 
             <!-- Mobile Navigation -->
@@ -538,6 +1037,41 @@
                                 <p style="color: var(--color-label-soft); margin: 0;">移动端导航通常会使用汉堡菜单来节省屏幕空间...</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <div class="code-title">HTML</div>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制
+                        </button>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code>&lt;div style="max-width: 400px; border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden;"&gt;
+  &lt;div style="background: var(--color-bg-sub); padding: var(--p-lg); display: flex; justify-content: space-between; align-items: center;"&gt;
+    &lt;div style="display: flex; align-items: center; gap: var(--gap-sm);"&gt;
+      &lt;div style="width: 24px; height: 24px; background: var(--color-accent-base); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-bg-base); font-weight: bold; font-size: var(--text-xs);"&gt;M&lt;/div&gt;
+      &lt;span style="font-weight: var(--font-weight-semibold);"&gt;Meshy&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;button class="button button-icon"&gt;
+      &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+        &lt;line x1="3" y1="12" x2="21" y2="12"/&gt;
+        &lt;line x1="3" y1="6" x2="21" y2="6"/&gt;
+        &lt;line x1="3" y1="18" x2="21" y2="18"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div style="background: var(--color-bg-base); padding: var(--p-lg);"&gt;
+    &lt;h4 style="margin: 0 0 var(--p-lg) 0;"&gt;主要内容区域&lt;/h4&gt;
+    &lt;p style="color: var(--color-label-soft); margin: 0;"&gt;移动端导航通常会使用汉堡菜单来节省屏幕空间...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
                     </div>
                 </div>
             </section>
