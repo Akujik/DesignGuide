@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单组件 - Meshy.ai 设计系统</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">表单组件</h1>
+                <p class="header-subtitle">完整的表单控件库 - 包含验证和交互状态</p>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="header-link">返回首页</a>
+                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <aside class="sidebar">
+            <nav>
+                <h3 class="sidebar-title">设计令牌</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="colors.html" class="sidebar-link">颜色系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="typography.html" class="sidebar-link">字体系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="spacing.html" class="sidebar-link">间距系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="layout.html" class="sidebar-link">布局系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="animations.html" class="sidebar-link">动效系统</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">组件库</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="forms.html" class="sidebar-link active">表单 Forms</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Input Fields -->
+            <section class="section">
+                <h2 class="section-title">输入控件</h2>
+                <p class="section-description">基础输入控件和文本输入组件</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">文本输入框</h3>
+                    <div class="component-preview">
+                        <form style="max-width: 500px;">
+                            <div class="form-group">
+                                <label for="username" class="form-label">用户名</label>
+                                <input type="text" id="username" class="form-input" placeholder="输入用户名" data-validate="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">邮箱地址</label>
+                                <input type="email" id="email" class="form-input" placeholder="输入邮箱地址" data-validate="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="form-label">密码</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="password" class="form-input password-input" placeholder="输入密码" data-validate="password">
+                                    <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                        <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                            <circle cx="12" cy="12" r="3"/>
+                                        </svg>
+                                        <svg class="eye-closed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden>
+                                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                                            <line x1="1" y1="1" x2="23" y2="23"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="textarea" class="form-label">多行文本</label>
+                                <textarea id="textarea" class="form-textarea" rows="4" placeholder="输入多行文本内容..."></textarea>
+                                <div class="form-character-count">
+                                    <span>0</span> / 500 字符
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">搜索输入框</h3>
+                    <div class="component-preview">
+                        <form style="max-width: 400px;">
+                            <div class="search-input-wrapper">
+                                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="m21 21-4.35-4.35"/>
+                                </svg>
+                                <input type="search" class="form-input search-input" placeholder="搜索模型、教程和更多...">
+                                <button type="button" class="search-clear" hidden>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="18" y1="6" x2="6" y2="18"/>
+                                        <line x1="6" y1="6" x2="18" y2="18"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Select and Dropdowns -->
+            <section class="section">
+                <h2 class="section-title">选择控件</h2>
+                <p class="section-description">下拉选择和选择器组件</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">下拉选择器</h3>
+                    <div class="component-preview">
+                        <form style="max-width: 400px;">
+                            <div class="form-group">
+                                <label for="model-type" class="form-label">模型类型</label>
+                                <div class="select-wrapper">
+                                    <select id="model-type" class="form-select">
+                                        <option value="">选择模型类型</option>
+                                        <option value="character">角色模型</option>
+                                        <option value="environment">环境模型</option>
+                                        <option value="object">道具模型</option>
+                                        <option value="vehicle">载具模型</option>
+                                    </select>
+                                    <div class="select-arrow">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M6 9l6 6 6-6"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Checkboxes and Radio Buttons -->
+            <section class="section">
+                <h2 class="section-title">复选框和单选按钮</h2>
+                <p class="section-description">用于选择的交互控件</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">复选框</h3>
+                    <div class="component-preview">
+                        <div style="max-width: 400px;">
+                            <div class="form-group">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox-input" checked>
+                                    <span class="checkbox-box">
+                                        <svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 6L9 17l-5-5"/>
+                                        </svg>
+                                    </span>
+                                    <span class="checkbox-label">同意服务条款</span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox-input">
+                                    <span class="checkbox-box">
+                                        <svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 6L9 17l-5-5"/>
+                                        </svg>
+                                    </span>
+                                    <span class="checkbox-label">订阅新闻通讯</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">单选按钮</h3>
+                    <div class="component-preview">
+                        <div style="max-width: 400px;">
+                            <div class="form-group">
+                                <label class="form-label">模型质量</label>
+                                <div class="radio-group">
+                                    <label class="radio-wrapper">
+                                        <input type="radio" name="quality" value="standard" class="radio-input" checked>
+                                        <span class="radio-circle"></span>
+                                        <span class="radio-label">标准质量</span>
+                                    </label>
+                                    <label class="radio-wrapper">
+                                        <input type="radio" name="quality" value="high" class="radio-input">
+                                        <span class="radio-circle"></span>
+                                        <span class="radio-label">高质量</span>
+                                    </label>
+                                    <label class="radio-wrapper">
+                                        <input type="radio" name="quality" value="ultra" class="radio-input">
+                                        <span class="radio-circle"></span>
+                                        <span class="radio-label">超高质量</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">开关切换</h3>
+                    <div class="component-preview">
+                        <div style="max-width: 400px;">
+                            <div class="form-group">
+                                <label class="toggle-wrapper">
+                                    <input type="checkbox" class="toggle-input" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">启用通知</span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="toggle-wrapper">
+                                    <input type="checkbox" class="toggle-input">
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">自动保存</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File Upload -->
+            <section class="section">
+                <h2 class="section-title">文件上传</h2>
+                <p class="section-description">文件上传和拖拽组件</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">模型上传</h3>
+                    <div class="component-preview">
+                        <div style="max-width: 500px;">
+                            <div class="form-group">
+                                <label for="file-upload" class="form-label">上传模型文件</label>
+                                <div class="file-upload-wrapper">
+                                    <input type="file" id="file-upload" class="file-input" accept=".obj,.fbx,.gltf" multiple>
+                                    <label for="file-upload" class="file-upload-area">
+                                        <div class="file-upload-icon">
+                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                                <polyline points="17,8 12,3 7,8"/>
+                                                <line x1="12" y1="3" x2="12" y2="15"/>
+                                            </svg>
+                                        </div>
+                                        <div class="file-upload-text">
+                                            <p class="file-upload-title">拖拽文件到这里或点击浏览</p>
+                                            <p class="file-upload-subtitle">支持 OBJ, FBX, GLTF 格式</p>
+                                        </div>
+                                    </label>
+                                    <div class="file-list" id="file-list"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Form States -->
+            <section class="section">
+                <h2 class="section-title">表单状态</h2>
+                <p class="section-description">不同状态的表单控件展示</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">验证状态</h3>
+                    <div class="component-preview">
+                        <div style="max-width: 400px;">
+                            <div class="form-group form-success">
+                                <label for="success-input" class="form-label">成功状态</label>
+                                <input type="text" id="success-input" class="form-input" value="user@example.com">
+                                <div class="form-success-message">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    邮箱格式正确
+                                </div>
+                            </div>
+
+                            <div class="form-group form-error">
+                                <label for="error-input" class="form-label">错误状态</label>
+                                <input type="text" id="error-input" class="form-input" value="123">
+                                <div class="form-error-message">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="15" y1="9" x2="9" y2="15"/>
+                                        <line x1="9" y1="9" x2="15" y2="15"/>
+                                    </svg>
+                                    密码至少需要8个字符
+                                </div>
+                            </div>
+
+                            <div class="form-group form-warning">
+                                <label for="warning-input" class="form-label">警告状态</label>
+                                <input type="text" id="warning-input" class="form-input" placeholder="输入API密钥">
+                                <div class="form-warning-message">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                                        <line x1="12" y1="9" x2="12" y2="13"/>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                    </svg>
+                                    API使用量接近限制
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="disabled-input" class="form-label">禁用状态</label>
+                                <input type="text" id="disabled-input" class="form-input" value="此字段已禁用" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="readonly-input" class="form-label">只读状态</label>
+                                <input type="text" id="readonly-input" class="form-input" value="此字段为只读" readonly>
+                            </div>
+
+                            <div class="form-group form-loading">
+                                <label for="loading-input" class="form-label">加载状态</label>
+                                <div class="input-with-loading">
+                                    <input type="text" id="loading-input" class="form-input" value="正在验证...">
+                                    <div class="input-loading-spinner">
+                                        <div class="spinner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Complete Form -->
+            <section class="section">
+                <h2 class="section-title">完整表单</h2>
+                <p class="section-description">一个完整的用户注册表单示例</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">注册表单</h3>
+                    <div class="component-preview">
+                        <form style="max-width: 500px;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name" class="form-label">名字</label>
+                                    <input type="text" id="first-name" class="form-input" placeholder="输入名字" data-validate="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name" class="form-label">姓氏</label>
+                                    <input type="text" id="last-name" class="form-input" placeholder="输入姓氏" data-validate="required">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">邮箱地址</label>
+                                <input type="email" id="email" class="form-input" placeholder="输入邮箱地址" data-validate="email" autocomplete="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="form-label">密码</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="password" class="form-input password-input" placeholder="创建密码" data-validate="password" autocomplete="new-password">
+                                    <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                        <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                            <circle cx="12" cy="12" r="3"/>
+                                        </svg>
+                                        <svg class="eye-closed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden>
+                                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                                            <line x1="1" y1="1" x2="23" y2="23"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="form-help">密码至少需要8个字符</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="account-type" class="form-label">账户类型</label>
+                                <div class="select-wrapper">
+                                    <select id="account-type" class="form-select">
+                                        <option value="">选择账户类型</option>
+                                        <option value="personal">个人账户</option>
+                                        <option value="business">商业账户</option>
+                                        <option value="student">学生账户</option>
+                                    </select>
+                                    <div class="select-arrow">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M6 9l6 6 6-6"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox-input" required>
+                                    <span class="checkbox-box">
+                                        <svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 6L9 17l-5-5"/>
+                                        </svg>
+                                    </span>
+                                    <span class="checkbox-label">
+                                        我同意 <a href="#" style="color: var(--color-accent-base);">服务条款</a> 和 <a href="#" style="color: var(--color-accent-base);">隐私政策</a>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="button button-primary button-full-width">创建账户</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

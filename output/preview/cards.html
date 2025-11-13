@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片组件 - Meshy.ai 设计系统</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">卡片组件</h1>
+                <p class="header-subtitle">多样化卡片组件 - 用于内容展示和分组</p>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="header-link">返回首页</a>
+                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <aside class="sidebar">
+            <nav>
+                <h3 class="sidebar-title">设计令牌</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="colors.html" class="sidebar-link">颜色系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="typography.html" class="sidebar-link">字体系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="spacing.html" class="sidebar-link">间距系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="layout.html" class="sidebar-link">布局系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="animations.html" class="sidebar-link">动效系统</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">组件库</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="cards.html" class="sidebar-link active">卡片 Cards</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Standard Cards -->
+            <section class="section">
+                <h2 class="section-title">标准卡片</h2>
+                <p class="section-description">用于组织和展示相关信息的通用卡片组件</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">基础卡片</h3>
+                    <div class="component-preview grid grid-responsive">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">基础卡片</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>这是一个标准的卡片组件，用于展示相关信息的集合。卡片可以包含标题、内容和操作区域。</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="button button-primary button-small">查看详情</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="card-title">带头像的卡片</h3>
+                                    <span class="tag tag-primary">新功能</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="flex items-center gap-md mb-md">
+                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-full);"></div>
+                                    <div>
+                                        <div style="font-weight: var(--font-weight-medium);">John Doe</div>
+                                        <div style="font-size: var(--text-sm); color: var(--color-label-soft);">产品经理</div>
+                                    </div>
+                                </div>
+                                <p>卡片可以包含用户信息、状态标签和丰富的内容结构。</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="button button-secondary button-small">了解更多</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Model Cards -->
+            <section class="section">
+                <h2 class="section-title">模型卡片</h2>
+                <p class="section-description">专门用于展示 3D 模型的卡片组件</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">3D 模型卡片</h3>
+                    <div class="component-preview grid grid-responsive">
+                        <div class="card card-model">
+                            <div class="card-media">
+                                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--text-lg);">
+                                    3D 模型预览
+                                </div>
+                                <div class="model-overlay">
+                                    <button class="button button-primary button-small">查看 3D</button>
+                                </div>
+                            </div>
+                            <div class="card-content" style="padding: var(--p-lg);">
+                                <h3 class="card-title">幻想战士</h3>
+                                <div class="flex items-center justify-between mt-sm">
+                                    <span class="tag tag-default">角色</span>
+                                    <span style="font-size: var(--text-xs); color: var(--color-label-soft);">2小时前</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card card-model">
+                            <div class="card-media">
+                                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--text-lg);">
+                                    环境模型
+                                </div>
+                                <div class="model-overlay">
+                                    <button class="button button-primary button-small">查看 3D</button>
+                                </div>
+                            </div>
+                            <div class="card-content" style="padding: var(--p-lg);">
+                                <h3 class="card-title">魔法森林</h3>
+                                <div class="flex items-center justify-between mt-sm">
+                                    <span class="tag tag-default">环境</span>
+                                    <span style="font-size: var(--text-xs); color: var(--color-label-soft);">5小时前</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Cards -->
+            <section class="section">
+                <h2 class="section-title">博客卡片</h2>
+                <p class="section-description">用于文章和博客内容展示的卡片</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">文章卡片</h3>
+                    <div class="component-preview grid grid-responsive">
+                        <article class="card">
+                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 16/9; margin: calc(var(--p-2xl) * -1); margin-bottom: var(--m-lg);"></div>
+                            <div class="card-header">
+                                <div class="tag tag-primary mb-sm">教程</div>
+                                <h3 class="card-title">开始使用 3D 建模</h3>
+                                <p class="card-subtitle">学习 3D 建模的基础知识和创建你的第一个精彩 3D 资产</p>
+                            </div>
+                            <div class="card-content">
+                                <p style="margin: 0;">探索 3D 建模的精彩世界，从基础概念到高级技术...</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="flex items-center gap-md">
+                                    <div style="width: 24px; height: 24px; background: var(--color-bg-border); border-radius: var(--radius-full);"></div>
+                                    <span style="font-size: var(--text-sm); color: var(--color-label-soft);">John Doe</span>
+                                </div>
+                                <span style="font-size: var(--text-xs); color: var(--color-label-muted);">5分钟阅读</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Job Cards -->
+            <section class="section">
+                <h2 class="section-title">职位卡片</h2>
+                <p class="section-description">用于职位招聘信息展示的卡片</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">招聘卡片</h3>
+                    <div class="component-preview">
+                        <div class="card" style="border-left: 4px solid var(--color-accent-base);">
+                            <div class="card-header">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="card-title">高级前端开发工程师</h3>
+                                        <p class="card-subtitle" style="margin-top: var(--p-xs);">Meshy AI</p>
+                                    </div>
+                                    <span class="tag tag-success">全职</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p>我们正在寻找经验丰富的前端开发工程师加入我们的团队...</p>
+                                <div class="flex flex-wrap gap-sm mt-md">
+                                    <span class="tag tag-default">React</span>
+                                    <span class="tag tag-default">TypeScript</span>
+                                    <span class="tag tag-default">3D 图形</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div style="font-size: var(--text-sm); color: var(--color-label-soft);">旧金山, CA</div>
+                                    </div>
+                                    <div style="font-size: var(--text-sm); color: var(--color-accent-base); font-weight: var(--font-weight-medium);">$120k - $180k</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Cards -->
+            <section class="section">
+                <h2 class="section-title">统计卡片</h2>
+                <p class="section-description">用于展示数据统计的卡片</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">数据卡片</h3>
+                    <div class="component-preview grid grid-4">
+                        <div class="card card-stats text-center">
+                            <div class="stats-icon" style="margin: 0 auto var(--m-lg); width: 48px; height: 48px; background-color: var(--color-accent-bg); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-accent-base);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                </svg>
+                            </div>
+                            <div class="stats-content">
+                                <div class="stats-value" style="font-size: var(--text-3xl); font-weight: var(--font-weight-bold); color: var(--color-label-title);">12,543</div>
+                                <div class="stats-label">总模型数</div>
+                                <div class="stats-change positive">+12.5%</div>
+                            </div>
+                        </div>
+
+                        <div class="card card-stats text-center">
+                            <div class="stats-icon" style="margin: 0 auto var(--m-lg); width: 48px; height: 48px; background-color: rgba(59, 130, 246, 0.1); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-semantic-info-base);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="stats-content">
+                                <div class="stats-value" style="font-size: var(--text-3xl); font-weight: var(--font-weight-bold); color: var(--color-label-title);">3,842</div>
+                                <div class="stats-label">活跃用户</div>
+                                <div class="stats-change positive">+8.2%</div>
+                            </div>
+                        </div>
+
+                        <div class="card card-stats text-center">
+                            <div class="stats-icon" style="margin: 0 auto var(--m-lg); width: 48px; height: 48px; background-color: rgba(46, 224, 64, 0.1); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-semantic-success-base);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10,9 9,9 8,9"/>
+                                </svg>
+                            </div>
+                            <div class="stats-content">
+                                <div class="stats-value" style="font-size: var(--text-3xl); font-weight: var(--font-weight-bold); color: var(--color-label-title);">986</div>
+                                <div class="stats-label">文档数量</div>
+                                <div class="stats-change positive">+15.3%</div>
+                            </div>
+                        </div>
+
+                        <div class="card card-stats text-center">
+                            <div class="stats-icon" style="margin: 0 auto var(--m-lg); width: 48px; height: 48px; background-color: rgba(246, 153, 43, 0.1); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-semantic-warning-base);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="8.5" cy="7" r="4"/>
+                                    <line x1="20" y1="8" x2="20" y2="14"/>
+                                    <line x1="23" y1="11" x2="17" y2="11"/>
+                                </svg>
+                            </div>
+                            <div class="stats-content">
+                                <div class="stats-value" style="font-size: var(--text-3xl); font-weight: var(--font-weight-bold); color: var(--color-label-title);">247</div>
+                                <div class="stats-label">团队规模</div>
+                                <div class="stats-change negative">-2.1%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

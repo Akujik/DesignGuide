@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颜色系统 - Meshy.ai 设计系统</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">颜色系统</h1>
+                <p class="header-subtitle">Meshy.ai 设计系统的颜色规范和使用指南</p>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="header-link">返回首页</a>
+                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <aside class="sidebar">
+            <nav>
+                <h3 class="sidebar-title">设计令牌</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="colors.html" class="sidebar-link active">颜色系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="typography.html" class="sidebar-link">字体系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="spacing.html" class="sidebar-link">间距系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="layout.html" class="sidebar-link">布局系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="animations.html" class="sidebar-link">动效系统</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">组件库</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Primary Colors -->
+            <section class="section">
+                <h2 class="section-title">品牌颜色</h2>
+                <p class="section-description">Meshy.ai 的核心品牌颜色，用于主要的交互元素和品牌识别</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">主色调</h3>
+                    <div class="component-preview">
+                        <div class="color-palette">
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #c5f955;" data-color="#c5f955"></div>
+                                <div class="color-info">
+                                    <div class="color-name">主绿色</div>
+                                    <div class="color-value">#c5f955</div>
+                                    <div class="color-usage">--color-accent-base</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #a8e328;" data-color="#a8e328"></div>
+                                <div class="color-info">
+                                    <div class="color-name">主绿色悬停</div>
+                                    <div class="color-value">#a8e328</div>
+                                    <div class="color-usage">--color-accent-base-hover</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #c5f95526;" data-color="#c5f95526"></div>
+                                <div class="color-info">
+                                    <div class="color-name">主绿色背景</div>
+                                    <div class="color-value">#c5f95526</div>
+                                    <div class="color-usage">--color-accent-bg</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #dcfa9d;" data-color="#dcfa9d"></div>
+                                <div class="color-info">
+                                    <div class="color-name">主绿色高亮</div>
+                                    <div class="color-value">#dcfa9d</div>
+                                    <div class="color-usage">--color-accent-highlight</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span class="code-title">主色调 CSS 变量</span>
+                            <button class="copy-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                                复制
+                            </button>
+                        </div>
+                        <div class="code-wrapper">
+                            <pre><code class="language-css">:root {
+  --color-accent-base: #c5f955;
+  --color-accent-base-hover: #a8e328;
+  --color-accent-bg: #c5f95526;
+  --color-accent-bg-hover: #c5f95533;
+  --color-accent-highlight: #dcfa9d;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">辅助色系</h3>
+                    <div class="component-preview">
+                        <div class="color-palette">
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #ff3e8f;" data-color="#ff3e8f"></div>
+                                <div class="color-info">
+                                    <div class="color-name">辅助洋红</div>
+                                    <div class="color-value">#ff3e8f</div>
+                                    <div class="color-usage">--color-accent-support-base</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #ff97c2;" data-color="#ff97c2"></div>
+                                <div class="color-info">
+                                    <div class="color-name">辅助粉色</div>
+                                    <div class="color-value">#ff97c2</div>
+                                    <div class="color-usage">--color-accent-support-highlight</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Background Colors -->
+            <section class="section">
+                <h2 class="section-title">背景颜色</h2>
+                <p class="section-description">用于构建界面层次和视觉分离的背景色系统</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">深色主题背景</h3>
+                    <div class="component-preview">
+                        <div class="color-palette">
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #181818;" data-color="#181818"></div>
+                                <div class="color-info">
+                                    <div class="color-name">主背景</div>
+                                    <div class="color-value">#181818</div>
+                                    <div class="color-usage">--color-bg-base</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #1e1e1e;" data-color="#1e1e1e"></div>
+                                <div class="color-info">
+                                    <div class="color-name">次要背景</div>
+                                    <div class="color-value">#1e1e1e</div>
+                                    <div class="color-usage">--color-bg-sub</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #262626;" data-color="#262626"></div>
+                                <div class="color-info">
+                                    <div class="color-name">悬停背景</div>
+                                    <div class="color-value">#262626</div>
+                                    <div class="color-usage">--color-bg-base-hover</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #303030;" data-color="#303030"></div>
+                                <div class="color-info">
+                                    <div class="color-name">阴影背景</div>
+                                    <div class="color-value">#303030</div>
+                                    <div class="color-usage">--color-bg-shade</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #3f3f3f;" data-color="#3f3f3f"></div>
+                                <div class="color-info">
+                                    <div class="color-name">边框颜色</div>
+                                    <div class="color-value">#3f3f3f</div>
+                                    <div class="color-usage">--color-bg-border</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #ffffff0d;" data-color="#ffffff0d"></div>
+                                <div class="color-info">
+                                    <div class="color-name">半透明白色</div>
+                                    <div class="color-value">#ffffff0d</div>
+                                    <div class="color-usage">--color-bg-translucent</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Text Colors -->
+            <section class="section">
+                <h2 class="section-title">文本颜色</h2>
+                <p class="section-description">用于文本内容层次和可读性的颜色系统</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">文本层次</h3>
+                    <div class="component-preview">
+                        <div class="color-palette">
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #ffffff;" data-color="#ffffff"></div>
+                                <div class="color-info">
+                                    <div class="color-name">标题文本</div>
+                                    <div class="color-value">#ffffff</div>
+                                    <div class="color-usage">--color-label-title</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #dedede;" data-color="#dedede"></div>
+                                <div class="color-info">
+                                    <div class="color-name">主要文本</div>
+                                    <div class="color-value">#dedede</div>
+                                    <div class="color-usage">--color-label-base</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #9b9b9b;" data-color="#9b9b9b"></div>
+                                <div class="color-info">
+                                    <div class="color-name">次要文本</div>
+                                    <div class="color-value">#9b9b9b</div>
+                                    <div class="color-usage">--color-label-soft</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #696969;" data-color="#696969"></div>
+                                <div class="color-info">
+                                    <div class="color-name">静音文本</div>
+                                    <div class="color-value">#696969</div>
+                                    <div class="color-usage">--color-label-muted</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #505050;" data-color="#505050"></div>
+                                <div class="color-info">
+                                    <div class="color-name">淡化文本</div>
+                                    <div class="color-value">#505050</div>
+                                    <div class="color-usage">--color-label-faint</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Semantic Colors -->
+            <section class="section">
+                <h2 class="section-title">语义颜色</h2>
+                <p class="section-description">用于状态指示和反馈的语义化颜色</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">状态色</h3>
+                    <div class="component-preview">
+                        <div class="color-palette">
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #f33;" data-color="#f33"></div>
+                                <div class="color-info">
+                                    <div class="color-name">错误状态</div>
+                                    <div class="color-value">#f33</div>
+                                    <div class="color-usage">--color-semantic-error-base</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #2ee040;" data-color="#2ee040"></div>
+                                <div class="color-info">
+                                    <div class="color-name">成功状态</div>
+                                    <div class="color-value">#2ee040</div>
+                                    <div class="color-usage">--color-semantic-success-base</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #f6992b;" data-color="#f6992b"></div>
+                                <div class="color-info">
+                                    <div class="color-name">警告状态</div>
+                                    <div class="color-value">#f6992b</div>
+                                    <div class="color-usage">--color-semantic-warning-base</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #3b82f6;" data-color="#3b82f6"></div>
+                                <div class="color-info">
+                                    <div class="color-name">信息状态</div>
+                                    <div class="color-value">#3b82f6</div>
+                                    <div class="color-usage">--color-semantic-info-base</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color Usage Examples -->
+            <section class="section">
+                <h2 class="section-title">颜色使用示例</h2>
+                <p class="section-description">实际应用中的颜色组合示例</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">按钮颜色组合</h3>
+                    <div class="component-preview">
+                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-lg);">
+                            <button class="button button-primary">主要按钮</button>
+                            <button class="button button-secondary">次要按钮</button>
+                            <button class="button button-success">成功按钮</button>
+                            <button class="button button-warning">警告按钮</button>
+                            <button class="button button-error">错误按钮</button>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span class="code-title">按钮颜色示例</span>
+                            <button class="copy-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                                复制
+                            </button>
+                        </div>
+                        <div class="code-wrapper">
+                            <pre><code class="language-html">&lt;button class="button button-primary"&gt;主要按钮&lt;/button&gt;
+&lt;button class="button button-secondary"&gt;次要按钮&lt;/button&gt;
+&lt;button class="button button-success"&gt;成功按钮&lt;/button&gt;
+&lt;button class="button button-warning"&gt;警告按钮&lt;/button&gt;
+&lt;button class="button button-error"&gt;错误按钮&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">状态标签示例</h3>
+                    <div class="component-preview">
+                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-md);">
+                            <span class="tag tag-success">成功</span>
+                            <span class="tag tag-warning">警告</span>
+                            <span class="tag tag-error">错误</span>
+                            <span class="tag tag-default">默认</span>
+                            <span class="tag tag-primary">主要</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

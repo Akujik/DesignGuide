@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>间距系统 - Meshy.ai 设计系统</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">间距系统</h1>
+                <p class="header-subtitle">基于 4px 的数学化间距规范</p>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="header-link">返回首页</a>
+                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <aside class="sidebar">
+            <nav>
+                <h3 class="sidebar-title">设计令牌</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="colors.html" class="sidebar-link">颜色系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="typography.html" class="sidebar-link">字体系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="spacing.html" class="sidebar-link active">间距系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="layout.html" class="sidebar-link">布局系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="animations.html" class="sidebar-link">动效系统</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">组件库</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Spacing Scale -->
+            <section class="section">
+                <h2 class="section-title">间距规范</h2>
+                <p class="section-description">基于 4px 基础单位的数学化间距系统</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">间距层级</h3>
+                    <div class="component-preview">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--gap-xl);">
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-xs); margin-bottom: var(--p-sm);">4px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-xs</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-sm); margin-bottom: var(--p-sm);">8px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-sm</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-md); margin-bottom: var(--p-sm);">12px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-md</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-lg); margin-bottom: var(--p-sm);">16px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-lg</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-xl); margin-bottom: var(--p-sm);">20px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-xl</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-2xl); margin-bottom: var(--p-sm);">24px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-2xl</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-3xl); margin-bottom: var(--p-sm);">32px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-3xl</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-4xl); margin-bottom: var(--p-sm);">40px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-4xl</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-5xl); margin-bottom: var(--p-sm);">48px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-5xl</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-6xl); margin-bottom: var(--p-sm);">64px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-6xl</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Margin and Padding -->
+            <section class="section">
+                <h2 class="section-title">外间距和内间距</h2>
+                <p class="section-description">外间距 (margin) 和内间距 (padding) 的使用示例</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">间距对比</h3>
+                    <div class="component-preview">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap-xl);">
+                            <div>
+                                <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">内间距 (Padding)</h4>
+                                <div style="background: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-2xl);">
+                                    <p style="margin: 0; color: var(--color-label-soft);">这个元素使用了内间距，内容与边框之间有 24px 的间距。</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">外间距 (Margin)</h4>
+                                <div style="background: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg); margin-bottom: var(--m-xl);">
+                                    <p style="margin: 0; color: var(--color-label-soft);">这个元素下方有 24px 的外间距，与下一个元素保持距离。</p>
+                                </div>
+                                <div style="background: var(--color-bg-shade); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
+                                    <p style="margin: 0; color: var(--color-label-soft);">下一个元素</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gap -->
+            <section class="section">
+                <h2 class="section-title">元素间距</h2>
+                <p class="section-description">Flexbox 和 Grid 中的间距 (gap)</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">间距大小对比</h3>
+                    <div class="component-preview">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--gap-xl);">
+                            <div>
+                                <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">小间距</h4>
+                                <div class="flex flex-column gap-sm">
+                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 1</div>
+                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 2</div>
+                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 3</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">中间距</h4>
+                                <div class="flex flex-column gap-md">
+                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 1</div>
+                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 2</div>
+                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 3</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">大间距</h4>
+                                <div class="flex flex-column gap-lg">
+                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 1</div>
+                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 2</div>
+                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">水平间距</h3>
+                    <div class="component-preview">
+                        <div class="flex items-center gap-lg" style="background: var(--color-bg-sub); padding: var(--p-xl); border-radius: var(--radius-lg);">
+                            <div style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 1</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 2</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 3</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 4</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Border Radius -->
+            <section class="section">
+                <h2 class="section-title">圆角系统</h2>
+                <p class="section-description">统一的圆角规范和视觉效果</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">圆角大小</h3>
+                    <div class="component-preview">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: var(--gap-xl);">
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-xs); padding: var(--p-xl); margin-bottom: var(--p-sm);">2px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-xs</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-sm); padding: var(--p-xl); margin-bottom: var(--p-sm);">4px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-sm</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-xl); margin-bottom: var(--p-sm);">6px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-md</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-lg); padding: var(--p-xl); margin-bottom: var(--p-sm);">8px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-lg</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">12px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-xl</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-2xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">16px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-2xl</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-3xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">24px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-3xl</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-4xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">32px</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-4xl</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-full); width: 80px; height: 80px; line-height: 80px; margin: 0 auto var(--p-sm);">∞</div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-full</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Spacing in Components -->
+            <section class="section">
+                <h2 class="section-title">组件中的间距应用</h2>
+                <p class="section-description">间距在不同组件中的实际应用示例</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">按钮间距</h3>
+                    <div class="component-preview">
+                        <div class="flex gap-lg items-center">
+                            <button class="button button-primary button-small">小按钮</button>
+                            <button class="button button-primary">中按钮</button>
+                            <button class="button button-primary button-large">大按钮</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">卡片间距</h3>
+                    <div class="component-preview grid grid-responsive">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">卡片 1</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>卡片内部使用标准间距，确保内容层次清晰。</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">卡片 2</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>卡片之间使用大间距，提供良好的视觉分离。</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">卡片 3</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>统一的间距系统确保了设计的一致性。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">表单间距</h3>
+                    <div class="component-preview" style="max-width: 400px;">
+                        <div class="form-group">
+                            <label class="form-label">用户名</label>
+                            <input type="text" class="form-input" placeholder="输入用户名">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">邮箱</label>
+                            <input type="email" class="form-input" placeholder="输入邮箱">
+                        </div>
+                        <button class="button button-primary button-full-width">提交</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Variables Reference -->
+            <section class="section">
+                <h2 class="section-title">CSS 变量参考</h2>
+                <p class="section-description">间距系统使用的 CSS 变量</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">间距 CSS 变量</h3>
+                    <div class="component-preview">
+                        <div style="font-family: var(--font-mono); font-size: var(--text-sm);">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--gap-lg);">
+                                <div>
+                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">基础间距</h4>
+                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
+                                        --spacing-unit: 0.25rem;<br>
+                                        --spacing-xs: 0.25rem;<br>
+                                        --spacing-sm: 0.5rem;<br>
+                                        --spacing-md: 0.75rem;<br>
+                                        --spacing-lg: 1rem;<br>
+                                        --spacing-xl: 1.25rem;
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">大间距</h4>
+                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
+                                        --spacing-2xl: 1.5rem;<br>
+                                        --spacing-3xl: 2rem;<br>
+                                        --spacing-4xl: 2.5rem;<br>
+                                        --spacing-5xl: 3rem;<br>
+                                        --spacing-6xl: 4rem;
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">内间距</h4>
+                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
+                                        --p-xs: var(--spacing-xs);<br>
+                                        --p-sm: var(--spacing-sm);<br>
+                                        --p-md: var(--spacing-md);<br>
+                                        --p-lg: var(--spacing-lg);<br>
+                                        --p-xl: var(--spacing-xl);
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">外间距</h4>
+                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
+                                        --m-xs: var(--spacing-xs);<br>
+                                        --m-sm: var(--spacing-sm);<br>
+                                        --m-md: var(--spacing-md);<br>
+                                        --m-lg: var(--spacing-lg);<br>
+                                        --m-xl: var(--spacing-xl);
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">元素间距</h4>
+                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
+                                        --gap-xs: var(--spacing-xs);<br>
+                                        --gap-sm: var(--spacing-sm);<br>
+                                        --gap-md: var(--spacing-md);<br>
+                                        --gap-lg: var(--spacing-lg);<br>
+                                        --gap-xl: var(--spacing-xl);
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">圆角</h4>
+                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
+                                        --radius-xs: 0.125rem;<br>
+                                        --radius-sm: 0.25rem;<br>
+                                        --radius-md: 0.375rem;<br>
+                                        --radius-lg: 0.5rem;<br>
+                                        --radius-xl: 0.75rem;<br>
+                                        --radius-2xl: 1rem;<br>
+                                        --radius-full: 9999px;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

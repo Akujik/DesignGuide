@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体系统 - Meshy.ai 设计系统</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">字体系统</h1>
+                <p class="header-subtitle">完整的字体层次和排版规范</p>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="header-link">返回首页</a>
+                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <aside class="sidebar">
+            <nav>
+                <h3 class="sidebar-title">设计令牌</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="colors.html" class="sidebar-link">颜色系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="typography.html" class="sidebar-link active">字体系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="spacing.html" class="sidebar-link">间距系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="layout.html" class="sidebar-link">布局系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="animations.html" class="sidebar-link">动效系统</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">组件库</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Typography Scale -->
+            <section class="section">
+                <h2 class="section-title">字体层次</h2>
+                <p class="section-description">基于 CSS 变量的完整字体层次系统</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">标题层次</h3>
+                    <div class="component-preview">
+                        <div class="typography-showcase">
+                            <div class="typography-sample">
+                                <div class="typography-label">H1 - 页面主标题</div>
+                                <h1 class="typography-text" style="font-size: var(--text-6xl); font-weight: var(--font-weight-bold); line-height: var(--leading-tight);">页面主标题</h1>
+                            </div>
+
+                            <div class="typography-sample">
+                                <div class="typography-label">H2 - 章节标题</div>
+                                <h2 class="typography-text" style="font-size: var(--text-4xl); font-weight: var(--font-weight-semibold); line-height: var(--leading-tight);">章节标题</h2>
+                            </div>
+
+                            <div class="typography-sample">
+                                <div class="typography-label">H3 - 小节标题</div>
+                                <h3 class="typography-text" style="font-size: var(--text-2xl); font-weight: var(--font-weight-semibold); line-height: var(--leading-tight);">小节标题</h3>
+                            </div>
+
+                            <div class="typography-sample">
+                                <div class="typography-label">H4 - 微标题</div>
+                                <h4 class="typography-text" style="font-size: var(--text-xl); font-weight: var(--font-weight-medium); line-height: var(--leading-normal);">微标题</h4>
+                            </div>
+
+                            <div class="typography-sample">
+                                <div class="typography-label">H5 - 小标题</div>
+                                <h5 class="typography-text" style="font-size: var(--text-lg); font-weight: var(--font-weight-medium); line-height: var(--leading-normal);">小标题</h5>
+                            </div>
+
+                            <div class="typography-sample">
+                                <div class="typography-label">H6 - 最小标题</div>
+                                <h6 class="typography-text" style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); line-height: var(--leading-normal);">最小标题</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Body Text -->
+            <section class="section">
+                <h2 class="section-title">正文文本</h2>
+                <p class="section-description">不同尺寸和样式的正文文本</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">文本尺寸</h3>
+                    <div class="component-preview">
+                        <div class="typography-showcase">
+                            <div class="typography-sample">
+                                <div class="typography-label">大文本 (Large)</div>
+                                <p class="typography-text" style="font-size: var(--text-lg); line-height: var(--leading-relaxed);">这是大号文本，用于强调重要内容或段落开头。大号文本提供更好的可读性和视觉层次。</p>
+                            </div>
+
+                            <div class="typography-sample">
+                                <div class="typography-label">标准正文 (Base)</div>
+                                <p class="typography-text" style="font-size: var(--text-base); line-height: var(--leading-relaxed);">这是标准的正文文本，适用于大多数内容展示。标准正文提供了良好的阅读体验，适合长篇阅读。</p>
+                            </div>
+
+                            <div class="typography-sample">
+                                <div class="typography-label">小文本 (Small)</div>
+                                <p class="typography-text" style="font-size: var(--text-sm); line-height: var(--leading-normal);">这是小号文本，通常用于次要信息、注释或空间有限的场景。</p>
+                            </div>
+
+                            <div class="typography-sample">
+                                <div class="typography-label">超小文本 (Extra Small)</div>
+                                <p class="typography-text" style="font-size: var(--text-xs); line-height: var(--leading-normal);">这是超小文本，主要用于标签、版权信息、元数据等辅助信息。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">文本权重</h3>
+                    <div class="component-preview">
+                        <div style="display: flex; flex-direction: column; gap: var(--gap-lg);">
+                            <div style="font-weight: var(--font-weight-light); font-size: var(--text-xl);">
+                                <span style="color: var(--color-label-soft); font-size: var(--text-sm); font-family: var(--font-mono);">Light (300)</span>
+                                轻体文本
+                            </div>
+                            <div style="font-weight: var(--font-weight-normal); font-size: var(--text-xl);">
+                                <span style="color: var(--color-label-soft); font-size: var(--text-sm); font-family: var(--font-mono);">Normal (400)</span>
+                                常规文本
+                            </div>
+                            <div style="font-weight: var(--font-weight-medium); font-size: var(--text-xl);">
+                                <span style="color: var(--color-label-soft); font-size: var(--text-sm); font-family: var(--font-mono);">Medium (500)</span>
+                                中等字体
+                            </div>
+                            <div style="font-weight: var(--font-weight-semibold); font-size: var(--text-xl);">
+                                <span style="color: var(--color-label-soft); font-size: var(--text-sm); font-family: var(--font-mono);">Semibold (600)</span>
+                                半粗体
+                            </div>
+                            <div style="font-weight: var(--font-weight-bold); font-size: var(--text-xl);">
+                                <span style="color: var(--color-label-soft); font-size: var(--text-sm); font-family: var(--font-mono);">Bold (700)</span>
+                                粗体文本
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Text Styles -->
+            <section class="section">
+                <h2 class="section-title">文本样式</h2>
+                <p class="section-description">不同样式和用途的文本变体</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">文本样式</h3>
+                    <div class="component-preview">
+                        <div style="display: flex; flex-direction: column; gap: var(--gap-lg);">
+                            <div>
+                                <p><strong>粗体文本</strong> - 使用 strong 标签或 font-weight: bold</p>
+                            </div>
+                            <div>
+                                <p><em>斜体文本</em> - 使用 em 标签或 font-style: italic</p>
+                            </div>
+                            <div>
+                                <p><u>下划线文本</u> - 使用 u 标签或 text-decoration: underline</p>
+                            </div>
+                            <div>
+                                <p><del>删除线文本</del> - 使用 del 标签或 text-decoration: line-through</p>
+                            </div>
+                            <div>
+                                <p style="color: var(--color-accent-base);"><span style="color: var(--color-accent-base);">强调文本</span> - 使用品牌颜色强调重要信息</p>
+                            </div>
+                            <div>
+                                <p style="color: var(--color-label-soft);"><span style="color: var(--color-label-soft);">静音文本</span> - 使用柔和颜色表示次要信息</p>
+                            </div>
+                            <div>
+                                <p style="text-transform: uppercase; letter-spacing: 0.05em; font-size: var(--text-sm);">大写文本</p>
+                            </div>
+                            <div>
+                                <p style="font-family: var(--font-mono);"><code style="font-family: var(--font-mono);">等宽文本</code> - 用于代码、数据等</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Font Families -->
+            <section class="section">
+                <h2 class="section-title">字体族</h2>
+                <p class="section-description">系统中使用的字体族和后备方案</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">字体族演示</h3>
+                    <div class="component-preview">
+                        <div style="display: flex; flex-direction: column; gap: var(--gap-lg);">
+                            <div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">Sans-serif 系统字体</div>
+                                <p style="font-family: var(--font-sans); font-size: var(--text-xl);">系统默认无衬线字体</p>
+                            </div>
+                            <div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">Inter 字体</div>
+                                <p style="font-family: var(--font-inter); font-size: var(--text-xl);">Inter 字体 - 专为界面设计</p>
+                            </div>
+                            <div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">Monospace 等宽字体</div>
+                                <p style="font-family: var(--font-mono); font-size: var(--text-xl);">Monospace 等宽字体 - 1234567890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Line Heights -->
+            <section class="section">
+                <h2 class="section-title">行高系统</h2>
+                <p class="section-description">不同行高对可读性的影响</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">行高对比</h3>
+                    <div class="component-preview">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--gap-lg);">
+                            <div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">紧凑行高 (1.25)</div>
+                                <p style="line-height: var(--leading-tight);">这是紧凑行高的文本示例。紧凑行高适合在有限空间内展示大量信息，但可能会影响可读性。适用于标题、标签等场景。</p>
+                            </div>
+                            <div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">正常行高 (1.5)</div>
+                                <p style="line-height: var(--leading-normal);">这是正常行高的文本示例。正常行高提供了良好的可读性，是大多数正文内容的推荐选择。适合段落、描述等。</p>
+                            </div>
+                            <div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">宽松行高 (1.75)</div>
+                                <p style="line-height: var(--leading-relaxed);">这是宽松行高的文本示例。宽松行高提高了可读性，特别适合长篇阅读和重要内容。适合文章、教程等。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Text Colors -->
+            <section class="section">
+                <h2 class="section-title">文本颜色</h2>
+                <p class="section-description">不同文本颜色的语义和用途</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">文本颜色层次</h3>
+                    <div class="component-preview">
+                        <div style="display: flex; flex-direction: column; gap: var(--gap-lg);">
+                            <div>
+                                <div style="color: var(--color-label-title); font-size: var(--text-xl); font-weight: var(--font-weight-semibold);">
+                                    标题文本 (Title)
+                                </div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-top: var(--p-xs);">
+                                    用于页面和组件的主要标题
+                                </div>
+                            </div>
+                            <div>
+                                <div style="color: var(--color-label-base); font-size: var(--text-xl);">
+                                    正文文本 (Body)
+                                </div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-top: var(--p-xs);">
+                                    用于主要内容区域
+                                </div>
+                            </div>
+                            <div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-xl);">
+                                    次要文本 (Soft)
+                                </div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-top: var(--p-xs);">
+                                    用于辅助信息和元数据
+                                </div>
+                            </div>
+                            <div>
+                                <div style="color: var(--color-label-muted); font-size: var(--text-xl);">
+                                    静音文本 (Muted)
+                                </div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-top: var(--p-xs);">
+                                    用于占位符和禁用状态
+                                </div>
+                            </div>
+                            <div>
+                                <div style="color: var(--color-label-faint); font-size: var(--text-xl);">
+                                    淡化文本 (Faint)
+                                </div>
+                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-top: var(--p-xs);">
+                                    用于极次要的信息
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Responsive Typography -->
+            <section class="section">
+                <h2 class="section-title">响应式字体</h2>
+                <p class="section-description">不同屏幕尺寸下的字体适配</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">响应式标题</h3>
+                    <div class="component-preview">
+                        <div style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-xl); max-width: 800px;">
+                            <h1 style="font-size: clamp(1.5rem, 5vw, 3rem); line-height: var(--leading-tight);">响应式标题示例</h1>
+                            <p style="margin-top: var(--p-lg); color: var(--color-label-soft);">
+                                使用 clamp() 函数创建响应式字体大小，确保在不同设备上都有良好的显示效果。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Variables Reference -->
+            <section class="section">
+                <h2 class="section-title">CSS 变量参考</h2>
+                <p class="section-description">字体系统使用的 CSS 变量列表</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">字体系统 CSS 变量</h3>
+                    <div class="component-preview">
+                        <div style="font-family: var(--font-mono); font-size: var(--text-sm);">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap-lg);">
+                                <div>
+                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">字体族</h4>
+                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
+                                        --font-sans: ui-sans-serif, system-ui, sans-serif;<br>
+                                        --font-inter: "Inter", sans-serif;<br>
+                                        --font-mono: ui-monospace, SFMono-Regular, monospace;
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">字号</h4>
+                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
+                                        --text-xs: 0.75rem;<br>
+                                        --text-sm: 0.875rem;<br>
+                                        --text-base: 1rem;<br>
+                                        --text-lg: 1.125rem;<br>
+                                        --text-xl: 1.25rem;<br>
+                                        --text-2xl: 1.5rem;<br>
+                                        --text-3xl: 1.75rem;<br>
+                                        --text-4xl: 2rem;
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">字重</h4>
+                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
+                                        --font-weight-light: 300;<br>
+                                        --font-weight-normal: 400;<br>
+                                        --font-weight-medium: 500;<br>
+                                        --font-weight-semibold: 600;<br>
+                                        --font-weight-bold: 700;
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">行高</h4>
+                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
+                                        --leading-tight: 1.25;<br>
+                                        --leading-normal: 1.5;<br>
+                                        --leading-relaxed: 1.75;<br>
+                                        --leading-loose: 2;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

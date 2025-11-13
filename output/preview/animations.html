@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动效系统 - Meshy.ai 设计系统</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <style>
+        /* Additional animation styles */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+            40%, 43% { transform: translateY(-10px); }
+            70% { transform: translateY(-5px); }
+            90% { transform: translateY(-2px); }
+        }
+
+        .demo-box {
+            background: var(--color-bg-sub);
+            border: 1px solid var(--color-bg-border);
+            border-radius: var(--radius-lg);
+            padding: var(--p-xl);
+            margin-bottom: var(--m-lg);
+        }
+
+        .animation-fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .animation-slide-right {
+            animation: slideInRight 0.5s ease-out;
+        }
+
+        .animation-bounce {
+            animation: bounce 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">动效系统</h1>
+                <p class="header-subtitle">流畅的动画和过渡效果</p>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="header-link">返回首页</a>
+                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <aside class="sidebar">
+            <nav>
+                <h3 class="sidebar-title">设计令牌</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="colors.html" class="sidebar-link">颜色系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="typography.html" class="sidebar-link">字体系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="spacing.html" class="sidebar-link">间距系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="layout.html" class="sidebar-link">布局系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="animations.html" class="sidebar-link active">动效系统</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">组件库</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Animation Examples -->
+            <section class="section">
+                <h2 class="section-title">动画效果</h2>
+                <p class="section-description">不同的动画效果示例</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">动画演示</h3>
+                    <div class="component-preview">
+                        <div class="demo-box animation-fade-in">
+                            淡入动画效果
+                        </div>
+                        <div class="demo-box animation-slide-right">
+                            滑入动画效果
+                        </div>
+                        <div class="demo-box animation-bounce">
+                            弹跳动画效果
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transitions -->
+            <section class="section">
+                <h2 class="section-title">过渡效果</h2>
+                <p class="section-description">交互式过渡效果</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">悬停过渡</h3>
+                    <div class="component-preview">
+                        <button class="button button-primary">
+                            悬停查看过渡效果
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

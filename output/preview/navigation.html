@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航组件 - Meshy.ai 设计系统</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">导航组件</h1>
+                <p class="header-subtitle">完整的导航系统 - 包含主导航、侧边栏、面包屑等</p>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="header-link">返回首页</a>
+                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <aside class="sidebar">
+            <nav>
+                <h3 class="sidebar-title">设计令牌</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="colors.html" class="sidebar-link">颜色系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="typography.html" class="sidebar-link">字体系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="spacing.html" class="sidebar-link">间距系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="layout.html" class="sidebar-link">布局系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="animations.html" class="sidebar-link">动效系统</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">组件库</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="navigation.html" class="sidebar-link active">导航 Navigation</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Header Navigation -->
+            <section class="section">
+                <h2 class="section-title">主导航</h2>
+                <p class="section-description">网站的主要导航栏和品牌标识</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">标准导航栏</h3>
+                    <div class="component-preview">
+                        <nav class="nav">
+                            <div class="nav-brand">
+                                <a href="#" class="brand-link">
+                                    <div style="width: 32px; height: 32px; background: var(--color-accent-base); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-bg-base); font-weight: bold; font-size: var(--text-sm);">M</div>
+                                    <span class="brand-text">Meshy</span>
+                                </a>
+                            </div>
+
+                            <ul class="nav-menu">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">模型</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">教程</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">定价</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">资源</a>
+                                </li>
+                            </ul>
+
+                            <div class="nav-actions">
+                                <a href="#" class="button button-ghost">登录</a>
+                                <a href="#" class="button button-primary">开始使用</a>
+                                <button class="button button-icon mobile-menu-toggle">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="3" y1="12" x2="21" y2="12"/>
+                                        <line x1="3" y1="6" x2="21" y2="6"/>
+                                        <line x1="3" y1="18" x2="21" y2="18"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">带下拉菜单的导航</h3>
+                    <div class="component-preview">
+                        <nav class="nav">
+                            <div class="nav-brand">
+                                <a href="#" class="brand-link">
+                                    <div style="width: 32px; height: 32px; background: var(--color-accent-base); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-bg-base); font-weight: bold; font-size: var(--text-sm);">M</div>
+                                    <span class="brand-text">Meshy</span>
+                                </a>
+                            </div>
+
+                            <ul class="nav-menu">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">模型</a>
+                                </li>
+                                <li class="nav-item nav-dropdown">
+                                    <button class="nav-link nav-dropdown-toggle">
+                                        资源
+                                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M6 9l6 6 6-6"/>
+                                        </svg>
+                                    </button>
+                                    <div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; min-width: 200px; background: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-sm); box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 50;">
+                                        <a href="#" class="dropdown-item">博客</a>
+                                        <a href="#" class="dropdown-item">文档</a>
+                                        <a href="#" class="dropdown-item">API 参考</a>
+                                        <a href="#" class="dropdown-item">社区</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">定价</a>
+                                </li>
+                            </ul>
+
+                            <div class="nav-actions">
+                                <a href="#" class="button button-primary">开始使用</a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sidebar Navigation -->
+            <section class="section">
+                <h2 class="section-title">侧边栏导航</h2>
+                <p class="section-description">应用内导航和仪表板侧边栏</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">仪表板侧边栏</h3>
+                    <div class="component-preview">
+                        <div style="display: flex; max-width: 800px; border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden;">
+                            <div class="sidebar" style="width: 280px; height: 500px;">
+                                <div class="sidebar-header">
+                                    <div class="sidebar-brand">
+                                        <div style="width: 24px; height: 24px; background: var(--color-accent-base); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-bg-base); font-weight: bold; font-size: var(--text-xs);">M</div>
+                                        <span class="sidebar-title">控制台</span>
+                                    </div>
+                                    <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="18" y1="6" x2="6" y2="18"/>
+                                            <line x1="6" y1="6" x2="18" y2="18"/>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <nav class="sidebar-nav">
+                                    <div class="nav-section">
+                                        <h3 class="nav-section-title">主要</h3>
+                                        <ul class="nav-list">
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link nav-active">
+                                                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                                        <polyline points="9,22 9,12 15,12 15,22"/>
+                                                    </svg>
+                                                    <span>仪表板</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                                    </svg>
+                                                    <span>我的模型</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <circle cx="12" cy="12" r="10"/>
+                                                        <line x1="12" y1="8" x2="12" y2="16"/>
+                                                        <line x1="8" y1="12" x2="16" y2="12"/>
+                                                    </svg>
+                                                    <span>创建新模型</span>
+                                                    <span class="nav-badge">Pro</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="nav-section">
+                                        <h3 class="nav-section-title">资源</h3>
+                                        <ul class="nav-list">
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                                    </svg>
+                                                    <span>教程</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                        <polyline points="14,2 14,8 20,8"/>
+                                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                                        <polyline points="10,9 9,9 8,9"/>
+                                                    </svg>
+                                                    <span>API 文档</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+
+                                <div class="sidebar-footer">
+                                    <div class="user-profile">
+                                        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-full);"></div>
+                                        <div class="user-info">
+                                            <div class="user-name">John Doe</div>
+                                            <div class="user-plan">Pro Plan</div>
+                                        </div>
+                                        <button class="user-menu-toggle" aria-label="User menu">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M6 9l6 6 6-6"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="flex: 1; padding: var(--p-2xl); background: var(--color-bg-base);">
+                                <h3 style="margin: 0 0 var(--p-lg) 0; color: var(--color-label-title);">主内容区域</h3>
+                                <p style="color: var(--color-label-soft);">这里是仪表板的主要内容显示区域...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Breadcrumb Navigation -->
+            <section class="section">
+                <h2 class="section-title">面包屑导航</h2>
+                <p class="section-description">显示用户当前位置的路径导航</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">标准面包屑</h3>
+                    <div class="component-preview">
+                        <nav class="breadcrumb" aria-label="Breadcrumb">
+                            <ol class="breadcrumb-list">
+                                <li class="breadcrumb-item">
+                                    <a href="#" class="breadcrumb-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                            <polyline points="9,22 9,12 15,12 15,22"/>
+                                        </svg>
+                                        <span class="sr-only">首页</span>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#" class="breadcrumb-link">模型</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#" class="breadcrumb-link">角色</a>
+                                </li>
+                                <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+                                    幻想战士
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">简单面包屑</h3>
+                    <div class="component-preview">
+                        <nav class="breadcrumb" aria-label="Breadcrumb">
+                            <ol class="breadcrumb-list">
+                                <li class="breadcrumb-item">
+                                    <a href="#" class="breadcrumb-link">首页</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#" class="breadcrumb-link">设置</a>
+                                </li>
+                                <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+                                    账户信息
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab Navigation -->
+            <section class="section">
+                <h2 class="section-title">标签页导航</h2>
+                <p class="section-description">内容切换的标签页导航</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">标准标签页</h3>
+                    <div class="component-preview">
+                        <div class="tabs">
+                            <nav class="tab-nav" role="tablist" aria-label="模型设置">
+                                <button class="tab-button tab-active" role="tab" aria-selected="true">
+                                    常规
+                                </button>
+                                <button class="tab-button" role="tab" aria-selected="false">
+                                    高级
+                                </button>
+                                <button class="tab-button" role="tab" aria-selected="false">
+                                    导出
+                                </button>
+                                <button class="tab-button" role="tab" aria-selected="false">
+                                    权限
+                                </button>
+                            </nav>
+
+                            <div class="tab-panels">
+                                <div class="tab-panel">
+                                    <h4>常规设置</h4>
+                                    <p>这里是模型的常规设置内容，包括基本参数和配置选项。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">带图标的标签页</h3>
+                    <div class="component-preview">
+                        <div class="tabs">
+                            <nav class="tab-nav" role="tablist">
+                                <button class="tab-button tab-active" role="tab" aria-selected="true">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: var(--gap-xs);">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                    </svg>
+                                    模型信息
+                                </button>
+                                <button class="tab-button" role="tab" aria-selected="false">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: var(--gap-xs);">
+                                        <circle cx="12" cy="12" r="3"/>
+                                        <path d="M12 1v6m0 6v6m4.22-13.22l4.24 4.24M1.54 9.96l4.24 4.24m12.44 0l4.24 4.24M1.54 14.04l4.24-4.24"/>
+                                    </svg>
+                                    材质设置
+                                </button>
+                                <button class="tab-button" role="tab" aria-selected="false">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: var(--gap-xs);">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                    </svg>
+                                    渲染设置
+                                </button>
+                            </nav>
+
+                            <div class="tab-panels">
+                                <div class="tab-panel">
+                                    <h4>模型信息</h4>
+                                    <p>查看和编辑模型的基本信息和元数据。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <section class="section">
+                <h2 class="section-title">分页导航</h2>
+                <p class="section-description">用于内容分页的导航组件</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">标准分页</h3>
+                    <div class="component-preview">
+                        <nav class="pagination" aria-label="Pagination">
+                            <button class="pagination-button pagination-prev" disabled>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M15 18l-6-6 6-6"/>
+                                </svg>
+                                上一页
+                            </button>
+
+                            <ol class="pagination-list">
+                                <li class="pagination-item">
+                                    <button class="pagination-page pagination-current" aria-current="page">1</button>
+                                </li>
+                                <li class="pagination-item">
+                                    <button class="pagination-page">2</button>
+                                </li>
+                                <li class="pagination-item">
+                                    <button class="pagination-page">3</button>
+                                </li>
+                                <li class="pagination-item">
+                                    <span class="pagination-ellipsis">...</span>
+                                </li>
+                                <li class="pagination-item">
+                                    <button class="pagination-page">12</button>
+                                </li>
+                            </ol>
+
+                            <button class="pagination-button pagination-next">
+                                下一页
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 18l6-6-6-6"/>
+                                </svg>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">紧凑分页</h3>
+                    <div class="component-preview">
+                        <nav class="pagination" aria-label="Pagination">
+                            <ol class="pagination-list">
+                                <li class="pagination-item">
+                                    <button class="pagination-page pagination-current" aria-current="page">1</button>
+                                </li>
+                                <li class="pagination-item">
+                                    <button class="pagination-page">2</button>
+                                </li>
+                                <li class="pagination-item">
+                                    <button class="pagination-page">3</button>
+                                </li>
+                                <li class="pagination-item">
+                                    <button class="pagination-page">4</button>
+                                </li>
+                                <li class="pagination-item">
+                                    <button class="pagination-page">5</button>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step Navigation -->
+            <section class="section">
+                <h2 class="section-title">步骤导航</h2>
+                <p class="section-description">显示多步骤流程的导航组件</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">步骤指示器</h3>
+                    <div class="component-preview">
+                        <div class="steps">
+                            <div class="steps-container">
+                                <div class="step step-completed">
+                                    <div class="step-indicator">
+                                        <svg class="step-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 6L9 17l-5-5"/>
+                                        </svg>
+                                    </div>
+                                    <div class="step-content">
+                                        <div class="step-title">上传模型</div>
+                                        <div class="step-description">选择你的 3D 模型文件</div>
+                                    </div>
+                                </div>
+
+                                <div class="step step-current">
+                                    <div class="step-indicator">
+                                        <span class="step-number">2</span>
+                                    </div>
+                                    <div class="step-content">
+                                        <div class="step-title">配置设置</div>
+                                        <div class="step-description">调整质量和格式选项</div>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <div class="step-indicator">
+                                        <span class="step-number">3</span>
+                                    </div>
+                                    <div class="step-content">
+                                        <div class="step-title">生成</div>
+                                        <div class="step-description">处理并创建你的模型</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-progress">
+                                <div class="step-progress-bar" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile Navigation -->
+            <section class="section">
+                <h2 class="section-title">移动端导航</h2>
+                <p class="section-description">针对移动设备优化的导航组件</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">汉堡菜单</h3>
+                    <div class="component-preview">
+                        <div style="max-width: 400px; border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden;">
+                            <div style="background: var(--color-bg-sub); padding: var(--p-lg); display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display: flex; align-items: center; gap: var(--gap-sm);">
+                                    <div style="width: 24px; height: 24px; background: var(--color-accent-base); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-bg-base); font-weight: bold; font-size: var(--text-xs);">M</div>
+                                    <span style="font-weight: var(--font-weight-semibold);">Meshy</span>
+                                </div>
+                                <button class="button button-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="3" y1="12" x2="21" y2="12"/>
+                                        <line x1="3" y1="6" x2="21" y2="6"/>
+                                        <line x1="3" y1="18" x2="21" y2="18"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div style="background: var(--color-bg-base); padding: var(--p-lg);">
+                                <h4 style="margin: 0 0 var(--p-lg) 0;">主要内容区域</h4>
+                                <p style="color: var(--color-label-soft); margin: 0;">移动端导航通常会使用汉堡菜单来节省屏幕空间...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

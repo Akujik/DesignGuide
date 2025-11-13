@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布局系统 - Meshy.ai 设计系统</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">布局系统</h1>
+                <p class="header-subtitle">响应式布局和网格系统</p>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="header-link">返回首页</a>
+                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <aside class="sidebar">
+            <nav>
+                <h3 class="sidebar-title">设计令牌</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="colors.html" class="sidebar-link">颜色系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="typography.html" class="sidebar-link">字体系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="spacing.html" class="sidebar-link">间距系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="layout.html" class="sidebar-link active">布局系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="animations.html" class="sidebar-link">动效系统</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">组件库</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Grid System -->
+            <section class="section">
+                <h2 class="section-title">网格系统</h2>
+                <p class="section-description">基于 CSS Grid 的响应式网格布局</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">12列网格</h3>
+                    <div class="component-preview">
+                        <div class="grid">
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 1</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 2</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 3</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 4</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 5</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 6</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 7</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 8</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 9</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 10</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 11</div>
+                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 12</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Flexbox Layout -->
+            <section class="section">
+                <h2 class="section-title">弹性布局</h2>
+                <p class="section-description">Flexbox 布局模式和对齐方式</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">对齐方式</h3>
+                    <div class="component-preview">
+                        <div style="display: flex; flex-direction: column; gap: var(--gap-lg);">
+                            <div class="flex justify-center items-center" style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md);">居中对齐</div>
+                            <div class="flex justify-between items-center" style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md);">
+                                <span>左对齐</span>
+                                <span>右对齐</span>
+                            </div>
+                            <div class="flex justify-around items-center" style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md);">
+                                <span>项目 1</span>
+                                <span>项目 2</span>
+                                <span>项目 3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Container -->
+            <section class="section">
+                <h2 class="section-title">容器系统</h2>
+                <p class="section-description">不同最大宽度的容器组件</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">容器尺寸</h3>
+                    <div class="component-preview">
+                        <div style="display: flex; flex-direction: column; gap: var(--gap-lg);">
+                            <div class="container container-narrow" style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
+                                <p style="margin: 0; text-align: center; color: var(--color-label-soft);">窄容器 (max-width: 800px)</p>
+                            </div>
+                            <div class="container" style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
+                                <p style="margin: 0; text-align: center; color: var(--color-label-soft);">标准容器 (max-width: 1200px)</p>
+                            </div>
+                            <div class="container container-wide" style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
+                                <p style="margin: 0; text-align: center; color: var(--color-label-soft);">宽容器 (max-width: 1400px)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
