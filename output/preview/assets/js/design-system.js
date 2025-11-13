@@ -1,7 +1,7 @@
-// Meshy.ai Design System JavaScript
+// Meshy.ai Design System JavaScript - Enhanced Quick Guide Navigation
 
-// Navigation toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile navigation toggle
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scroll for anchor links
+    // Enhanced smooth scroll for all anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -38,15 +38,130 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for fixed nav
+                    // Account for both mobile nav and desktop sidebar
+                    const isMobile = window.innerWidth < 1024;
+                    const offset = isMobile ? 80 : 32;
+                    const offsetTop = target.offsetTop - offset;
+
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
                     });
+
+                    // Update active navigation state
+                    updateActiveNavigation(href);
                 }
             }
         });
     });
+
+    // Sidebar navigation active state management
+    function updateActiveNavigation(targetId) {
+        // Update desktop sidebar
+        const sidebarLinks = document.querySelectorAll('.hidden.lg\\:fixed a[href^="#"]');
+        sidebarLinks.forEach(link => {
+            link.classList.remove('bg-meshy-50', 'dark:bg-meshy-900/20', 'text-meshy-600', 'dark:text-meshy-400');
+            if (link.getAttribute('href') === targetId) {
+                link.classList.add('bg-meshy-50', 'dark:bg-meshy-900/20', 'text-meshy-600', 'dark:text-meshy-400');
+            }
+        });
+    }
+
+    // Highlight current section on scroll
+    function highlightCurrentSection() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                updateActiveNavigation('#' + sectionId);
+            }
+        });
+    }
+
+    // Scroll event listener for section highlighting
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(highlightCurrentSection, 50);
+    });
+
+    // Initialize current section highlight
+    highlightCurrentSection();
+
+    // Add keyboard navigation support
+    document.addEventListener('keydown', function(e) {
+        // Press '/' to focus search (if implemented)
+        if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+            e.preventDefault();
+            // Could implement search functionality here
+        }
+
+        // Press 'Escape' to close mobile menu
+        if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+
+    // Intersection Observer for animations (if needed)
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections for entrance animations
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+});
+
+// Add CSS for entrance animations
+const styleSheet = document.createElement('style');
+styleSheet.textContent = `
+    .animate-in {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Smooth transitions for interactive elements */
+    .group:hover .group-hover\\:text-meshy-600 {
+        transition: color 0.2s ease-in-out;
+    }
+
+    .group:hover .group-hover\\:border-meshy-500 {
+        transition: border-color 0.2s ease-in-out;
+    }
+
+    .group:hover .group-hover\\:shadow-lg {
+        transition: box-shadow 0.2s ease-in-out;
+    }
+`;
+document.head.appendChild(styleSheet);
 
     // Add active state to navigation based on scroll position
     function updateActiveNav() {
