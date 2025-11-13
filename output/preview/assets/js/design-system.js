@@ -381,3 +381,103 @@ document.head.appendChild(styleSheet);
 
     console.log('Meshy.ai Design System initialized successfully!');
 });
+
+// ========================================
+// EXPANDABLE CODE BLOCKS FUNCTIONALITY
+// ========================================
+
+// Function to toggle code block expansion
+function toggleCode(button) {
+    const codeBlock = button.closest('.code-block');
+    const content = codeBlock.querySelector('.code-content');
+    const toggleText = button.querySelector('.toggle-text');
+    const toggleIcon = button.querySelector('.toggle-icon');
+
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        toggleText.textContent = '收起';
+        toggleIcon.style.transform = 'rotate(180deg)';
+    } else {
+        content.style.display = 'none';
+        toggleText.textContent = '展开';
+        toggleIcon.style.transform = 'rotate(0deg)';
+    }
+}
+
+// Function to convert legacy code examples to expandable format
+function convertCodeExamples() {
+    const legacyExamples = document.querySelectorAll('.code-example');
+
+    legacyExamples.forEach((example, index) => {
+        // Skip if already converted
+        if (example.querySelector('.code-header')) return;
+
+        const code = example.querySelector('code');
+        const copyBtn = example.querySelector('.copy-btn');
+
+        if (code) {
+            // Create new expandable structure
+            const codeBlock = document.createElement('div');
+            codeBlock.className = 'code-block';
+
+            // Create header
+            const header = document.createElement('div');
+            header.className = 'code-header';
+            header.onclick = function() {
+                toggleCode(this.querySelector('.code-toggle'));
+            };
+
+            const title = document.createElement('h4');
+            title.textContent = '代码示例';
+
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'code-toggle';
+            toggleBtn.innerHTML = `
+                <span class="toggle-text">展开</span>
+                <span class="toggle-icon">▼</span>
+            `;
+
+            header.appendChild(title);
+            header.appendChild(toggleBtn);
+
+            // Create content
+            const content = document.createElement('div');
+            content.className = 'code-content';
+            content.style.display = 'none';
+
+            const pre = document.createElement('pre');
+            pre.appendChild(code.cloneNode(true));
+
+            content.appendChild(pre);
+
+            // Move copy button to content
+            if (copyBtn) {
+                content.appendChild(copyBtn);
+            }
+
+            // Assemble new structure
+            codeBlock.appendChild(header);
+            codeBlock.appendChild(content);
+
+            // Replace old example
+            example.parentNode.replaceChild(codeBlock, example);
+        }
+    });
+}
+
+// Initialize expandable code blocks on DOM ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Convert legacy code examples
+    setTimeout(convertCodeExamples, 100);
+
+    // Add click listeners to existing code headers
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.code-header')) {
+            const toggleBtn = e.target.closest('.code-header').querySelector('.code-toggle');
+            if (toggleBtn) {
+                toggleCode(toggleBtn);
+            }
+        }
+    });
+});
+});
