@@ -13,6 +13,7 @@ function initializePreview() {
   initializeNavigation();
   initializeThemeToggle();
   initializeComponentInteractions();
+  initializeCodeToggle();
 }
 
 // Copy button functionality
@@ -538,6 +539,147 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// Code toggle functionality
+function initializeCodeToggle() {
+  // Handle code-example elements
+  const codeExamples = document.querySelectorAll('.code-example');
+
+  codeExamples.forEach(example => {
+    initializeCodeExample(example);
+  });
+
+  // Handle component-code elements
+  const componentCodes = document.querySelectorAll('.component-code');
+
+  componentCodes.forEach(code => {
+    initializeComponentCode(code);
+  });
+}
+
+function initializeCodeExample(example) {
+  // Start with collapsed state
+  example.classList.add('collapsed');
+
+  // Get the header and modify it to include toggle button
+  const header = example.querySelector('.code-header');
+  if (header && !header.querySelector('.toggle-code-btn')) {
+    // Create control container
+    const controlsContainer = document.createElement('div');
+    controlsContainer.className = 'code-header-controls';
+
+    // Create toggle button
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'toggle-code-btn';
+    toggleBtn.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+      显示代码
+    `;
+
+    // Find the copy button and move it to controls container
+    const copyBtn = header.querySelector('.copy-btn');
+    if (copyBtn) {
+      controlsContainer.appendChild(copyBtn);
+    }
+
+    // Add toggle button to controls container
+    controlsContainer.appendChild(toggleBtn);
+
+    // Replace header content
+    const title = header.querySelector('.code-title');
+    header.innerHTML = '';
+    if (title) {
+      header.appendChild(title);
+    }
+    header.appendChild(controlsContainer);
+
+    // Add click event to toggle button
+    toggleBtn.addEventListener('click', function() {
+      toggleCodeExample(example, this);
+    });
+  }
+}
+
+function initializeComponentCode(code) {
+  // Start with collapsed state
+  code.classList.add('collapsed');
+
+  // Find the copy button
+  const copyBtn = code.querySelector('.copy-button');
+
+  if (copyBtn && !code.querySelector('.toggle-code-btn')) {
+    // Create toggle button
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'toggle-code-btn';
+    toggleBtn.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+      显示代码
+    `;
+
+    // Insert toggle button before copy button
+    copyBtn.parentNode.insertBefore(toggleBtn, copyBtn);
+
+    // Add click event to toggle button
+    toggleBtn.addEventListener('click', function() {
+      toggleComponentCode(code, this);
+    });
+  }
+}
+
+function toggleCodeExample(example, toggleBtn) {
+  const isCollapsed = example.classList.contains('collapsed');
+
+  if (isCollapsed) {
+    example.classList.remove('collapsed');
+    toggleBtn.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+      隐藏代码
+    `;
+  } else {
+    example.classList.add('collapsed');
+    toggleBtn.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+      显示代码
+    `;
+  }
+}
+
+function toggleComponentCode(code, toggleBtn) {
+  const isCollapsed = code.classList.contains('collapsed');
+  const codeBlock = code.querySelector('pre, code');
+
+  if (isCollapsed) {
+    code.classList.remove('collapsed');
+    if (codeBlock) {
+      codeBlock.style.display = 'block';
+    }
+    toggleBtn.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+      隐藏代码
+    `;
+  } else {
+    code.classList.add('collapsed');
+    if (codeBlock) {
+      codeBlock.style.display = 'none';
+    }
+    toggleBtn.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+      显示代码
+    `;
+  }
+}
 
 // Export utilities for external use
 window.DesignSystemPreview = {
