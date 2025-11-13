@@ -58,8 +58,13 @@
                 <a href="colors.html" class="nav-link">颜色</a>
                 <a href="typography.html" class="nav-link">字体</a>
                 <a href="spacing.html" class="nav-link">间距</a>
+                <a href="layout.html" class="nav-link">布局</a>
+                <a href="animations.html" class="nav-link">动效</a>
                 <a href="buttons.html" class="nav-link">按钮</a>
+                <a href="cards.html" class="nav-link">卡片</a>
                 <a href="forms.html" class="nav-link active">表单</a>
+                <a href="navigation.html" class="nav-link">导航</a>
+                <a href="hero-sections.html" class="nav-link">Hero区域</a>
             </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -86,15 +91,24 @@
                     <div style="margin-bottom: var(--space-4);">
                         <input type="text" placeholder="请输入内容" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
                     </div>
-                    <div class="code-example">
-                        <code>input[type="text"] {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>input[type="text"] {
   width: 100%;
   padding: var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"text\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('input[type=\"text\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -104,10 +118,19 @@
                         <label style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-weight-medium); color: var(--color-text-primary);">用户名</label>
                         <input type="text" placeholder="请输入用户名" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
                     </div>
-                    <div class="code-example">
-                        <code><label>用户名</label>
-<input type="text" placeholder="请输入用户名"></code>
-                        <button class="copy-btn" onclick="copyToClipboard('<label>用户名</label>\n<input type=\"text\" placeholder=\"请输入用户名\">')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code><label>用户名</label>
+<input type="text" placeholder="请输入用户名"></code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('<label>用户名</label>\n<input type=\"text\" placeholder=\"请输入用户名\">')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -116,15 +139,24 @@
                     <div style="margin-bottom: var(--space-4);">
                         <input type="password" placeholder="请输入密码" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
                     </div>
-                    <div class="code-example">
-                        <code>input[type="password"] {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>input[type="password"] {
   width: 100%;
   padding: var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"password\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('input[type=\"password\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -133,15 +165,24 @@
                     <div style="margin-bottom: var(--space-4);">
                         <input type="email" placeholder="请输入邮箱地址" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
                     </div>
-                    <div class="code-example">
-                        <code>input[type="email"] {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>input[type="email"] {
   width: 100%;
   padding: var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"email\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('input[type=\"email\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -150,16 +191,25 @@
                     <div style="margin-bottom: var(--space-4);">
                         <textarea placeholder="请输入多行文本内容" rows="4" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base); resize: vertical;"></textarea>
                     </div>
-                    <div class="code-example">
-                        <code>textarea {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>textarea {
   width: 100%;
   padding: var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
   resize: vertical;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('textarea {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n  resize: vertical;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('textarea {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n  resize: vertical;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -168,13 +218,22 @@
                     <div style="margin-bottom: var(--space-4);">
                         <input type="text" placeholder="禁用的输入框" disabled style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-surface-light); color: var(--color-text-muted);">
                     </div>
-                    <div class="code-example">
-                        <code>input:disabled {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>input:disabled {
   background-color: var(--color-surface-light);
   color: var(--color-text-muted);
   cursor: not-allowed;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('input:disabled {\n  background-color: var(--color-surface-light);\n  color: var(--color-text-muted);\n  cursor: not-allowed;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('input:disabled {\n  background-color: var(--color-surface-light);\n  color: var(--color-text-muted);\n  cursor: not-allowed;\n}')">复制</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,8 +257,16 @@
                             ✓ 输入内容验证成功
                         </div>
                     </div>
-                    <div class="code-example">
-                        <code>input.success {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>input.success {
   border-color: var(--color-success);
   background-color: var(--color-surface);
 }
@@ -207,8 +274,9 @@
 .success-message {
   color: var(--color-success);
   font-size: var(--font-size-sm);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('input.success {\n  border-color: var(--color-success);\n  background-color: var(--color-surface);\n}\n\n.success-message {\n  color: var(--color-success);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('input.success {\n  border-color: var(--color-success);\n  background-color: var(--color-surface);\n}\n\n.success-message {\n  color: var(--color-success);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -220,8 +288,16 @@
                             ✗ 输入格式不正确
                         </div>
                     </div>
-                    <div class="code-example">
-                        <code>input.error {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>input.error {
   border-color: var(--color-error);
   background-color: var(--color-error-light);
 }
@@ -229,8 +305,9 @@
 .error-message {
   color: var(--color-error);
   font-size: var(--font-size-sm);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('input.error {\n  border-color: var(--color-error);\n  background-color: var(--color-error-light);\n}\n\n.error-message {\n  color: var(--color-error);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('input.error {\n  border-color: var(--color-error);\n  background-color: var(--color-error-light);\n}\n\n.error-message {\n  color: var(--color-error);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -242,8 +319,16 @@
                             ⚠ 请确认输入内容
                         </div>
                     </div>
-                    <div class="code-example">
-                        <code>input.warning {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>input.warning {
   border-color: var(--color-warning);
   background-color: var(--color-warning-light);
 }
@@ -251,8 +336,9 @@
 .warning-message {
   color: var(--color-warning);
   font-size: var(--font-size-sm);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('input.warning {\n  border-color: var(--color-warning);\n  background-color: var(--color-warning-light);\n}\n\n.warning-message {\n  color: var(--color-warning);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('input.warning {\n  border-color: var(--color-warning);\n  background-color: var(--color-warning-light);\n}\n\n.warning-message {\n  color: var(--color-warning);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -264,8 +350,16 @@
                             <div style="position: absolute; right: var(--space-3); top: 50%; transform: translateY(-50%); width: 16px; height: 16px; border: 2px solid var(--color-border); border-top: 2px solid var(--color-primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
                         </div>
                     </div>
-                    <div class="code-example">
-                        <code>.input-loading {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.input-loading {
   position: relative;
 }
 
@@ -281,8 +375,9 @@
   border-top: 2px solid var(--color-primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.input-loading {\n  position: relative;\n}\n\n.input-loading::after {\n  content: \'\';\n  position: absolute;\n  right: var(--space-3);\n  top: 50%;\n  transform: translateY(-50%);\n  width: 16px;\n  height: 16px;\n  border: 2px solid var(--color-border);\n  border-top: 2px solid var(--color-primary);\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.input-loading {\n  position: relative;\n}\n\n.input-loading::after {\n  content: \'\';\n  position: absolute;\n  right: var(--space-3);\n  top: 50%;\n  transform: translateY(-50%);\n  width: 16px;\n  height: 16px;\n  border: 2px solid var(--color-border);\n  border-top: 2px solid var(--color-primary);\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n}')">复制</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -308,16 +403,25 @@
                             <option>选项三</option>
                         </select>
                     </div>
-                    <div class="code-example">
-                        <code>select {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>select {
   width: 100%;
   padding: var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
   background-color: var(--color-surface);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('select {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n  background-color: var(--color-surface);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('select {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n  background-color: var(--color-surface);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -337,12 +441,21 @@
                             <span style="color: var(--color-text-muted);">禁用的选项</span>
                         </label>
                     </div>
-                    <div class="code-example">
-                        <code><label>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code><label>
   <input type="checkbox" checked>
   选项文本
-</label></code>
-                        <button class="copy-btn" onclick="copyToClipboard('<label>\n  <input type=\"checkbox\" checked>\n  选项文本\n</label>')">复制</button>
+</label></code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('<label>\n  <input type=\"checkbox\" checked>\n  选项文本\n</label>')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -362,12 +475,21 @@
                             <span style="color: var(--color-text-muted);">禁用的选项</span>
                         </label>
                     </div>
-                    <div class="code-example">
-                        <code><label>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code><label>
   <input type="radio" name="group" checked>
   选项文本
-</label></code>
-                        <button class="copy-btn" onclick="copyToClipboard('<label>\n  <input type=\"radio\" name=\"group\" checked>\n  选项文本\n</label>')">复制</button>
+</label></code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('<label>\n  <input type=\"radio\" name=\"group\" checked>\n  选项文本\n</label>')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -376,15 +498,24 @@
                     <div style="margin-bottom: var(--space-4);">
                         <input type="file" style="width: 100%; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-sm);">
                     </div>
-                    <div class="code-example">
-                        <code>input[type="file"] {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>input[type="file"] {
   width: 100%;
   padding: var(--space-2);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"file\"] {\n  width: 100%;\n  padding: var(--space-2);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('input[type=\"file\"] {\n  width: 100%;\n  padding: var(--space-2);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -393,15 +524,24 @@
                     <div style="margin-bottom: var(--space-4);">
                         <input type="number" value="42" min="0" max="100" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
                     </div>
-                    <div class="code-example">
-                        <code>input[type="number"] {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>input[type="number"] {
   width: 100%;
   padding: var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"number\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('input[type=\"number\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -410,15 +550,24 @@
                     <div style="margin-bottom: var(--space-4);">
                         <input type="date" value="2024-01-01" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
                     </div>
-                    <div class="code-example">
-                        <code>input[type="date"] {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>input[type="date"] {
   width: 100%;
   padding: var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"date\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('input[type=\"date\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -448,8 +597,16 @@
                             </div>
                         </form>
                     </div>
-                    <div class="code-example">
-                        <code>.form-vertical {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.form-vertical {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
@@ -458,8 +615,9 @@
 .form-vertical .form-group {
   display: flex;
   flex-direction: column;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.form-vertical {\n  display: flex;\n  flex-direction: column;\n  gap: var(--space-4);\n}\n\n.form-vertical .form-group {\n  display: flex;\n  flex-direction: column;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.form-vertical {\n  display: flex;\n  flex-direction: column;\n  gap: var(--space-4);\n}\n\n.form-vertical .form-group {\n  display: flex;\n  flex-direction: column;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -477,8 +635,16 @@
                             </div>
                         </form>
                     </div>
-                    <div class="code-example">
-                        <code>.form-horizontal .form-group {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.form-horizontal .form-group {
   display: flex;
   gap: var(--space-4);
   align-items: center;
@@ -491,8 +657,9 @@
 
 .form-horizontal input {
   flex: 1;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.form-horizontal .form-group {\n  display: flex;\n  gap: var(--space-4);\n  align-items: center;\n}\n\n.form-horizontal label {\n  min-width: 80px;\n  font-weight: var(--font-weight-medium);\n}\n\n.form-horizontal input {\n  flex: 1;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.form-horizontal .form-group {\n  display: flex;\n  gap: var(--space-4);\n  align-items: center;\n}\n\n.form-horizontal label {\n  min-width: 80px;\n  font-weight: var(--font-weight-medium);\n}\n\n.form-horizontal input {\n  flex: 1;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -506,8 +673,16 @@
                             </button>
                         </form>
                     </div>
-                    <div class="code-example">
-                        <code>.form-inline {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.form-inline {
   display: flex;
   gap: var(--space-3);
   align-items: center;
@@ -525,8 +700,9 @@
   border-radius: var(--radius-md);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.form-inline {\n  display: flex;\n  gap: var(--space-3);\n  align-items: center;\n}\n\n.form-inline input {\n  flex: 1;\n}\n\n.form-inline button {\n  padding: var(--space-3) var(--space-6);\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.form-inline {\n  display: flex;\n  gap: var(--space-3);\n  align-items: center;\n}\n\n.form-inline input {\n  flex: 1;\n}\n\n.form-inline button {\n  padding: var(--space-3) var(--space-6);\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -548,8 +724,16 @@
                             </div>
                         </form>
                     </div>
-                    <div class="code-example">
-                        <code>.form-grid {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-4);
@@ -557,8 +741,9 @@
 
 .form-grid .form-group:last-child {
   grid-column: 1 / -1;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.form-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: var(--space-4);\n}\n\n.form-grid .form-group:last-child {\n  grid-column: 1 / -1;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.form-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: var(--space-4);\n}\n\n.form-grid .form-group:last-child {\n  grid-column: 1 / -1;\n}')">复制</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -588,113 +773,6 @@
     </footer>
 
 
-    <script>
-        // Navigation toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navToggle.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
-                        navToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    }
-                });
-            }
-
-            // Smooth scroll for anchor links
-            const anchorLinks = document.querySelectorAll('a[href^="#"]');
-            anchorLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#' && document.querySelector(href)) {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            const offsetTop = target.offsetTop - 80;
-                            window.scrollTo({
-                                top: offsetTop,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-        });
-
-        // Copy to clipboard function
-        function copyToClipboard(text) {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(function() {
-                    showNotification('样式已复制到剪贴板');
-                }).catch(function() {
-                    showNotification('复制失败，请手动复制');
-                });
-            } else {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-
-                try {
-                    document.execCommand('copy');
-                    showNotification('样式已复制到剪贴板');
-                } catch (err) {
-                    showNotification('复制失败，请手动复制');
-                }
-
-                document.body.removeChild(textArea);
-            }
-        }
-
-        // Show notification
-        function showNotification(message) {
-            const existingNotification = document.querySelector('.notification-toast');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-
-            const notification = document.createElement('div');
-            notification.className = 'notification-toast';
-            notification.textContent = message;
-            notification.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background-color: var(--color-surface-light);
-                border: 1px solid var(--color-primary);
-                border-radius: var(--radius-md);
-                padding: var(--space-3) var(--space-4);
-                color: var(--color-text-primary);
-                font-size: var(--font-size-sm);
-                z-index: var(--z-toast);
-                transform: translateX(100%);
-                transition: transform var(--transition-normal);
-            `;
-
-            document.body.appendChild(notification);
-
-            requestAnimationFrame(() => {
-                notification.style.transform = 'translateX(0)';
-            });
-
-            setTimeout(() => {
-                notification.style.transform = 'translateX(100%)';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.parentNode.removeChild(notification);
-                    }
-                }, 300);
-            }, 3000);
-        }
-    </script>
+  <script src="assets/js/design-system.js"></script>
 </body>
 </html>

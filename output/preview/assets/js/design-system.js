@@ -383,6 +383,77 @@ document.head.appendChild(styleSheet);
 });
 
 // ========================================
+// UTILITY FUNCTIONS
+// ========================================
+
+// Copy to clipboard function
+function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+            showNotification('样式已复制到剪贴板');
+        }).catch(function() {
+            showNotification('复制失败，请手动复制');
+        });
+    } else {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+
+        try {
+            document.execCommand('copy');
+            showNotification('样式已复制到剪贴板');
+        } catch (err) {
+            showNotification('复制失败，请手动复制');
+        }
+
+        document.body.removeChild(textArea);
+    }
+}
+
+// Show notification
+function showNotification(message) {
+    const existingNotification = document.querySelector('.notification-toast');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    const notification = document.createElement('div');
+    notification.className = 'notification-toast';
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--color-surface-light);
+        border: 1px solid var(--color-primary);
+        border-radius: var(--radius-md);
+        padding: var(--space-3) var(--space-4);
+        color: var(--color-text-primary);
+        font-size: var(--font-size-sm);
+        z-index: var(--z-toast);
+        transform: translateX(100%);
+        transition: transform var(--transition-normal);
+    `;
+
+    document.body.appendChild(notification);
+
+    requestAnimationFrame(() => {
+        notification.style.transform = 'translateX(0)';
+    });
+
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
+
+// ========================================
 // EXPANDABLE CODE BLOCKS FUNCTIONALITY
 // ========================================
 

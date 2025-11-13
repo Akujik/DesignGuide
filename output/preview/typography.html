@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
 <body>
     <!-- Desktop Sidebar Navigation -->
     <div class="sidebar-desktop">
@@ -55,8 +56,15 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">首页</a>
                 <a href="colors.html" class="nav-link">颜色</a>
-                <a href="typography.html" class="nav-link">字体</a>
+                <a href="typography.html" class="nav-link active">字体</a>
+                <a href="spacing.html" class="nav-link">间距</a>
+                <a href="layout.html" class="nav-link">布局</a>
+                <a href="animations.html" class="nav-link">动效</a>
                 <a href="buttons.html" class="nav-link">按钮</a>
+                <a href="cards.html" class="nav-link">卡片</a>
+                <a href="forms.html" class="nav-link">表单</a>
+                <a href="navigation.html" class="nav-link">导航</a>
+                <a href="hero-sections.html" class="nav-link">Hero区域</a>
             </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -83,9 +91,18 @@
                     <div style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); margin-bottom: var(--space-4);">
                         Inter, -apple-system, BlinkMacSystemFont
                     </div>
-                    <div class="code-example">
-                        <code>font-family: var(--font-family-primary);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-family: var(--font-family-primary);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-family: var(--font-family-primary);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-family: var(--font-family-primary);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -94,9 +111,18 @@
                     <div style="font-family: var(--font-family-mono); font-size: var(--font-size-xl); margin-bottom: var(--space-4);">
                         'SF Mono', Monaco, 'Cascadia Code'
                     </div>
-                    <div class="code-example">
-                        <code>font-family: var(--font-family-mono);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-family: var(--font-family-mono);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-family: var(--font-family-mono);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-family: var(--font-family-mono);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -129,81 +155,162 @@
                 <article class="article-item">
                     <div style="font-size: var(--font-size-5xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-2);">48px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-5xl)</div>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-5xl);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-5xl);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-5xl);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-5xl);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-2);">36px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-4xl)</div>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-4xl);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-4xl);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-4xl);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-4xl);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">30px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-3xl)</div>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-3xl);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-3xl);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-3xl);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-3xl);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">24px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-2xl)</div>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-2xl);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-2xl);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-2xl);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-2xl);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-size: var(--font-size-xl); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">20px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-xl)</div>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-xl);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-xl);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-xl);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-xl);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">18px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-lg)</div>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-lg);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-lg);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-lg);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-lg);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-size: var(--font-size-base); margin-bottom: var(--space-2);">16px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-base)</div>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-base);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-base);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-base);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-base);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-size: var(--font-size-sm); margin-bottom: var(--space-2);">14px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-sm)</div>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-sm);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-sm);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-sm);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-sm);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-size: var(--font-size-xs); margin-bottom: var(--space-2);">12px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-xs)</div>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-xs);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-xs);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-xs);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-xs);')">复制</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -222,36 +329,72 @@
                 <article class="article-item">
                     <div style="font-weight: var(--font-weight-bold); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Bold 700</div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-bold)</div>
-                    <div class="code-example">
-                        <code>font-weight: var(--font-weight-bold);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-bold);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-weight: var(--font-weight-bold);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-bold);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-weight: var(--font-weight-semibold); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Semibold 600</div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-semibold)</div>
-                    <div class="code-example">
-                        <code>font-weight: var(--font-weight-semibold);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-semibold);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-weight: var(--font-weight-semibold);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-semibold);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-weight: var(--font-weight-medium); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Medium 500</div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-medium)</div>
-                    <div class="code-example">
-                        <code>font-weight: var(--font-weight-medium);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-medium);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-weight: var(--font-weight-medium);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-medium);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="article-item">
                     <div style="font-weight: var(--font-weight-normal); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Regular 400</div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-normal)</div>
-                    <div class="code-example">
-                        <code>font-weight: var(--font-weight-normal);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-normal);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-weight: var(--font-weight-normal);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-normal);')">复制</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,9 +415,18 @@
                         紧凑行高<br>1.25
                     </div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--line-height-tight)</div>
-                    <div class="code-example">
-                        <code>line-height: var(--line-height-tight);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-tight);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>line-height: var(--line-height-tight);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-tight);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -283,9 +435,18 @@
                         标准行高<br>1.5
                     </div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--line-height-normal)</div>
-                    <div class="code-example">
-                        <code>line-height: var(--line-height-normal);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-normal);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>line-height: var(--line-height-normal);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-normal);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -294,9 +455,18 @@
                         宽松行高<br>1.75
                     </div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--line-height-relaxed)</div>
-                    <div class="code-example">
-                        <code>line-height: var(--line-height-relaxed);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-relaxed);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>line-height: var(--line-height-relaxed);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-relaxed);')">复制</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -317,9 +487,18 @@
                     <h1 style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-2);">主标题 H1</h1>
                     <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">副标题 H2</h2>
                     <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">三级标题 H3</h3>
-                    <div class="code-example">
-                        <code>/* H1 Style */\nfont-size: var(--font-size-3xl);\nfont-weight: var(--font-weight-bold);\nline-height: var(--line-height-tight);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('/* H1 Style */\nfont-size: var(--font-size-3xl);\nfont-weight: var(--font-weight-bold);\nline-height: var(--line-height-tight);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>/* H1 Style */\nfont-size: var(--font-size-3xl);\nfont-weight: var(--font-weight-bold);\nline-height: var(--line-height-tight);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('/* H1 Style */\nfont-size: var(--font-size-3xl);\nfont-weight: var(--font-weight-bold);\nline-height: var(--line-height-tight);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -328,9 +507,18 @@
                     <p style="font-size: var(--font-size-base); line-height: var(--line-height-normal); margin-bottom: var(--space-2);">
                         这是正文内容，使用标准的字号和行高，确保良好的阅读体验。Inter字体在屏幕显示时具有良好的可读性。
                     </p>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-base);\nline-height: var(--line-height-normal);\ncolor: var(--color-text-primary);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-base);\nline-height: var(--line-height-normal);\ncolor: var(--color-text-primary);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-base);\nline-height: var(--line-height-normal);\ncolor: var(--color-text-primary);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-base);\nline-height: var(--line-height-normal);\ncolor: var(--color-text-primary);')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -339,9 +527,18 @@
                     <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-2);">
                         这是辅助文本，用于显示次要信息或说明内容。使用较小的字号和较淡的颜色。
                     </p>
-                    <div class="code-example">
-                        <code>font-size: var(--font-size-sm);\ncolor: var(--color-text-secondary);\nline-height: var(--line-height-normal);</code>
-                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-sm);\ncolor: var(--color-text-secondary);\nline-height: var(--line-height-normal);')">复制</button>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>font-size: var(--font-size-sm);\ncolor: var(--color-text-secondary);\nline-height: var(--line-height-normal);</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-sm);\ncolor: var(--color-text-secondary);\nline-height: var(--line-height-normal);')">复制</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -372,113 +569,6 @@
     </footer>
 
 
-    <script>
-        // Navigation toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navToggle.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
-                        navToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    }
-                });
-            }
-
-            // Smooth scroll for anchor links
-            const anchorLinks = document.querySelectorAll('a[href^="#"]');
-            anchorLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#' && document.querySelector(href)) {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            const offsetTop = target.offsetTop - 80;
-                            window.scrollTo({
-                                top: offsetTop,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-        });
-
-        // Copy to clipboard function
-        function copyToClipboard(text) {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(function() {
-                    showNotification('样式已复制到剪贴板');
-                }).catch(function() {
-                    showNotification('复制失败，请手动复制');
-                });
-            } else {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-
-                try {
-                    document.execCommand('copy');
-                    showNotification('样式已复制到剪贴板');
-                } catch (err) {
-                    showNotification('复制失败，请手动复制');
-                }
-
-                document.body.removeChild(textArea);
-            }
-        }
-
-        // Show notification
-        function showNotification(message) {
-            const existingNotification = document.querySelector('.notification-toast');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-
-            const notification = document.createElement('div');
-            notification.className = 'notification-toast';
-            notification.textContent = message;
-            notification.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background-color: var(--color-surface-light);
-                border: 1px solid var(--color-primary);
-                border-radius: var(--radius-md);
-                padding: var(--space-3) var(--space-4);
-                color: var(--color-text-primary);
-                font-size: var(--font-size-sm);
-                z-index: var(--z-toast);
-                transform: translateX(100%);
-                transition: transform var(--transition-normal);
-            `;
-
-            document.body.appendChild(notification);
-
-            requestAnimationFrame(() => {
-                notification.style.transform = 'translateX(0)';
-            });
-
-            setTimeout(() => {
-                notification.style.transform = 'translateX(100%)';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.parentNode.removeChild(notification);
-                    }
-                }, 300);
-            }, 3000);
-        }
-    </script>
+    <script src="assets/js/design-system.js"></script>
 </body>
 </html>

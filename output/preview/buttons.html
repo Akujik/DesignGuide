@@ -59,6 +59,12 @@
                 <a href="typography.html" class="nav-link">字体</a>
                 <a href="spacing.html" class="nav-link">间距</a>
                 <a href="layout.html" class="nav-link">布局</a>
+                <a href="animations.html" class="nav-link">动效</a>
+                <a href="buttons.html" class="nav-link active">按钮</a>
+                <a href="cards.html" class="nav-link">卡片</a>
+                <a href="forms.html" class="nav-link">表单</a>
+                <a href="navigation.html" class="nav-link">导航</a>
+                <a href="hero-sections.html" class="nav-link">Hero区域</a>
             </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -86,8 +92,16 @@
                             主要按钮
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-primary {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-primary {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
   border: none;
@@ -100,8 +114,9 @@
 
 .btn-primary:hover {
   background-color: var(--color-primary-dark);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-primary {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: background-color var(--transition-fast);\n}\n\n.btn-primary:hover {\n  background-color: var(--color-primary-dark);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-primary {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: background-color var(--transition-fast);\n}\n\n.btn-primary:hover {\n  background-color: var(--color-primary-dark);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -112,8 +127,16 @@
                             次要按钮
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-secondary {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-secondary {
   background-color: transparent;
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
@@ -127,8 +150,9 @@
 .btn-secondary:hover {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-secondary {\n  background-color: transparent;\n  color: var(--color-primary);\n  border: 2px solid var(--color-primary);\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: all var(--transition-fast);\n}\n\n.btn-secondary:hover {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-secondary {\n  background-color: transparent;\n  color: var(--color-primary);\n  border: 2px solid var(--color-primary);\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: all var(--transition-fast);\n}\n\n.btn-secondary:hover {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -139,8 +163,16 @@
                             幽灵按钮
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-ghost {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-ghost {
   background-color: transparent;
   color: var(--color-text-secondary);
   border: none;
@@ -153,8 +185,9 @@
 
 .btn-ghost:hover {
   color: var(--color-primary);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-ghost {\n  background-color: transparent;\n  color: var(--color-text-secondary);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: color var(--transition-fast);\n}\n\n.btn-ghost:hover {\n  color: var(--color-primary);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-ghost {\n  background-color: transparent;\n  color: var(--color-text-secondary);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: color var(--transition-fast);\n}\n\n.btn-ghost:hover {\n  color: var(--color-primary);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -177,8 +210,16 @@
                             小按钮
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-small {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-small {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
   border: none;
@@ -187,8 +228,9 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-small {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-sm);\n  padding: var(--space-2) var(--space-3);\n  font-size: var(--font-size-sm);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-small {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-sm);\n  padding: var(--space-2) var(--space-3);\n  font-size: var(--font-size-sm);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -199,8 +241,16 @@
                             中等按钮
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-medium {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-medium {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
   border: none;
@@ -209,8 +259,9 @@
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-medium {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-size: var(--font-size-base);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-medium {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-size: var(--font-size-base);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -221,8 +272,16 @@
                             大按钮
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-large {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-large {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
   border: none;
@@ -231,8 +290,9 @@
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-large {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-lg);\n  padding: var(--space-4) var(--space-8);\n  font-size: var(--font-size-lg);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-large {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-lg);\n  padding: var(--space-4) var(--space-8);\n  font-size: var(--font-size-lg);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -255,13 +315,22 @@
                             悬停状态
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn:hover {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn:hover {
   background-color: var(--color-primary-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn:hover {\n  background-color: var(--color-primary-dark);\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-lg);\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn:hover {\n  background-color: var(--color-primary-dark);\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-lg);\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -272,16 +341,25 @@
                             禁用状态
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn:disabled {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn:disabled {
   background-color: var(--color-surface-light);
   color: var(--color-text-muted);
   border: 1px solid var(--color-border);
   opacity: 0.6;
   cursor: not-allowed;
   pointer-events: none;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn:disabled {\n  background-color: var(--color-surface-light);\n  color: var(--color-text-muted);\n  border: 1px solid var(--color-border);\n  opacity: 0.6;\n  cursor: not-allowed;\n  pointer-events: none;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn:disabled {\n  background-color: var(--color-surface-light);\n  color: var(--color-text-muted);\n  border: 1px solid var(--color-border);\n  opacity: 0.6;\n  cursor: not-allowed;\n  pointer-events: none;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -293,8 +371,16 @@
                             <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; border: 2px solid transparent; border-top: 2px solid currentColor; border-radius: 50%; animation: spin 1s linear infinite;"></span>
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-loading {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-loading {
   color: transparent;
   position: relative;
   cursor: not-allowed;
@@ -312,10 +398,11 @@
   border-top: 2px solid currentColor;
   border-radius: 50%;
   animation: spin 1s linear infinite;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-loading {\n  color: transparent;\n  position: relative;\n  cursor: not-allowed;\n}\n\n.btn-loading::after {\n  content: \'\';\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 16px;\n  height: 16px;\n  border: 2px solid transparent;\n  border-top: 2px solid currentColor;\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-loading {\n  color: transparent;\n  position: relative;\n  cursor: not-allowed;\n}\n\n.btn-loading::after {\n  content: \'\';\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 16px;\n  height: 16px;\n  border: 2px solid transparent;\n  border-top: 2px solid currentColor;\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n}')">复制</button>
+                        </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -339,8 +426,16 @@
                             下载
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-icon-left {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-icon-left {
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -348,8 +443,9 @@
 
 .btn-icon-left svg {
   flex-shrink: 0;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-icon-left {\n  display: flex;\n  align-items: center;\n  gap: var(--space-2);\n}\n\n.btn-icon-left svg {\n  flex-shrink: 0;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-icon-left {\n  display: flex;\n  align-items: center;\n  gap: var(--space-2);\n}\n\n.btn-icon-left svg {\n  flex-shrink: 0;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -364,8 +460,16 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-icon-right {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-icon-right {
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -373,8 +477,9 @@
 
 .btn-icon-right svg {
   flex-shrink: 0;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-icon-right {\n  display: flex;\n  align-items: center;\n  gap: var(--space-2);\n}\n\n.btn-icon-right svg {\n  flex-shrink: 0;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-icon-right {\n  display: flex;\n  align-items: center;\n  gap: var(--space-2);\n}\n\n.btn-icon-right svg {\n  flex-shrink: 0;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -388,8 +493,16 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-icon-only {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-icon-only {
   background-color: var(--color-surface-light);
   color: var(--color-text-primary);
   border: none;
@@ -400,8 +513,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-icon-only {\n  background-color: var(--color-surface-light);\n  color: var(--color-text-primary);\n  border: none;\n  border-radius: var(--radius-full);\n  width: 40px;\n  height: 40px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-icon-only {\n  background-color: var(--color-surface-light);\n  color: var(--color-text-primary);\n  border: none;\n  border-radius: var(--radius-full);\n  width: 40px;\n  height: 40px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}')">复制</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -430,8 +544,16 @@
                             最后一个
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-group {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-group {
   display: flex;
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -450,8 +572,9 @@
 .btn-group .btn:last-child {
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   border-right: none;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-group {\n  display: flex;\n  overflow: hidden;\n  border-radius: var(--radius-md);\n  box-shadow: var(--shadow-md);\n}\n\n.btn-group .btn {\n  border-radius: 0;\n  border-right: 1px solid rgba(255,255,255,0.2);\n}\n\n.btn-group .btn:first-child {\n  border-radius: var(--radius-md) 0 0 var(--radius-md);\n}\n\n.btn-group .btn:last-child {\n  border-radius: 0 var(--radius-md) var(--radius-md) 0;\n  border-right: none;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-group {\n  display: flex;\n  overflow: hidden;\n  border-radius: var(--radius-md);\n  box-shadow: var(--shadow-md);\n}\n\n.btn-group .btn {\n  border-radius: 0;\n  border-right: 1px solid rgba(255,255,255,0.2);\n}\n\n.btn-group .btn:first-child {\n  border-radius: var(--radius-md) 0 0 var(--radius-md);\n}\n\n.btn-group .btn:last-child {\n  border-radius: 0 var(--radius-md) var(--radius-md) 0;\n  border-right: none;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
 
@@ -468,8 +591,16 @@
                             选项3
                         </button>
                     </div>
-                    <div class="code-example">
-                        <code>.btn-group-vertical {
+                    <div class="code-block">
+                        <div class="code-header">
+                            <h4>代码示例</h4>
+                            <button class="code-toggle">
+                                <span class="toggle-text">展开</span>
+                                <span class="toggle-icon">▼</span>
+                            </button>
+                        </div>
+                        <div class="code-content" style="display: none;">
+                            <pre><code>.btn-group-vertical {
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -489,8 +620,9 @@
 .btn-group-vertical .btn:last-child {
   border-radius: 0 0 var(--radius-md) var(--radius-md);
   border-bottom: none;
-}</code>
-                        <button class="copy-btn" onclick="copyToClipboard('.btn-group-vertical {\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  border-radius: var(--radius-md);\n  box-shadow: var(--shadow-md);\n}\n\n.btn-group-vertical .btn {\n  border-radius: 0;\n  border-bottom: 1px solid rgba(255,255,255,0.2);\n}\n\n.btn-group-vertical .btn:first-child {\n  border-radius: var(--radius-md) var(--radius-md) 0 0;\n}\n\n.btn-group-vertical .btn:last-child {\n  border-radius: 0 0 var(--radius-md) var(--radius-md);\n  border-bottom: none;\n}')">复制</button>
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard('.btn-group-vertical {\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  border-radius: var(--radius-md);\n  box-shadow: var(--shadow-md);\n}\n\n.btn-group-vertical .btn {\n  border-radius: 0;\n  border-bottom: 1px solid rgba(255,255,255,0.2);\n}\n\n.btn-group-vertical .btn:first-child {\n  border-radius: var(--radius-md) var(--radius-md) 0 0;\n}\n\n.btn-group-vertical .btn:last-child {\n  border-radius: 0 0 var(--radius-md) var(--radius-md);\n  border-bottom: none;\n}')">复制</button>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -519,114 +651,6 @@
         </div>
     </footer>
 
-    
-    <script>
-        // Navigation toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navToggle.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
-                        navToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    }
-                });
-            }
-
-            // Smooth scroll for anchor links
-            const anchorLinks = document.querySelectorAll('a[href^="#"]');
-            anchorLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#' && document.querySelector(href)) {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            const offsetTop = target.offsetTop - 80;
-                            window.scrollTo({
-                                top: offsetTop,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-        });
-
-        // Copy to clipboard function
-        function copyToClipboard(text) {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(function() {
-                    showNotification('样式已复制到剪贴板');
-                }).catch(function() {
-                    showNotification('复制失败，请手动复制');
-                });
-            } else {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-
-                try {
-                    document.execCommand('copy');
-                    showNotification('样式已复制到剪贴板');
-                } catch (err) {
-                    showNotification('复制失败，请手动复制');
-                }
-
-                document.body.removeChild(textArea);
-            }
-        }
-
-        // Show notification
-        function showNotification(message) {
-            const existingNotification = document.querySelector('.notification-toast');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-
-            const notification = document.createElement('div');
-            notification.className = 'notification-toast';
-            notification.textContent = message;
-            notification.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background-color: var(--color-surface-light);
-                border: 1px solid var(--color-primary);
-                border-radius: var(--radius-md);
-                padding: var(--space-3) var(--space-4);
-                color: var(--color-text-primary);
-                font-size: var(--font-size-sm);
-                z-index: var(--z-modal);
-                transform: translateX(100%);
-                transition: transform var(--transition-normal);
-            `;
-
-            document.body.appendChild(notification);
-
-            requestAnimationFrame(() => {
-                notification.style.transform = 'translateX(0)';
-            });
-
-            setTimeout(() => {
-                notification.style.transform = 'translateX(100%)';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.parentNode.removeChild(notification);
-                    }
-                }, 300);
-            }, 3000);
-        }
-    </script>
+    <script src="assets/js/design-system.js"></script>
 </body>
 </html>
