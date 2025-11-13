@@ -8,9 +8,280 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Sidebar Navigation Styles */
+        .sidebar-desktop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background-color: var(--color-surface);
+            border-right: 1px solid var(--color-border);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .sidebar-content {
+            padding: var(--space-6);
+        }
+
+        .sidebar-header h2 {
+            color: var(--color-primary);
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-8);
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .nav-section h3 {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-3);
+        }
+
+        .nav-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-section li {
+            margin-bottom: var(--space-2);
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: var(--space-2) var(--space-3);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            font-size: var(--font-size-sm);
+        }
+
+        .sidebar-link:hover {
+            background-color: var(--color-surface-light);
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .sidebar-link.active {
+            background-color: var(--color-primary);
+            color: var(--color-text-inverse);
+            font-weight: var(--font-weight-semibold);
+            box-shadow: 0 2px 4px rgba(197, 249, 85, 0.2);
+        }
+
+        /* Enhanced scrollbar styling */
+        .sidebar-desktop::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar-desktop::-webkit-scrollbar-track {
+            background: var(--color-surface);
+        }
+
+        .sidebar-desktop::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: 3px;
+        }
+
+        .sidebar-desktop::-webkit-scrollbar-thumb:hover {
+            background: var(--color-text-muted);
+        }
+
+        /* Main content adjustment for sidebar */
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 1024px) {
+            .sidebar-desktop {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        /* Article-style layout for design system */
+        .content-section {
+            max-width: 65rem;
+            margin: 0 auto;
+        }
+
+        .component-list {
+            list-style: none;
+            padding: 0;
+            margin: var(--space-6) 0;
+        }
+
+        .component-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-6) 0;
+            transition: all var(--transition-fast);
+        }
+
+        .component-item:first-child {
+            border-top: 1px solid var(--color-border);
+        }
+
+        .component-item:hover {
+            background-color: var(--color-surface-light);
+            margin: 0 calc(-1 * var(--space-6));
+            padding-left: var(--space-6);
+            padding-right: var(--space-6);
+            border-radius: var(--radius-md);
+        }
+
+        .component-link {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-4);
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition-fast);
+        }
+
+        .component-link:hover {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .component-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+
+        .component-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .component-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-1);
+            color: var(--color-text-primary);
+        }
+
+        .component-description {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            line-height: var(--line-height-relaxed);
+            margin-bottom: var(--space-2);
+        }
+
+        .component-meta {
+            font-size: var(--font-size-xs);
+            color: var(--color-text-muted);
+        }
+
+        .quick-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-4);
+            margin: var(--space-6) 0;
+        }
+
+        .quick-nav a {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-3) var(--space-4);
+            text-decoration: none;
+            color: var(--color-text-primary);
+            transition: all var(--transition-fast);
+            text-align: center;
+            font-weight: var(--font-weight-medium);
+        }
+
+        .quick-nav a:hover {
+            background-color: var(--color-primary);
+            color: var(--color-text-inverse);
+            transform: translateY(-1px);
+            text-decoration: none;
+        }
+
+        .feature-highlight {
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-light) 100%);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            margin: var(--space-8) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            opacity: 0.7;
+        }
+
+        .feature-highlight h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-4);
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Desktop Sidebar Navigation -->
+    <div class="sidebar-desktop">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2>Meshy.ai</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>设计令牌</h3>
+                    <ul>
+                        <li><a href="colors.html" class="sidebar-link">颜色系统</a></li>
+                        <li><a href="typography.html" class="sidebar-link">字体系统</a></li>
+                        <li><a href="spacing.html" class="sidebar-link">间距系统</a></li>
+                        <li><a href="layout.html" class="sidebar-link">布局系统</a></li>
+                        <li><a href="animations.html" class="sidebar-link">动效系统</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>UI组件</h3>
+                    <ul>
+                        <li><a href="buttons.html" class="sidebar-link">按钮组件</a></li>
+                        <li><a href="cards.html" class="sidebar-link active">卡片组件</a></li>
+                        <li><a href="forms.html" class="sidebar-link">表单组件</a></li>
+                        <li><a href="navigation.html" class="sidebar-link">导航组件</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>模式与指南</h3>
+                    <ul>
+                        <li><a href="hero-sections.html" class="sidebar-link">Hero区域</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
     <nav class="nav-container">
         <div class="nav-content">
             <div class="nav-brand">
@@ -32,8 +303,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
@@ -536,6 +809,7 @@
             </div>
         </div>
     </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

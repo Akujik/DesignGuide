@@ -8,134 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Sidebar Navigation Styles */
-        .sidebar-desktop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 280px;
-            height: 100vh;
-            background-color: var(--color-surface);
-            border-right: 1px solid var(--color-border);
-            z-index: 1000;
-            overflow-y: auto;
-        }
-
-        .sidebar-content {
-            padding: var(--space-6);
-        }
-
-        .sidebar-header h2 {
-            color: var(--color-primary);
-            font-size: var(--font-size-xl);
-            font-weight: var(--font-weight-bold);
-            margin-bottom: var(--space-8);
-        }
-
-        .sidebar-nav {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-6);
-        }
-
-        .nav-section h3 {
-            color: var(--color-text-secondary);
-            font-size: var(--font-size-sm);
-            font-weight: var(--font-weight-semibold);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--space-3);
-        }
-
-        .nav-section ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-section li {
-            margin-bottom: var(--space-2);
-        }
-
-        .sidebar-link {
-            display: block;
-            padding: var(--space-2) var(--space-3);
-            color: var(--color-text-primary);
-            text-decoration: none;
-            border-radius: var(--radius-md);
-            transition: all var(--transition-fast);
-            font-size: var(--font-size-sm);
-        }
-
-        .sidebar-link:hover {
-            background-color: var(--color-surface-light);
-            color: var(--color-primary);
-            text-decoration: none;
-        }
-
-        .sidebar-link.active {
-            background-color: var(--color-primary);
-            color: var(--color-text-inverse);
-            font-weight: var(--font-weight-semibold);
-            box-shadow: 0 2px 4px rgba(197, 249, 85, 0.2);
-        }
-
-        /* Main content adjustment for sidebar */
-        .main-content {
-            margin-left: 280px;
-            min-height: 100vh;
-        }
-
-        /* Mobile responsive */
-        @media (max-width: 1024px) {
-            .sidebar-desktop {
-                display: none;
-            }
-
-            .main-content {
-                margin-left: 0;
-            }
-        }
-    </style></head>
+</head>
 <body>
-    <!-- Desktop Sidebar Navigation -->
-    <div class="sidebar-desktop">
-        <div class="sidebar-content">
-            <div class="sidebar-header">
-                <h2>Meshy.ai</h2>
-            </div>
-            <nav class="sidebar-nav">
-                <div class="nav-section">
-                    <h3>设计令牌</h3>
-                    <ul>
-                        <li><a href="colors.html" class="sidebar-link">颜色系统</a></li>
-                        <li><a href="typography.html" class="sidebar-link">字体系统</a></li>
-                        <li><a href="spacing.html" class="sidebar-link">间距系统</a></li>
-                        <li><a href="layout.html" class="sidebar-link">布局系统</a></li>
-                        <li><a href="animations.html" class="sidebar-link">动效系统</a></li>
-                    </ul>
-                </div>
-                <div class="nav-section">
-                    <h3>UI组件</h3>
-                    <ul>
-                        <li><a href="buttons.html" class="sidebar-link">按钮组件</a></li>
-                        <li><a href="cards.html" class="sidebar-link">卡片组件</a></li>
-                        <li><a href="forms.html" class="sidebar-link">表单组件</a></li>
-                        <li><a href="navigation.html" class="sidebar-link">导航组件</a></li>
-                    </ul>
-                </div>
-                <div class="nav-section">
-                    <h3>模式与指南</h3>
-                    <ul>
-                        <li><a href="hero-sections.html" class="sidebar-link">Hero区域</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-
-    <!-- Mobile Navigation -->
+    <!-- Navigation -->
     <nav class="nav-container">
         <div class="nav-content">
             <div class="nav-brand">
@@ -146,7 +21,8 @@
                 <a href="index.html" class="nav-link">首页</a>
                 <a href="colors.html" class="nav-link">颜色</a>
                 <a href="typography.html" class="nav-link">字体</a>
-                <a href="buttons.html" class="nav-link">按钮</a>
+                <a href="spacing.html" class="nav-link">间距</a>
+                <a href="layout.html" class="nav-link active">布局</a>
             </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -156,8 +32,6 @@
         </div>
     </nav>
 
-    <!-- Main Content Area -->
-    <div class="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -511,8 +385,6 @@
             </div>
         </div>
     </section>
-
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
