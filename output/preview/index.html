@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meshy.ai 设计系统 - 预览系统</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">Meshy.ai 设计系统</h1>
+                <p class="header-subtitle">基于 Meshy.ai 网站分析的设计令牌和组件库</p>
+            </div>
+            <nav class="header-nav">
+                <a href="#design-tokens" class="header-link">设计令牌</a>
+                <a href="#components" class="header-link">组件库</a>
+                <a href="#documentation" class="header-link">文档</a>
+                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <aside class="sidebar">
+            <nav>
+                <h3 class="sidebar-title">设计令牌</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="colors.html" class="sidebar-link">颜色系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="typography.html" class="sidebar-link">字体系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="spacing.html" class="sidebar-link">间距系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="layout.html" class="sidebar-link">布局系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="animations.html" class="sidebar-link">动效系统</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">组件库</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">文档</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="../design-system/01-design-tokens.md" class="sidebar-link">设计令牌总览</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="../component-library/buttons.md" class="sidebar-link">组件文档</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#usage-guide" class="sidebar-link">使用指南</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Overview Section -->
+            <section id="overview" class="section">
+                <h2 class="page-title">设计系统概览</h2>
+                <p class="page-description">
+                    这是基于 Meshy.ai 网站全面分析建立的设计系统。包含了从 5 个网站页面中提取的设计令牌、
+                    组件库和最佳实践。所有组件都可以预览和复制代码。
+                </p>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-4">
+                    <div class="card text-center">
+                        <h3 style="color: var(--color-accent-base); font-size: var(--text-3xl); margin: 0;">5</h3>
+                        <p style="color: var(--color-label-soft); margin: var(--p-sm) 0 0 0;">分析页面</p>
+                    </div>
+                    <div class="card text-center">
+                        <h3 style="color: var(--color-accent-support-base); font-size: var(--text-3xl); margin: 0;">25+</h3>
+                        <p style="color: var(--color-label-soft); margin: var(--p-sm) 0 0 0;">组件变体</p>
+                    </div>
+                    <div class="card text-center">
+                        <h3 style="color: var(--color-semantic-success-base); font-size: var(--text-3xl); margin: 0;">6</h3>
+                        <p style="color: var(--color-label-soft); margin: var(--p-sm) 0 0 0;">设计令牌</p>
+                    </div>
+                    <div class="card text-center">
+                        <h3 style="color: var(--color-semantic-info-base); font-size: var(--text-3xl); margin: 0;">100%</h3>
+                        <p style="color: var(--color-label-soft); margin: var(--p-sm) 0 0 0;">响应式设计</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Design Tokens Preview -->
+            <section id="design-tokens" class="section">
+                <h2 class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                    设计令牌预览
+                </h2>
+                <p class="section-description">
+                    核心设计令牌的快速预览，点击颜色块可以复制颜色值。
+                </p>
+
+                <!-- Primary Colors -->
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">品牌颜色</h3>
+                    <div class="component-preview">
+                        <div class="color-palette">
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #c5f955;" data-color="#c5f955"></div>
+                                <div class="color-info">
+                                    <div class="color-name">主绿色</div>
+                                    <div class="color-value">#c5f955</div>
+                                    <div class="color-usage">--color-accent-base</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #ff3e8f;" data-color="#ff3e8f"></div>
+                                <div class="color-info">
+                                    <div class="color-name">辅助洋红</div>
+                                    <div class="color-value">#ff3e8f</div>
+                                    <div class="color-usage">--color-accent-support-base</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #ff97c2;" data-color="#ff97c2"></div>
+                                <div class="color-info">
+                                    <div class="color-name">辅助粉色</div>
+                                    <div class="color-value">#ff97c2</div>
+                                    <div class="color-usage">--color-accent-support-highlight</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Background Colors -->
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">背景颜色</h3>
+                    <div class="component-preview">
+                        <div class="color-palette">
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #181818;" data-color="#181818"></div>
+                                <div class="color-info">
+                                    <div class="color-name">主背景</div>
+                                    <div class="color-value">#181818</div>
+                                    <div class="color-usage">--color-bg-base</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #1e1e1e;" data-color="#1e1e1e"></div>
+                                <div class="color-info">
+                                    <div class="color-name">次要背景</div>
+                                    <div class="color-value">#1e1e1e</div>
+                                    <div class="color-usage">--color-bg-sub</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #303030;" data-color="#303030"></div>
+                                <div class="color-info">
+                                    <div class="color-name">阴影背景</div>
+                                    <div class="color-value">#303030</div>
+                                    <div class="color-usage">--color-bg-shade</div>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #3f3f3f;" data-color="#3f3f3f"></div>
+                                <div class="color-info">
+                                    <div class="color-name">边框颜色</div>
+                                    <div class="color-value">#3f3f3f</div>
+                                    <div class="color-usage">--color-bg-border</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typography Preview -->
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">字体层次</h3>
+                    <div class="component-preview">
+                        <div class="typography-showcase">
+                            <div class="typography-sample">
+                                <div class="typography-label">H1</div>
+                                <h1 class="typography-text" style="font-size: var(--text-6xl); font-weight: var(--font-weight-bold);">页面主标题</h1>
+                            </div>
+                            <div class="typography-sample">
+                                <div class="typography-label">H2</div>
+                                <h2 class="typography-text" style="font-size: var(--text-4xl); font-weight: var(--font-weight-semibold);">章节标题</h2>
+                            </div>
+                            <div class="typography-sample">
+                                <div class="typography-label">H3</div>
+                                <h3 class="typography-text" style="font-size: var(--text-2xl); font-weight: var(--font-weight-semibold);">小节标题</h3>
+                            </div>
+                            <div class="typography-sample">
+                                <div class="typography-label">Body</div>
+                                <p class="typography-text">这是正文内容，使用标准的字体大小和行高，提供良好的阅读体验。</p>
+                            </div>
+                            <div class="typography-sample">
+                                <div class="typography-label">Small</div>
+                                <p class="typography-text" style="font-size: var(--text-sm); color: var(--color-label-soft);">这是小号文本，用于辅助信息和说明文字。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Components Preview -->
+            <section id="components" class="section">
+                <h2 class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="9" y1="9" x2="15" y2="9"/>
+                        <line x1="9" y1="15" x2="15" y2="15"/>
+                    </svg>
+                    核心组件预览
+                </h2>
+                <p class="section-description">
+                    设计系统中核心组件的快速预览，所有组件都可以交互和复制代码。
+                </p>
+
+                <!-- Buttons -->
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">按钮组件</h3>
+                    <div class="component-preview">
+                        <button class="button button-primary">主要按钮</button>
+                        <button class="button button-secondary">次要按钮</button>
+                        <button class="button button-ghost">幽灵按钮</button>
+                        <button class="button button-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span class="code-title">按钮代码示例</span>
+                            <button class="copy-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                                复制
+                            </button>
+                        </div>
+                        <div class="code-wrapper">
+                            <pre><code class="language-html">&lt;button class="button button-primary"&gt;主要按钮&lt;/button&gt;
+&lt;button class="button button-secondary"&gt;次要按钮&lt;/button&gt;
+&lt;button class="button button-ghost"&gt;幽灵按钮&lt;/button&gt;
+&lt;button class="button button-icon"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards -->
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">卡片组件</h3>
+                    <div class="component-preview grid grid-responsive">
+                        <div class="card" data-component-name="standard-card">
+                            <div class="card-header">
+                                <h3 class="card-title">标准卡片</h3>
+                            </div>
+                            <div class="card-content">
+                                <p>这是一个标准的卡片组件，用于展示相关信息的集合。</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="button button-primary button-small">查看详情</button>
+                            </div>
+                        </div>
+                        <div class="card card-model" data-component-name="model-card">
+                            <div class="card-media">
+                                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                    3D 模型预览
+                                </div>
+                                <div class="model-overlay">
+                                    <button class="button button-primary button-small">查看 3D</button>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">模型卡片</h3>
+                                <p style="font-size: var(--text-sm); color: var(--color-label-soft);">专门用于展示 3D 模型的卡片组件</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forms -->
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">表单组件</h3>
+                    <div class="component-preview" style="display: block; max-width: 400px;">
+                        <div class="form-group">
+                            <label class="form-label">用户名</label>
+                            <input type="text" class="form-input" placeholder="输入用户名" data-validate="required">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">邮箱</label>
+                            <input type="email" class="form-input" placeholder="输入邮箱地址" data-validate="email">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">选择模型类型</label>
+                            <select class="form-select">
+                                <option>选择类型</option>
+                                <option>角色模型</option>
+                                <option>场景模型</option>
+                                <option>道具模型</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" checked>
+                                <span class="checkbox-box">
+                                    <svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                </span>
+                                <span class="checkbox-label">同意服务条款</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">导航组件</h3>
+                    <div class="component-preview">
+                        <nav class="nav">
+                            <div class="nav-item">
+                                <a href="#" class="nav-link active">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    </svg>
+                                    首页
+                                </a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                    </svg>
+                                    模型
+                                </a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    收藏
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="component-preview" style="margin-top: var(--m-lg);">
+                        <nav class="breadcrumb" aria-label="Breadcrumb">
+                            <ol style="display: flex; align-items: center; gap: var(--gap-sm); list-style: none; margin: 0; padding: 0;">
+                                <li style="display: flex; align-items: center; gap: var(--gap-sm);">
+                                    <a href="#" style="color: var(--color-label-soft); text-decoration: none; font-size: var(--text-sm);">首页</a>
+                                </li>
+                                <li style="color: var(--color-label-muted); font-size: var(--text-sm);">/</li>
+                                <li style="display: flex; align-items: center; gap: var(--gap-sm);">
+                                    <a href="#" style="color: var(--color-label-soft); text-decoration: none; font-size: var(--text-sm);">模型</a>
+                                </li>
+                                <li style="color: var(--color-label-muted); font-size: var(--text-sm);">/</li>
+                                <li style="color: var(--color-label-base); font-size: var(--text-sm); font-weight: var(--font-weight-medium);">角色模型</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Usage Guide -->
+            <section id="usage-guide" class="section">
+                <h2 class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    使用指南
+                </h2>
+                <p class="section-description">
+                    如何使用这个设计系统来构建一致的用户界面。
+                </p>
+
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3 class="card-title">1. 集成样式</h3>
+                        <div class="card-content">
+                            <p>在你的项目中引入 CSS 文件：</p>
+                            <div class="code-example" style="margin-top: var(--m-lg);">
+                                <div class="code-wrapper">
+                                    <pre><code class="language-html">&lt;link rel="stylesheet" href="design-system/assets/css/styles.css"&gt;
+&lt;link rel="stylesheet" href="design-system/assets/css/components.css"&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">2. 使用组件</h3>
+                        <div class="card-content">
+                            <p>使用预定义的 HTML 结构和 CSS 类：</p>
+                            <div class="code-example" style="margin-top: var(--m-lg);">
+                                <div class="code-wrapper">
+                                    <pre><code class="language-html">&lt;button class="button button-primary"&gt;
+  点击我
+&lt;/button&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">3. 自定义设计令牌</h3>
+                        <div class="card-content">
+                            <p>通过 CSS 变量自定义设计系统：</p>
+                            <div class="code-example" style="margin-top: var(--m-lg);">
+                                <div class="code-wrapper">
+                                    <pre><code class="language-css">:root {
+  --color-accent-base: #your-color;
+  --font-sans: "Your Font", sans-serif;
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">4. 响应式设计</h3>
+                        <div class="card-content">
+                            <p>所有组件都支持响应式设计，使用断点系统：</p>
+                            <div class="code-example" style="margin-top: var(--m-lg);">
+                                <div class="code-wrapper">
+                                    <pre><code class="language-css">@media (max-width: 768px) {
+  .component {
+    /* 移动端样式 */
+  }
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- File Structure -->
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">文件结构</h3>
+                    <div class="component-preview">
+                        <div style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-label-base);">
+                            <div>design-system/</div>
+                            <div>├── design-system/          # 设计令牌文档</div>
+                            <div>│   ├── 01-design-tokens.md</div>
+                            <div>│   ├── 02-color-system.md</div>
+                            <div>│   ├── 03-typography.md</div>
+                            <div>│   ├── 04-spacing.md</div>
+                            <div>│   ├── 05-layout.md</div>
+                            <div>│   └── 06-animations.md</div>
+                            <div>├── component-library/      # 组件文档</div>
+                            <div>│   ├── buttons.md</div>
+                            <div>│   ├── cards.md</div>
+                            <div>│   ├── forms.md</div>
+                            <div>│   └── navigation.md</div>
+                            <div>└── preview/                # 预览系统</div>
+                            <div>    ├── assets/</div>
+                            <div>    │   ├── css/</div>
+                            <div>    │   │   ├── styles.css</div>
+                            <div>    │   │   └── components.css</div>
+                            <div>    │   └── js/</div>
+                            <div>    │       └── scripts.js</div>
+                            <div>    ├── index.html</div>
+                            <div>    ├── colors.html</div>
+                            <div>    ├── buttons.html</div>
+                            <div>    └── ...</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section id="documentation" class="section">
+                <h2 class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                    系统特性
+                </h2>
+
+                <div class="grid grid-responsive">
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-base)" stroke-width="2" style="margin: 0 auto var(--p-lg);">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6m0 6v6m4.22-13.22l4.24 4.24M18.36 18.36l4.24 4.24M1 12h6m6 0h6m-13.22 4.22l4.24-4.24M5.64 5.64l4.24 4.24"/>
+                            </svg>
+                            <h3 class="card-title">完整的设计令牌</h3>
+                            <p>包含颜色、字体、间距、布局等完整的设计系统令牌</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-support-base)" stroke-width="2" style="margin: 0 auto var(--p-lg);">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            <h3 class="card-title">交互式预览</h3>
+                            <p>所有组件都可以实时预览和交互，支持一键复制代码</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-semantic-success-base)" stroke-width="2" style="margin: 0 auto var(--p-lg);">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <h3 class="card-title">响应式设计</h3>
+                            <p>完全响应式的设计系统，支持从移动端到大屏幕的所有设备</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-semantic-info-base)" stroke-width="2" style="margin: 0 auto var(--p-lg);">
+                                <path d="M9 11H3v10h6V11z"/>
+                                <path d="M15 3H9v18h6V3z"/>
+                                <path d="M21 7h-6v14h6V7z"/>
+                            </svg>
+                            <h3 class="card-title">可扩展架构</h3>
+                            <p>基于 CSS 变量的模块化架构，易于扩展和自定义</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="section">
+                <div class="text-center">
+                    <h3 class="card-title">开始使用</h3>
+                    <p style="color: var(--color-label-soft); margin-bottom: var(p-xl);">
+                        现在就可以在您的项目中使用这个设计系统
+                    </p>
+                    <div class="flex justify-center gap-md">
+                        <a href="colors.html" class="button button-primary">查看设计令牌</a>
+                        <a href="buttons.html" class="button button-secondary">查看组件库</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

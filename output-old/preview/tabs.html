@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs Components - Meshy AI Design System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div style="margin-bottom: var(--margin-2xl);">
+                <h2 style="color: var(--color-accent-base); font-size: var(--text-xl); margin: 0; display: flex; align-items: center; gap: var(--gap-sm);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    Meshy AI
+                </h2>
+                <p style="color: var(--color-label-soft); font-size: var(--text-sm); margin: var(--margin-xs) 0 0 0;">设计系统预览</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    首页
+                </a>
+                <a href="design-tokens.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6m4.22-13.22l4.24 4.24M1.54 1.54l4.24 4.24M20.46 20.46l-4.24-4.24M1.54 20.46l4.24-4.24"/>
+                    </svg>
+                    设计令牌
+                </a>
+                <a href="colors.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                    </svg>
+                    色彩系统
+                </a>
+                <a href="typography.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="4 7 4 4 7 4"/>
+                        <polyline points="20 7 20 4 17 4"/>
+                        <polyline points="4 17 4 20 7 20"/>
+                        <polyline points="20 17 20 20 17 20"/>
+                        <line x1="4" y1="11" x2="20" y2="11"/>
+                        <line x1="11" y1="4" x2="11" y2="20"/>
+                    </svg>
+                    字体系统
+                </a>
+                <a href="buttons.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    </svg>
+                    按钮组件
+                </a>
+                <a href="cards.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <rect x="7" y="7" width="10" height="6"/>
+                        <rect x="7" y="15" width="10" height="2"/>
+                    </svg>
+                    卡片组件
+                </a>
+                <a href="forms.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                    表单组件
+                </a>
+                <a href="header-navigation.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="9" y1="3" x2="9" y2="21"/>
+                        <line x1="15" y1="3" x2="15" y2="21"/>
+                    </svg>
+                    头部导航
+                </a>
+                <a href="navigation.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                    </svg>
+                    导航组件
+                </a>
+                <a href="tabs.html" class="sidebar-nav-item active">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3h18v18H3zM9 9h6v6H9z"/>
+                    </svg>
+                    标签页组件
+                </a>
+                <a href="tables.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                        <line x1="9" y1="3" x2="9" y2="21"/>
+                    </svg>
+                    表格组件
+                </a>
+                <a href="accordion.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                    手风琴组件
+                </a>
+                <a href="footer.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    页脚组件
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <h1>Tab Components</h1>
+            <p style="color: var(--color-label-soft); font-size: var(--text-lg); margin-bottom: var(--margin-2xl);">
+                Meshy AI's tab components provide intuitive navigation and content organization with modern design language and smooth interactions.
+            </p>
+
+            <!-- Basic Tabs -->
+            <div class="component-showcase">
+                <h2>Basic Tabs</h2>
+                <div class="component-preview">
+                    <div style="width: 100%; max-width: 800px;">
+                        <div class="tabs">
+                            <div class="tab-list">
+                                <button class="tab-button active" data-tab="overview">概览</button>
+                                <button class="tab-button" data-tab="details">详情</button>
+                                <button class="tab-button" data-tab="settings">设置</button>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-panel active" data-panel="overview">
+                                    <h3>概览内容</h3>
+                                    <p>这是概览标签页的内容区域，显示主要信息和统计数据。</p>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 20px;">
+                                        <div style="background: var(--color-bg-sub); padding: 16px; border-radius: 8px;">
+                                            <div style="font-size: 24px; font-weight: 600; color: var(--color-accent-base);">1,234</div>
+                                            <div style="color: var(--color-label-soft);">模型总数</div>
+                                        </div>
+                                        <div style="background: var(--color-bg-sub); padding: 16px; border-radius: 8px;">
+                                            <div style="font-size: 24px; font-weight: 600; color: var(--color-accent-base);">567</div>
+                                            <div style="color: var(--color-label-soft);">已完成</div>
+                                        </div>
+                                        <div style="background: var(--color-bg-sub); padding: 16px; border-radius: 8px;">
+                                            <div style="font-size: 24px; font-weight: 600; color: var(--color-accent-base);">89</div>
+                                            <div style="color: var(--color-label-soft);">处理中</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-panel" data-panel="details">
+                                    <h3>详细信息</h3>
+                                    <p>这是详情标签页的内容，展示更详细的技术规格和配置信息。</p>
+                                    <ul style="margin-top: 16px; padding-left: 20px;">
+                                        <li>支持多种3D文件格式：FBX、OBJ、GLTF、GLB</li>
+                                        <li>AI智能纹理生成，分辨率最高4K</li>
+                                        <li>自动拓扑优化，减少50%面数</li>
+                                        <li>实时预览和编辑功能</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-panel" data-panel="settings">
+                                    <h3>设置选项</h3>
+                                    <p>配置您的偏好设置和工作流程参数。</p>
+                                    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 16px;">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" class="checkbox-input" checked>
+                                            <span class="checkbox-label">启用自动保存</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" class="checkbox-input">
+                                            <span class="checkbox-label">显示高级选项</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" class="checkbox-input" checked>
+                                            <span class="checkbox-label">使用GPU加速</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <span style="color: var(--color-label-soft); font-size: var(--text-sm);">HTML Code</span>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            Copy Code
+                        </button>
+                    </div>
+                    <div class="code-content">
+                        <pre><code>&lt;div class="tabs"&gt;
+  &lt;div class="tab-list"&gt;
+    &lt;button class="tab-button active" data-tab="overview"&gt;概览&lt;/button&gt;
+    &lt;button class="tab-button" data-tab="details"&gt;详情&lt;/button&gt;
+    &lt;button class="tab-button" data-tab="settings"&gt;设置&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="tab-content"&gt;
+    &lt;div class="tab-panel active" data-panel="overview"&gt;
+      &lt;h3&gt;概览内容&lt;/h3&gt;
+      &lt;p&gt;这是概览标签页的内容区域&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="tab-panel" data-panel="details"&gt;
+      &lt;h3&gt;详细信息&lt;/h3&gt;
+      &lt;p&gt;这是详情标签页的内容&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Underline Style Tabs -->
+            <div class="component-showcase">
+                <h2>Underline Style Tabs</h2>
+                <div class="component-preview">
+                    <div style="width: 100%; max-width: 600px;">
+                        <div class="tabs tabs-underline">
+                            <div class="tab-list">
+                                <button class="tab-button active" data-tab="home">首页</button>
+                                <button class="tab-button" data-tab="products">产品</button>
+                                <button class="tab-button" data-tab="about">关于</button>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-panel active" data-panel="home">
+                                    <h4>欢迎首页</h4>
+                                    <p>探索Meshy AI的强大功能，开始您的3D创作之旅。</p>
+                                </div>
+                                <div class="tab-panel" data-panel="products">
+                                    <h4>产品介绍</h4>
+                                    <p>了解我们全面的3D内容创作工具和解决方案。</p>
+                                </div>
+                                <div class="tab-panel" data-panel="about">
+                                    <h4>关于我们</h4>
+                                    <p>认识我们的团队，了解我们的使命和愿景。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pills Style Tabs -->
+            <div class="component-showcase">
+                <h2>Pills Style Tabs</h2>
+                <div class="component-preview">
+                    <div style="width: 100%; max-width: 600px;">
+                        <div class="tabs tabs-pills">
+                            <div class="tab-list">
+                                <button class="tab-button active" data-tab="all">全部</button>
+                                <button class="tab-button" data-tab="progress">进行中</button>
+                                <button class="tab-button" data-tab="completed">已完成</button>
+                                <button class="tab-button" data-tab="failed">失败</button>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-panel active" data-panel="all">
+                                    <h4>全部任务</h4>
+                                    <p>显示所有状态的任务项目，包含筛选和搜索功能。</p>
+                                </div>
+                                <div class="tab-panel" data-panel="progress">
+                                    <h4>进行中的任务</h4>
+                                    <p>当前正在处理的任务列表和进度信息。</p>
+                                </div>
+                                <div class="tab-panel" data-panel="completed">
+                                    <h4>已完成的任务</h4>
+                                    <p>成功完成的任务历史记录和成果展示。</p>
+                                </div>
+                                <div class="tab-panel" data-panel="failed">
+                                    <h4>失败的任务</h4>
+                                    <p>处理失败的任务和错误诊断信息。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertical Tabs -->
+            <div class="component-showcase">
+                <h2>Vertical Tabs</h2>
+                <div class="component-preview">
+                    <div style="width: 100%; max-width: 800px;">
+                        <div class="tabs tabs-vertical">
+                            <div class="tab-list">
+                                <button class="tab-button active" data-tab="user-info">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="12" cy="7" r="4"/>
+                                    </svg>
+                                    用户信息
+                                </button>
+                                <button class="tab-button" data-tab="security">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                    </svg>
+                                    安全设置
+                                </button>
+                                <button class="tab-button" data-tab="notifications">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                                    </svg>
+                                    通知设置
+                                </button>
+                                <button class="tab-button" data-tab="privacy">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    </svg>
+                                    隐私设置
+                                </button>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-panel active" data-panel="user-info">
+                                    <h4>用户信息</h4>
+                                    <p>管理您的基本账户信息和个人资料设置。</p>
+                                </div>
+                                <div class="tab-panel" data-panel="security">
+                                    <h4>安全设置</h4>
+                                    <p>配置密码、双因素认证等安全选项。</p>
+                                </div>
+                                <div class="tab-panel" data-panel="notifications">
+                                    <h4>通知设置</h4>
+                                    <p>自定义邮件和应用通知偏好设置。</p>
+                                </div>
+                                <div class="tab-panel" data-panel="privacy">
+                                    <h4>隐私设置</h4>
+                                    <p>控制数据共享和隐私选项。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usage Guidelines -->
+            <div class="component-showcase">
+                <h2>Usage Guidelines</h2>
+                <div class="component-preview" style="padding: var(--padding-xl); text-align: left; align-items: flex-start;">
+                    <h3 style="color: var(--color-accent-base); margin-top: 0;">标签页使用指南</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-xl); margin-top: var(--margin-lg);">
+                        <div>
+                            <h4>最佳实践</h4>
+                            <ul style="color: var(--color-label-base); line-height: var(--leading-relaxed);">
+                                <li>保持标签页数量在3-7个之间</li>
+                                <li>使用清晰简洁的标签名称</li>
+                                <li>确保每个标签页都有相关内容</li>
+                                <li>为长内容考虑使用垂直布局</li>
+                                <li>提供明确的视觉反馈和状态指示</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>使用场景</h4>
+                            <ul style="color: var(--color-label-base); line-height: var(--leading-relaxed);">
+                                <li>产品详情页的多信息展示</li>
+                                <li>用户设置和配置界面</li>
+                                <li>数据分析和报告展示</li>
+                                <li>步骤引导和教程界面</li>
+                                <li>多文档或项目内容管理</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle button button-icon" onclick="toggleTheme()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+        </svg>
+    </button>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle tab switching for all tab containers
+            document.querySelectorAll('.tabs').forEach(tabsContainer => {
+                const tabButtons = tabsContainer.querySelectorAll('.tab-button');
+                const tabPanels = tabsContainer.querySelectorAll('.tab-panel');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const targetTab = this.getAttribute('data-tab');
+
+                        // Remove active class from all buttons and panels in this container
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabPanels.forEach(panel => panel.classList.remove('active'));
+
+                        // Add active class to clicked button and corresponding panel
+                        this.classList.add('active');
+                        const targetPanel = tabsContainer.querySelector(`[data-panel="${targetTab}"]`);
+                        if (targetPanel) {
+                            targetPanel.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颜色系统 - Meshy AI 设计系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div style="margin-bottom: var(--margin-2xl);">
+                <h2 style="color: var(--color-accent-base); font-size: var(--text-xl); margin: 0; display: flex; align-items: center; gap: var(--gap-sm);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    Meshy AI
+                </h2>
+                <p style="color: var(--color-label-soft); font-size: var(--text-sm); margin: var(--margin-xs) 0 0 0;">设计系统预览</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    首页
+                </a>
+                <a href="design-tokens.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6m4.22-13.22l4.24 4.24M1.54 1.54l4.24 4.24M20.46 20.46l-4.24-4.24M1.54 20.46l4.24-4.24"/>
+                    </svg>
+                    设计令牌
+                </a>
+                <a href="colors.html" class="sidebar-nav-item active">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                    </svg>
+                    颜色系统
+                </a>
+                <a href="typography.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="4 7 4 4 7 4"/>
+                        <polyline points="20 7 20 4 17 4"/>
+                        <polyline points="4 17 4 20 7 20"/>
+                        <polyline points="20 17 20 20 17 20"/>
+                        <line x1="4" y1="11" x2="20" y2="11"/>
+                        <line x1="11" y1="4" x2="11" y2="20"/>
+                    </svg>
+                    字体系统
+                </a>
+                <a href="buttons.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    </svg>
+                    按钮组件
+                </a>
+                <a href="cards.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <rect x="7" y="7" width="10" height="6"/>
+                        <rect x="7" y="15" width="10" height="2"/>
+                    </svg>
+                    卡片组件
+                </a>
+                <a href="forms.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                    表单组件
+                </a>
+                <a href="navigation.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                    </svg>
+                    导航组件
+                </a>
+                <a href="header-navigation.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                        <line x1="9" y1="3" x2="9" y2="21"/>
+                    </svg>
+                    头部导航
+                </a>
+                <a href="tabs.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3h18v18H3zM9 9h6v6H9z"/>
+                    </svg>
+                    标签页组件
+                </a>
+                <a href="tables.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                        <line x1="9" y1="3" x2="9" y2="21"/>
+                    </svg>
+                    表格组件
+                </a>
+                <a href="accordion.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                    手风琴组件
+                </a>
+                <a href="footer.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    页脚组件
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <h1>颜色系统</h1>
+            <p style="color: var(--color-label-soft); font-size: var(--text-lg); margin-bottom: var(--margin-2xl);">
+                Meshy AI 采用基于深色主题的现代化颜色系统，以鲜明的绿色作为品牌主色，搭配支持性的品红色系。
+            </p>
+
+            <!-- 背景色系 -->
+            <div class="component-showcase">
+                <h2>背景色系</h2>
+                <div class="color-swatches">
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-bg-base);"></div>
+                        <div class="color-info">
+                            <div class="color-name">主背景</div>
+                            <div class="color-value" onclick="copyColor('#181818')">--color-bg-base #181818</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-bg-sub);"></div>
+                        <div class="color-info">
+                            <div class="color-name">次要背景</div>
+                            <div class="color-value" onclick="copyColor('#1e1e1e')">--color-bg-sub #1e1e1e</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-bg-shade);"></div>
+                        <div class="color-info">
+                            <div class="color-name">深色阴影</div>
+                            <div class="color-value" onclick="copyColor('#303030')">--color-bg-shade #303030</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-bg-border);"></div>
+                        <div class="color-info">
+                            <div class="color-name">边框颜色</div>
+                            <div class="color-value" onclick="copyColor('#3f3f3f')">--color-bg-border #3f3f3f</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 文本色系 -->
+            <div class="component-showcase">
+                <h2>文本色系</h2>
+                <div class="color-swatches">
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-label-title);"></div>
+                        <div class="color-info">
+                            <div class="color-name">主要标题</div>
+                            <div class="color-value" onclick="copyColor('#ffffff')">--color-label-title #ffffff</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-label-base);"></div>
+                        <div class="color-info">
+                            <div class="color-name">正文文本</div>
+                            <div class="color-value" onclick="copyColor('#dedede')">--color-label-base #dedede</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-label-soft);"></div>
+                        <div class="color-info">
+                            <div class="color-name">次要文本</div>
+                            <div class="color-value" onclick="copyColor('#9b9b9b')">--color-label-soft #9b9b9b</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-label-muted);"></div>
+                        <div class="color-info">
+                            <div class="color-name">淡色文本</div>
+                            <div class="color-value" onclick="copyColor('#696969')">--color-label-muted #696969</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-label-faint);"></div>
+                        <div class="color-info">
+                            <div class="color-name">极淡文本</div>
+                            <div class="color-value" onclick="copyColor('#505050')">--color-label-faint #505050</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 品牌色系 -->
+            <div class="component-showcase">
+                <h2>品牌色系</h2>
+                <div class="color-swatches">
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-accent-base);"></div>
+                        <div class="color-info">
+                            <div class="color-name">主要品牌绿</div>
+                            <div class="color-value" onclick="copyColor('#C5F955')">--color-accent-base #C5F955</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-accent-support-base);"></div>
+                        <div class="color-info">
+                            <div class="color-name">支持品红</div>
+                            <div class="color-value" onclick="copyColor('#FF3E8F')">--color-accent-support-base #FF3E8F</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-accent-highlight);"></div>
+                        <div class="color-info">
+                            <div class="color-name">高亮粉色</div>
+                            <div class="color-value" onclick="copyColor('#FF97C2')">--color-accent-highlight #FF97C2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 功能色系 -->
+            <div class="component-showcase">
+                <h2>功能色系</h2>
+                <div class="color-swatches">
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-success);"></div>
+                        <div class="color-info">
+                            <div class="color-name">成功状态</div>
+                            <div class="color-value" onclick="copyColor('#22c55e')">--color-success #22c55e</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-warning);"></div>
+                        <div class="color-info">
+                            <div class="color-name">警告状态</div>
+                            <div class="color-value" onclick="copyColor('#f59e0b')">--color-warning #f59e0b</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-error);"></div>
+                        <div class="color-info">
+                            <div class="color-name">错误状态</div>
+                            <div class="color-value" onclick="copyColor('#ef4444')">--color-error #ef4444</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-sample" style="background-color: var(--color-info);"></div>
+                        <div class="color-info">
+                            <div class="color-name">信息状态</div>
+                            <div class="color-value" onclick="copyColor('#3b82f6')">--color-info #3b82f6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 渐变色系统 -->
+            <div class="component-showcase">
+                <h2>渐变色系统</h2>
+                <div class="component-preview">
+                    <div style="display: flex; flex-direction: column; gap: var(--gap-lg); width: 100%;">
+                        <div style="height: 80px; background: linear-gradient(90deg, #C5F955, #FF97C2); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-bg-base); font-weight: var(--font-weight-semibold);">
+                            gradient-new-feature
+                        </div>
+                        <div style="height: 80px; background: linear-gradient(90deg, #F9E855, #E99430); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-bg-base); font-weight: var(--font-weight-semibold);">
+                            gradient-credit
+                        </div>
+                        <div style="height: 80px; background: linear-gradient(135deg, #C5F955, #FF3E8F); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-weight: var(--font-weight-semibold);">
+                            品牌渐变
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <span style="color: var(--color-label-soft); font-size: var(--text-sm);">CSS 代码</span>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制代码
+                        </button>
+                    </div>
+                    <div class="code-content">
+                        <pre><code>.gradient-new-feature {
+  background: linear-gradient(90deg, #C5F955, #FF97C2);
+}
+
+.gradient-credit {
+  background: linear-gradient(90deg, #F9E855, #E99430);
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, #C5F955, #FF3E8F);
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 使用指南 -->
+            <div class="component-showcase">
+                <h2>使用指南</h2>
+                <div class="component-preview" style="padding: var(--padding-2xl); text-align: left; align-items: flex-start;">
+                    <h3 style="color: var(--color-accent-base); margin-top: 0;">主要使用场景</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-xl); margin-top: var(--margin-lg);">
+                        <div>
+                            <h4>页面层次</h4>
+                            <ul style="color: var(--color-label-base); line-height: var(--leading-relaxed); padding-left: var(--margin-lg);">
+                                <li><strong>页面背景</strong>: --color-bg-base</li>
+                                <li><strong>卡片背景</strong>: --color-bg-sub</li>
+                                <li><strong>悬浮状态</strong>: --color-bg-shade</li>
+                                <li><strong>边框</strong>: --color-bg-border</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>文本层级</h4>
+                            <ul style="color: var(--color-label-base); line-height: var(--leading-relaxed); padding-left: var(--margin-lg);">
+                                <li><strong>页面标题</strong>: --color-label-title</li>
+                                <li><strong>正文内容</strong>: --color-label-base</li>
+                                <li><strong>辅助信息</strong>: --color-label-soft</li>
+                                <li><strong>占位符</strong>: --color-label-faint</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--color-accent-base); margin-top: var(--margin-2xl);">最佳实践</h3>
+                    <ul style="color: var(--color-label-base); line-height: var(--leading-relaxed); padding-left: var(--margin-lg);">
+                        <li>确保文本颜色与背景色有足够的对比度（至少 4.5:1）</li>
+                        <li>品牌绿色主要用于重要的交互元素和强调</li>
+                        <li>品红色作为支持色用于次要强调元素</li>
+                        <li>功能色仅用于对应的状态指示</li>
+                        <li>避免使用过多的颜色，保持界面的简洁性</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 可访问性 -->
+            <div class="component-showcase">
+                <h2>可访问性对比度</h2>
+                <div class="component-preview" style="padding: var(--padding-xl); text-align: left;">
+                    <p style="margin-bottom: var(--margin-lg);">所有文本颜色都确保在深色背景下达到 WCAG AA 标准：</p>
+                    <div style="display: grid; gap: var(--gap-md);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--padding-md); background-color: var(--color-bg-base); border-radius: var(--radius-md);">
+                            <span style="color: var(--color-label-title); font-weight: var(--font-weight-semibold);">标题文本</span>
+                            <span style="color: var(--color-label-soft); font-size: var(--text-sm);">对比度 > 7:1 (AAA)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--padding-md); background-color: var(--color-bg-base); border-radius: var(--radius-md);">
+                            <span style="color: var(--color-label-base);">正文文本</span>
+                            <span style="color: var(--color-label-soft); font-size: var(--text-sm);">对比度 > 4.5:1 (AA)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--padding-md); background-color: var(--color-bg-base); border-radius: var(--radius-md);">
+                            <span style="color: var(--color-label-soft);">辅助文本</span>
+                            <span style="color: var(--color-label-muted); font-size: var(--text-sm);">对比度 > 3:1 (AA Large)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 主题切换按钮 -->
+    <button class="theme-toggle button button-icon" onclick="this.click()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+        </svg>
+    </button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

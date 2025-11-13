@@ -1,0 +1,8 @@
+{
+  "originalUrl": "about:blank",
+  "indexFilename": "index.html",
+  "resources": {
+    "scripts/1.js": "https://js.intercomcdn.com/vendor-modern.42b70a8b.js",
+    "scripts/0.js": "https://js.intercomcdn.com/frame-modern.1a283dde.js"
+  }
+}

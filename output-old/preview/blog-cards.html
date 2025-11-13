@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客卡片组件 - Meshy AI Design System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div style="margin-bottom: var(--margin-2xl);">
+                <h2 style="color: var(--color-accent-base); font-size: var(--text-xl); margin: 0; display: flex; align-items: center; gap: var(--gap-sm);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    Meshy AI
+                </h2>
+                <p style="color: var(--color-label-soft); font-size: var(--text-sm); margin: var(--margin-xs) 0 0 0;">设计系统预览</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    首页
+                </a>
+                <a href="design-tokens.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6m4.22-13.22l4.24 4.24M1.54 1.54l4.24 4.24M20.46 20.46l-4.24-4.24M1.54 20.46l4.24-4.24"/>
+                    </svg>
+                    设计令牌
+                </a>
+                <a href="colors.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                    </svg>
+                    色彩系统
+                </a>
+                <a href="typography.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="4 7 4 4 7 4"/>
+                        <polyline points="20 7 20 4 17 4"/>
+                        <polyline points="4 17 4 20 7 20"/>
+                        <polyline points="20 17 20 20 17 20"/>
+                        <line x1="4" y1="11" x2="20" y2="11"/>
+                        <line x1="11" y1="4" x2="11" y2="20"/>
+                    </svg>
+                    字体系统
+                </a>
+                <a href="buttons.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    </svg>
+                    按钮组件
+                </a>
+                <a href="cards.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <rect x="7" y="7" width="10" height="6"/>
+                        <rect x="7" y="15" width="10" height="2"/>
+                    </svg>
+                    卡片组件
+                </a>
+                <a href="forms.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                    表单组件
+                </a>
+                <a href="header-navigation.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="9" y1="3" x2="9" y2="21"/>
+                        <line x1="15" y1="3" x2="15" y2="21"/>
+                    </svg>
+                    头部导航
+                </a>
+                <a href="navigation.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                    </svg>
+                    导航组件
+                </a>
+                <a href="tabs.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3h18v18H3zM9 9h6v6H9z"/>
+                    </svg>
+                    标签页组件
+                </a>
+                <a href="tables.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                        <line x1="9" y1="3" x2="9" y2="21"/>
+                    </svg>
+                    表格组件
+                </a>
+                <a href="accordion.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                    手风琴组件
+                </a>
+                <a href="footer.html" class="sidebar-nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    页脚组件
+                </a>
+                <a href="blog-cards.html" class="sidebar-nav-item active">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                    博客卡片组件
+                </a>
+            </nav>
+
+            <div style="margin-top: var(--margin-3xl); padding-top: var(--margin-lg); border-top: 1px solid var(--color-bg-border);">
+                <p style="color: var(--color-label-muted); font-size: var(--text-xs); margin: 0;">
+                    基于 Meshy AI 官方网站分析生成<br>
+                    最后更新: 2025-11-13
+                </p>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <h1>博客卡片组件</h1>
+            <p style="color: var(--color-label-soft); font-size: var(--text-lg); margin-bottom: var(--margin-2xl);">
+                Meshy AI 的博客卡片组件采用现代化设计，通过图片、标题、摘要和元数据的组合，为用户提供清晰的博客文章预览。
+            </p>
+
+            <!-- 标准博客卡片 -->
+            <div class="component-showcase">
+                <h2>标准博客卡片</h2>
+                <div class="component-preview">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap-xl); width: 100%;">
+                        <!-- 博客卡片 1 -->
+                        <article class="blog-card" style="background-color: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--color-accent-base), var(--color-accent-support-base)); display: flex; align-items: center; justify-content: center;">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(255, 255, 255, 0.8);">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10 9 9 9 8 9"/>
+                                </svg>
+                            </div>
+                            <div style="padding: var(--padding-lg);">
+                                <div style="display: flex; align-items: center; gap: var(--gap-sm); margin-bottom: var(--margin-md);">
+                                    <span style="background: var(--color-accent-base); color: var(--color-bg-base); font-size: var(--text-xs); padding: 2px 8px; border-radius: var(--radius-sm); font-weight: 600;">教程</span>
+                                    <time style="color: var(--color-label-soft); font-size: var(--text-sm);">2024年3月15日</time>
+                                </div>
+                                <h3 style="margin: 0 0 var(--margin-md) 0; color: var(--color-label-title); font-size: var(--text-xl); font-weight: 600; line-height: 1.3;">如何使用 Meshy AI 创建高质量的 3D 模型</h3>
+                                <p style="color: var(--color-label-base); margin: 0 0 var(--margin-lg) 0; line-height: 1.6;">学习使用我们的AI工具快速生成专业级3D模型，从文本描述到成品模型的完整流程指南。</p>
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: var(--margin-lg);">
+                                    <div style="display: flex; align-items: center; gap: var(--gap-md);">
+                                        <span style="color: var(--color-label-soft); font-size: var(--text-sm);">阅读时间：5分钟</span>
+                                    </div>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-base);">
+                                        <polyline points="9 18 15 12 9 6"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- 博客卡片 2 -->
+                        <article class="blog-card" style="background-color: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--color-accent-support-base), var(--color-accent-base)); display: flex; align-items: center; justify-content: center;">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(255, 255, 255, 0.8);">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div style="padding: var(--padding-lg);">
+                                <div style="display: flex; align-items: center; gap: var(--gap-sm); margin-bottom: var(--margin-md);">
+                                    <span style="background: var(--color-accent-support-base); color: var(--color-bg-base); font-size: var(--text-xs); padding: 2px 8px; border-radius: var(--radius-sm); font-weight: 600;">更新</span>
+                                    <time style="color: var(--color-label-soft); font-size: var(--text-sm);">2024年3月12日</time>
+                                </div>
+                                <h3 style="margin: 0 0 var(--margin-md) 0; color: var(--color-label-title); font-size: var(--text-xl); font-weight: 600; line-height: 1.3;">Meshy AI V2.0 新功能发布：纹理生成升级</h3>
+                                <p style="color: var(--color-label-base); margin: 0 0 var(--margin-lg) 0; line-height: 1.6;">探索我们最新的纹理生成技术，支持更多材质类型和更高的质量标准。</p>
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: var(--margin-lg);">
+                                    <div style="display: flex; align-items: center; gap: var(--gap-md);">
+                                        <span style="color: var(--color-label-soft); font-size: var(--text-sm);">阅读时间：3分钟</span>
+                                    </div>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-base);">
+                                        <polyline points="9 18 15 12 9 6"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <span style="color: var(--color-label-soft); font-size: var(--text-sm);">HTML Code</span>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            复制代码
+                        </button>
+                    </div>
+                    <div class="code-content">
+                        <pre><code>&lt;article class="blog-card"&gt;
+  &lt;div style="aspect-ratio: 16/9; background: linear-gradient(...);"&gt;
+    &lt;!-- 图片占位符 --&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;div&gt;
+      &lt;span&gt;教程&lt;/span&gt;
+      &lt;time&gt;2024年3月15日&lt;/time&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;文章标题&lt;/h3&gt;
+    &lt;p&gt;文章摘要...&lt;/p&gt;
+    &lt;div&gt;
+      &lt;span&gt;阅读时间：5分钟&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 带图片的博客卡片 -->
+            <div class="component-showcase">
+                <h2>带真实图片的博客卡片</h2>
+                <div class="component-preview">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--gap-xl); width: 100%;">
+                        <article class="blog-card" style="background-color: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 32px rgba(0, 0, 0, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <div style="aspect-ratio: 16/9; background-color: var(--color-bg-base); position: relative;">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23333' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666' font-family='Arial' font-size='18'%3E3D 模型预览图%3C/text%3E%3C/svg%3E" alt="3D模型预览" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="position: absolute; top: var(--padding-md); right: var(--padding-md); background: rgba(0, 0, 0, 0.7); color: white; padding: 4px 8px; border-radius: var(--radius-sm); font-size: var(--text-xs);">
+                                    <span>✨ 特色</span>
+                                </div>
+                            </div>
+                            <div style="padding: var(--padding-lg);">
+                                <div style="display: flex; align-items: center; gap: var(--gap-sm); margin-bottom: var(--margin-md);">
+                                    <span style="background: var(--color-accent-base); color: var(--color-bg-base); font-size: var(--text-xs); padding: 2px 8px; border-radius: var(--radius-sm); font-weight: 600;">案例研究</span>
+                                    <time style="color: var(--color-label-soft); font-size: var(--text-sm);">2024年3月10日</time>
+                                </div>
+                                <h3 style="margin: 0 0 var(--margin-md) 0; color: var(--color-label-title); font-size: var(--text-xl); font-weight: 600; line-height: 1.3;">案例：游戏开发中的 Meshy AI 应用</h3>
+                                <p style="color: var(--color-label-base); margin: 0 0 var(--margin-lg) 0; line-height: 1.6;">了解独立游戏开发者如何使用 Meshy AI 快速原型开发，节省时间和成本。</p>
+                                <div style="display: flex; align-items: center; gap: var(--gap-lg); margin-top: var(--margin-lg);">
+                                    <div style="display: flex; align-items: center; gap: var(--gap-sm);">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-label-soft);">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                                            <line x1="9" y1="9" x2="15.01" y2="9"/>
+                                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                        </svg>
+                                        <span style="color: var(--color-label-soft); font-size: var(--text-sm);">42 评论</span>
+                                    </div>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-base);">
+                                        <polyline points="9 18 15 12 9 6"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 紧凑型博客卡片 -->
+            <div class="component-showcase">
+                <h2>紧凑型博客卡片</h2>
+                <div class="component-preview">
+                    <div style="display: flex; flex-direction: column; gap: var(--gap-md); width: 100%; max-width: 600px;">
+                        <article class="blog-card compact" style="background-color: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--padding-md); display: flex; gap: var(--gap-md); transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <div style="width: 120px; height: 90px; background: linear-gradient(135deg, var(--color-accent-base), var(--color-accent-support-base)); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(255, 255, 255, 0.8);">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                </svg>
+                            </div>
+                            <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: var(--gap-sm); margin-bottom: var(--margin-xs);">
+                                        <span style="background: var(--color-accent-base); color: var(--color-bg-base); font-size: 10px; padding: 2px 6px; border-radius: var(--radius-sm); font-weight: 600;">更新</span>
+                                        <time style="color: var(--color-label-soft); font-size: var(--text-xs);">2天前</time>
+                                    </div>
+                                    <h4 style="margin: 0; color: var(--color-label-title); font-size: var(--text-base); font-weight: 600; line-height: 1.3;">API 集成指南：在项目中使用 Meshy AI</h4>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: var(--margin-sm);">
+                                    <span style="color: var(--color-label-soft); font-size: var(--text-xs);">3分钟阅读</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent-base);">
+                                        <polyline points="9 18 15 12 9 6"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 博客列表视图 -->
+            <div class="component-showcase">
+                <h2>博客列表视图</h2>
+                <div class="component-preview">
+                    <div style="background-color: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden;">
+                        <div style="padding: var(--padding-lg); border-bottom: 1px solid var(--color-bg-border);">
+                            <h3 style="margin: 0; color: var(--color-label-title); font-size: var(--text-lg);">最新文章</h3>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <!-- 博客列表项 -->
+                            <article class="blog-list-item" style="padding: var(--padding-lg); border-bottom: 1px solid var(--color-bg-border); display: flex; gap: var(--gap-lg); transition: background-color 0.2s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='var(--color-bg-base)'" onmouseout="this.style.backgroundColor='transparent'">
+                                <div style="width: 80px; height: 60px; background: linear-gradient(135deg, var(--color-accent-base), var(--color-accent-support-base)); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(255, 255, 255, 0.8);">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                        <line x1="9" y1="9" x2="15" y2="9"/>
+                                        <line x1="9" y1="15" x2="15" y2="15"/>
+                                    </svg>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; align-items: center; gap: var(--gap-sm); margin-bottom: var(--margin-xs);">
+                                        <span style="background: var(--color-accent-base); color: var(--color-bg-base); font-size: 10px; padding: 2px 6px; border-radius: var(--radius-sm); font-weight: 600;">新功能</span>
+                                        <time style="color: var(--color-label-soft); font-size: var(--text-xs);">今天</time>
+                                    </div>
+                                    <h4 style="margin: 0 0 var(--margin-xs) 0; color: var(--color-label-title); font-size: var(--text-base); font-weight: 600;">Meshy AI 支持更多文件格式导入</h4>
+                                    <p style="color: var(--color-label-base); margin: 0; font-size: var(--text-sm); line-height: 1.4;">现在支持 FBX、OBJ、GLTF、GLB 等主流 3D 文件格式</p>
+                                </div>
+                            </article>
+
+                            <!-- 博客列表项 2 -->
+                            <article class="blog-list-item" style="padding: var(--padding-lg); border-bottom: 1px solid var(--color-bg-border); display: flex; gap: var(--gap-lg); transition: background-color 0.2s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='var(--color-bg-base)'" onmouseout="this.style.backgroundColor='transparent'">
+                                <div style="width: 80px; height: 60px; background: linear-gradient(135deg, var(--color-accent-support-base), var(--color-accent-base)); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(255, 255, 255, 0.8);">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                                        <line x1="9" y1="9" x2="15.01" y2="9"/>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                    </svg>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; align-items: center; gap: var(--gap-sm); margin-bottom: var(--margin-xs);">
+                                        <span style="background: var(--color-accent-support-base); color: var(--color-bg-base); font-size: 10px; padding: 2px 6px; border-radius: var(--radius-sm); font-weight: 600;">社区</span>
+                                        <time style="color: var(--color-label-soft); font-size: var(--text-xs);">3天前</time>
+                                    </div>
+                                    <h4 style="margin: 0 0 var(--margin-xs) 0; color: var(--color-label-title); font-size: var(--text-base); font-weight: 600;">用户分享：使用 Meshy AI 创建的精彩作品</h4>
+                                    <p style="color: var(--color-label-base); margin: 0; font-size: var(--text-sm); line-height: 1.4;">来自全球创作者的优秀 3D 模型作品展示</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 响应式博客卡片网格 -->
+            <div class="component-showcase">
+                <h2>响应式博客网格</h2>
+                <div class="component-preview">
+                    <div style="background-color: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--padding-xl); width: 100%;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--gap-lg);">
+                            <!-- 响应式卡片 1 -->
+                            <article class="blog-card responsive" style="background-color: var(--color-bg-base); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
+                                <div style="aspect-ratio: 16/9; background: linear-gradient(45deg, var(--color-accent-base), var(--color-accent-support-base)); display: flex; align-items: center; justify-content: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(255, 255, 255, 0.9);">
+                                        <path d="M13 2L3 14h9l7 7V9l-5 5z"/>
+                                    </svg>
+                                </div>
+                                <div style="padding: var(--padding-md);">
+                                    <h4 style="margin: 0 0 var(--margin-sm) 0; color: var(--color-label-title); font-size: var(--text-lg); font-weight: 600;">快速开始指南</h4>
+                                    <p style="color: var(--color-label-soft); margin: 0; font-size: var(--text-sm); line-height: 1.4;">5分钟上手教程</p>
+                                </div>
+                            </article>
+
+                            <!-- 响应式卡片 2 -->
+                            <article class="blog-card responsive" style="background-color: var(--color-bg-base); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
+                                <div style="aspect-ratio: 16/9; background: linear-gradient(45deg, var(--color-accent-support-base), var(--color-accent-base)); display: flex; align-items: center; justify-content: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(255, 255, 255, 0.9);">
+                                        <circle cx="12" cy="12" r="3"/>
+                                        <path d="M12 1v6m0 6v6m4.22-13.22l4.24 4.24M1.54 1.54l4.24 4.24M20.46 20.46l-4.24-4.24M1.54 20.46l4.24-4.24"/>
+                                    </svg>
+                                </div>
+                                <div style="padding: var(--padding-md);">
+                                    <h4 style="margin: 0 0 var(--margin-sm) 0; color: var(--color-label-title); font-size: var(--text-lg); font-weight: 600;">设计系统</h4>
+                                    <p style="color: var(--color-label-soft); margin: 0; font-size: var(--text-sm); line-height: 1.4;">完整的 UI 组件库</p>
+                                </div>
+                            </article>
+
+                            <!-- 响应式卡片 3 -->
+                            <article class="blog-card responsive" style="background-color: var(--color-bg-base); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
+                                <div style="aspect-ratio: 16/9; background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(255, 255, 255, 0.9);">
+                                        <polyline points="22 12 18 12 15 21 9 12 6 12 2 12"/>
+                                        <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6"/>
+                                    </svg>
+                                </div>
+                                <div style="padding: var(--padding-md);">
+                                    <h4 style="margin: 0 0 var(--margin-sm) 0; color: var(--color-label-title); font-size: var(--text-lg); font-weight: 600;">API 文档</h4>
+                                    <p style="color: var(--color-label-soft); margin: 0; font-size: var(--text-sm); line-height: 1.4;">完整的 API 参考</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
