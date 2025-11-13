@@ -3,581 +3,674 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>按钮组件 - Meshy.ai 设计系统</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/components.css">
+    <title>按钮组件 - Meshy.ai Design System</title>
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div>
-                <h1 class="header-title">按钮组件</h1>
-                <p class="header-subtitle">完整按钮组件库 - 包含所有变体和状态</p>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <h2>Meshy.ai</h2>
+                <span class="nav-subtitle">Design System</span>
             </div>
-            <nav class="header-nav">
-                <a href="index.html" class="header-link">返回首页</a>
-                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
-            </nav>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="colors.html" class="nav-link">颜色</a>
+                <a href="typography.html" class="nav-link">字体</a>
+                <a href="spacing.html" class="nav-link">间距</a>
+                <a href="layout.html" class="nav-link">布局</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <div class="preview-container">
-        <aside class="sidebar">
-            <nav>
-                <h3 class="sidebar-title">设计令牌</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="colors.html" class="sidebar-link">颜色系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="typography.html" class="sidebar-link">字体系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="spacing.html" class="sidebar-link">间距系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="layout.html" class="sidebar-link">布局系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="animations.html" class="sidebar-link">动效系统</a>
-                    </li>
-                </ul>
-
-                <h3 class="sidebar-title">组件库</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="buttons.html" class="sidebar-link active">按钮 Buttons</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="hero-sections.html" class="sidebar-link">Hero 区域</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            <!-- Primary Buttons -->
-            <section class="section">
-                <h2 class="section-title">主要按钮</h2>
-                <p class="section-description">用于主要操作的按钮，使用品牌主色</p>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">按钮变体</h3>
-                    <div class="component-preview">
-                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-lg); align-items: center;">
-                            <button class="button button-primary">主要按钮</button>
-                            <button class="button button-secondary">次要按钮</button>
-                            <button class="button button-ghost">幽灵按钮</button>
-                            <button class="button button-icon">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-                                </svg>
-                            </button>
-                        </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">按钮组件</span>
+                </h1>
+                <p class="hero-description">
+                    完整的按钮组件库，包含多种样式、尺寸和状态，满足各种交互需求
+                </p>
+                <div class="hero-actions">
+                    <a href="#button-variants" class="btn btn-primary">查看样式</a>
+                    <a href="#button-states" class="btn btn-secondary">按钮状态</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-cards">
+                    <div class="hero-card hero-card-1">
+                        <div class="card-icon">🎨</div>
+                        <h3>多样化样式</h3>
+                        <p>主要、次要、幽灵等多种样式</p>
                     </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">基础按钮 HTML</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;button class="button button-primary"&gt;主要按钮&lt;/button&gt;
-&lt;button class="button button-secondary"&gt;次要按钮&lt;/button&gt;
-&lt;button class="button button-ghost"&gt;幽灵按钮&lt;/button&gt;
-&lt;button class="button button-icon"&gt;
-  &lt;svg&gt;...&lt;/svg&gt;
-&lt;/button&gt;</code></pre>
-                        </div>
+                    <div class="hero-card hero-card-2">
+                        <div class="card-icon">📏</div>
+                        <h3>灵活尺寸</h3>
+                        <p>小、中、大三种标准尺寸</p>
+                    </div>
+                    <div class="hero-card hero-card-3">
+                        <div class="card-icon">⚡</div>
+                        <h3>交互状态</h3>
+                        <p>悬停、点击、禁用等状态</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">按钮尺寸</h3>
-                    <div class="component-preview">
-                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-lg); align-items: center;">
-                            <button class="button button-primary button-small">小按钮</button>
-                            <button class="button button-primary button-medium">中等按钮</button>
-                            <button class="button button-primary button-large">大按钮</button>
-                        </div>
+    <!-- Button Variants -->
+    <section id="button-variants" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">按钮样式</h2>
+                <p class="section-subtitle">不同样式和变体的按钮组件</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">主要按钮</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; transition: background-color var(--transition-fast);">
+                            主要按钮
+                        </button>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">按钮尺寸 HTML</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;button class="button button-primary button-small"&gt;小按钮&lt;/button&gt;
-&lt;button class="button button-primary button-medium"&gt;中等按钮&lt;/button&gt;
-&lt;button class="button button-primary button-large"&gt;大按钮&lt;/button&gt;</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Button States -->
-            <section class="section">
-                <h2 class="section-title">按钮状态</h2>
-                <p class="section-description">按钮的不同交互状态和可用性状态</p>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">交互状态</h3>
-                    <div class="component-preview">
-                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-lg); align-items: center;">
-                            <button class="button button-primary">正常状态</button>
-                            <button class="button button-primary" style="background-color: #a8e328;">悬停状态</button>
-                            <button class="button button-primary:active">激活状态</button>
-                        </div>
-                    </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">交互状态 HTML</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;button class="button button-primary"&gt;正常状态&lt;/button&gt;
-&lt;button class="button button-primary"&gt;悬停状态&lt;/button&gt;
-&lt;button class="button button-primary:active"&gt;激活状态&lt;/button&gt;
-
-&lt;!-- CSS --&gt;
-.button-primary:hover {
-  background-color: var(--color-accent-base-hover);
+                        <code>.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-6);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
 }
 
-.button-primary:active {
-  background-color: var(--color-accent-base);
-  transform: translateY(1px);
-}</code></pre>
-                        </div>
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-primary {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: background-color var(--transition-fast);\n}\n\n.btn-primary:hover {\n  background-color: var(--color-primary-dark);\n}')">复制</button>
                     </div>
                 </div>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">可用性状态</h3>
-                    <div class="component-preview">
-                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-lg); align-items: center;">
-                            <button class="button button-primary">可用按钮</button>
-                            <button class="button button-primary" disabled>禁用按钮</button>
-                            <button class="button button-primary button-loading">
-                                加载中
-                            </button>
-                        </div>
+                <div class="token-card">
+                    <h3 class="token-title">次要按钮</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: transparent; color: var(--color-primary); border: 2px solid var(--color-primary); border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; transition: all var(--transition-fast);">
+                            次要按钮
+                        </button>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">可用性状态 HTML</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;button class="button button-primary"&gt;可用按钮&lt;/button&gt;
-&lt;button class="button button-primary" disabled&gt;禁用按钮&lt;/button&gt;
-&lt;button class="button button-primary button-loading"&gt;
-  加载中
-&lt;/button&gt;
+                        <code>.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-6);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
 
-&lt;!-- CSS --&gt;
-.button-primary[disabled] {
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-secondary {\n  background-color: transparent;\n  color: var(--color-primary);\n  border: 2px solid var(--color-primary);\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: all var(--transition-fast);\n}\n\n.btn-secondary:hover {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">幽灵按钮</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: transparent; color: var(--color-text-secondary); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; transition: color var(--transition-fast);">
+                            幽灵按钮
+                        </button>
+                    </div>
+                    <div class="code-example">
+                        <code>.btn-ghost {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-6);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.btn-ghost:hover {
+  color: var(--color-primary);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-ghost {\n  background-color: transparent;\n  color: var(--color-text-secondary);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: color var(--transition-fast);\n}\n\n.btn-ghost:hover {\n  color: var(--color-primary);\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Button Sizes -->
+    <section id="button-sizes" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">按钮尺寸</h2>
+                <p class="section-subtitle">不同大小的按钮组件</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">小按钮</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;">
+                            小按钮
+                        </button>
+                    </div>
+                    <div class="code-example">
+                        <code>.btn-small {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-small {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-sm);\n  padding: var(--space-2) var(--space-3);\n  font-size: var(--font-size-sm);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">中等按钮</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-size: var(--font-size-base); font-weight: var(--font-weight-medium); cursor: pointer;">
+                            中等按钮
+                        </button>
+                    </div>
+                    <div class="code-example">
+                        <code>.btn-medium {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-medium {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-size: var(--font-size-base);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">大按钮</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-lg); padding: var(--space-4) var(--space-8); font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); cursor: pointer;">
+                            大按钮
+                        </button>
+                    </div>
+                    <div class="code-example">
+                        <code>.btn-large {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-large {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-lg);\n  padding: var(--space-4) var(--space-8);\n  font-size: var(--font-size-lg);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Button States -->
+    <section id="button-states" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">按钮状态</h2>
+                <p class="section-subtitle">按钮的不同交互状态和可用性状态</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">悬停状态</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-primary-dark); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; transform: translateY(-2px);">
+                            悬停状态
+                        </button>
+                    </div>
+                    <div class="code-example">
+                        <code>.btn:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn:hover {\n  background-color: var(--color-primary-dark);\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-lg);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">禁用状态</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-surface-light); color: var(--color-text-muted); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: not-allowed; opacity: 0.6;" disabled>
+                            禁用状态
+                        </button>
+                    </div>
+                    <div class="code-example">
+                        <code>.btn:disabled {
+  background-color: var(--color-surface-light);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
   opacity: 0.6;
   cursor: not-allowed;
   pointer-events: none;
-}
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn:disabled {\n  background-color: var(--color-surface-light);\n  color: var(--color-text-muted);\n  border: 1px solid var(--color-border);\n  opacity: 0.6;\n  cursor: not-allowed;\n  pointer-events: none;\n}')">复制</button>
+                    </div>
+                </div>
 
-.button-primary.button-loading {
-  position: relative;
+                <div class="token-card">
+                    <h3 class="token-title">加载状态</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: not-allowed; position: relative; color: transparent;">
+                            加载中
+                            <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; border: 2px solid transparent; border-top: 2px solid currentColor; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+                        </button>
+                    </div>
+                    <div class="code-example">
+                        <code>.btn-loading {
   color: transparent;
+  position: relative;
+  cursor: not-allowed;
 }
 
-.button-primary.button-loading:after {
-  content: "";
+.btn-loading::after {
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
-  margin: -8px 0 0 -8px;
-  border: 2px solid rgba(255,255,255,0.3);
-  border-top-color: #fff;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
   border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}</code></pre>
-                        </div>
+  animation: spin 1s linear infinite;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-loading {\n  color: transparent;\n  position: relative;\n  cursor: not-allowed;\n}\n\n.btn-loading::after {\n  content: \'\';\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 16px;\n  height: 16px;\n  border: 2px solid transparent;\n  border-top: 2px solid currentColor;\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Icon Buttons -->
+    <section id="icon-buttons" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">图标按钮</h2>
+                <p class="section-subtitle">结合图标和文本的按钮组合</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">左图标按钮</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; display: flex; align-items: center; gap: var(--space-2);">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                            下载
+                        </button>
+                    </div>
+                    <div class="code-example">
+                        <code>.btn-icon-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.btn-icon-left svg {
+  flex-shrink: 0;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-icon-left {\n  display: flex;\n  align-items: center;\n  gap: var(--space-2);\n}\n\n.btn-icon-left svg {\n  flex-shrink: 0;\n}')">复制</button>
                     </div>
                 </div>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">语义按钮</h3>
-                    <div class="component-preview">
-                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-lg); align-items: center;">
-                            <button class="button button-success">成功按钮</button>
-                            <button class="button button-warning">警告按钮</button>
-                            <button class="button button-error">错误按钮</button>
-                            <button class="button button-info">信息按钮</button>
-                        </div>
+                <div class="token-card">
+                    <h3 class="token-title">右图标按钮</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; display: flex; align-items: center; gap: var(--space-2);">
+                            下一步
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">语义按钮 HTML</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;button class="button button-success"&gt;成功按钮&lt;/button&gt;
-&lt;button class="button button-warning"&gt;警告按钮&lt;/button&gt;
-&lt;button class="button button-error"&gt;错误按钮&lt;/button&gt;
-&lt;button class="button button-info"&gt;信息按钮&lt;/button&gt;
-
-&lt;!-- CSS --&gt;
-.button-success {
-  background-color: var(--color-success-base);
-  color: white;
+                        <code>.btn-icon-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
-.button-warning {
-  background-color: var(--color-warning-base);
-  color: white;
-}
-
-.button-error {
-  background-color: var(--color-error-base);
-  color: white;
-}
-
-.button-info {
-  background-color: var(--color-info-base);
-  color: white;
-}</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Button with Icons -->
-            <section class="section">
-                <h2 class="section-title">带图标的按钮</h2>
-                <p class="section-description">结合图标和文本的按钮组合</p>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">图标位置</h3>
-                    <div class="component-preview">
-                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-lg); align-items: center;">
-                            <button class="button button-primary">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-                                </svg>
-                                左图标
-                            </button>
-                            <button class="button button-primary">
-                                右图标
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14"/>
-                                    <path d="m12 5 7 7-7 7"/>
-                                </svg>
-                            </button>
-                            <button class="button button-primary button-full-width">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-                                </svg>
-                                全宽按钮
-                            </button>
-                        </div>
-                    </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">图标位置 HTML</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;!-- 左图标 --&gt;
-&lt;button class="button button-primary"&gt;
-  &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-    &lt;path d="M19 14l-7 7m0 0l-7-7m7 7V3"/&gt;
-  &lt;/svg&gt;
-  左图标
-&lt;/button&gt;
-
-&lt;!-- 右图标 --&gt;
-&lt;button class="button button-primary"&gt;
-  右图标
-  &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-    &lt;path d="M5 12h14"/&gt;
-    &lt;path d="m12 5 7 7-7 7"/&gt;
-  &lt;/svg&gt;
-&lt;/button&gt;
-
-&lt;!-- 全宽按钮 --&gt;
-&lt;button class="button button-primary button-full-width"&gt;
-  &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-    &lt;path d="M19 14l-7 7m0 0l-7-7m7 7V3"/&gt;
-  &lt;/svg&gt;
-  全宽按钮
-&lt;/button&gt;
-
-&lt;!-- CSS --&gt;
-.button-full-width {
-  width: 100%;
-  justify-content: center;
-}
-
-.button svg:first-child {
-  margin-right: var(--gap-sm);
-}
-
-.button svg:last-child {
-  margin-left: var(--gap-sm);
-}</code></pre>
-                        </div>
+.btn-icon-right svg {
+  flex-shrink: 0;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-icon-right {\n  display: flex;\n  align-items: center;\n  gap: var(--space-2);\n}\n\n.btn-icon-right svg {\n  flex-shrink: 0;\n}')">复制</button>
                     </div>
                 </div>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">纯图标按钮</h3>
-                    <div class="component-preview">
-                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-md); align-items: center;">
-                            <button class="button button-icon">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 12h18m-9-9v18"/>
-                                </svg>
-                            </button>
-                            <button class="button button-icon">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                    <circle cx="12" cy="12" r="3"/>
-                                </svg>
-                            </button>
-                            <button class="button button-icon">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                                </svg>
-                            </button>
-                            <button class="button button-icon">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-                                </svg>
-                            </button>
-                        </div>
+                <div class="token-card">
+                    <h3 class="token-title">纯图标按钮</h3>
+                    <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-surface-light); color: var(--color-text-primary); border: none; border-radius: var(--radius-full); width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">纯图标按钮 HTML</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;button class="button button-icon"&gt;
-  &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-    &lt;path d="M3 12h18m-9-9v18"/&gt;
-  &lt;/svg&gt;
-&lt;/button&gt;
-
-&lt;button class="button button-icon"&gt;
-  &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-    &lt;path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/&gt;
-    &lt;circle cx="12" cy="12" r="3"/&gt;
-  &lt;/svg&gt;
-&lt;/button&gt;
-
-&lt;button class="button button-icon"&gt;
-  &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-    &lt;path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/&gt;
-  &lt;/svg&gt;
-&lt;/button&gt;
-
-&lt;button class="button button-icon"&gt;
-  &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-    &lt;path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/&gt;
-    &lt;path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/&gt;
-  &lt;/svg&gt;
-&lt;/button&gt;
-
-&lt;!-- CSS --&gt;
-.button-icon {
+                        <code>.btn-icon-only {
+  background-color: var(--color-surface-light);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: var(--radius-full);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  border-radius: 50%;
-}
-
-.button-icon svg {
-  flex-shrink: 0;
-}</code></pre>
-                        </div>
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-icon-only {\n  background-color: var(--color-surface-light);\n  color: var(--color-text-primary);\n  border: none;\n  border-radius: var(--radius-full);\n  width: 40px;\n  height: 40px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}')">复制</button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- Button Groups -->
-            <section class="section">
+    <!-- Button Groups -->
+    <section id="button-groups" class="section">
+        <div class="container">
+            <div class="section-header">
                 <h2 class="section-title">按钮组</h2>
-                <p class="section-description">相关按钮的组合和排列</p>
+                <p class="section-subtitle">相关按钮的组合和排列</p>
+            </div>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">按钮组</h3>
-                    <div class="component-preview">
-                        <div class="button-group">
-                            <button class="button button-primary">保存</button>
-                            <button class="button button-secondary">取消</button>
-                            <button class="button button-ghost">删除</button>
-                        </div>
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">水平按钮组</h3>
+                    <div style="padding: var(--space-4); display: flex; gap: var(--space-2); margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md) 0 0 var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer;">
+                            第一个
+                        </button>
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: 0; padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; border-left: 1px solid rgba(255,255,255,0.2);">
+                            中间
+                        </button>
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; border-left: 1px solid rgba(255,255,255,0.2);">
+                            最后一个
+                        </button>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">按钮组 HTML</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;div class="button-group"&gt;
-  &lt;button class="button button-primary"&gt;保存&lt;/button&gt;
-  &lt;button class="button button-secondary"&gt;取消&lt;/button&gt;
-  &lt;button class="button button-ghost"&gt;删除&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;!-- CSS --&gt;
-.button-group {
-  display: inline-flex;
-  gap: 1px;
-  border-radius: var(--radius-md);
+                        <code>.btn-group {
+  display: flex;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 }
 
-.button-group .button {
+.btn-group .btn {
   border-radius: 0;
-  box-shadow: none;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255,255,255,0.2);
 }
 
-.button-group .button:last-child {
+.btn-group .btn:first-child {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.btn-group .btn:last-child {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
   border-right: none;
-  border-top-right-radius: var(--radius-md);
-  border-bottom-right-radius: var(--radius-md);
-}
-
-.button-group .button:first-child {
-  border-top-left-radius: var(--radius-md);
-  border-bottom-left-radius: var(--radius-md);
-}</code></pre>
-                        </div>
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-group {\n  display: flex;\n  overflow: hidden;\n  border-radius: var(--radius-md);\n  box-shadow: var(--shadow-md);\n}\n\n.btn-group .btn {\n  border-radius: 0;\n  border-right: 1px solid rgba(255,255,255,0.2);\n}\n\n.btn-group .btn:first-child {\n  border-radius: var(--radius-md) 0 0 var(--radius-md);\n}\n\n.btn-group .btn:last-child {\n  border-radius: 0 var(--radius-md) var(--radius-md) 0;\n  border-right: none;\n}')">复制</button>
                     </div>
                 </div>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">垂直按钮组</h3>
-                    <div class="component-preview" style="max-width: 200px;">
-                        <div class="button-group button-group-vertical">
-                            <button class="button button-primary button-full-width">上传</button>
-                            <button class="button button-secondary button-full-width">预览</button>
-                            <button class="button button-ghost button-full-width">删除</button>
-                        </div>
+                <div class="token-card">
+                    <h3 class="token-title">垂直按钮组</h3>
+                    <div style="padding: var(--space-4); display: flex; flex-direction: column; gap: 0; margin-bottom: var(--space-4);">
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md) var(--radius-md) 0 0; padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; width: 100%;">
+                            选项1
+                        </button>
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: 0; padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; width: 100%; border-top: 1px solid rgba(255,255,255,0.2);">
+                            选项2
+                        </button>
+                        <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: 0 0 var(--radius-md) var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; width: 100%; border-top: 1px solid rgba(255,255,255,0.2);">
+                            选项3
+                        </button>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">垂直按钮组 HTML</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;div class="button-group button-group-vertical"&gt;
-  &lt;button class="button button-primary button-full-width"&gt;上传&lt;/button&gt;
-  &lt;button class="button button-secondary button-full-width"&gt;预览&lt;/button&gt;
-  &lt;button class="button button-ghost button-full-width"&gt;删除&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;!-- CSS --&gt;
-.button-group-vertical {
+                        <code>.btn-group-vertical {
+  display: flex;
   flex-direction: column;
-  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 }
 
-.button-group-vertical .button {
+.btn-group-vertical .btn {
   border-radius: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.button-group-vertical .button:last-child {
+.btn-group-vertical .btn:first-child {
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.btn-group-vertical .btn:last-child {
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
   border-bottom: none;
-  border-bottom-left-radius: var(--radius-md);
-  border-bottom-right-radius: var(--radius-md);
-}
-
-.button-group-vertical .button:first-child {
-  border-top-left-radius: var(--radius-md);
-  border-top-right-radius: var(--radius-md);
-}
-
-.button-full-width {
-  width: 100%;
-  justify-content: center;
-}</code></pre>
-                        </div>
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.btn-group-vertical {\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  border-radius: var(--radius-md);\n  box-shadow: var(--shadow-md);\n}\n\n.btn-group-vertical .btn {\n  border-radius: 0;\n  border-bottom: 1px solid rgba(255,255,255,0.2);\n}\n\n.btn-group-vertical .btn:first-child {\n  border-radius: var(--radius-md) var(--radius-md) 0 0;\n}\n\n.btn-group-vertical .btn:last-child {\n  border-radius: 0 0 var(--radius-md) var(--radius-md);\n  border-bottom: none;\n}')">复制</button>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="assets/js/scripts.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Meshy.ai Design System</h3>
+                    <p>构建一致的用户体验</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="#">文档</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">支持</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Meshy.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .code-example {
+            position: relative;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            margin-top: var(--space-4);
+        }
+
+        .code-example code {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            white-space: pre-wrap;
+            display: block;
+            margin-right: 60px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            background-color: var(--color-primary);
+            color: var(--color-text-inverse);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: var(--space-1) var(--space-2);
+            font-size: var(--font-size-xs);
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+        }
+
+        .copy-btn:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+
+    <script>
+        // Navigation toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // Smooth scroll for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && document.querySelector(href)) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const offsetTop = target.offsetTop - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showNotification('样式已复制到剪贴板');
+                }).catch(function() {
+                    showNotification('复制失败，请手动复制');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+
+                try {
+                    document.execCommand('copy');
+                    showNotification('样式已复制到剪贴板');
+                } catch (err) {
+                    showNotification('复制失败，请手动复制');
+                }
+
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const existingNotification = document.querySelector('.notification-toast');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            const notification = document.createElement('div');
+            notification.className = 'notification-toast';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--color-surface-light);
+                border: 1px solid var(--color-primary);
+                border-radius: var(--radius-md);
+                padding: var(--space-3) var(--space-4);
+                color: var(--color-text-primary);
+                font-size: var(--font-size-sm);
+                z-index: var(--z-modal);
+                transform: translateX(100%);
+                transition: transform var(--transition-normal);
+            `;
+
+            document.body.appendChild(notification);
+
+            requestAnimationFrame(() => {
+                notification.style.transform = 'translateX(0)';
+            });
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

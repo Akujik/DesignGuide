@@ -1,0 +1,15 @@
+{
+  "originalUrl": "https://docs.meshy.ai/en",
+  "title": "Introduction - Meshy Docs",
+  "archiveTime": "2025-11-13T19:02:58.976Z",
+  "indexFilename": "index.html",
+  "resources": {
+    "stylesheet_2.css": "https://docs.meshy.ai/_next/static/css/410fcb13a60be342.css",
+    "scripts/1.js": "https://docs.meshy.ai/_next/static/chunks/fd9d1056-d4cee3ade0d7644c.js",
+    "scripts/2.js": "https://docs.meshy.ai/_next/static/chunks/596-d6414354db980ba7.js",
+    "scripts/3.js": "https://docs.meshy.ai/_next/static/chunks/main-app-fd5f5b8513f51546.js",
+    "scripts/5.js": "https://docs.meshy.ai/_next/static/chunks/webpack-88cdbc61ca3ebf3d.js",
+    "scripts/4.js": "https://docs.meshy.ai/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js",
+    "images/0.ico": "https://docs.meshy.ai/favicon.ico"
+  }
+}

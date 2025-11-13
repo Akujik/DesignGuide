@@ -3,586 +3,974 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero 区域 - Meshy.ai 设计系统</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/components.css">
+    <title>Hero 区域 - Meshy.ai Design System</title>
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div>
-                <h1 class="header-title">Hero 区域组件</h1>
-                <p class="header-subtitle">首屏展示和用户引导组件</p>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <h2>Meshy.ai</h2>
+                <span class="nav-subtitle">Design System</span>
             </div>
-            <nav class="header-nav">
-                <a href="index.html" class="header-link">返回首页</a>
-                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
-            </nav>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="colors.html" class="nav-link">颜色</a>
+                <a href="typography.html" class="nav-link">字体</a>
+                <a href="buttons.html" class="nav-link">按钮</a>
+                <a href="hero-sections.html" class="nav-link active">Hero区域</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <div class="preview-container">
-        <aside class="sidebar">
-            <nav>
-                <h3 class="sidebar-title">设计令牌</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="colors.html" class="sidebar-link">颜色系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="typography.html" class="sidebar-link">字体系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="spacing.html" class="sidebar-link">间距系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="layout.html" class="sidebar-link">布局系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="animations.html" class="sidebar-link">动效系统</a>
-                    </li>
-                </ul>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">Hero 区域</span>
+                </h1>
+                <p class="hero-description">
+                    完整的Hero区域设计模式，包含多种布局、动画效果和交互组件
+                </p>
+                <div class="hero-actions">
+                    <a href="#centered-hero" class="btn btn-primary">居中布局</a>
+                    <a href="#split-hero" class="btn btn-secondary">分屏布局</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-cards">
+                    <div class="hero-card hero-card-1">
+                        <div class="card-icon">🎨</div>
+                        <h3>布局模式</h3>
+                        <p>多种Hero区域布局</p>
+                    </div>
+                    <div class="hero-card hero-card-2">
+                        <div class="card-icon">✨</div>
+                        <h3>动画效果</h3>
+                        <p>流畅的交互动画</p>
+                    </div>
+                    <div class="hero-card hero-card-3">
+                        <div class="card-icon">🎯</div>
+                        <h3>行动号召</h3>
+                        <p>有效的CTA设计</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <h3 class="sidebar-title">组件库</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="hero-sections.html" class="sidebar-link active">Hero 区域</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
+    <!-- Centered Hero -->
+    <section id="centered-hero" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">居中布局</h2>
+                <p class="section-subtitle">内容居中的Hero区域布局，适合品牌展示和重要信息传达</p>
+            </div>
 
-        <main class="main-content">
-            <!-- Homepage Hero -->
-            <section class="section">
-                <h2 class="section-title">主页 Hero 区域</h2>
-                <p class="section-description">品牌展示和主导航的组合，用于网站首页首屏</p>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">标准主页头部</h3>
-                    <div class="component-preview">
-                        <div class="demo-hero-header">
-                            <div class="demo-hero-container">
-                                <div class="demo-hero-brand">
-                                    <a href="#" class="demo-brand-link" aria-label="Meshy">
-                                        <svg class="demo-brand-logo" viewBox="0 0 167 64" fill="none">
-                                            <defs>
-                                                <linearGradient id="demo-brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                    <stop offset="0%" style="stop-color:#c5f955" />
-                                                    <stop offset="50%" style="stop-color:#ff97c2" />
-                                                    <stop offset="100%" style="stop-color:#ff3e8f" />
-                                                </linearGradient>
-                                            </defs>
-                                            <rect x="2" y="2" width="60" height="60" rx="12" fill="url(#demo-brand-gradient)"/>
-                                            <text x="70" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#ffffff">Meshy</text>
-                                        </svg>
-                                    </a>
-                                </div>
-
-                                <nav class="demo-hero-nav">
-                                    <ul class="demo-nav-list">
-                                        <li class="demo-nav-item">
-                                            <a href="#" class="demo-nav-link">Features</a>
-                                        </li>
-                                        <li class="demo-nav-item">
-                                            <a href="#" class="demo-nav-link">Pricing</a>
-                                        </li>
-                                        <li class="demo-nav-item demo-nav-dropdown">
-                                            <button class="demo-nav-link dropdown-toggle">
-                                                Resources
-                                                <svg class="demo-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                    <path d="M6 9l6 6 6-6"/>
-                                                </svg>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </nav>
-
-                                <div class="demo-hero-actions">
-                                    <button class="button button-secondary">Sign In</button>
-                                    <button class="button button-primary">Get Started Free</button>
-                                </div>
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">基础居中Hero</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="text-align: center; padding: var(--space-16) var(--space-8); background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%); border-radius: var(--radius-lg);">
+                            <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-4);">欢迎来到未来</h1>
+                            <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--space-8); max-width: 600px; margin-left: auto; margin-right: auto;">
+                                创新的设计系统，为您的产品带来极致的用户体验
+                            </p>
+                            <div style="display: flex; gap: var(--space-4); justify-content: center;">
+                                <button style="padding: var(--space-3) var(--space-8); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                    立即开始
+                                </button>
+                                <button style="padding: var(--space-3) var(--space-8); background-color: transparent; color: var(--color-primary); border: 2px solid var(--color-primary); border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                    了解更多
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="component-code">
-                        <button class="copy-button" data-code="homepage-hero">复制代码</button>
-                        <pre><code id="homepage-hero-code" class="language-html">&lt;header class="hero-header"&gt;
-  &lt;div class="hero-container"&gt;
-    &lt;div class="hero-brand"&gt;
-      &lt;a href="/" class="brand-link" aria-label="Meshy"&gt;
-        &lt;svg class="brand-logo" viewBox="0 0 167 64" fill="none"&gt;
-          &lt;defs&gt;
-            &lt;linearGradient id="brand-gradient"&gt;
-              &lt;stop offset="0%" style="stop-color:#c5f955" /&gt;
-              &lt;stop offset="100%" style="stop-color:#ff3e8f" /&gt;
-            &lt;/linearGradient&gt;
-          &lt;/defs&gt;
-          &lt;!-- Logo SVG paths --&gt;
-        &lt;/svg&gt;
-      &lt;/a&gt;
-    &lt;/div&gt;
+                    <div class="code-example">
+                        <code>.hero-centered {
+  text-align: center;
+  padding: var(--space-16) var(--space-8);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%);
+  border-radius: var(--radius-lg);
+}
 
-    &lt;nav class="hero-nav"&gt;
-      &lt;ul class="nav-list"&gt;
-        &lt;li class="nav-item"&gt;
-          &lt;a href="/features" class="nav-link"&gt;Features&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li class="nav-item"&gt;
-          &lt;a href="/pricing" class="nav-link"&gt;Pricing&lt;/a&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/nav&gt;
+.hero-centered h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
 
-    &lt;div class="hero-actions"&gt;
-      &lt;button class="button button-secondary"&gt;Sign In&lt;/button&gt;
-      &lt;button class="button button-primary"&gt;Get Started Free&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/header&gt;</code></pre>
+.hero-centered p {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-centered .actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-centered {\n  text-align: center;\n  padding: var(--space-16) var(--space-8);\n  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%);\n  border-radius: var(--radius-lg);\n}\n\n.hero-centered h1 {\n  font-size: var(--font-size-4xl);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-text-primary);\n  margin-bottom: var(--space-4);\n}\n\n.hero-centered p {\n  font-size: var(--font-size-xl);\n  color: var(--color-text-secondary);\n  margin-bottom: var(--space-8);\n  max-width: 600px;\n  margin-left: auto;\n  margin-right: auto;\n}\n\n.hero-centered .actions {\n  display: flex;\n  gap: var(--space-4);\n  justify-content: center;\n}')">复制</button>
                     </div>
                 </div>
-            </section>
 
-            <!-- Full-Screen Hero -->
-            <section class="section">
-                <h2 class="section-title">全屏 Hero 区域</h2>
-                <p class="section-description">沉浸式首屏体验，突出核心价值主张</p>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">全屏展示组件</h3>
-                    <div class="component-preview">
-                        <div class="demo-hero-fullscreen">
-                            <div class="demo-hero-background">
-                                <div class="demo-hero-gradient"></div>
-                                <div class="demo-hero-pattern"></div>
-                            </div>
-
-                            <div class="demo-hero-content">
-                                <h1 class="demo-hero-title">
-                                    AI-Powered 3D Model Generation
-                                </h1>
-                                <p class="demo-hero-subtitle">
-                                    Create stunning 3D models from text descriptions in seconds.
+                <div class="token-card">
+                    <h3 class="token-title">全屏居中Hero</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="height: 500px; display: flex; align-items: center; justify-content: center; background-color: var(--color-surface); border-radius: var(--radius-lg); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, var(--color-primary-light) 0%, transparent 70%); opacity: 0.3;"></div>
+                            <div style="text-align: center; z-index: 1; padding: var(--space-8);">
+                                <h1 style="font-size: var(--font-size-5xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-6);">改变世界的设计</h1>
+                                <p style="font-size: var(--font-size-2xl); color: var(--color-text-secondary); margin-bottom: var(--space-8); max-width: 800px;">
+                                    我们相信好的设计能够改变世界，让复杂变得简单，让困难变得容易
                                 </p>
-
-                                <div class="demo-hero-cta">
-                                    <button class="button button-primary button-large">
-                                        Start Creating Free
+                                <div style="display: flex; gap: var(--space-4); justify-content: center;">
+                                    <button style="padding: var(--space-4) var(--space-8); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer; font-size: var(--font-size-lg);">
+                                        开始体验
                                     </button>
-                                    <button class="button button-ghost button-large">
-                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <polygon points="5,3 19,12 5,21"/>
-                                        </svg>
-                                        Watch Demo
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="demo-hero-visual">
-                                <div class="demo-hero-showcase">
-                                    <div class="demo-hero-image-placeholder">
-                                        <svg viewBox="0 0 400 300" fill="none">
-                                            <rect width="400" height="300" rx="16" fill="var(--color-bg-sub)"/>
-                                            <rect x="100" y="75" width="200" height="150" rx="8" fill="url(#demo-model-gradient)"/>
-                                            <text x="200" y="155" text-anchor="middle" font-family="Inter" font-size="16" fill="var(--color-label-soft)">3D Model Preview</text>
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="component-code">
-                        <button class="copy-button" data-code="fullscreen-hero">复制代码</button>
-                        <pre><code id="fullscreen-hero-code" class="language-html">&lt;section class="hero-fullscreen"&gt;
-  &lt;div class="hero-background"&gt;
-    &lt;div class="hero-gradient"&gt;&lt;/div&gt;
-    &lt;div class="hero-pattern"&gt;&lt;/div&gt;
-  &lt;/div&gt;
+                    <div class="code-example">
+                        <code>.hero-fullscreen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+}
 
-  &lt;div class="hero-content"&gt;
-    &lt;h1 class="hero-title"&gt;
-      AI-Powered 3D Model Generation
-    &lt;/h1&gt;
-    &lt;p class="hero-subtitle"&gt;
-      Create stunning 3D models from text descriptions in seconds.
-    &lt;/p&gt;
+.hero-fullscreen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, var(--color-primary-light) 0%, transparent 70%);
+  opacity: 0.3;
+}
 
-    &lt;div class="hero-cta"&gt;
-      &lt;button class="button button-primary button-large"&gt;
-        Start Creating Free
-      &lt;/button&gt;
-      &lt;button class="button button-ghost button-large"&gt;
-        Watch Demo
-      &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/section&gt;</code></pre>
+.hero-fullscreen .content {
+  text-align: center;
+  z-index: 1;
+  padding: var(--space-8);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-fullscreen {\n  height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--color-surface);\n  position: relative;\n  overflow: hidden;\n}\n\n.hero-fullscreen::before {\n  content: \'\';\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: radial-gradient(circle at center, var(--color-primary-light) 0%, transparent 70%);\n  opacity: 0.3;\n}\n\n.hero-fullscreen .content {\n  text-align: center;\n  z-index: 1;\n  padding: var(--space-8);\n}')">复制</button>
                     </div>
                 </div>
-            </section>
 
-            <!-- Split-Screen Hero -->
-            <section class="section">
-                <h2 class="section-title">分屏 Hero 区域</h2>
-                <p class="section-description">左右布局，适合功能介绍和产品展示</p>
+                <div class="token-card">
+                    <h3 class="token-title">带背景图的Hero</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="height: 400px; border-radius: var(--radius-lg); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);"></div>
+                            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 400\"><rect fill=\"%236366f1\" width=\"800\" height=\"400\"/><circle fill=\"%23818cf8\" cx=\"200\" cy=\"200\" r=\"100\" opacity=\"0.5\"/><circle fill=\"%23a5b4fc\" cx=\"600\" cy=\"100\" r=\"150\" opacity=\"0.3\"/></svg>'); background-size: cover; background-position: center;"></div>
+                            <div style="text-align: center; z-index: 1; padding: var(--space-8); color: white;">
+                                <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-4);">探索无限可能</h1>
+                                <p style="font-size: var(--font-size-xl); margin-bottom: var(--space-8); max-width: 600px;">
+                                    释放创造力，构建令人惊叹的用户体验
+                                </p>
+                                <button style="padding: var(--space-3) var(--space-8); background-color: white; color: var(--color-primary); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                    立即探索
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.hero-background {
+  height: 400px;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">分屏展示组件</h3>
-                    <div class="component-preview">
-                        <div class="demo-hero-split">
-                            <div class="demo-hero-split-container">
-                                <div class="demo-hero-split-content">
-                                    <div class="demo-hero-content-left">
-                                        <h1 class="demo-hero-title">
-                                            Transform Ideas into 3D Models
-                                        </h1>
-                                        <p class="demo-hero-description">
-                                            Meshy uses cutting-edge AI to convert your text descriptions into high-quality 3D models.
-                                        </p>
+.hero-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+}
 
-                                        <div class="demo-hero-features">
-                                            <div class="demo-feature-item">
-                                                <svg class="demo-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                    <path d="M20 6L9 17l-5-5"/>
-                                                </svg>
-                                                <span>Text to 3D in seconds</span>
-                                            </div>
-                                            <div class="demo-feature-item">
-                                                <svg class="demo-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                    <path d="M20 6L9 17l-5-5"/>
-                                                </svg>
-                                                <span>High-quality output</span>
-                                            </div>
-                                            <div class="demo-feature-item">
-                                                <svg class="demo-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                    <path d="M20 6L9 17l-5-5"/>
-                                                </svg>
-                                                <span>Multiple format support</span>
-                                            </div>
-                                        </div>
+.hero-background .bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+}
 
-                                        <div class="demo-hero-actions">
-                                            <button class="button button-primary button-large">
-                                                Start Free Trial
-                                            </button>
-                                            <button class="button button-secondary button-large">
-                                                View Gallery
-                                            </button>
-                                        </div>
-                                    </div>
+.hero-background .content {
+  text-align: center;
+  z-index: 1;
+  padding: var(--space-8);
+  color: white;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-background {\n  height: 400px;\n  border-radius: var(--radius-lg);\n  position: relative;\n  overflow: hidden;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.hero-background::before {\n  content: \'\';\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);\n}\n\n.hero-background .bg-image {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-size: cover;\n  background-position: center;\n}\n\n.hero-background .content {\n  text-align: center;\n  z-index: 1;\n  padding: var(--space-8);\n  color: white;\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Hero -->
+    <section id="split-hero" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">分屏布局</h2>
+                <p class="section-subtitle">左右分屏或图文并茂的Hero区域布局</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">左右分屏Hero</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; min-height: 400px; border-radius: var(--radius-lg); overflow: hidden;">
+                            <div style="padding: var(--space-8); display: flex; flex-direction: column; justify-content: center; background-color: var(--color-surface);">
+                                <h1 style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-4);">创新设计系统</h1>
+                                <p style="font-size: var(--font-size-lg); color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                                    为现代应用提供完整的设计解决方案，让您的产品脱颖而出
+                                </p>
+                                <div style="display: flex; gap: var(--space-4);">
+                                    <button style="padding: var(--space-3) var(--space-6); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                        开始使用
+                                    </button>
+                                    <button style="padding: var(--space-3) var(--space-6); background-color: transparent; color: var(--color-primary); border: 2px solid var(--color-primary); border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                        查看演示
+                                    </button>
                                 </div>
+                            </div>
+                            <div style="background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%); display: flex; align-items: center; justify-content: center;">
+                                <div style="font-size: 80px; color: white;">🎨</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
 
-                                <div class="demo-hero-split-visual">
-                                    <div class="demo-hero-showcase-3d">
-                                        <div class="demo-model-viewer">
-                                            <div class="demo-model-mesh"></div>
-                                        </div>
-                                    </div>
+.hero-split .content {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-surface);
+}
+
+.hero-split .visual {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-split {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  min-height: 400px;\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n}\n\n.hero-split .content {\n  padding: var(--space-8);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  background-color: var(--color-surface);\n}\n\n.hero-split .visual {\n  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">图文并列Hero</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="display: grid; grid-template-columns: 2fr 3fr; gap: var(--space-8); align-items: center;">
+                            <div>
+                                <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: 60px;">
+                                    🚀
+                                </div>
+                            </div>
+                            <div>
+                                <h1 style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-4);">快速构建应用</h1>
+                                <p style="font-size: var(--font-size-lg); color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                                    使用我们的设计系统，您可以在几分钟内构建出专业级的应用界面。包含完整的组件库、设计规范和最佳实践。
+                                </p>
+                                <ul style="margin-bottom: var(--space-6); color: var(--color-text-secondary);">
+                                    <li style="margin-bottom: var(--space-2);">✅ 50+ 精美组件</li>
+                                    <li style="margin-bottom: var(--space-2);">✅ 完整设计规范</li>
+                                    <li style="margin-bottom: var(--space-2);">✅ 响应式设计</li>
+                                    <li>✅ 无障碍支持</li>
+                                </ul>
+                                <button style="padding: var(--space-3) var(--space-8); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                    免费开始
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.hero-side-by-side {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.hero-side-by-side .visual {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  height: 300px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 60px;
+}
+
+.hero-side-by-side .content h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-side-by-side {\n  display: grid;\n  grid-template-columns: 2fr 3fr;\n  gap: var(--space-8);\n  align-items: center;\n}\n\n.hero-side-by-side .visual {\n  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);\n  height: 300px;\n  border-radius: var(--radius-lg);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  font-size: 60px;\n}\n\n.hero-side-by-side .content h1 {\n  font-size: var(--font-size-3xl);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-text-primary);\n  margin-bottom: var(--space-4);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">重叠式Hero</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="position: relative; min-height: 400px; border-radius: var(--radius-lg); overflow: hidden; background-color: var(--color-surface-light);">
+                            <div style="position: absolute; top: var(--space-8); right: var(--space-8); width: 300px; height: 300px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); border-radius: var(--radius-lg); transform: rotate(5deg); z-index: 1;"></div>
+                            <div style="position: relative; z-index: 2; padding: var(--space-12) var(--space-8); max-width: 60%;">
+                                <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-4);">突破传统界限</h1>
+                                <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                                    大胆创新，打破常规，创造令人难忘的用户体验
+                                </p>
+                                <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+                                    <button style="padding: var(--space-3) var(--space-6); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                        探索更多
+                                    </button>
+                                    <button style="padding: var(--space-3) var(--space-6); background-color: var(--color-secondary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                        查看案例
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="component-code">
-                        <button class="copy-button" data-code="split-hero">复制代码</button>
-                        <pre><code id="split-hero-code" class="language-html">&lt;section class="hero-split"&gt;
-  &lt;div class="hero-split-container"&gt;
-    &lt;div class="hero-split-content"&gt;
-      &lt;div class="hero-content-left"&gt;
-        &lt;h1 class="hero-title"&gt;
-          Transform Ideas into 3D Models
-        &lt;/h1&gt;
-        &lt;p class="hero-description"&gt;
-          Meshy uses cutting-edge AI to convert text descriptions into 3D models.
-        &lt;/p&gt;
+                    <div class="code-example">
+                        <code>.hero-overlap {
+  position: relative;
+  min-height: 400px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-surface-light);
+}
 
-        &lt;div class="hero-features"&gt;
-          &lt;div class="feature-item"&gt;
-            &lt;!-- Feature icon and text --&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+.hero-overlap .shape {
+  position: absolute;
+  top: var(--space-8);
+  right: var(--space-8);
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: var(--radius-lg);
+  transform: rotate(5deg);
+  z-index: 1;
+}
 
-        &lt;div class="hero-actions"&gt;
-          &lt;button class="button button-primary button-large"&gt;
-            Start Free Trial
-          &lt;/button&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="hero-split-visual"&gt;
-      &lt;!-- 3D model showcase --&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/section&gt;</code></pre>
+.hero-overlap .content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-12) var(--space-8);
+  max-width: 60%;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-overlap {\n  position: relative;\n  min-height: 400px;\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  background-color: var(--color-surface-light);\n}\n\n.hero-overlap .shape {\n  position: absolute;\n  top: var(--space-8);\n  right: var(--space-8);\n  width: 300px;\n  height: 300px;\n  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);\n  border-radius: var(--radius-lg);\n  transform: rotate(5deg);\n  z-index: 1;\n}\n\n.hero-overlap .content {\n  position: relative;\n  z-index: 2;\n  padding: var(--space-12) var(--space-8);\n  max-width: 60%;\n}')">复制</button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- Feature Showcase Hero -->
-            <section class="section">
-                <h2 class="section-title">功能展示 Hero 区域</h2>
-                <p class="section-description">以卡片网格形式展示核心功能</p>
+    <!-- Hero Content Variations -->
+    <section id="hero-variations" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">内容变体</h2>
+                <p class="section-subtitle">不同内容类型和重点的Hero区域设计</p>
+            </div>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">功能卡片网格</h3>
-                    <div class="component-preview">
-                        <div class="demo-hero-feature">
-                            <div class="demo-hero-feature-container">
-                                <div class="demo-hero-feature-header">
-                                    <h1 class="demo-hero-feature-title">
-                                        AI-Powered 3D Model Generation
-                                    </h1>
-                                    <p class="demo-hero-feature-subtitle">
-                                        From text to 3D in seconds with advanced artificial intelligence.
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">文本密集型Hero</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="padding: var(--space-12) var(--space-8); background-color: var(--color-surface); border-radius: var(--radius-lg);">
+                            <h1 style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-6);">深入了解我们的设计理念</h1>
+                            <div style="font-size: var(--font-size-lg); color: var(--color-text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-6); max-width: 800px;">
+                                <p style="margin-bottom: var(--space-4);">
+                                    我们相信好的设计不仅仅是美观，更重要的是功能性和用户体验。每一个组件都经过精心设计和反复测试，确保在实际应用中能够发挥最大价值。
+                                </p>
+                                <p style="margin-bottom: var(--space-4);">
+                                    通过统一的视觉语言和交互模式，我们帮助团队提高开发效率，减少设计决策的疲劳，让设计师和开发者能够专注于真正重要的事情。
+                                </p>
+                                <p>
+                                    无论您是初创公司还是大型企业，我们的设计系统都能为您带来一致、高效、专业的用户体验。
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: var(--space-4); align-items: center;">
+                                <button style="padding: var(--space-3) var(--space-6); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                    阅读完整文档
+                                </button>
+                                <span style="color: var(--color-text-muted); font-size: var(--font-size-sm);">
+                                    约5分钟阅读
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.hero-text-heavy {
+  padding: var(--space-12) var(--space-8);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+}
+
+.hero-text-heavy h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.hero-text-heavy .content {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-6);
+  max-width: 800px;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-text-heavy {\n  padding: var(--space-12) var(--space-8);\n  background-color: var(--color-surface);\n  border-radius: var(--radius-lg);\n}\n\n.hero-text-heavy h1 {\n  font-size: var(--font-size-3xl);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-text-primary);\n  margin-bottom: var(--space-6);\n}\n\n.hero-text-heavy .content {\n  font-size: var(--font-size-lg);\n  color: var(--color-text-secondary);\n  line-height: var(--line-height-relaxed);\n  margin-bottom: var(--space-6);\n  max-width: 800px;\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">特性展示Hero</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="padding: var(--space-12) var(--space-8); background: linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface) 100%); border-radius: var(--radius-lg);">
+                            <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-8); text-align: center;">强大功能，简单使用</h1>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-8);">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 40px; margin-bottom: var(--space-3);">⚡</div>
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-text-primary); margin-bottom: var(--space-2);">极速性能</h3>
+                                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">优化的代码和资源加载，确保最佳性能表现</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 40px; margin-bottom: var(--space-3);">🎨</div>
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-text-primary); margin-bottom: var(--space-2);">精美设计</h3>
+                                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">现代化的视觉风格，符合最新设计趋势</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 40px; margin-bottom: var(--space-3);">📱</div>
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-text-primary); margin-bottom: var(--space-2);">响应式</h3>
+                                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">完美适配各种设备和屏幕尺寸</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="font-size: 40px; margin-bottom: var(--space-3);">♿</div>
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-text-primary); margin-bottom: var(--space-2);">无障碍</h3>
+                                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">遵循WCAG标准，确保所有人都能使用</p>
+                                </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <button style="padding: var(--space-3) var(--space-8); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer; font-size: var(--font-size-lg);">
+                                    立即体验所有功能
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.hero-features {
+  padding: var(--space-12) var(--space-8);
+  background: linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface) 100%);
+  border-radius: var(--radius-lg);
+}
+
+.hero-features h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.hero-features .features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.hero-features .feature {
+  text-align: center;
+}
+
+.hero-features .feature-icon {
+  font-size: 40px;
+  margin-bottom: var(--space-3);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-features {\n  padding: var(--space-12) var(--space-8);\n  background: linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface) 100%);\n  border-radius: var(--radius-lg);\n}\n\n.hero-features h1 {\n  font-size: var(--font-size-4xl);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-text-primary);\n  margin-bottom: var(--space-8);\n  text-align: center;\n}\n\n.hero-features .features {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: var(--space-6);\n  margin-bottom: var(--space-8);\n}\n\n.hero-features .feature {\n  text-align: center;\n}\n\n.hero-features .feature-icon {\n  font-size: 40px;\n  margin-bottom: var(--space-3);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">产品展示Hero</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="padding: var(--space-12) var(--space-8); background-color: var(--color-surface); border-radius: var(--radius-lg);">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: center;">
+                                <div>
+                                    <div style="display: inline-block; padding: var(--space-2) var(--space-4); background-color: var(--color-success-light); color: var(--color-success); border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); margin-bottom: var(--space-4);">
+                                        🎉 新版本发布
+                                    </div>
+                                    <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-4);">Meshy.ai 3.0</h1>
+                                    <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                                        全新的设计系统，更强的功能，更好的体验。支持暗黑模式、实时协作和智能组件推荐。
                                     </p>
-                                </div>
-
-                                <div class="demo-hero-feature-grid">
-                                    <div class="demo-feature-card">
-                                        <div class="demo-feature-icon-large">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                                            </svg>
-                                        </div>
-                                        <h3 class="demo-feature-title">Text to 3D</h3>
-                                        <p class="demo-feature-description">
-                                            Simply describe your model in natural language.
-                                        </p>
+                                    <div style="display: flex; gap: var(--space-4); margin-bottom: var(--space-6);">
+                                        <button style="padding: var(--space-3) var(--space-6); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                            免费试用
+                                        </button>
+                                        <button style="padding: var(--space-3) var(--space-6); background-color: transparent; color: var(--color-primary); border: 2px solid var(--color-primary); border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                            观看演示
+                                        </button>
                                     </div>
-
-                                    <div class="demo-feature-card">
-                                        <div class="demo-feature-icon-large">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                            </svg>
-                                        </div>
-                                        <h3 class="demo-feature-title">High Quality</h3>
-                                        <p class="demo-feature-description">
-                                            Production-ready models with clean topology.
-                                        </p>
-                                    </div>
-
-                                    <div class="demo-feature-card">
-                                        <div class="demo-feature-icon-large">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                                <circle cx="8.5" cy="8.5" r="1.5"/>
-                                                <polyline points="21,15 16,10 5,21"/>
-                                            </svg>
-                                        </div>
-                                        <h3 class="demo-feature-title">Multiple Formats</h3>
-                                        <p class="demo-feature-description">
-                                            Export to OBJ, FBX, GLTF, and other formats.
-                                        </p>
+                                    <div style="display: flex; gap: var(--space-6); color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                                        <span>⭐ 4.9/5 用户评分</span>
+                                        <span>👥 10万+ 活跃用户</span>
+                                        <span>🏆 年度最佳产品</span>
                                     </div>
                                 </div>
-
-                                <div class="demo-hero-feature-cta">
-                                    <button class="button button-primary button-large">
-                                        Get Started Free
-                                    </button>
-                                    <p class="demo-cta-description">
-                                        No credit card required • 100 free models per month
-                                    </p>
+                                <div>
+                                    <div style="background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: 100px;">
+                                        🎯
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="component-code">
-                        <button class="copy-button" data-code="feature-hero">复制代码</button>
-                        <pre><code id="feature-hero-code" class="language-html">&lt;section class="hero-feature"&gt;
-  &lt;div class="hero-feature-container"&gt;
-    &lt;div class="hero-feature-header"&gt;
-      &lt;h1 class="hero-feature-title"&gt;
-        AI-Powered 3D Model Generation
-      &lt;/h1&gt;
-      &lt;p class="hero-feature-subtitle"&gt;
-        From text to 3D in seconds with AI.
-      &lt;/p&gt;
-    &lt;/div&gt;
+                    <div class="code-example">
+                        <code>.hero-product {
+  padding: var(--space-12) var(--space-8);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+}
 
-    &lt;div class="hero-feature-grid"&gt;
-      &lt;div class="feature-card"&gt;
-        &lt;div class="feature-icon-large"&gt;
-          &lt;!-- Icon SVG --&gt;
-        &lt;/div&gt;
-        &lt;h3 class="feature-title"&gt;Text to 3D&lt;/h3&gt;
-        &lt;p class="feature-description"&gt;
-          Simply describe your model in natural language.
-        &lt;/p&gt;
-      &lt;/div&gt;
+.hero-product .badge {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-4);
+}
 
-      &lt;!-- More feature cards --&gt;
-    &lt;/div&gt;
-
-    &lt;div class="hero-feature-cta"&gt;
-      &lt;button class="button button-primary button-large"&gt;
-        Get Started Free
-      &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/section&gt;</code></pre>
+.hero-product .stats {
+  display: flex;
+  gap: var(--space-6);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-product {\n  padding: var(--space-12) var(--space-8);\n  background-color: var(--color-surface);\n  border-radius: var(--radius-lg);\n}\n\n.hero-product .badge {\n  display: inline-block;\n  padding: var(--space-2) var(--space-4);\n  background-color: var(--color-success-light);\n  color: var(--color-success);\n  border-radius: var(--radius-full);\n  font-size: var(--font-size-sm);\n  font-weight: var(--font-weight-medium);\n  margin-bottom: var(--space-4);\n}\n\n.hero-product .stats {\n  display: flex;\n  gap: var(--space-6);\n  color: var(--color-text-secondary);\n  font-size: var(--font-size-sm);\n}')">复制</button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- Hero 区域设计令牌 -->
-            <section class="section">
-                <h2 class="section-title">设计令牌</h2>
-                <p class="section-description">Hero 区域专用的设计变量</p>
+    <!-- Hero Animations -->
+    <section id="hero-animations" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">动画效果</h2>
+                <p class="section-subtitle">Hero区域的动画和交互效果</p>
+            </div>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">颜色规范</h3>
-                    <div class="component-preview">
-                        <div class="color-swatches">
-                            <div class="color-swatch">
-                                <div class="color-sample" style="background-color: #c5f955;" data-color="#c5f955"></div>
-                                <div class="color-info">
-                                    <span class="color-name">主渐变色起始</span>
-                                    <span class="color-value">--color-accent-base</span>
-                                    <span class="color-hex">#c5f955</span>
-                                </div>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="color-sample" style="background-color: #ff3e8f;" data-color="#ff3e8f"></div>
-                                <div class="color-info">
-                                    <span class="color-name">主渐变色结束</span>
-                                    <span class="color-value">--color-accent-support-base</span>
-                                    <span class="color-hex">#ff3e8f</span>
-                                </div>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="color-sample" style="background-color: #ff97c2;" data-color="#ff97c2"></div>
-                                <div class="color-info">
-                                    <span class="color-name">渐变色中间</span>
-                                    <span class="color-value">--color-accent-support-highlight</span>
-                                    <span class="color-hex">#ff97c2</span>
-                                </div>
-                            </div>
-                            <div class="color-swatch">
-                                <div class="color-sample" style="background-color: #181818;" data-color="#181818"></div>
-                                <div class="color-info">
-                                    <span class="color-name">背景色</span>
-                                    <span class="color-value">--color-bg-base</span>
-                                    <span class="color-hex">#181818</span>
-                                </div>
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">淡入动画</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="padding: var(--space-12) var(--space-8); background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%); border-radius: var(--radius-lg); opacity: 0; animation: fadeIn 1s ease-out forwards;">
+                            <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-4); text-align: center; opacity: 0; animation: fadeInUp 0.8s ease-out 0.3s forwards;">
+                                渐进式展示
+                            </h1>
+                            <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--space-8); text-align: center; opacity: 0; animation: fadeInUp 0.8s ease-out 0.6s forwards;">
+                                优雅的动画效果，让内容展示更加生动有趣
+                            </p>
+                            <div style="text-align: center; opacity: 0; animation: fadeInUp 0.8s ease-out 0.9s forwards;">
+                                <button style="padding: var(--space-3) var(--space-8); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                    体验动画效果
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="component-code">
-                        <button class="copy-button" data-code="hero-colors">复制代码</button>
-                        <pre><code id="hero-colors-code" class="language-css">/* Hero 区域颜色规范 */
-:root {
-  /* 主渐变色 */
-  --color-accent-base: #c5f955;
-  --color-accent-support-highlight: #ff97c2;
-  --color-accent-support-base: #ff3e8f;
-
-  /* 背景色 */
-  --color-bg-base: #181818;
-  --color-bg-sub: #242424;
-  --color-bg-tertiary: #2e2e2e;
-
-  /* 文字色 */
-  --color-label-base: #ffffff;
-  --color-label-secondary: #b3b3b3;
-  --color-label-soft: #808080;
+                    <div class="code-example">
+                        <code>.hero-fade-in {
+  padding: var(--space-12) var(--space-8);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%);
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
 }
 
-/* 渐变定义 */
-.hero-gradient {
-  background: linear-gradient(
-    135deg,
-    var(--color-accent-base) 0%,
-    var(--color-accent-support-highlight) 50%,
-    var(--color-accent-support-base) 100%
-  );
-}</code></pre>
-                    </div>
-                </div>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">间距规范</h3>
-                    <div class="component-preview">
-                        <div class="spacing-demo">
-                            <div class="spacing-item">
-                                <div class="spacing-box" style="height: 48px;">
-                                    <span>Header Height (Mobile)</span>
-                                </div>
-                                <span class="spacing-value">3rem / 48px</span>
-                            </div>
-                            <div class="spacing-item">
-                                <div class="spacing-box" style="height: 72px;">
-                                    <span>Header Height (Desktop)</span>
-                                </div>
-                                <span class="spacing-value">4.5rem / 72px</span>
-                            </div>
-                            <div class="spacing-item">
-                                <div class="spacing-box" style="height: 120px;">
-                                    <span>Hero Section Padding</span>
-                                </div>
-                                <span class="spacing-value">7.5rem / 120px</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="component-code">
-                        <button class="copy-button" data-code="hero-spacing">复制代码</button>
-                        <pre><code id="hero-spacing-code" class="language-css">/* Hero 区域间距规范 */
-:root {
-  /* 基础间距单位 */
-  --spacing-unit: 0.25rem; /* 4px */
-
-  /* Hero 区域专用间距 */
-  --hero-header-height-mobile: 3rem; /* 48px */
-  --hero-header-height-desktop: 4.5rem; /* 72px */
-  --hero-section-padding: 7.5rem; /* 120px */
-  --hero-content-gap: 3rem; /* 48px */
-  --hero-feature-gap: 2rem; /* 32px */
+.hero-fade-in h1 {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
 }
 
-/* Hero 组件间距样式 */
-.hero-header {
-  height: var(--hero-header-height-mobile);
+.hero-fade-in p {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
 }
 
-@media (min-width: 768px) {
-  .hero-header {
-    height: var(--hero-header-height-desktop);
+.hero-fade-in .actions {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.9s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-}
-
-.hero-fullscreen,
-.hero-split,
-.hero-feature {
-  padding: var(--hero-section-padding) var(--container-padding);
-}
-
-.hero-content > * + * {
-  margin-top: var(--hero-content-gap);
-}
-
-.hero-feature-grid {
-  gap: var(--hero-feature-gap);
-}</code></pre>
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-fade-in {\n  padding: var(--space-12) var(--space-8);\n  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%);\n  border-radius: var(--radius-lg);\n  opacity: 0;\n  animation: fadeIn 1s ease-out forwards;\n}\n\n.hero-fade-in h1 {\n  opacity: 0;\n  animation: fadeInUp 0.8s ease-out 0.3s forwards;\n}\n\n.hero-fade-in p {\n  opacity: 0;\n  animation: fadeInUp 0.8s ease-out 0.6s forwards;\n}\n\n.hero-fade-in .actions {\n  opacity: 0;\n  animation: fadeInUp 0.8s ease-out 0.9s forwards;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}\n\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}')">复制</button>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
 
-    <script src="assets/js/scripts.js"></script>
+                <div class="token-card">
+                    <h3 class="token-title">悬停效果</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="padding: var(--space-12) var(--space-8); background-color: var(--color-surface); border-radius: var(--radius-lg); text-align: center;">
+                            <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-4);">交互式体验</h1>
+                            <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--space-8);">鼠标悬停查看效果</p>
+                            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                                <button style="padding: var(--space-3) var(--space-6); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer; transition: all var(--transition-fast); transform: translateY(0);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                    悬停上浮
+                                </button>
+                                <button style="padding: var(--space-3) var(--space-6); background-color: var(--color-secondary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer; transition: all var(--transition-fast);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                    悬停放大
+                                </button>
+                                <button style="padding: var(--space-3) var(--space-6); background-color: var(--color-success); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer; transition: all var(--transition-fast);" onmouseover="this.style.backgroundColor='var(--color-success-dark)'" onmouseout="this.style.backgroundColor='var(--color-success)'">
+                                    颜色变化
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.hero-hover .btn-hover {
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  transform: translateY(0);
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-scale:hover {
+  transform: scale(1.05);
+}
+
+.btn-color:hover {
+  background-color: var(--color-primary-dark);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-hover .btn-hover {\n  padding: var(--space-3) var(--space-6);\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: all var(--transition-fast);\n  transform: translateY(0);\n}\n\n.btn-hover:hover {\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-lg);\n}\n\n.btn-scale:hover {\n  transform: scale(1.05);\n}\n\n.btn-color:hover {\n  background-color: var(--color-primary-dark);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">滚动动画</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="padding: var(--space-12) var(--space-8); background: linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface) 100%); border-radius: var(--radius-lg); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%); animation: shimmer 3s infinite;"></div>
+                            <h1 style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-4); text-align: center; position: relative;">动态效果展示</h1>
+                            <p style="font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--space-8); text-align: center; position: relative;">
+                                各种动画效果让界面更加生动
+                            </p>
+                            <div style="text-align: center; position: relative;">
+                                <div style="display: inline-block; padding: var(--space-1) var(--space-4); background-color: var(--color-primary); color: var(--color-text-inverse); border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); animation: pulse 2s infinite;">
+                                    ✨ 动态加载中...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.hero-scroll {
+  padding: var(--space-12) var(--space-8);
+  background: linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface) 100%);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-scroll::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  animation: shimmer 3s infinite;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.hero-scroll {\n  padding: var(--space-12) var(--space-8);\n  background: linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface) 100%);\n  border-radius: var(--radius-lg);\n  position: relative;\n  overflow: hidden;\n}\n\n.hero-scroll::before {\n  content: \'\';\n  position: absolute;\n  top: 0;\n  left: -100%;\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);\n  animation: shimmer 3s infinite;\n}\n\n.pulse {\n  animation: pulse 2s infinite;\n}\n\n@keyframes shimmer {\n  0% { left: -100%; }\n  100% { left: 100%; }\n}\n\n@keyframes pulse {\n  0%, 100% { opacity: 1; }\n  50% { opacity: 0.7; }\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Meshy.ai Design System</h3>
+                    <p>构建一致的用户体验</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="#">文档</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">支持</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Meshy.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .code-example {
+            position: relative;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            margin-top: var(--space-4);
+        }
+
+        .code-example code {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            white-space: pre-wrap;
+            display: block;
+            margin-right: 60px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            background-color: var(--color-primary);
+            color: var(--color-text-inverse);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: var(--space-1) var(--space-2);
+            font-size: var(--font-size-xs);
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+        }
+
+        .copy-btn:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+
+    <script>
+        // Navigation toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // Smooth scroll for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && document.querySelector(href)) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const offsetTop = target.offsetTop - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showNotification('样式已复制到剪贴板');
+                }).catch(function() {
+                    showNotification('复制失败，请手动复制');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+
+                try {
+                    document.execCommand('copy');
+                    showNotification('样式已复制到剪贴板');
+                } catch (err) {
+                    showNotification('复制失败，请手动复制');
+                }
+
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const existingNotification = document.querySelector('.notification-toast');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            const notification = document.createElement('div');
+            notification.className = 'notification-toast';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--color-surface-light);
+                border: 1px solid var(--color-primary);
+                border-radius: var(--radius-md);
+                padding: var(--space-3) var(--space-4);
+                color: var(--color-text-primary);
+                font-size: var(--font-size-sm);
+                z-index: var(--z-toast);
+                transform: translateX(100%);
+                transition: transform var(--transition-normal);
+            `;
+
+            document.body.appendChild(notification);
+
+            requestAnimationFrame(() => {
+                notification.style.transform = 'translateX(0)';
+            });
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

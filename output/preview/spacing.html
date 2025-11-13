@@ -3,430 +3,581 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>间距系统 - Meshy.ai 设计系统</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <title>间距系统 - Meshy.ai Design System</title>
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header glass-header">
-        <div class="header-content">
-            <div>
-                <h1 class="header-title">间距系统</h1>
-                <p class="header-subtitle">基于 4px 的数学化间距规范</p>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <h2>Meshy.ai</h2>
+                <span class="nav-subtitle">Design System</span>
             </div>
-            <nav class="header-nav">
-                <a href="index.html" class="header-link">返回首页</a>
-                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
-            </nav>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="colors.html" class="nav-link">颜色</a>
+                <a href="typography.html" class="nav-link">字体</a>
+                <a href="spacing.html" class="nav-link active">间距</a>
+                <a href="layout.html" class="nav-link">布局</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <!-- Mobile Sidebar Toggle -->
-    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-    </button>
-
-    <!-- Mobile Sidebar Overlay -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-    <!-- Modern Hero Section -->
-    <section class="modern-hero">
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        <div class="modern-hero-content">
-            <h1 class="modern-hero-title animate-fadeInUp">
-                Meshy.ai 间距系统
-            </h1>
-            <p class="modern-hero-subtitle animate-fadeInUp animate-delay-1">
-                基于4px单位的数学化间距系统，确保视觉一致性
-            </p>
-            <div class="animate-fadeInUp animate-delay-2">
-                <button class="modern-button">
-                    探索间距规范
-                </button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">间距系统</span>
+                </h1>
+                <p class="hero-description">
+                    基于4px网格系统的标准化间距规范，确保界面元素的一致性和协调性
+                </p>
+                <div class="hero-actions">
+                    <a href="#spacing-scale" class="btn btn-primary">查看间距</a>
+                    <a href="#spacing-rules" class="btn btn-secondary">使用规则</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-cards">
+                    <div class="hero-card hero-card-1">
+                        <div class="card-icon">📏</div>
+                        <h3>4px网格</h3>
+                        <p>基于4px倍数的间距系统</p>
+                    </div>
+                    <div class="hero-card hero-card-2">
+                        <div class="card-icon">🎯</div>
+                        <h3>一致性</h3>
+                        <p>统一的间距使用规范</p>
+                    </div>
+                    <div class="hero-card hero-card-3">
+                        <div class="card-icon">⚖️</div>
+                        <h3>平衡</h3>
+                        <p>视觉平衡与层次感</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="modern-bg">
-        <div class="preview-container">
-        <aside class="sidebar">
-            <nav>
-                <h3 class="sidebar-title">设计令牌</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="colors.html" class="sidebar-link">颜色系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="typography.html" class="sidebar-link">字体系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="spacing.html" class="sidebar-link active">间距系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="layout.html" class="sidebar-link">布局系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="animations.html" class="sidebar-link">动效系统</a>
-                    </li>
-                </ul>
+    <!-- Spacing Scale -->
+    <section id="spacing-scale" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">间距比例</h2>
+                <p class="section-subtitle">基于4px网格的标准化间距值</p>
+            </div>
 
-                <h3 class="sidebar-title">组件库</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            <!-- Spacing Scale -->
-            <section class="section">
-                <h2 class="section-title">间距规范</h2>
-                <p class="section-description">基于 4px 基础单位的数学化间距系统</p>
-
-                <div class="component-showcase-enhanced animate-fadeInUp">
-                    <h3 class="component-showcase-title">间距层级</h3>
-                    <div class="component-preview-enhanced">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--gap-xl);">
-                            <div class="text-center interactive-card animate-fadeInUp animate-delay-1">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-xs); margin-bottom: var(--p-sm);">4px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-xs</div>
-                            </div>
-                            <div class="text-center interactive-card animate-fadeInUp animate-delay-2">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-sm); margin-bottom: var(--p-sm);">8px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-sm</div>
-                            </div>
-                            <div class="text-center interactive-card animate-fadeInUp animate-delay-3">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-md); margin-bottom: var(--p-sm);">12px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-md</div>
-                            </div>
-                            <div class="text-center interactive-card animate-fadeInUp animate-delay-4">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-lg); margin-bottom: var(--p-sm);">16px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-lg</div>
-                            </div>
-                            <div class="text-center interactive-card animate-fadeInUp animate-delay-5">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-xl); margin-bottom: var(--p-sm);">20px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-xl</div>
-                            </div>
-                            <div class="text-center interactive-card animate-scaleIn animate-delay-1">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-2xl); margin-bottom: var(--p-sm);">24px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-2xl</div>
-                            </div>
-                            <div class="text-center interactive-card animate-scaleIn animate-delay-2">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-3xl); margin-bottom: var(--p-sm);">32px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-3xl</div>
-                            </div>
-                            <div class="text-center interactive-card animate-scaleIn animate-delay-3">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-4xl); margin-bottom: var(--p-sm);">40px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-4xl</div>
-                            </div>
-                            <div class="text-center interactive-card animate-scaleIn animate-delay-4">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-5xl); margin-bottom: var(--p-sm);">48px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-5xl</div>
-                            </div>
-                            <div class="text-center interactive-card animate-scaleIn animate-delay-5">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-6xl); margin-bottom: var(--p-sm);">64px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-6xl</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Margin and Padding -->
-            <section class="section">
-                <h2 class="section-title">外间距和内间距</h2>
-                <p class="section-description">外间距 (margin) 和内间距 (padding) 的使用示例</p>
-
-                <div class="component-showcase-enhanced animate-slideInLeft">
-                    <h3 class="component-showcase-title">间距对比</h3>
-                    <div class="component-preview-enhanced">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap-xl);">
-                            <div class="interactive-card animate-fadeInUp animate-delay-1">
-                                <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">内间距 (Padding)</h4>
-                                <div style="background: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-2xl);">
-                                    <p style="margin: 0; color: var(--color-label-soft);">这个元素使用了内间距，内容与边框之间有 24px 的间距。</p>
-                                </div>
-                            </div>
-                            <div class="interactive-card animate-fadeInUp animate-delay-2">
-                                <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">外间距 (Margin)</h4>
-                                <div style="background: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg); margin-bottom: var(--m-xl);">
-                                    <p style="margin: 0; color: var(--color-label-soft);">这个元素下方有 24px 的外间距，与下一个元素保持距离。</p>
-                                </div>
-                                <div style="background: var(--color-bg-shade); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
-                                    <p style="margin: 0; color: var(--color-label-soft);">下一个元素</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Gap -->
-            <section class="section">
-                <h2 class="section-title">元素间距</h2>
-                <p class="section-description">Flexbox 和 Grid 中的间距 (gap)</p>
-
-                <div class="component-showcase-enhanced animate-slideInRight">
-                    <h3 class="component-showcase-title">间距大小对比</h3>
-                    <div class="component-preview-enhanced">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--gap-xl);">
-                            <div class="interactive-card animate-scaleIn animate-delay-1">
-                                <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">小间距</h4>
-                                <div class="flex flex-column gap-sm">
-                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 1</div>
-                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 2</div>
-                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 3</div>
-                                </div>
-                            </div>
-                            <div class="interactive-card animate-scaleIn animate-delay-2">
-                                <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">中间距</h4>
-                                <div class="flex flex-column gap-md">
-                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 1</div>
-                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 2</div>
-                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 3</div>
-                                </div>
-                            </div>
-                            <div class="interactive-card animate-scaleIn animate-delay-3">
-                                <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">大间距</h4>
-                                <div class="flex flex-column gap-lg">
-                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 1</div>
-                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 2</div>
-                                    <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 3</div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 4px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 1</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">4px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-1)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-1);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-1);')">复制</button>
                     </div>
                 </div>
 
-                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-2">
-                    <h3 class="component-showcase-title">水平间距</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="interactive-card animate-slideInLeft" style="background: var(--color-bg-sub); padding: var(--p-xl); border-radius: var(--radius-lg);">
-                            <div class="flex items-center gap-lg">
-                                <div class="animate-scaleIn animate-delay-1" style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 1</div>
-                                <div class="animate-scaleIn animate-delay-2" style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 2</div>
-                                <div class="animate-scaleIn animate-delay-3" style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 3</div>
-                                <div class="animate-scaleIn animate-delay-4" style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 4</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Border Radius -->
-            <section class="section">
-                <h2 class="section-title">圆角系统</h2>
-                <p class="section-description">统一的圆角规范和视觉效果</p>
-
-                <div class="component-showcase-enhanced animate-scaleIn">
-                    <h3 class="component-showcase-title">圆角大小</h3>
-                    <div class="component-preview-enhanced">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: var(--gap-xl);">
-                            <div class="text-center interactive-card animate-fadeInUp animate-delay-1">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-xs); padding: var(--p-xl); margin-bottom: var(--p-sm);">2px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-xs</div>
-                            </div>
-                            <div class="text-center interactive-card animate-fadeInUp animate-delay-2">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-sm); padding: var(--p-xl); margin-bottom: var(--p-sm);">4px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-sm</div>
-                            </div>
-                            <div class="text-center interactive-card animate-fadeInUp animate-delay-3">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-xl); margin-bottom: var(--p-sm);">6px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-md</div>
-                            </div>
-                            <div class="text-center interactive-card animate-fadeInUp animate-delay-4">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-lg); padding: var(--p-xl); margin-bottom: var(--p-sm);">8px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-lg</div>
-                            </div>
-                            <div class="text-center interactive-card animate-fadeInUp animate-delay-5">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">12px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-xl</div>
-                            </div>
-                            <div class="text-center interactive-card animate-scaleIn animate-delay-1">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-2xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">16px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-2xl</div>
-                            </div>
-                            <div class="text-center interactive-card animate-scaleIn animate-delay-2">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-3xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">24px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-3xl</div>
-                            </div>
-                            <div class="text-center interactive-card animate-scaleIn animate-delay-3">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-4xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">32px</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-4xl</div>
-                            </div>
-                            <div class="text-center interactive-card animate-scaleIn animate-delay-4">
-                                <div style="background: var(--color-accent-bg); border-radius: var(--radius-full); width: 80px; height: 80px; line-height: 80px; margin: 0 auto var(--p-sm);">∞</div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-full</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Spacing in Components -->
-            <section class="section">
-                <h2 class="section-title">组件中的间距应用</h2>
-                <p class="section-description">间距在不同组件中的实际应用示例</p>
-
-                <div class="component-showcase-enhanced animate-slideInLeft">
-                    <h3 class="component-showcase-title">按钮间距</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="button-showcase-enhanced">
-                            <button class="button button-primary button-small interactive-card animate-scaleIn animate-delay-1">小按钮</button>
-                            <button class="button button-primary interactive-card animate-scaleIn animate-delay-2">中按钮</button>
-                            <button class="button button-primary button-large interactive-card animate-scaleIn animate-delay-3">大按钮</button>
-                        </div>
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 8px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 2</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">8px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-2)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-2);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-2);')">复制</button>
                     </div>
                 </div>
 
-                <div class="component-showcase-enhanced animate-slideInRight">
-                    <h3 class="component-showcase-title">卡片间距</h3>
-                    <div class="component-preview-enhanced grid grid-responsive">
-                        <div class="card interactive-card animate-fadeInUp animate-delay-1">
-                            <div class="card-header">
-                                <h3 class="card-title">卡片 1</h3>
-                            </div>
-                            <div class="card-content">
-                                <p>卡片内部使用标准间距，确保内容层次清晰。</p>
-                            </div>
-                        </div>
-                        <div class="card interactive-card animate-fadeInUp animate-delay-2">
-                            <div class="card-header">
-                                <h3 class="card-title">卡片 2</h3>
-                            </div>
-                            <div class="card-content">
-                                <p>卡片之间使用大间距，提供良好的视觉分离。</p>
-                            </div>
-                        </div>
-                        <div class="card interactive-card animate-fadeInUp animate-delay-3">
-                            <div class="card-header">
-                                <h3 class="card-title">卡片 3</h3>
-                            </div>
-                            <div class="card-content">
-                                <p>统一的间距系统确保了设计的一致性。</p>
-                            </div>
-                        </div>
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 12px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 3</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">12px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-3)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-3);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-3);')">复制</button>
                     </div>
                 </div>
 
-                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-3">
-                    <h3 class="component-showcase-title">表单间距</h3>
-                    <div class="component-preview-enhanced interactive-card animate-scaleIn" style="max-width: 400px;">
-                        <div class="form-group animate-slideInLeft animate-delay-1">
-                            <label class="form-label">用户名</label>
-                            <input type="text" class="form-input" placeholder="输入用户名">
-                        </div>
-                        <div class="form-group animate-slideInLeft animate-delay-2">
-                            <label class="form-label">邮箱</label>
-                            <input type="email" class="form-input" placeholder="输入邮箱">
-                        </div>
-                        <button class="button button-primary button-full-width animate-scaleIn animate-delay-3">提交</button>
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 16px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 4</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">16px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-4)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-4);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-4);')">复制</button>
                     </div>
                 </div>
-            </section>
 
-            <!-- CSS Variables Reference -->
-            <section class="section">
-                <h2 class="section-title">CSS 变量参考</h2>
-                <p class="section-description">间距系统使用的 CSS 变量</p>
-
-                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-4">
-                    <h3 class="component-showcase-title">间距 CSS 变量</h3>
-                    <div class="component-preview-enhanced">
-                        <div style="font-family: var(--font-mono); font-size: var(--text-sm);">
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--gap-lg);">
-                                <div class="interactive-card animate-slideInLeft animate-delay-1">
-                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">基础间距</h4>
-                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
-                                        --spacing-unit: 0.25rem;<br>
-                                        --spacing-xs: 0.25rem;<br>
-                                        --spacing-sm: 0.5rem;<br>
-                                        --spacing-md: 0.75rem;<br>
-                                        --spacing-lg: 1rem;<br>
-                                        --spacing-xl: 1.25rem;
-                                    </div>
-                                </div>
-                                <div class="interactive-card animate-slideInLeft animate-delay-2">
-                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">大间距</h4>
-                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
-                                        --spacing-2xl: 1.5rem;<br>
-                                        --spacing-3xl: 2rem;<br>
-                                        --spacing-4xl: 2.5rem;<br>
-                                        --spacing-5xl: 3rem;<br>
-                                        --spacing-6xl: 4rem;
-                                    </div>
-                                </div>
-                                <div class="interactive-card animate-slideInRight animate-delay-1">
-                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">内间距</h4>
-                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
-                                        --p-xs: var(--spacing-xs);<br>
-                                        --p-sm: var(--spacing-sm);<br>
-                                        --p-md: var(--spacing-md);<br>
-                                        --p-lg: var(--spacing-lg);<br>
-                                        --p-xl: var(--spacing-xl);
-                                    </div>
-                                </div>
-                                <div class="interactive-card animate-slideInRight animate-delay-2">
-                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">外间距</h4>
-                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
-                                        --m-xs: var(--spacing-xs);<br>
-                                        --m-sm: var(--spacing-sm);<br>
-                                        --m-md: var(--spacing-md);<br>
-                                        --m-lg: var(--spacing-lg);<br>
-                                        --m-xl: var(--spacing-xl);
-                                    </div>
-                                </div>
-                                <div class="interactive-card animate-scaleIn animate-delay-1">
-                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">元素间距</h4>
-                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
-                                        --gap-xs: var(--spacing-xs);<br>
-                                        --gap-sm: var(--spacing-sm);<br>
-                                        --gap-md: var(--spacing-md);<br>
-                                        --gap-lg: var(--spacing-lg);<br>
-                                        --gap-xl: var(--spacing-xl);
-                                    </div>
-                                </div>
-                                <div class="interactive-card animate-scaleIn animate-delay-2">
-                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">圆角</h4>
-                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
-                                        --radius-xs: 0.125rem;<br>
-                                        --radius-sm: 0.25rem;<br>
-                                        --radius-md: 0.375rem;<br>
-                                        --radius-lg: 0.5rem;<br>
-                                        --radius-xl: 0.75rem;<br>
-                                        --radius-2xl: 1rem;<br>
-                                        --radius-full: 9999px;
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 20px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 5</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">20px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-5)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-5);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-5);')">复制</button>
                     </div>
                 </div>
-            </section>
-        </main>
-        </div> <!-- Close modern-bg -->
-    </div>
 
-    <script src="assets/js/scripts.js"></script>
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 24px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 6</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">24px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-6)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-6);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-6);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 32px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 8</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">32px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-8)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-8);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-8);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 40px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 10</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">40px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-10)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-10);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-10);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 48px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 12</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">48px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-12)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-12);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-12);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 64px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 16</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">64px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-16)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-16);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-16);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div class="spacing-visual" style="height: 80px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
+                    <h3 class="token-title">Space 20</h3>
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">80px</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--space-20)</div>
+                    <div class="code-example">
+                        <code>padding: var(--space-20);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-20);')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacing Usage -->
+    <section id="spacing-usage" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">间距应用</h2>
+                <p class="section-subtitle">不同场景下的间距使用示例</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">内边距 Padding</h3>
+                    <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-4);">
+                        内边距示例内容
+                    </div>
+                    <div class="code-example">
+                        <code>padding: var(--space-4);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-4);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">外边距 Margin</h3>
+                    <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3); margin-top: var(--space-4);">
+                        上外边距示例
+                    </div>
+                    <div class="code-example">
+                        <code>margin-top: var(--space-4);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('margin-top: var(--space-4);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">间距 Gap</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3);">项目1</div>
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3);">项目2</div>
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3);">项目3</div>
+                    </div>
+                    <div class="code-example">
+                        <code>gap: var(--space-3);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('gap: var(--space-3);')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Component Spacing -->
+    <section id="component-spacing" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">组件间距</h2>
+                <p class="section-subtitle">组件间的标准间距规范</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">卡片间距</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3);">卡片1</div>
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3);">卡片2</div>
+                    </div>
+                    <div class="code-example">
+                        <code>gap: var(--space-4);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('gap: var(--space-4);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">列表间距</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3);">列表项1</div>
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3);">列表项2</div>
+                    </div>
+                    <div class="code-example">
+                        <code>gap: var(--space-2);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('gap: var(--space-2);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">表单间距</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                        <input type="text" placeholder="输入框" style="padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); background-color: var(--color-surface); color: var(--color-text-primary);">
+                        <textarea placeholder="文本域" style="padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); background-color: var(--color-surface); color: var(--color-text-primary); min-height: 80px;"></textarea>
+                    </div>
+                    <div class="code-example">
+                        <code>gap: var(--space-4);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('gap: var(--space-4);')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layout Spacing -->
+    <section id="layout-spacing" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">布局间距</h2>
+                <p class="section-subtitle">页面布局的间距规范</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">页面间距</h3>
+                    <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-8); margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-primary); height: 40px; border-radius: var(--radius-sm);"></div>
+                    </div>
+                    <div class="code-example">
+                        <code>padding: var(--space-8);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-8);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">区块间距</h3>
+                    <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-primary); height: 40px; border-radius: var(--radius-sm); margin-bottom: var(--space-4);"></div>
+                        <div style="background-color: var(--color-primary); height: 40px; border-radius: var(--radius-sm);"></div>
+                    </div>
+                    <div class="code-example">
+                        <code>padding: var(--space-6);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-6);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">内容间距</h3>
+                    <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-primary); height: 40px; border-radius: var(--radius-sm);"></div>
+                    </div>
+                    <div class="code-example">
+                        <code>padding: var(--space-4);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-4);')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacing Rules -->
+    <section id="spacing-rules" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">使用规则</h2>
+                <p class="section-subtitle">间距使用的最佳实践和规则</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">一致性原则</h3>
+                    <div style="color: var(--color-text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4);">
+                        <ul style="padding-left: var(--space-4); margin: 0;">
+                            <li>使用预定义的间距值</li>
+                            <li>避免使用像素值</li>
+                            <li>保持间距的一致性</li>
+                            <li>遵循4px网格系统</li>
+                        </ul>
+                    </div>
+                    <div class="code-example">
+                        <code>/* 推荐 */\npadding: var(--space-4);\n\n/* 避免 */\npadding: 15px;</code>
+                        <button class="copy-btn" onclick="copyToClipboard('/* 推荐 */\npadding: var(--space-4);\n\n/* 避免 */\npadding: 15px;')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">间距层级</h3>
+                    <div style="color: var(--color-text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4);">
+                        <ul style="padding-left: var(--space-4); margin: 0;">
+                            <li>元素间距：4-8px</li>
+                            <li>组件间距：16-24px</li>
+                            <li>区块间距：32-48px</li>
+                            <li>页面间距：64-80px</li>
+                        </ul>
+                    </div>
+                    <div class="code-example">
+                        <code>/* 元素间距 */\ngap: var(--space-2);\n\n/* 组件间距 */\ngap: var(--space-6);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('/* 元素间距 */\ngap: var(--space-2);\n\n/* 组件间距 */\ngap: var(--space-6);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">响应式间距</h3>
+                    <div style="color: var(--color-text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4);">
+                        <ul style="padding-left: var(--space-4); margin: 0;">
+                            <li>移动端使用较小间距</li>
+                            <li>桌面端使用较大间距</li>
+                            <li>保持相对比例</li>
+                            <li>考虑触摸友好性</li>
+                        </ul>
+                    </div>
+                    <div class="code-example">
+                        <code>/* 移动端 */\npadding: var(--space-4);\n\n/* 桌面端 */\npadding: var(--space-8);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('/* 移动端 */\npadding: var(--space-4);\n\n/* 桌面端 */\npadding: var(--space-8);')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Meshy.ai Design System</h3>
+                    <p>构建一致的用户体验</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="#">文档</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">支持</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Meshy.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .spacing-visual {
+            width: 100%;
+            border-radius: var(--radius-sm);
+        }
+
+        .code-example {
+            position: relative;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            margin-top: var(--space-4);
+        }
+
+        .code-example code {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            white-space: pre-wrap;
+            display: block;
+            margin-right: 60px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            background-color: var(--color-primary);
+            color: var(--color-text-inverse);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: var(--space-1) var(--space-2);
+            font-size: var(--font-size-xs);
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+        }
+
+        .copy-btn:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
+    </style>
+
+    <script>
+        // Navigation toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // Smooth scroll for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && document.querySelector(href)) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const offsetTop = target.offsetTop - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showNotification('样式已复制到剪贴板');
+                }).catch(function() {
+                    showNotification('复制失败，请手动复制');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+
+                try {
+                    document.execCommand('copy');
+                    showNotification('样式已复制到剪贴板');
+                } catch (err) {
+                    showNotification('复制失败，请手动复制');
+                }
+
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const existingNotification = document.querySelector('.notification-toast');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            const notification = document.createElement('div');
+            notification.className = 'notification-toast';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--color-surface-light);
+                border: 1px solid var(--color-primary);
+                border-radius: var(--radius-md);
+                padding: var(--space-3) var(--space-4);
+                color: var(--color-text-primary);
+                font-size: var(--font-size-sm);
+                z-index: var(--z-toast);
+                transform: translateX(100%);
+                transition: transform var(--transition-normal);
+            `;
+
+            document.body.appendChild(notification);
+
+            requestAnimationFrame(() => {
+                notification.style.transform = 'translateX(0)';
+            });
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

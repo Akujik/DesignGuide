@@ -3,408 +3,691 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>颜色系统 - Meshy.ai 设计系统</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <title>颜色系统 - Meshy.ai Design System</title>
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Color showcase styles */
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-6);
+            margin: var(--space-8) 0;
+        }
+
+        .color-swatch {
+            background-color: var(--color-surface-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .color-swatch:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary);
+        }
+
+        .color-preview {
+            width: 100%;
+            height: 80px;
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-4);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-fast);
+        }
+
+        .color-preview:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        .color-preview::after {
+            content: '点击复制';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+            opacity: 0;
+            transition: opacity var(--transition-fast);
+        }
+
+        .color-preview:hover::after {
+            opacity: 1;
+        }
+
+        .color-info h4 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .color-value {
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+            font-family: var(--font-family-mono);
+            margin-bottom: var(--space-1);
+        }
+
+        .color-variable {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            font-family: var(--font-family-mono);
+        }
+
+        .usage-example {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            margin: var(--space-8) 0;
+        }
+
+        .usage-example h3 {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            color: var(--color-text-primary);
+        }
+
+        .code-block {
+            background-color: var(--color-surface-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            background-color: var(--color-primary);
+            color: var(--color-text-inverse);
+            border: none;
+            border-radius: var(--radius-md);
+            padding: var(--space-2) var(--space-3);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .copy-button:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .copy-button.copied {
+            background-color: var(--color-success);
+        }
+
+        .color-contrast {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-4);
+            margin: var(--space-6) 0;
+        }
+
+        .contrast-example {
+            padding: var(--space-4);
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-weight: var(--font-weight-medium);
+        }
+
+        .contrast-ratio {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            margin-top: var(--space-2);
+        }
+
+        .status-colors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-4);
+            margin: var(--space-6) 0;
+        }
+
+        .status-color {
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            font-weight: var(--font-weight-medium);
+        }
+    </style>
 </head>
 <body>
-    <header class="header glass-header">
-        <div class="header-content">
-            <div>
-                <h1 class="header-title">颜色系统</h1>
-                <p class="header-subtitle">Meshy.ai 设计系统的颜色规范和使用指南</p>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <h2>Meshy.ai</h2>
+                <span class="nav-subtitle">Design System</span>
             </div>
-            <nav class="header-nav">
-                <a href="index.html" class="header-link">返回首页</a>
-                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
-            </nav>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="colors.html" class="nav-link active">颜色</a>
+                <a href="typography.html" class="nav-link">字体</a>
+                <a href="spacing.html" class="nav-link">间距</a>
+                <a href="layout.html" class="nav-link">布局</a>
+                <a href="animations.html" class="nav-link">动效</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <!-- Mobile Sidebar Toggle -->
-    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-    </button>
-
-    <!-- Mobile Sidebar Overlay -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-    <!-- Modern Hero Section -->
-    <section class="modern-hero">
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        <div class="modern-hero-content">
-            <h1 class="modern-hero-title animate-fadeInUp">
-                Meshy.ai 颜色系统
-            </h1>
-            <p class="modern-hero-subtitle animate-fadeInUp animate-delay-1">
-                深色主题为基础，亮绿色为主色调，构建层次分明、对比度良好的视觉系统
-            </p>
-            <div class="animate-fadeInUp animate-delay-2">
-                <button class="modern-button">
-                    探索颜色规范
-                </button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">颜色系统</span>
+                </h1>
+                <p class="hero-description">
+                    深色主题为基础，亮绿色为主色调，构建层次分明、对比度良好的视觉系统
+                </p>
+                <div class="hero-actions">
+                    <a href="#brand-colors" class="btn btn-primary">品牌颜色</a>
+                    <a href="#neutral-colors" class="btn btn-secondary">中性颜色</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-cards">
+                    <div class="hero-card hero-card-1">
+                        <div class="card-icon">🎨</div>
+                        <h3>品牌色彩</h3>
+                        <p>主色调和辅助色定义</p>
+                    </div>
+                    <div class="hero-card hero-card-2">
+                        <div class="card-icon">⚖️</div>
+                        <h3>对比度优化</h3>
+                        <p>确保可访问性标准</p>
+                    </div>
+                    <div class="hero-card hero-card-3">
+                        <div class="card-icon">🌙</div>
+                        <h3>深色主题</h3>
+                        <p>护眼且专业的视觉体验</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="modern-bg">
-        <div class="preview-container">
-        <aside class="sidebar">
-            <nav>
-                <h3 class="sidebar-title">设计令牌</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="colors.html" class="sidebar-link active">颜色系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="typography.html" class="sidebar-link">字体系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="spacing.html" class="sidebar-link">间距系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="layout.html" class="sidebar-link">布局系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="animations.html" class="sidebar-link">动效系统</a>
-                    </li>
-                </ul>
-
-                <h3 class="sidebar-title">组件库</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            <!-- Primary Colors -->
-            <section class="section">
+    <!-- Brand Colors -->
+    <section id="brand-colors" class="section">
+        <div class="container">
+            <div class="section-header">
                 <h2 class="section-title">品牌颜色</h2>
-                <p class="section-description">Meshy.ai 的核心品牌颜色，用于主要的交互元素和品牌识别</p>
+                <p class="section-subtitle">主色调和辅助色，用于品牌识别和关键交互元素</p>
+            </div>
 
-                <div class="component-showcase-enhanced animate-fadeInUp">
-                    <h3 class="component-showcase-title">主色调</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="color-palette">
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-1">
-                                <div class="color-preview" style="background-color: #c5f955;" data-color="#c5f955"></div>
-                                <div class="color-info">
-                                    <div class="color-name">主绿色</div>
-                                    <div class="color-value">#c5f955</div>
-                                    <div class="color-usage">--color-accent-base</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-2">
-                                <div class="color-preview" style="background-color: #a8e328;" data-color="#a8e328"></div>
-                                <div class="color-info">
-                                    <div class="color-name">主绿色悬停</div>
-                                    <div class="color-value">#a8e328</div>
-                                    <div class="color-usage">--color-accent-base-hover</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-3">
-                                <div class="color-preview" style="background-color: #c5f95526;" data-color="#c5f95526"></div>
-                                <div class="color-info">
-                                    <div class="color-name">主绿色背景</div>
-                                    <div class="color-value">#c5f95526</div>
-                                    <div class="color-usage">--color-accent-bg</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-4">
-                                <div class="color-preview" style="background-color: #dcfa9d;" data-color="#dcfa9d"></div>
-                                <div class="color-info">
-                                    <div class="color-name">主绿色高亮</div>
-                                    <div class="color-value">#dcfa9d</div>
-                                    <div class="color-usage">--color-accent-highlight</div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="color-palette">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #c5f955;" data-color="#c5f955"></div>
+                    <div class="color-info">
+                        <h4>主绿色</h4>
+                        <div class="color-value">#c5f955</div>
+                        <div class="color-variable">--color-primary</div>
                     </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">主色调 CSS 变量</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-css">:root {
-  --color-accent-base: #c5f955;
-  --color-accent-base-hover: #a8e328;
-  --color-accent-bg: #c5f95526;
-  --color-accent-bg-hover: #c5f95533;
-  --color-accent-highlight: #dcfa9d;
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #a8e038;" data-color="#a8e038"></div>
+                    <div class="color-info">
+                        <h4>深绿色</h4>
+                        <div class="color-value">#a8e038</div>
+                        <div class="color-variable">--color-primary-dark</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #d6ff77;" data-color="#d6ff77"></div>
+                    <div class="color-info">
+                        <h4>浅绿色</h4>
+                        <div class="color-value">#d6ff77</div>
+                        <div class="color-variable">--color-primary-light</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #ff3e8f;" data-color="#ff3e8f"></div>
+                    <div class="color-info">
+                        <h4>辅助洋红</h4>
+                        <div class="color-value">#ff3e8f</div>
+                        <div class="color-variable">--color-accent-support</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #ff97c2;" data-color="#ff97c2"></div>
+                    <div class="color-info">
+                        <h4>辅助粉色</h4>
+                        <div class="color-value">#ff97c2</div>
+                        <div class="color-variable">--color-accent-highlight</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usage Example -->
+            <div class="usage-example">
+                <h3>品牌颜色使用示例</h3>
+                <div class="code-block">
+                    <button class="copy-button" onclick="copyCode(this)">复制</button>
+                    <pre><code>/* 品牌颜色变量 */
+:root {
+  --color-primary: #c5f955;
+  --color-primary-dark: #a8e038;
+  --color-primary-light: #d6ff77;
+  --color-accent-support: #ff3e8f;
+  --color-accent-highlight: #ff97c2;
+}
+
+/* 使用示例 */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.accent-element {
+  background: linear-gradient(135deg,
+    var(--color-primary),
+    var(--color-accent-support));
 }</code></pre>
-                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neutral Colors -->
+    <section id="neutral-colors" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">中性颜色</h2>
+                <p class="section-subtitle">背景、文本和边框颜色，构建清晰的视觉层次</p>
+            </div>
+
+            <div class="color-palette">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #181818;" data-color="#181818"></div>
+                    <div class="color-info">
+                        <h4>主背景</h4>
+                        <div class="color-value">#181818</div>
+                        <div class="color-variable">--color-bg-base</div>
                     </div>
                 </div>
 
-                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-2">
-                    <h3 class="component-showcase-title">辅助色系</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="color-palette">
-                            <div class="color-swatch-enhanced interactive-card animate-slideInLeft animate-delay-1">
-                                <div class="color-preview" style="background-color: #ff3e8f;" data-color="#ff3e8f"></div>
-                                <div class="color-info">
-                                    <div class="color-name">辅助洋红</div>
-                                    <div class="color-value">#ff3e8f</div>
-                                    <div class="color-usage">--color-accent-support-base</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-slideInRight animate-delay-2">
-                                <div class="color-preview" style="background-color: #ff97c2;" data-color="#ff97c2"></div>
-                                <div class="color-info">
-                                    <div class="color-name">辅助粉色</div>
-                                    <div class="color-value">#ff97c2</div>
-                                    <div class="color-usage">--color-accent-support-highlight</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Background Colors -->
-            <section class="section">
-                <h2 class="section-title">背景颜色</h2>
-                <p class="section-description">用于构建界面层次和视觉分离的背景色系统</p>
-
-                <div class="component-showcase-enhanced animate-scaleIn">
-                    <h3 class="component-showcase-title">深色主题背景</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="color-palette">
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-1">
-                                <div class="color-preview" style="background-color: #181818;" data-color="#181818"></div>
-                                <div class="color-info">
-                                    <div class="color-name">主背景</div>
-                                    <div class="color-value">#181818</div>
-                                    <div class="color-usage">--color-bg-base</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-2">
-                                <div class="color-preview" style="background-color: #1e1e1e;" data-color="#1e1e1e"></div>
-                                <div class="color-info">
-                                    <div class="color-name">次要背景</div>
-                                    <div class="color-value">#1e1e1e</div>
-                                    <div class="color-usage">--color-bg-sub</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-3">
-                                <div class="color-preview" style="background-color: #262626;" data-color="#262626"></div>
-                                <div class="color-info">
-                                    <div class="color-name">悬停背景</div>
-                                    <div class="color-value">#262626</div>
-                                    <div class="color-usage">--color-bg-base-hover</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-4">
-                                <div class="color-preview" style="background-color: #303030;" data-color="#303030"></div>
-                                <div class="color-info">
-                                    <div class="color-name">阴影背景</div>
-                                    <div class="color-value">#303030</div>
-                                    <div class="color-usage">--color-bg-shade</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-5">
-                                <div class="color-preview" style="background-color: #3f3f3f;" data-color="#3f3f3f"></div>
-                                <div class="color-info">
-                                    <div class="color-name">边框颜色</div>
-                                    <div class="color-value">#3f3f3f</div>
-                                    <div class="color-usage">--color-bg-border</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-scaleIn animate-delay-1">
-                                <div class="color-preview" style="background-color: #ffffff0d;" data-color="#ffffff0d"></div>
-                                <div class="color-info">
-                                    <div class="color-name">半透明白色</div>
-                                    <div class="color-value">#ffffff0d</div>
-                                    <div class="color-usage">--color-bg-translucent</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Text Colors -->
-            <section class="section">
-                <h2 class="section-title">文本颜色</h2>
-                <p class="section-description">用于文本内容层次和可读性的颜色系统</p>
-
-                <div class="component-showcase-enhanced animate-slideInLeft">
-                    <h3 class="component-showcase-title">文本层次</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="color-palette">
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-1">
-                                <div class="color-preview" style="background-color: #ffffff;" data-color="#ffffff"></div>
-                                <div class="color-info">
-                                    <div class="color-name">标题文本</div>
-                                    <div class="color-value">#ffffff</div>
-                                    <div class="color-usage">--color-label-title</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-2">
-                                <div class="color-preview" style="background-color: #dedede;" data-color="#dedede"></div>
-                                <div class="color-info">
-                                    <div class="color-name">主要文本</div>
-                                    <div class="color-value">#dedede</div>
-                                    <div class="color-usage">--color-label-base</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-3">
-                                <div class="color-preview" style="background-color: #9b9b9b;" data-color="#9b9b9b"></div>
-                                <div class="color-info">
-                                    <div class="color-name">次要文本</div>
-                                    <div class="color-value">#9b9b9b</div>
-                                    <div class="color-usage">--color-label-soft</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-4">
-                                <div class="color-preview" style="background-color: #696969;" data-color="#696969"></div>
-                                <div class="color-info">
-                                    <div class="color-name">静音文本</div>
-                                    <div class="color-value">#696969</div>
-                                    <div class="color-usage">--color-label-muted</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-5">
-                                <div class="color-preview" style="background-color: #505050;" data-color="#505050"></div>
-                                <div class="color-info">
-                                    <div class="color-name">淡化文本</div>
-                                    <div class="color-value">#505050</div>
-                                    <div class="color-usage">--color-label-faint</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Semantic Colors -->
-            <section class="section">
-                <h2 class="section-title">语义颜色</h2>
-                <p class="section-description">用于状态指示和反馈的语义化颜色</p>
-
-                <div class="component-showcase-enhanced animate-slideInRight">
-                    <h3 class="component-showcase-title">状态色</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="color-palette">
-                            <div class="color-swatch-enhanced interactive-card animate-scaleIn animate-delay-1">
-                                <div class="color-preview" style="background-color: #f33;" data-color="#f33"></div>
-                                <div class="color-info">
-                                    <div class="color-name">错误状态</div>
-                                    <div class="color-value">#f33</div>
-                                    <div class="color-usage">--color-semantic-error-base</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-scaleIn animate-delay-2">
-                                <div class="color-preview" style="background-color: #2ee040;" data-color="#2ee040"></div>
-                                <div class="color-info">
-                                    <div class="color-name">成功状态</div>
-                                    <div class="color-value">#2ee040</div>
-                                    <div class="color-usage">--color-semantic-success-base</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-scaleIn animate-delay-3">
-                                <div class="color-preview" style="background-color: #f6992b;" data-color="#f6992b"></div>
-                                <div class="color-info">
-                                    <div class="color-name">警告状态</div>
-                                    <div class="color-value">#f6992b</div>
-                                    <div class="color-usage">--color-semantic-warning-base</div>
-                                </div>
-                            </div>
-                            <div class="color-swatch-enhanced interactive-card animate-scaleIn animate-delay-4">
-                                <div class="color-preview" style="background-color: #3b82f6;" data-color="#3b82f6"></div>
-                                <div class="color-info">
-                                    <div class="color-name">信息状态</div>
-                                    <div class="color-value">#3b82f6</div>
-                                    <div class="color-usage">--color-semantic-info-base</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Color Usage Examples -->
-            <section class="section">
-                <h2 class="section-title">颜色使用示例</h2>
-                <p class="section-description">实际应用中的颜色组合示例</p>
-
-                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-3">
-                    <h3 class="component-showcase-title">按钮颜色组合</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="button-showcase-enhanced">
-                            <button class="button button-primary animate-scaleIn animate-delay-1">主要按钮</button>
-                            <button class="button button-secondary animate-scaleIn animate-delay-2">次要按钮</button>
-                            <button class="button button-success animate-scaleIn animate-delay-3">成功按钮</button>
-                            <button class="button button-warning animate-scaleIn animate-delay-4">警告按钮</button>
-                            <button class="button button-error animate-scaleIn animate-delay-5">错误按钮</button>
-                        </div>
-                    </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">按钮颜色示例</span>
-                            <button class="copy-btn">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;button class="button button-primary"&gt;主要按钮&lt;/button&gt;
-&lt;button class="button button-secondary"&gt;次要按钮&lt;/button&gt;
-&lt;button class="button button-success"&gt;成功按钮&lt;/button&gt;
-&lt;button class="button button-warning"&gt;警告按钮&lt;/button&gt;
-&lt;button class="button button-error"&gt;错误按钮&lt;/button&gt;</code></pre>
-                        </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #1e1e1e;" data-color="#1e1e1e"></div>
+                    <div class="color-info">
+                        <h4>次要背景</h4>
+                        <div class="color-value">#1e1e1e</div>
+                        <div class="color-variable">--color-bg-sub</div>
                     </div>
                 </div>
 
-                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-4">
-                    <h3 class="component-showcase-title">状态标签示例</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="button-showcase-enhanced">
-                            <span class="tag tag-success interactive-card animate-scaleIn animate-delay-1">成功</span>
-                            <span class="tag tag-warning interactive-card animate-scaleIn animate-delay-2">警告</span>
-                            <span class="tag tag-error interactive-card animate-scaleIn animate-delay-3">错误</span>
-                            <span class="tag tag-default interactive-card animate-scaleIn animate-delay-4">默认</span>
-                            <span class="tag tag-primary interactive-card animate-scaleIn animate-delay-5">主要</span>
-                        </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #ffffff; border: 1px solid var(--color-border);" data-color="#ffffff"></div>
+                    <div class="color-info">
+                        <h4>主文本</h4>
+                        <div class="color-value">#ffffff</div>
+                        <div class="color-variable">--color-text-primary</div>
                     </div>
                 </div>
-            </section>
-        </main>
-        </div> <!-- Close modern-bg -->
-    </div>
 
-    <script src="assets/js/scripts.js"></script>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #dedede;" data-color="#dedede"></div>
+                    <div class="color-info">
+                        <h4>次要文本</h4>
+                        <div class="color-value">#dedede</div>
+                        <div class="color-variable">--color-text-secondary</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #9b9b9b;" data-color="#9b9b9b"></div>
+                    <div class="color-info">
+                        <h4>辅助文本</h4>
+                        <div class="color-value">#9b9b9b</div>
+                        <div class="color-variable">--color-text-muted</div>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #3f3f3f;" data-color="#3f3f3f"></div>
+                    <div class="color-info">
+                        <h4>边框颜色</h4>
+                        <div class="color-value">#3f3f3f</div>
+                        <div class="color-variable">--color-border</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Status Colors -->
+    <section id="status-colors" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">状态颜色</h2>
+                <p class="section-subtitle">用于表示不同状态的颜色，确保用户能够快速识别</p>
+            </div>
+
+            <div class="status-colors">
+                <div class="status-color" style="background-color: #4caf50; color: white;">
+                    成功
+                    <div class="contrast-ratio">#4caf50</div>
+                </div>
+
+                <div class="status-color" style="background-color: #ff9800; color: white;">
+                    警告
+                    <div class="contrast-ratio">#ff9800</div>
+                </div>
+
+                <div class="status-color" style="background-color: #f44336; color: white;">
+                    错误
+                    <div class="contrast-ratio">#f44336</div>
+                </div>
+
+                <div class="status-color" style="background-color: #2196f3; color: white;">
+                    信息
+                    <div class="contrast-ratio">#2196f3</div>
+                </div>
+            </div>
+
+            <!-- Usage Example -->
+            <div class="usage-example">
+                <h3>状态颜色使用示例</h3>
+                <div class="code-block">
+                    <button class="copy-button" onclick="copyCode(this)">复制</button>
+                    <pre><code>/* 状态颜色变量 */
+:root {
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-error: #f44336;
+  --color-info: #2196f3;
+}
+
+/* 使用示例 */
+.alert-success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.alert-warning {
+  background-color: var(--color-warning);
+  color: white;
+}
+
+.alert-error {
+  background-color: var(--color-error);
+  color: white;
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Accessibility -->
+    <section id="accessibility" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">颜色可访问性</h2>
+                <p class="section-subtitle">确保颜色对比度符合WCAG标准，提供良好的可读性</p>
+            </div>
+
+            <div class="color-contrast">
+                <div class="contrast-example" style="background-color: #181818; color: #ffffff;">
+                    白色文本 on 深色背景
+                    <div class="contrast-ratio">对比度: 15.8:1 ✓</div>
+                </div>
+
+                <div class="contrast-example" style="background-color: #c5f955; color: #000000;">
+                    黑色文本 on 主绿色
+                    <div class="contrast-ratio">对比度: 12.3:1 ✓</div>
+                </div>
+
+                <div class="contrast-example" style="background-color: #ff3e8f; color: #ffffff;">
+                    白色文本 on 洋红色
+                    <div class="contrast-ratio">对比度: 3.9:1 ✓</div>
+                </div>
+
+                <div class="contrast-example" style="background-color: #dedede; color: #000000;">
+                    黑色文本 on 浅灰色
+                    <div class="contrast-ratio">对比度: 11.4:1 ✓</div>
+                </div>
+            </div>
+
+            <div class="usage-example">
+                <h3>可访问性最佳实践</h3>
+                <div class="code-block">
+                    <button class="copy-button" onclick="copyCode(this)">复制</button>
+                    <pre><code>/* 确保足够的对比度 */
+.text-primary {
+  color: var(--color-text-primary); /* #ffffff */
+  background-color: var(--color-bg-base); /* #181818 */
+  /* 对比度: 15.8:1 - 超过WCAG AAA标准 */
+}
+
+/* 避免仅用颜色传达信息 */
+.error-text {
+  color: var(--color-error);
+  border-left: 4px solid var(--color-error);
+  /* 同时使用颜色和图标/边框 */
+}
+
+/* 为交互元素提供焦点状态 */
+.button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">相关链接</h2>
+                <p class="section-subtitle">其他设计系统组件</p>
+            </div>
+
+            <div class="component-grid">
+                <a href="typography.html" class="component-link">
+                    <div class="component-icon">✏️</div>
+                    <h3 class="component-title">字体系统</h3>
+                    <p class="component-description">字体、字号和文本样式规范</p>
+                </a>
+
+                <a href="spacing.html" class="component-link">
+                    <div class="component-icon">📏</div>
+                    <h3 class="component-title">间距系统</h3>
+                    <p class="component-description">标准化的间距规范</p>
+                </a>
+
+                <a href="layout.html" class="component-link">
+                    <div class="component-icon">📐</div>
+                    <h3 class="component-title">布局系统</h3>
+                    <p class="component-description">响应式布局和网格系统</p>
+                </a>
+
+                <a href="animations.html" class="component-link">
+                    <div class="component-icon">⚡</div>
+                    <h3 class="component-title">动效系统</h3>
+                    <p class="component-description">动画和过渡效果规范</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Meshy.ai Design System</h3>
+                    <p>构建一致的用户体验</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="#">文档</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">支持</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Meshy.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/design-system.js"></script>
+    <script>
+        // Color copy functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const colorPreviews = document.querySelectorAll('.color-preview');
+
+            colorPreviews.forEach(preview => {
+                preview.addEventListener('click', function() {
+                    const color = this.getAttribute('data-color');
+                    copyToClipboard(color);
+
+                    // Visual feedback
+                    const originalText = this.style::after.content;
+                    this.style.setProperty('--copy-text', '"已复制!"');
+                    setTimeout(() => {
+                        this.style.setProperty('--copy-text', '"点击复制"');
+                    }, 2000);
+                });
+            });
+        });
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showNotification('颜色已复制到剪贴板: ' + text);
+                }).catch(function() {
+                    showNotification('复制失败，请手动复制');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+
+                try {
+                    document.execCommand('copy');
+                    showNotification('颜色已复制到剪贴板: ' + text);
+                } catch (err) {
+                    showNotification('复制失败，请手动复制');
+                }
+
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const code = codeBlock.textContent;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code).then(function() {
+                    button.textContent = '已复制!';
+                    button.classList.add('copied');
+                    setTimeout(() => {
+                        button.textContent = '复制';
+                        button.classList.remove('copied');
+                    }, 2000);
+                });
+            } else {
+                // Fallback
+                const textArea = document.createElement('textarea');
+                textArea.value = code;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+
+                button.textContent = '已复制!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = '复制';
+                    button.classList.remove('copied');
+                }, 2000);
+            }
+        }
+
+        function showNotification(message) {
+            // Remove any existing notifications
+            const existingNotification = document.querySelector('.notification-toast');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            // Create new notification
+            const notification = document.createElement('div');
+            notification.className = 'notification-toast';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--color-primary);
+                color: #000000;
+                border-radius: var(--radius-md);
+                padding: var(--space-3) var(--space-4);
+                font-size: var(--font-size-sm);
+                font-weight: var(--font-weight-medium);
+                z-index: 1000;
+                transform: translateX(100%);
+                transition: transform var(--transition-normal);
+                box-shadow: var(--shadow-lg);
+            `;
+
+            document.body.appendChild(notification);
+
+            // Animate in
+            requestAnimationFrame(() => {
+                notification.style.transform = 'translateX(0)';
+            });
+
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

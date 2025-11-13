@@ -3,426 +3,521 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>字体系统 - Meshy.ai 设计系统</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <title>字体系统 - Meshy.ai Design System</title>
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header glass-header">
-        <div class="header-content">
-            <div>
-                <h1 class="header-title">字体系统</h1>
-                <p class="header-subtitle">完整的字体层次和排版规范</p>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <h2>Meshy.ai</h2>
+                <span class="nav-subtitle">Design System</span>
             </div>
-            <nav class="header-nav">
-                <a href="index.html" class="header-link">返回首页</a>
-                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
-            </nav>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="colors.html" class="nav-link">颜色</a>
+                <a href="typography.html" class="nav-link active">字体</a>
+                <a href="spacing.html" class="nav-link">间距</a>
+                <a href="layout.html" class="nav-link">布局</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <!-- Mobile Sidebar Toggle -->
-    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-    </button>
-
-    <!-- Mobile Sidebar Overlay -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-    <!-- Modern Hero Section -->
-    <section class="modern-hero">
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        <div class="modern-hero-content">
-            <h1 class="modern-hero-title animate-fadeInUp">
-                Meshy.ai 字体系统
-            </h1>
-            <p class="modern-hero-subtitle animate-fadeInUp animate-delay-1">
-                Inter字体族为基础，构建层次分明的文本系统
-            </p>
-            <div class="animate-fadeInUp animate-delay-2">
-                <button class="modern-button">
-                    探索字体规范
-                </button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">字体系统</span>
+                </h1>
+                <p class="hero-description">
+                    Inter字体族为基础，构建层次分明的文本系统，支持多语言和响应式排版
+                </p>
+                <div class="hero-actions">
+                    <a href="#font-sizes" class="btn btn-primary">查看字号</a>
+                    <a href="#font-weights" class="btn btn-secondary">字重规范</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-cards">
+                    <div class="hero-card hero-card-1">
+                        <div class="card-icon">🔤</div>
+                        <h3>字体族</h3>
+                        <p>Inter为主的多字体族</p>
+                    </div>
+                    <div class="hero-card hero-card-2">
+                        <div class="card-icon">📏</div>
+                        <h3>字号比例</h3>
+                        <p>基于黄金比例的字号系统</p>
+                    </div>
+                    <div class="hero-card hero-card-3">
+                        <div class="card-icon">⚖️</div>
+                        <h3>字重层次</h3>
+                        <p>清晰的字重分级系统</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="modern-bg">
-        <div class="preview-container">
-        <aside class="sidebar">
-            <nav>
-                <h3 class="sidebar-title">设计令牌</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="colors.html" class="sidebar-link">颜色系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="typography.html" class="sidebar-link active">字体系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="spacing.html" class="sidebar-link">间距系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="layout.html" class="sidebar-link">布局系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="animations.html" class="sidebar-link">动效系统</a>
-                    </li>
-                </ul>
-
-                <h3 class="sidebar-title">组件库</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            <!-- Typography Scale -->
-            <section class="section">
-                <h2 class="section-title">字体层次</h2>
-                <p class="section-description">基于 CSS 变量的完整字体层次系统</p>
-
-                <div class="component-showcase-enhanced animate-fadeInUp">
-                    <h3 class="component-showcase-title">标题层次</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="typography-showcase-enhanced">
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-1">
-                                <div class="typography-label">H1 - 页面主标题</div>
-                                <h1 class="typography-text" style="font-size: var(--text-6xl); font-weight: var(--font-weight-bold); line-height: var(--leading-tight);">页面主标题</h1>
-                            </div>
-
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-2">
-                                <div class="typography-label">H2 - 章节标题</div>
-                                <h2 class="typography-text" style="font-size: var(--text-4xl); font-weight: var(--font-weight-semibold); line-height: var(--leading-tight);">章节标题</h2>
-                            </div>
-
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-3">
-                                <div class="typography-label">H3 - 小节标题</div>
-                                <h3 class="typography-text" style="font-size: var(--text-2xl); font-weight: var(--font-weight-semibold); line-height: var(--leading-tight);">小节标题</h3>
-                            </div>
-
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-4">
-                                <div class="typography-label">H4 - 微标题</div>
-                                <h4 class="typography-text" style="font-size: var(--text-xl); font-weight: var(--font-weight-medium); line-height: var(--leading-normal);">微标题</h4>
-                            </div>
-
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-5">
-                                <div class="typography-label">H5 - 小标题</div>
-                                <h5 class="typography-text" style="font-size: var(--text-lg); font-weight: var(--font-weight-medium); line-height: var(--leading-normal);">小标题</h5>
-                            </div>
-
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-1">
-                                <div class="typography-label">H6 - 最小标题</div>
-                                <h6 class="typography-text" style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); line-height: var(--leading-normal);">最小标题</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Body Text -->
-            <section class="section">
-                <h2 class="section-title">正文文本</h2>
-                <p class="section-description">不同尺寸和样式的正文文本</p>
-
-                <div class="component-showcase-enhanced animate-slideInLeft">
-                    <h3 class="component-showcase-title">文本尺寸</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="typography-showcase-enhanced">
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-1">
-                                <div class="typography-label">大文本 (Large)</div>
-                                <p class="typography-text" style="font-size: var(--text-lg); line-height: var(--leading-relaxed);">这是大号文本，用于强调重要内容或段落开头。大号文本提供更好的可读性和视觉层次。</p>
-                            </div>
-
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-2">
-                                <div class="typography-label">标准正文 (Base)</div>
-                                <p class="typography-text" style="font-size: var(--text-base); line-height: var(--leading-relaxed);">这是标准的正文文本，适用于大多数内容展示。标准正文提供了良好的阅读体验，适合长篇阅读。</p>
-                            </div>
-
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-3">
-                                <div class="typography-label">小文本 (Small)</div>
-                                <p class="typography-text" style="font-size: var(--text-sm); line-height: var(--leading-normal);">这是小号文本，通常用于次要信息、注释或空间有限的场景。</p>
-                            </div>
-
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-4">
-                                <div class="typography-label">超小文本 (Extra Small)</div>
-                                <p class="typography-text" style="font-size: var(--text-xs); line-height: var(--leading-normal);">这是超小文本，主要用于标签、版权信息、元数据等辅助信息。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="component-showcase-enhanced animate-slideInRight">
-                    <h3 class="component-showcase-title">文本权重</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="typography-showcase-enhanced">
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-1">
-                                <span style="color: var(--color-label-soft); font-size: var(--text-sm); font-family: var(--font-mono);">Light (300)</span>
-                                <div style="font-weight: var(--font-weight-light); font-size: var(--text-xl);">轻体文本</div>
-                            </div>
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-2">
-                                <span style="color: var(--color-label-soft); font-size: var(--text-sm); font-family: var(--font-mono);">Normal (400)</span>
-                                <div style="font-weight: var(--font-weight-normal); font-size: var(--text-xl);">常规文本</div>
-                            </div>
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-3">
-                                <span style="color: var(--color-label-soft); font-size: var(--text-sm); font-family: var(--font-mono);">Medium (500)</span>
-                                <div style="font-weight: var(--font-weight-medium); font-size: var(--text-xl);">中等字体</div>
-                            </div>
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-4">
-                                <span style="color: var(--color-label-soft); font-size: var(--text-sm); font-family: var(--font-mono);">Semibold (600)</span>
-                                <div style="font-weight: var(--font-weight-semibold); font-size: var(--text-xl);">半粗体</div>
-                            </div>
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-5">
-                                <span style="color: var(--color-label-soft); font-size: var(--text-sm); font-family: var(--font-mono);">Bold (700)</span>
-                                <div style="font-weight: var(--font-weight-bold); font-size: var(--text-xl);">粗体文本</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Text Styles -->
-            <section class="section">
-                <h2 class="section-title">文本样式</h2>
-                <p class="section-description">不同样式和用途的文本变体</p>
-
-                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-2">
-                    <h3 class="component-showcase-title">文本样式</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="typography-showcase-enhanced">
-                            <div class="typography-sample interactive-card animate-slideInLeft animate-delay-1">
-                                <p><strong>粗体文本</strong> - 使用 strong 标签或 font-weight: bold</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-slideInLeft animate-delay-2">
-                                <p><em>斜体文本</em> - 使用 em 标签或 font-style: italic</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-slideInLeft animate-delay-3">
-                                <p><u>下划线文本</u> - 使用 u 标签或 text-decoration: underline</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-slideInLeft animate-delay-4">
-                                <p><del>删除线文本</del> - 使用 del 标签或 text-decoration: line-through</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-slideInRight animate-delay-1">
-                                <p style="color: var(--color-accent-base);"><span style="color: var(--color-accent-base);">强调文本</span> - 使用品牌颜色强调重要信息</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-slideInRight animate-delay-2">
-                                <p style="color: var(--color-label-soft);"><span style="color: var(--color-label-soft);">静音文本</span> - 使用柔和颜色表示次要信息</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-1">
-                                <p style="text-transform: uppercase; letter-spacing: 0.05em; font-size: var(--text-sm);">大写文本</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-2">
-                                <p style="font-family: var(--font-mono);"><code style="font-family: var(--font-mono);">等宽文本</code> - 用于代码、数据等</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Font Families -->
-            <section class="section">
+    <!-- Font Families -->
+    <section id="font-families" class="section">
+        <div class="container">
+            <div class="section-header">
                 <h2 class="section-title">字体族</h2>
-                <p class="section-description">系统中使用的字体族和后备方案</p>
+                <p class="section-subtitle">标准化的字体选择，确保跨平台一致性</p>
+            </div>
 
-                <div class="component-showcase-enhanced animate-scaleIn">
-                    <h3 class="component-showcase-title">字体族演示</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="typography-showcase-enhanced">
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-1">
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">Sans-serif 系统字体</div>
-                                <p style="font-family: var(--font-sans); font-size: var(--text-xl);">系统默认无衬线字体</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-2">
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">Inter 字体</div>
-                                <p style="font-family: var(--font-inter); font-size: var(--text-xl);">Inter 字体 - 专为界面设计</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-3">
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">Monospace 等宽字体</div>
-                                <p style="font-family: var(--font-mono); font-size: var(--text-xl);">Monospace 等宽字体 - 1234567890</p>
-                            </div>
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">主字体</h3>
+                    <div style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); margin-bottom: var(--space-4);">
+                        Inter, -apple-system, BlinkMacSystemFont
+                    </div>
+                    <div class="code-example">
+                        <code>font-family: var(--font-family-primary);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-family: var(--font-family-primary);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">等宽字体</h3>
+                    <div style="font-family: var(--font-family-mono); font-size: var(--font-size-xl); margin-bottom: var(--space-4);">
+                        'SF Mono', Monaco, 'Cascadia Code'
+                    </div>
+                    <div class="code-example">
+                        <code>font-family: var(--font-family-mono);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-family: var(--font-family-mono);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">字体对比</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                        <div style="font-family: var(--font-family-primary);">
+                            <span style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Primary:</span>
+                            The quick brown fox jumps over the lazy dog
+                        </div>
+                        <div style="font-family: var(--font-family-mono);">
+                            <span style="color: var(--color-text-muted); font-size: var(--font-size-sm);">Monospace:</span>
+                            The quick brown fox jumps over the lazy dog
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- Line Heights -->
-            <section class="section">
-                <h2 class="section-title">行高系统</h2>
-                <p class="section-description">不同行高对可读性的影响</p>
+    <!-- Font Sizes -->
+    <section id="font-sizes" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">字号规范</h2>
+                <p class="section-subtitle">基于比例的字号系统，确保视觉层次清晰</p>
+            </div>
 
-                <div class="component-showcase-enhanced animate-slideInLeft">
-                    <h3 class="component-showcase-title">行高对比</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="typography-showcase-enhanced" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--gap-lg);">
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-1">
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">紧凑行高 (1.25)</div>
-                                <p style="line-height: var(--leading-tight);">这是紧凑行高的文本示例。紧凑行高适合在有限空间内展示大量信息，但可能会影响可读性。适用于标题、标签等场景。</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-2">
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">正常行高 (1.5)</div>
-                                <p style="line-height: var(--leading-normal);">这是正常行高的文本示例。正常行高提供了良好的可读性，是大多数正文内容的推荐选择。适合段落、描述等。</p>
-                            </div>
-                            <div class="typography-sample interactive-card animate-fadeInUp animate-delay-3">
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-bottom: var(--p-xs);">宽松行高 (1.75)</div>
-                                <p style="line-height: var(--leading-relaxed);">这是宽松行高的文本示例。宽松行高提高了可读性，特别适合长篇阅读和重要内容。适合文章、教程等。</p>
-                            </div>
-                        </div>
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <div style="font-size: var(--font-size-5xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-2);">48px</div>
+                    <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-5xl)</div>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-5xl);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-5xl);')">复制</button>
                     </div>
                 </div>
-            </section>
 
-            <!-- Text Colors -->
-            <section class="section">
-                <h2 class="section-title">文本颜色</h2>
-                <p class="section-description">不同文本颜色的语义和用途</p>
-
-                <div class="component-showcase-enhanced animate-slideInRight">
-                    <h3 class="component-showcase-title">文本颜色层次</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="typography-showcase-enhanced">
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-1">
-                                <div style="color: var(--color-label-title); font-size: var(--text-xl); font-weight: var(--font-weight-semibold);">
-                                    标题文本 (Title)
-                                </div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-top: var(--p-xs);">
-                                    用于页面和组件的主要标题
-                                </div>
-                            </div>
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-2">
-                                <div style="color: var(--color-label-base); font-size: var(--text-xl);">
-                                    正文文本 (Body)
-                                </div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-top: var(--p-xs);">
-                                    用于主要内容区域
-                                </div>
-                            </div>
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-3">
-                                <div style="color: var(--color-label-soft); font-size: var(--text-xl);">
-                                    次要文本 (Soft)
-                                </div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-top: var(--p-xs);">
-                                    用于辅助信息和元数据
-                                </div>
-                            </div>
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-4">
-                                <div style="color: var(--color-label-muted); font-size: var(--text-xl);">
-                                    静音文本 (Muted)
-                                </div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-top: var(--p-xs);">
-                                    用于占位符和禁用状态
-                                </div>
-                            </div>
-                            <div class="typography-sample interactive-card animate-scaleIn animate-delay-5">
-                                <div style="color: var(--color-label-faint); font-size: var(--text-xl);">
-                                    淡化文本 (Faint)
-                                </div>
-                                <div style="color: var(--color-label-soft); font-size: var(--text-sm); margin-top: var(--p-xs);">
-                                    用于极次要的信息
-                                </div>
-                            </div>
-                        </div>
+                <div class="token-card">
+                    <div style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-2);">36px</div>
+                    <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-4xl)</div>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-4xl);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-4xl);')">复制</button>
                     </div>
                 </div>
-            </section>
 
-            <!-- Responsive Typography -->
-            <section class="section">
-                <h2 class="section-title">响应式字体</h2>
-                <p class="section-description">不同屏幕尺寸下的字体适配</p>
-
-                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-3">
-                    <h3 class="component-showcase-title">响应式标题</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="interactive-card animate-scaleIn" style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-xl); max-width: 800px;">
-                            <h1 style="font-size: clamp(1.5rem, 5vw, 3rem); line-height: var(--leading-tight);">响应式标题示例</h1>
-                            <p style="margin-top: var(--p-lg); color: var(--color-label-soft);">
-                                使用 clamp() 函数创建响应式字体大小，确保在不同设备上都有良好的显示效果。
-                            </p>
-                        </div>
+                <div class="token-card">
+                    <div style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">30px</div>
+                    <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-3xl)</div>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-3xl);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-3xl);')">复制</button>
                     </div>
                 </div>
-            </section>
 
-            <!-- CSS Variables Reference -->
-            <section class="section">
-                <h2 class="section-title">CSS 变量参考</h2>
-                <p class="section-description">字体系统使用的 CSS 变量列表</p>
-
-                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-4">
-                    <h3 class="component-showcase-title">字体系统 CSS 变量</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="typography-showcase-enhanced" style="font-family: var(--font-mono); font-size: var(--text-sm);">
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap-lg);">
-                                <div class="interactive-card animate-slideInLeft animate-delay-1">
-                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">字体族</h4>
-                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
-                                        --font-sans: ui-sans-serif, system-ui, sans-serif;<br>
-                                        --font-inter: "Inter", sans-serif;<br>
-                                        --font-mono: ui-monospace, SFMono-Regular, monospace;
-                                    </div>
-                                </div>
-                                <div class="interactive-card animate-slideInLeft animate-delay-2">
-                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">字号</h4>
-                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
-                                        --text-xs: 0.75rem;<br>
-                                        --text-sm: 0.875rem;<br>
-                                        --text-base: 1rem;<br>
-                                        --text-lg: 1.125rem;<br>
-                                        --text-xl: 1.25rem;<br>
-                                        --text-2xl: 1.5rem;<br>
-                                        --text-3xl: 1.75rem;<br>
-                                        --text-4xl: 2rem;
-                                    </div>
-                                </div>
-                                <div class="interactive-card animate-slideInRight animate-delay-1">
-                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">字重</h4>
-                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
-                                        --font-weight-light: 300;<br>
-                                        --font-weight-normal: 400;<br>
-                                        --font-weight-medium: 500;<br>
-                                        --font-weight-semibold: 600;<br>
-                                        --font-weight-bold: 700;
-                                    </div>
-                                </div>
-                                <div class="interactive-card animate-slideInRight animate-delay-2">
-                                    <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">行高</h4>
-                                    <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
-                                        --leading-tight: 1.25;<br>
-                                        --leading-normal: 1.5;<br>
-                                        --leading-relaxed: 1.75;<br>
-                                        --leading-loose: 2;
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="token-card">
+                    <div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">24px</div>
+                    <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-2xl)</div>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-2xl);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-2xl);')">复制</button>
                     </div>
                 </div>
-            </section>
-        </main>
-        </div> <!-- Close modern-bg -->
-    </div>
 
-    <script src="assets/js/scripts.js"></script>
+                <div class="token-card">
+                    <div style="font-size: var(--font-size-xl); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">20px</div>
+                    <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-xl)</div>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-xl);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-xl);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">18px</div>
+                    <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-lg)</div>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-lg);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-lg);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div style="font-size: var(--font-size-base); margin-bottom: var(--space-2);">16px</div>
+                    <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-base)</div>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-base);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-base);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div style="font-size: var(--font-size-sm); margin-bottom: var(--space-2);">14px</div>
+                    <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-sm)</div>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-sm);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-sm);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div style="font-size: var(--font-size-xs); margin-bottom: var(--space-2);">12px</div>
+                    <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-xs)</div>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-xs);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-xs);')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Font Weights -->
+    <section id="font-weights" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">字重规范</h2>
+                <p class="section-subtitle">标准化的字重使用，确保文本层次分明</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <div style="font-weight: var(--font-weight-bold); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Bold 700</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-bold)</div>
+                    <div class="code-example">
+                        <code>font-weight: var(--font-weight-bold);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-bold);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div style="font-weight: var(--font-weight-semibold); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Semibold 600</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-semibold)</div>
+                    <div class="code-example">
+                        <code>font-weight: var(--font-weight-semibold);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-semibold);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div style="font-weight: var(--font-weight-medium); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Medium 500</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-medium)</div>
+                    <div class="code-example">
+                        <code>font-weight: var(--font-weight-medium);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-medium);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div style="font-weight: var(--font-weight-normal); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Regular 400</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-normal)</div>
+                    <div class="code-example">
+                        <code>font-weight: var(--font-weight-normal);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-normal);')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Line Heights -->
+    <section id="line-heights" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">行高规范</h2>
+                <p class="section-subtitle">标准化的行高设置，确保良好的阅读体验</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <div style="line-height: var(--line-height-tight); font-size: var(--font-size-lg); margin-bottom: var(--space-2);">
+                        紧凑行高<br>1.25
+                    </div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--line-height-tight)</div>
+                    <div class="code-example">
+                        <code>line-height: var(--line-height-tight);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-tight);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div style="line-height: var(--line-height-normal); font-size: var(--font-size-lg); margin-bottom: var(--space-2);">
+                        标准行高<br>1.5
+                    </div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--line-height-normal)</div>
+                    <div class="code-example">
+                        <code>line-height: var(--line-height-normal);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-normal);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div style="line-height: var(--line-height-relaxed); font-size: var(--font-size-lg); margin-bottom: var(--space-2);">
+                        宽松行高<br>1.75
+                    </div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--line-height-relaxed)</div>
+                    <div class="code-example">
+                        <code>line-height: var(--line-height-relaxed);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-relaxed);')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text Styles -->
+    <section id="text-styles" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">文本样式</h2>
+                <p class="section-subtitle">常用的文本样式组合和排版效果</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">标题样式</h3>
+                    <h1 style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-2);">主标题 H1</h1>
+                    <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">副标题 H2</h2>
+                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">三级标题 H3</h3>
+                    <div class="code-example">
+                        <code>/* H1 Style */\nfont-size: var(--font-size-3xl);\nfont-weight: var(--font-weight-bold);\nline-height: var(--line-height-tight);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('/* H1 Style */\nfont-size: var(--font-size-3xl);\nfont-weight: var(--font-weight-bold);\nline-height: var(--line-height-tight);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">正文样式</h3>
+                    <p style="font-size: var(--font-size-base); line-height: var(--line-height-normal); margin-bottom: var(--space-2);">
+                        这是正文内容，使用标准的字号和行高，确保良好的阅读体验。Inter字体在屏幕显示时具有良好的可读性。
+                    </p>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-base);\nline-height: var(--line-height-normal);\ncolor: var(--color-text-primary);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-base);\nline-height: var(--line-height-normal);\ncolor: var(--color-text-primary);')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">辅助文本</h3>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-2);">
+                        这是辅助文本，用于显示次要信息或说明内容。使用较小的字号和较淡的颜色。
+                    </p>
+                    <div class="code-example">
+                        <code>font-size: var(--font-size-sm);\ncolor: var(--color-text-secondary);\nline-height: var(--line-height-normal);</code>
+                        <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-sm);\ncolor: var(--color-text-secondary);\nline-height: var(--line-height-normal);')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Meshy.ai Design System</h3>
+                    <p>构建一致的用户体验</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="#">文档</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">支持</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Meshy.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .code-example {
+            position: relative;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            margin-top: var(--space-4);
+        }
+
+        .code-example code {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            white-space: pre-wrap;
+            display: block;
+            margin-right: 60px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            background-color: var(--color-primary);
+            color: var(--color-text-inverse);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: var(--space-1) var(--space-2);
+            font-size: var(--font-size-xs);
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+        }
+
+        .copy-btn:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
+    </style>
+
+    <script>
+        // Navigation toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // Smooth scroll for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && document.querySelector(href)) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const offsetTop = target.offsetTop - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showNotification('样式已复制到剪贴板');
+                }).catch(function() {
+                    showNotification('复制失败，请手动复制');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+
+                try {
+                    document.execCommand('copy');
+                    showNotification('样式已复制到剪贴板');
+                } catch (err) {
+                    showNotification('复制失败，请手动复制');
+                }
+
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const existingNotification = document.querySelector('.notification-toast');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            const notification = document.createElement('div');
+            notification.className = 'notification-toast';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--color-surface-light);
+                border: 1px solid var(--color-primary);
+                border-radius: var(--radius-md);
+                padding: var(--space-3) var(--space-4);
+                color: var(--color-text-primary);
+                font-size: var(--font-size-sm);
+                z-index: var(--z-toast);
+                transform: translateX(100%);
+                transition: transform var(--transition-normal);
+            `;
+
+            document.body.appendChild(notification);
+
+            requestAnimationFrame(() => {
+                notification.style.transform = 'translateX(0)';
+            });
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

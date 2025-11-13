@@ -3,459 +3,710 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>卡片组件 - Meshy.ai 设计系统</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/components.css">
+    <title>卡片组件 - Meshy.ai Design System</title>
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div>
-                <h1 class="header-title">卡片组件</h1>
-                <p class="header-subtitle">多样化卡片组件 - 用于内容展示和分组</p>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <h2>Meshy.ai</h2>
+                <span class="nav-subtitle">Design System</span>
             </div>
-            <nav class="header-nav">
-                <a href="index.html" class="header-link">返回首页</a>
-                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
-            </nav>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="colors.html" class="nav-link">颜色</a>
+                <a href="typography.html" class="nav-link">字体</a>
+                <a href="spacing.html" class="nav-link">间距</a>
+                <a href="layout.html" class="nav-link">布局</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <div class="preview-container">
-        <aside class="sidebar">
-            <nav>
-                <h3 class="sidebar-title">设计令牌</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="colors.html" class="sidebar-link">颜色系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="typography.html" class="sidebar-link">字体系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="spacing.html" class="sidebar-link">间距系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="layout.html" class="sidebar-link">布局系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="animations.html" class="sidebar-link">动效系统</a>
-                    </li>
-                </ul>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">卡片组件</span>
+                </h1>
+                <p class="hero-description">
+                    灵活多样的卡片组件，用于展示内容、数据和信息，支持多种布局和交互模式
+                </p>
+                <div class="hero-actions">
+                    <a href="#card-types" class="btn btn-primary">查看类型</a>
+                    <a href="#card-layouts" class="btn btn-secondary">卡片布局</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-cards">
+                    <div class="hero-card hero-card-1">
+                        <div class="card-icon">🎴</div>
+                        <h3>基础卡片</h3>
+                        <p>简洁的内容容器</p>
+                    </div>
+                    <div class="hero-card hero-card-2">
+                        <div class="card-icon">📊</div>
+                        <h3>数据卡片</h3>
+                        <p>展示统计和信息</p>
+                    </div>
+                    <div class="hero-card hero-card-3">
+                        <div class="card-icon">🖼️</div>
+                        <h3>媒体卡片</h3>
+                        <p>图片和媒体展示</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <h3 class="sidebar-title">组件库</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="cards.html" class="sidebar-link active">卡片 Cards</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="hero-sections.html" class="sidebar-link">Hero 区域</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
+    <!-- Basic Cards -->
+    <section id="card-types" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">基础卡片</h2>
+                <p class="section-subtitle">最基本的卡片组件和结构</p>
+            </div>
 
-        <main class="main-content">
-            <!-- Standard Cards -->
-            <section class="section">
-                <h2 class="section-title">标准卡片</h2>
-                <p class="section-description">用于组织和展示相关信息的通用卡片组件</p>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">基础卡片</h3>
-                    <div class="component-preview grid grid-responsive">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">基础卡片</h3>
-                            </div>
-                            <div class="card-content">
-                                <p>这是一个标准的卡片组件，用于展示相关信息的集合。卡片可以包含标题、内容和操作区域。</p>
-                            </div>
-                            <div class="card-footer">
-                                <button class="button button-primary button-small">查看详情</button>
-                            </div>
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">简单卡片</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 300px;">
+                            <h4 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-3); color: var(--color-text-primary);">卡片标题</h4>
+                            <p style="color: var(--color-text-secondary); margin: 0;">这是一个简单的卡片示例，包含标题和描述文本。</p>
                         </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  max-width: 300px;
+}
 
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="flex justify-between items-start">
-                                    <h3 class="card-title">带头像的卡片</h3>
-                                    <span class="tag tag-primary">新功能</span>
-                                </div>
+.card-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-3);
+  color: var(--color-text-primary);
+}
+
+.card-text {
+  color: var(--color-text-secondary);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-6);\n  max-width: 300px;\n}\n\n.card-title {\n  font-size: var(--font-size-lg);\n  font-weight: var(--font-weight-semibold);\n  margin-bottom: var(--space-3);\n  color: var(--color-text-primary);\n}\n\n.card-text {\n  color: var(--color-text-secondary);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">带头部的卡片</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; max-width: 300px;">
+                            <div style="background-color: var(--color-surface-light); padding: var(--space-4); border-bottom: 1px solid var(--color-border);">
+                                <h4 style="font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); margin: 0; color: var(--color-text-primary);">卡片头部</h4>
                             </div>
-                            <div class="card-content">
-                                <div class="flex items-center gap-md mb-md">
-                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-full);"></div>
-                                    <div>
-                                        <div style="font-weight: var(--font-weight-medium);">John Doe</div>
-                                        <div style="font-size: var(--text-sm); color: var(--color-label-soft);">产品经理</div>
-                                    </div>
-                                </div>
-                                <p>卡片可以包含用户信息、状态标签和丰富的内容结构。</p>
-                            </div>
-                            <div class="card-footer">
-                                <button class="button button-secondary button-small">了解更多</button>
+                            <div style="padding: var(--space-6);">
+                                <p style="color: var(--color-text-secondary); margin: 0;">这是卡片的主要内容区域，包含详细的信息描述。</p>
                             </div>
                         </div>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">基础卡片代码示例</span>
-                            <button class="code-copy-btn" data-code="basic-card">复制代码</button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;!-- 基础卡片 --&gt;
-&lt;div class="card"&gt;
-    &lt;div class="card-header"&gt;
-        &lt;h3 class="card-title"&gt;基础卡片&lt;/h3&gt;
-    &lt;/div&gt;
-    &lt;div class="card-content"&gt;
-        &lt;p&gt;这是一个标准的卡片组件，用于展示相关信息的集合。卡片可以包含标题、内容和操作区域。&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="card-footer"&gt;
-        &lt;button class="button button-primary button-small"&gt;查看详情&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+                        <code>.card-with-header {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 300px;
+}
 
-&lt;!-- 带头像的卡片 --&gt;
-&lt;div class="card"&gt;
-    &lt;div class="card-header"&gt;
-        &lt;div class="flex justify-between items-start"&gt;
-            &lt;h3 class="card-title"&gt;带头像的卡片&lt;/h3&gt;
-            &lt;span class="tag tag-primary"&gt;新功能&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="card-content"&gt;
-        &lt;div class="flex items-center gap-md mb-md"&gt;
-            &lt;div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-full);"&gt;&lt;/div&gt;
-            &lt;div&gt;
-                &lt;div style="font-weight: var(--font-weight-medium);"&gt;John Doe&lt;/div&gt;
-                &lt;div style="font-size: var(--text-sm); color: var(--color-label-soft);"&gt;产品经理&lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;p&gt;卡片可以包含用户信息、状态标签和丰富的内容结构。&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="card-footer"&gt;
-        &lt;button class="button button-secondary button-small"&gt;了解更多&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+.card-header {
+  background-color: var(--color-surface-light);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card-body {
+  padding: var(--space-6);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card-with-header {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  max-width: 300px;\n}\n\n.card-header {\n  background-color: var(--color-surface-light);\n  padding: var(--space-4);\n  border-bottom: 1px solid var(--color-border);\n}\n\n.card-body {\n  padding: var(--space-6);\n}')">复制</button>
                     </div>
                 </div>
-            </section>
 
-            <!-- Model Cards -->
-            <section class="section">
-                <h2 class="section-title">模型卡片</h2>
-                <p class="section-description">专门用于展示 3D 模型的卡片组件</p>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">3D 模型卡片</h3>
-                    <div class="component-preview grid grid-responsive">
-                        <div class="card card-model">
-                            <div class="card-media">
-                                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--text-lg);">
-                                    3D 模型预览
-                                </div>
-                                <div class="model-overlay">
-                                    <button class="button button-primary button-small">查看 3D</button>
-                                </div>
-                            </div>
-                            <div class="card-content" style="padding: var(--p-lg);">
-                                <h3 class="card-title">幻想战士</h3>
-                                <div class="flex items-center justify-between mt-sm">
-                                    <span class="tag tag-default">角色</span>
-                                    <span style="font-size: var(--text-xs); color: var(--color-label-soft);">2小时前</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card card-model">
-                            <div class="card-media">
-                                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--text-lg);">
-                                    环境模型
-                                </div>
-                                <div class="model-overlay">
-                                    <button class="button button-primary button-small">查看 3D</button>
-                                </div>
-                            </div>
-                            <div class="card-content" style="padding: var(--p-lg);">
-                                <h3 class="card-title">魔法森林</h3>
-                                <div class="flex items-center justify-between mt-sm">
-                                    <span class="tag tag-default">环境</span>
-                                    <span style="font-size: var(--text-xs); color: var(--color-label-soft);">5小时前</span>
-                                </div>
+                <div class="token-card">
+                    <h3 class="token-title">带操作的卡片</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 300px;">
+                            <h4 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-3); color: var(--color-text-primary);">操作卡片</h4>
+                            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">这是一个包含操作按钮的卡片示例。</p>
+                            <div style="display: flex; gap: var(--space-2);">
+                                <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); font-size: var(--font-size-sm); cursor: pointer;">确定</button>
+                                <button style="background-color: transparent; color: var(--color-text-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); font-size: var(--font-size-sm); cursor: pointer;">取消</button>
                             </div>
                         </div>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">3D模型卡片代码示例</span>
-                            <button class="code-copy-btn" data-code="model-card">复制代码</button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;!-- 3D模型卡片 --&gt;
-&lt;div class="card card-model"&gt;
-    &lt;div class="card-media"&gt;
-        &lt;div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: var(--text-lg);"&gt;
-            3D 模型预览
-        &lt;/div&gt;
-        &lt;div class="model-overlay"&gt;
-            &lt;button class="button button-primary button-small"&gt;查看 3D&lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="card-content" style="padding: var(--p-lg);"&gt;
-        &lt;h3 class="card-title"&gt;幻想战士&lt;/h3&gt;
-        &lt;div class="flex items-center justify-between mt-sm"&gt;
-            &lt;span class="tag tag-default"&gt;角色&lt;/span&gt;
-            &lt;span style="font-size: var(--text-xs); color: var(--color-label-soft);"&gt;2小时前&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+                        <code>.card-with-actions {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  max-width: 300px;
+}
+
+.card-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card-with-actions {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-6);\n  max-width: 300px;\n}\n\n.card-actions {\n  display: flex;\n  gap: var(--space-2);\n  margin-top: var(--space-4);\n}')">复制</button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- Blog Cards -->
-            <section class="section">
-                <h2 class="section-title">博客卡片</h2>
-                <p class="section-description">用于文章和博客内容展示的卡片</p>
+    <!-- Media Cards -->
+    <section id="media-cards" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">媒体卡片</h2>
+                <p class="section-subtitle">包含图片、图标或其他媒体内容的卡片</p>
+            </div>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">文章卡片</h3>
-                    <div class="component-preview grid grid-responsive">
-                        <article class="card">
-                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 16/9; margin: calc(var(--p-2xl) * -1); margin-bottom: var(--m-lg);"></div>
-                            <div class="card-header">
-                                <div class="tag tag-primary mb-sm">教程</div>
-                                <h3 class="card-title">开始使用 3D 建模</h3>
-                                <p class="card-subtitle">学习 3D 建模的基础知识和创建你的第一个精彩 3D 资产</p>
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">图片卡片</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; max-width: 300px;">
+                            <div style="background-color: var(--color-surface-light); height: 160px; display: flex; align-items: center; justify-content: center;">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21,15 16,10 5,21"/>
+                                </svg>
                             </div>
-                            <div class="card-content">
-                                <p style="margin: 0;">探索 3D 建模的精彩世界，从基础概念到高级技术...</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="flex items-center gap-md">
-                                    <div style="width: 24px; height: 24px; background: var(--color-bg-border); border-radius: var(--radius-full);"></div>
-                                    <span style="font-size: var(--text-sm); color: var(--color-label-soft);">John Doe</span>
-                                </div>
-                                <span style="font-size: var(--text-xs); color: var(--color-label-muted);">5分钟阅读</span>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">文章卡片代码示例</span>
-                            <button class="code-copy-btn" data-code="blog-card">复制代码</button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;!-- 文章卡片 --&gt;
-&lt;article class="card"&gt;
-    &lt;div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 16/9; margin: calc(var(--p-2xl) * -1); margin-bottom: var(--m-lg);"&gt;&lt;/div&gt;
-    &lt;div class="card-header"&gt;
-        &lt;div class="tag tag-primary mb-sm"&gt;教程&lt;/div&gt;
-        &lt;h3 class="card-title"&gt;开始使用 3D 建模&lt;/h3&gt;
-        &lt;p class="card-subtitle"&gt;学习 3D 建模的基础知识和创建你的第一个精彩 3D 资产&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="card-content"&gt;
-        &lt;p style="margin: 0;"&gt;探索 3D 建模的精彩世界，从基础概念到高级技术...&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="card-footer"&gt;
-        &lt;div class="flex items-center gap-md"&gt;
-            &lt;div style="width: 24px; height: 24px; background: var(--color-bg-border); border-radius: var(--radius-full);"&gt;&lt;/div&gt;
-            &lt;span style="font-size: var(--text-sm); color: var(--color-label-soft);"&gt;John Doe&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;span style="font-size: var(--text-xs); color: var(--color-label-muted);"&gt;5分钟阅读&lt;/span&gt;
-    &lt;/div&gt;
-&lt;/article&gt;</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Job Cards -->
-            <section class="section">
-                <h2 class="section-title">职位卡片</h2>
-                <p class="section-description">用于职位招聘信息展示的卡片</p>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">招聘卡片</h3>
-                    <div class="component-preview">
-                        <div class="card" style="border-left: 4px solid var(--color-accent-base);">
-                            <div class="card-header">
-                                <div class="flex justify-between items-start">
-                                    <div>
-                                        <h3 class="card-title">高级前端开发工程师</h3>
-                                        <p class="card-subtitle" style="margin-top: var(--p-xs);">Meshy AI</p>
-                                    </div>
-                                    <span class="tag tag-success">全职</span>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p>我们正在寻找经验丰富的前端开发工程师加入我们的团队...</p>
-                                <div class="flex flex-wrap gap-sm mt-md">
-                                    <span class="tag tag-default">React</span>
-                                    <span class="tag tag-default">TypeScript</span>
-                                    <span class="tag tag-default">3D 图形</span>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <div style="font-size: var(--text-sm); color: var(--color-label-soft);">旧金山, CA</div>
-                                    </div>
-                                    <div style="font-size: var(--text-sm); color: var(--color-accent-base); font-weight: var(--font-weight-medium);">$120k - $180k</div>
-                                </div>
+                            <div style="padding: var(--space-4);">
+                                <h4 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2); color: var(--color-text-primary);">图片标题</h4>
+                                <p style="color: var(--color-text-secondary); margin: 0; font-size: var(--font-size-sm);">这是一个包含图片的卡片，适用于展示图片相关内容。</p>
                             </div>
                         </div>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">招聘卡片代码示例</span>
-                            <button class="code-copy-btn" data-code="job-card">复制代码</button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;!-- 招聘卡片 --&gt;
-&lt;div class="card" style="border-left: 4px solid var(--color-accent-base);"&gt;
-    &lt;div class="card-header"&gt;
-        &lt;div class="flex justify-between items-start"&gt;
-            &lt;div&gt;
-                &lt;h3 class="card-title"&gt;高级前端开发工程师&lt;/h3&gt;
-                &lt;p class="card-subtitle" style="margin-top: var(--p-xs);"&gt;Meshy AI&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;span class="tag tag-success"&gt;全职&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="card-content"&gt;
-        &lt;p&gt;我们正在寻找经验丰富的前端开发工程师加入我们的团队...&lt;/p&gt;
-        &lt;div class="flex flex-wrap gap-sm mt-md"&gt;
-            &lt;span class="tag tag-default"&gt;React&lt;/span&gt;
-            &lt;span class="tag tag-default"&gt;TypeScript&lt;/span&gt;
-            &lt;span class="tag tag-default"&gt;3D 图形&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="card-footer"&gt;
-        &lt;div class="flex justify-between items-center"&gt;
-            &lt;div&gt;
-                &lt;div style="font-size: var(--text-sm); color: var(--color-label-soft);"&gt;旧金山, CA&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div style="font-size: var(--text-sm); color: var(--color-accent-base); font-weight: var(--font-weight-medium);"$120k - $180k&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+                        <code>.card-image {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.card-image-wrapper {
+  background-color: var(--color-surface-light);
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card-image {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  max-width: 300px;\n}\n\n.card-image-wrapper {\n  background-color: var(--color-surface-light);\n  height: 160px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.card-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}')">复制</button>
                     </div>
                 </div>
-            </section>
 
-            <!-- Stats Cards -->
-            <section class="section">
-                <h2 class="section-title">统计卡片</h2>
-                <p class="section-description">用于展示数据统计的卡片</p>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">数据卡片</h3>
-                    <div class="component-preview grid grid-4">
-                        <div class="card card-stats text-center">
-                            <div class="stats-icon" style="margin: 0 auto var(--m-lg); width: 48px; height: 48px; background-color: var(--color-accent-bg); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-accent-base);">
+                <div class="token-card">
+                    <h3 class="token-title">图标卡片</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); text-align: center; max-width: 300px;">
+                            <div style="background-color: var(--color-primary); color: white; width: 60px; height: 60px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                                 </svg>
                             </div>
-                            <div class="stats-content">
-                                <div class="stats-value" style="font-size: var(--text-3xl); font-weight: var(--font-weight-bold); color: var(--color-label-title);">12,543</div>
-                                <div class="stats-label">总模型数</div>
-                                <div class="stats-change positive">+12.5%</div>
+                            <h4 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2); color: var(--color-text-primary);">快速性能</h4>
+                            <p style="color: var(--color-text-secondary); margin: 0; font-size: var(--font-size-sm);">高性能和快速响应的用户体验。</p>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.card-icon {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  max-width: 300px;
+}
+
+.card-icon-circle {
+  background-color: var(--color-primary);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-4);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card-icon {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-6);\n  text-align: center;\n  max-width: 300px;\n}\n\n.card-icon-circle {\n  background-color: var(--color-primary);\n  color: white;\n  width: 60px;\n  height: 60px;\n  border-radius: var(--radius-full);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0 auto var(--space-4);\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Cards -->
+    <section id="data-cards" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">数据卡片</h2>
+                <p class="section-subtitle">展示统计数据、指标和信息的卡片</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">统计卡片</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 300px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-4);">
+                                <h4 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); margin: 0; color: var(--color-text-secondary);">总用户数</h4>
+                                <span style="background-color: var(--color-success); color: white; font-size: var(--font-size-xs); padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm);">+12%</span>
+                            </div>
+                            <div style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-2);">8,492</div>
+                            <p style="color: var(--color-text-muted); margin: 0; font-size: var(--font-size-sm);">相比上月增加 894 位用户</p>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.card-stats {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  max-width: 300px;
+}
+
+.stats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.stats-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.stats-change {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card-stats {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-6);\n  max-width: 300px;\n}\n\n.stats-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: var(--space-4);\n}\n\n.stats-value {\n  font-size: var(--font-size-3xl);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-text-primary);\n  margin-bottom: var(--space-2);\n}\n\n.stats-change {\n  color: var(--color-text-muted);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">进度卡片</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 300px;">
+                            <h4 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-4); color: var(--color-text-primary);">项目进度</h4>
+                            <div style="margin-bottom: var(--space-2);">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-1);">
+                                    <span style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">完成度</span>
+                                    <span style="font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); color: var(--color-text-primary);">75%</span>
+                                </div>
+                                <div style="background-color: var(--color-surface-light); height: 8px; border-radius: var(--radius-full);">
+                                    <div style="background-color: var(--color-primary); height: 100%; width: 75%; border-radius: var(--radius-full);"></div>
+                                </div>
+                            </div>
+                            <p style="color: var(--color-text-muted); margin: 0; font-size: var(--font-size-sm);">还需完成 5 个任务</p>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.card-progress {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  max-width: 300px;
+}
+
+.progress-bar {
+  background-color: var(--color-surface-light);
+  height: 8px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  background-color: var(--color-primary);
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card-progress {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-6);\n  max-width: 300px;\n}\n\n.progress-bar {\n  background-color: var(--color-surface-light);\n  height: 8px;\n  border-radius: var(--radius-full);\n  overflow: hidden;\n}\n\n.progress-fill {\n  background-color: var(--color-primary);\n  height: 100%;\n  border-radius: var(--radius-full);\n  transition: width var(--transition-normal);\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Card Layouts -->
+    <section id="card-layouts" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">卡片布局</h2>
+                <p class="section-subtitle">不同的卡片排列和组合方式</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">卡片网格</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4);">
+                            <h4 style="font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2); color: var(--color-text-primary);">卡片 1</h4>
+                            <p style="color: var(--color-text-secondary); margin: 0; font-size: var(--font-size-sm);">网格布局中的第一个卡片</p>
+                        </div>
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4);">
+                            <h4 style="font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2); color: var(--color-text-primary);">卡片 2</h4>
+                            <p style="color: var(--color-text-secondary); margin: 0; font-size: var(--font-size-sm);">网格布局中的第二个卡片</p>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.card-grid-item {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: var(--space-4);\n}\n\n.card-grid-item {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-4);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">卡片列表</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); display: flex; align-items: center; gap: var(--space-3);">
+                            <div style="background-color: var(--color-primary); width: 40px; height: 40px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-weight: var(--font-weight-bold);">A</div>
+                            <div style="flex: 1;">
+                                <h4 style="font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); margin: 0 0 var(--space-1) 0; color: var(--color-text-primary);">列表项 1</h4>
+                                <p style="color: var(--color-text-secondary); margin: 0; font-size: var(--font-size-sm);">水平列表布局的卡片</p>
                             </div>
                         </div>
-
-                        <div class="card card-stats text-center">
-                            <div class="stats-icon" style="margin: 0 auto var(--m-lg); width: 48px; height: 48px; background-color: rgba(59, 130, 246, 0.1); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-semantic-info-base);">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                                </svg>
-                            </div>
-                            <div class="stats-content">
-                                <div class="stats-value" style="font-size: var(--text-3xl); font-weight: var(--font-weight-bold); color: var(--color-label-title);">3,842</div>
-                                <div class="stats-label">活跃用户</div>
-                                <div class="stats-change positive">+8.2%</div>
-                            </div>
-                        </div>
-
-                        <div class="card card-stats text-center">
-                            <div class="stats-icon" style="margin: 0 auto var(--m-lg); width: 48px; height: 48px; background-color: rgba(46, 224, 64, 0.1); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-semantic-success-base);">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                    <polyline points="14,2 14,8 20,8"/>
-                                    <line x1="16" y1="13" x2="8" y2="13"/>
-                                    <line x1="16" y1="17" x2="8" y2="17"/>
-                                    <polyline points="10,9 9,9 8,9"/>
-                                </svg>
-                            </div>
-                            <div class="stats-content">
-                                <div class="stats-value" style="font-size: var(--text-3xl); font-weight: var(--font-weight-bold); color: var(--color-label-title);">986</div>
-                                <div class="stats-label">文档数量</div>
-                                <div class="stats-change positive">+15.3%</div>
-                            </div>
-                        </div>
-
-                        <div class="card card-stats text-center">
-                            <div class="stats-icon" style="margin: 0 auto var(--m-lg); width: 48px; height: 48px; background-color: rgba(246, 153, 43, 0.1); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-semantic-warning-base);">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="8.5" cy="7" r="4"/>
-                                    <line x1="20" y1="8" x2="20" y2="14"/>
-                                    <line x1="23" y1="11" x2="17" y2="11"/>
-                                </svg>
-                            </div>
-                            <div class="stats-content">
-                                <div class="stats-value" style="font-size: var(--text-3xl); font-weight: var(--font-weight-bold); color: var(--color-label-title);">247</div>
-                                <div class="stats-label">团队规模</div>
-                                <div class="stats-change negative">-2.1%</div>
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); display: flex; align-items: center; gap: var(--space-3);">
+                            <div style="background-color: var(--color-secondary); width: 40px; height: 40px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-background); font-weight: var(--font-weight-bold);">B</div>
+                            <div style="flex: 1;">
+                                <h4 style="font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); margin: 0 0 var(--space-1) 0; color: var(--color-text-primary);">列表项 2</h4>
+                                <p style="color: var(--color-text-secondary); margin: 0; font-size: var(--font-size-sm);">带有图标的列表卡片</p>
                             </div>
                         </div>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">统计卡片代码示例</span>
-                            <button class="code-copy-btn" data-code="stats-card">复制代码</button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code class="language-html">&lt;!-- 统计卡片 --&gt;
-&lt;div class="card card-stats text-center"&gt;
-    &lt;div class="stats-icon" style="margin: 0 auto var(--m-lg); width: 48px; height: 48px; background-color: var(--color-accent-bg); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-accent-base);"&gt;
-        &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-            &lt;path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/&gt;
-        &lt;/svg&gt;
-    &lt;/div&gt;
-    &lt;div class="stats-content"&gt;
-        &lt;div class="stats-value" style="font-size: var(--text-3xl); font-weight: var(--font-weight-bold); color: var(--color-label-title);"&gt;12,543&lt;/div&gt;
-        &lt;div class="stats-label"&gt;总模型数&lt;/div&gt;
-        &lt;div class="stats-change positive"&gt;+12.5%&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+                        <code>.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
 
-&lt;!-- 其他统计卡片采用相同结构，只需更改图标、数值和标签 --&gt;</code></pre>
-                        </div>
+.card-list-item {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.card-list-content {
+  flex: 1;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card-list {\n  display: flex;\n  flex-direction: column;\n  gap: var(--space-3);\n}\n\n.card-list-item {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-4);\n  display: flex;\n  align-items: center;\n  gap: var(--space-3);\n}\n\n.card-list-content {\n  flex: 1;\n}')">复制</button>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="assets/js/scripts.js"></script>
+    <!-- Interactive Cards -->
+    <section id="interactive-cards" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">交互卡片</h2>
+                <p class="section-subtitle">具有交互效果的卡片组件</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">可点击卡片</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 300px; cursor: pointer; transition: all var(--transition-fast);">
+                            <h4 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-3); color: var(--color-text-primary);">点击我</h4>
+                            <p style="color: var(--color-text-secondary); margin: 0;">这是一个可点击的卡片，鼠标悬停时会显示交互效果。</p>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.card-clickable {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  max-width: 300px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.card-clickable:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card-clickable {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-6);\n  max-width: 300px;\n  cursor: pointer;\n  transition: all var(--transition-fast);\n}\n\n.card-clickable:hover {\n  border-color: var(--color-primary);\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-lg);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">展开式卡片</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; max-width: 300px;">
+                            <div style="padding: var(--space-4); cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                                <h4 style="font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); margin: 0; color: var(--color-text-primary);">展开内容</h4>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 9l6 6 6-6"/>
+                                </svg>
+                            </div>
+                            <div style="border-top: 1px solid var(--color-border); padding: var(--space-4);">
+                                <p style="color: var(--color-text-secondary); margin: 0; font-size: var(--font-size-sm);">这是展开后的详细内容，包含更多的信息和描述。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.card-expandable {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.card-expandable-header {
+  padding: var(--space-4);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-expandable-content {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-4);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal);
+}
+
+.card-expandable.expanded .card-expandable-content {
+  max-height: 200px;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.card-expandable {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  max-width: 300px;\n}\n\n.card-expandable-header {\n  padding: var(--space-4);\n  cursor: pointer;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.card-expandable-content {\n  border-top: 1px solid var(--color-border);\n  padding: var(--space-4);\n  max-height: 0;\n  overflow: hidden;\n  transition: max-height var(--transition-normal);\n}\n\n.card-expandable.expanded .card-expandable-content {\n  max-height: 200px;\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Meshy.ai Design System</h3>
+                    <p>构建一致的用户体验</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="#">文档</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">支持</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Meshy.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .code-example {
+            position: relative;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            margin-top: var(--space-4);
+        }
+
+        .code-example code {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            white-space: pre-wrap;
+            display: block;
+            margin-right: 60px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            background-color: var(--color-primary);
+            color: var(--color-text-inverse);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: var(--space-1) var(--space-2);
+            font-size: var(--font-size-xs);
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+        }
+
+        .copy-btn:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
+    </style>
+
+    <script>
+        // Navigation toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // Smooth scroll for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && document.querySelector(href)) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const offsetTop = target.offsetTop - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showNotification('样式已复制到剪贴板');
+                }).catch(function() {
+                    showNotification('复制失败，请手动复制');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+
+                try {
+                    document.execCommand('copy');
+                    showNotification('样式已复制到剪贴板');
+                } catch (err) {
+                    showNotification('复制失败，请手动复制');
+                }
+
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const existingNotification = document.querySelector('.notification-toast');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            const notification = document.createElement('div');
+            notification.className = 'notification-toast';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--color-surface-light);
+                border: 1px solid var(--color-primary);
+                border-radius: var(--radius-md);
+                padding: var(--space-3) var(--space-4);
+                color: var(--color-text-primary);
+                font-size: var(--font-size-sm);
+                z-index: var(--z-modal);
+                transform: translateX(100%);
+                transition: transform var(--transition-normal);
+            `;
+
+            document.body.appendChild(notification);
+
+            requestAnimationFrame(() => {
+                notification.style.transform = 'translateX(0)';
+            });
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

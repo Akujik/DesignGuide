@@ -3,181 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>动效系统 - Meshy.ai 设计系统</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <style>
-        /* Additional animation styles */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
-            40%, 43% { transform: translateY(-10px); }
-            70% { transform: translateY(-5px); }
-            90% { transform: translateY(-2px); }
-        }
-
-        .demo-box {
-            background: var(--color-bg-sub);
-            border: 1px solid var(--color-bg-border);
-            border-radius: var(--radius-lg);
-            padding: var(--p-xl);
-            margin-bottom: var(--m-lg);
-        }
-
-        .animation-fade-in {
-            animation: fadeIn 0.5s ease-out;
-        }
-
-        .animation-slide-right {
-            animation: slideInRight 0.5s ease-out;
-        }
-
-        .animation-bounce {
-            animation: bounce 2s ease-in-out infinite;
-        }
-    </style>
+    <title>动效系统 - Meshy.ai Design System</title>
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header glass-header">
-        <div class="header-content">
-            <div>
-                <h1 class="header-title">动效系统</h1>
-                <p class="header-subtitle">流畅的动画和过渡效果</p>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <h2>Meshy.ai</h2>
+                <span class="nav-subtitle">Design System</span>
             </div>
-            <nav class="header-nav">
-                <a href="index.html" class="header-link">返回首页</a>
-                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
-            </nav>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="colors.html" class="nav-link">颜色</a>
+                <a href="typography.html" class="nav-link">字体</a>
+                <a href="spacing.html" class="nav-link">间距</a>
+                <a href="layout.html" class="nav-link">布局</a>
+                <a href="animations.html" class="nav-link active">动效</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <!-- Mobile Sidebar Toggle -->
-    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-    </button>
-
-    <!-- Mobile Sidebar Overlay -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-    <!-- Modern Hero Section -->
-    <section class="modern-hero">
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        <div class="modern-hero-content">
-            <h1 class="modern-hero-title animate-fadeInUp">
-                Meshy.ai 动效系统
-            </h1>
-            <p class="modern-hero-subtitle animate-fadeInUp animate-delay-1">
-                流畅自然的动画效果，提升用户体验和品牌感知
-            </p>
-            <div class="animate-fadeInUp animate-delay-2">
-                <button class="modern-button">
-                    探索动效规范
-                </button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">动效系统</span>
+                </h1>
+                <p class="hero-description">
+                    流畅自然的动画和过渡效果，提升用户体验和交互感知
+                </p>
+                <div class="hero-actions">
+                    <a href="#animations" class="btn btn-primary">查看动效</a>
+                    <a href="#transitions" class="btn btn-secondary">过渡效果</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-cards">
+                    <div class="hero-card hero-card-1">
+                        <div class="card-icon">⚡</div>
+                        <h3>快速响应</h3>
+                        <p>高性能动画效果</p>
+                    </div>
+                    <div class="hero-card hero-card-2">
+                        <div class="card-icon">🎯</div>
+                        <h3>精确控制</h3>
+                        <p>标准化的时长和缓动</p>
+                    </div>
+                    <div class="hero-card hero-card-3">
+                        <div class="card-icon">🔄</div>
+                        <h3>一致性</h3>
+                        <p>统一的交互体验</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="modern-bg">
-        <div class="preview-container">
-        <aside class="sidebar">
-            <nav>
-                <h3 class="sidebar-title">设计令牌</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="colors.html" class="sidebar-link">颜色系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="typography.html" class="sidebar-link">字体系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="spacing.html" class="sidebar-link">间距系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="layout.html" class="sidebar-link">布局系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="animations.html" class="sidebar-link active">动效系统</a>
-                    </li>
-                </ul>
+    <!-- Animation Tokens -->
+    <section id="animations" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">动效规范</h2>
+                <p class="section-subtitle">标准化的动画时长和缓动函数</p>
+            </div>
 
-                <h3 class="sidebar-title">组件库</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            <!-- Animation Examples -->
-            <section class="section">
-                <h2 class="section-title">动画效果</h2>
-                <p class="section-description">不同的动画效果示例</p>
-
-                <div class="component-showcase-enhanced animate-fadeInUp">
-                    <h3 class="component-showcase-title">动画演示</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="demo-box animation-fade-in interactive-card animate-scaleIn animate-delay-1">
-                            淡入动画效果
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">动画时长</h3>
+                    <div class="duration-showcase">
+                        <div class="duration-item">
+                            <div class="duration-box duration-fast"></div>
+                            <div class="duration-info">
+                                <span class="duration-label">快速</span>
+                                <span class="duration-value">150ms</span>
+                            </div>
                         </div>
-                        <div class="demo-box animation-slide-right interactive-card animate-slideInLeft animate-delay-2">
-                            滑入动画效果
+                        <div class="duration-item">
+                            <div class="duration-box duration-normal"></div>
+                            <div class="duration-info">
+                                <span class="duration-label">标准</span>
+                                <span class="duration-value">300ms</span>
+                            </div>
                         </div>
-                        <div class="demo-box animation-bounce interactive-card animate-fadeInUp animate-delay-3">
-                            弹跳动画效果
+                        <div class="duration-item">
+                            <div class="duration-box duration-slow"></div>
+                            <div class="duration-info">
+                                <span class="duration-label">缓慢</span>
+                                <span class="duration-value">500ms</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- Transitions -->
-            <section class="section">
+                <div class="token-card">
+                    <h3 class="token-title">缓动函数</h3>
+                    <div class="easing-showcase">
+                        <div class="easing-item">
+                            <div class="easing-curve ease-in-out"></div>
+                            <div class="easing-info">
+                                <span class="easing-label">标准缓动</span>
+                                <span class="easing-value">ease-in-out</span>
+                            </div>
+                        </div>
+                        <div class="easing-item">
+                            <div class="easing-curve ease-out"></div>
+                            <div class="easing-info">
+                                <span class="easing-label">出缓动</span>
+                                <span class="easing-value">ease-out</span>
+                            </div>
+                        </div>
+                        <div class="easing-item">
+                            <div class="easing-curve ease-in"></div>
+                            <div class="easing-info">
+                                <span class="easing-label">入缓动</span>
+                                <span class="easing-value">ease-in</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">性能优化</h3>
+                    <div class="performance-tips">
+                        <div class="tip-item">
+                            <div class="tip-icon">⚡</div>
+                            <div class="tip-content">
+                                <h4>使用 transform 和 opacity</h4>
+                                <p>避免触发重排和重绘</p>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">🎯</div>
+                            <div class="tip-content">
+                                <h4>GPU 加速</h4>
+                                <p>使用 transform3d 启用硬件加速</p>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">📱</div>
+                            <div class="tip-content">
+                                <h4>减少动画</h4>
+                                <p>移动端减少复杂动画效果</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animation Examples -->
+    <section id="examples" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">动效示例</h2>
+                <p class="section-subtitle">常用动画效果的实际应用</p>
+            </div>
+
+            <div class="components-grid">
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div class="animation-example">
+                            <div class="demo-box fade-in-animation">
+                                淡入效果
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-info">
+                        <h4>淡入动画</h4>
+                        <p>透明度从0到1的过渡效果</p>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div class="animation-example">
+                            <div class="demo-box slide-in-animation">
+                                滑入效果
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-info">
+                        <h4>滑入动画</h4>
+                        <p>从外部滑入到指定位置</p>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div class="animation-example">
+                            <div class="demo-box scale-animation">
+                                缩放效果
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-info">
+                        <h4>缩放动画</h4>
+                        <p>元素尺寸的平滑变化</p>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div class="animation-example">
+                            <div class="demo-box rotate-animation">
+                                旋转效果
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-info">
+                        <h4>旋转动画</h4>
+                        <p>360度旋转效果</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transition Examples -->
+    <section id="transitions" class="section">
+        <div class="container">
+            <div class="section-header">
                 <h2 class="section-title">过渡效果</h2>
-                <p class="section-description">交互式过渡效果</p>
+                <p class="section-subtitle">交互式过渡和状态变化</p>
+            </div>
 
-                <div class="component-showcase-enhanced animate-slideInLeft">
-                    <h3 class="component-showcase-title">悬停过渡</h3>
-                    <div class="component-preview-enhanced">
-                        <div class="button-showcase-enhanced">
-                            <button class="button button-primary interactive-card animate-scaleIn animate-delay-1">
-                                悬停查看过渡效果
+            <div class="components-grid">
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div class="transition-example">
+                            <button class="btn btn-primary hover-transition">
+                                悬停过渡效果
                             </button>
                         </div>
                     </div>
+                    <div class="component-info">
+                        <h4>悬停过渡</h4>
+                        <p>鼠标悬停时的状态变化</p>
+                    </div>
                 </div>
-            </section>
-        </main>
-        </div> <!-- Close modern-bg -->
-    </div>
 
-    <script src="assets/js/scripts.js"></script>
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div class="transition-example">
+                            <div class="interactive-card">
+                                <div class="card-header">
+                                    <h4>交互卡片</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>悬停查看过渡效果</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-info">
+                        <h4>卡片过渡</h4>
+                        <p>卡片悬停时的多层变化</p>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div class="transition-example">
+                            <div class="loading-spinner">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-info">
+                        <h4>加载动画</h4>
+                        <p>持续旋转的加载指示器</p>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div class="transition-example">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-info">
+                        <h4>进度条动画</h4>
+                        <p>平滑的进度条填充效果</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">相关链接</h2>
+                <p class="section-subtitle">其他设计系统组件</p>
+            </div>
+
+            <div class="quick-links-grid">
+                <a href="colors.html" class="quick-link-card">
+                    <div class="quick-link-icon">🎨</div>
+                    <h4>颜色系统</h4>
+                    <p>完整的颜色调色板和使用规范</p>
+                </a>
+
+                <a href="typography.html" class="quick-link-card">
+                    <div class="quick-link-icon">✏️</div>
+                    <h4>字体系统</h4>
+                    <p>字体、字号和文本样式</p>
+                </a>
+
+                <a href="spacing.html" class="quick-link-card">
+                    <div class="quick-link-icon">📏</div>
+                    <h4>间距系统</h4>
+                    <p>标准化的间距规范</p>
+                </a>
+
+                <a href="layout.html" class="quick-link-card">
+                    <div class="quick-link-icon">📱</div>
+                    <h4>布局系统</h4>
+                    <p>响应式布局和网格系统</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Meshy.ai Design System</h3>
+                    <p>构建一致的用户体验</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="#">文档</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">支持</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Meshy.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/animations.js"></script>
 </body>
 </html>

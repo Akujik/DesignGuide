@@ -3,844 +3,741 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>表单组件 - Meshy.ai 设计系统</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/components.css">
+    <title>表单组件 - Meshy.ai Design System</title>
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div>
-                <h1 class="header-title">表单组件</h1>
-                <p class="header-subtitle">完整的表单控件库 - 包含验证和交互状态</p>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-brand">
+                <h2>Meshy.ai</h2>
+                <span class="nav-subtitle">Design System</span>
             </div>
-            <nav class="header-nav">
-                <a href="index.html" class="header-link">返回首页</a>
-                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
-            </nav>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="colors.html" class="nav-link">颜色</a>
+                <a href="typography.html" class="nav-link">字体</a>
+                <a href="spacing.html" class="nav-link">间距</a>
+                <a href="buttons.html" class="nav-link">按钮</a>
+                <a href="forms.html" class="nav-link active">表单</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <div class="preview-container">
-        <aside class="sidebar">
-            <nav>
-                <h3 class="sidebar-title">设计令牌</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="colors.html" class="sidebar-link">颜色系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="typography.html" class="sidebar-link">字体系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="spacing.html" class="sidebar-link">间距系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="layout.html" class="sidebar-link">布局系统</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="animations.html" class="sidebar-link">动效系统</a>
-                    </li>
-                </ul>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">表单组件</span>
+                </h1>
+                <p class="hero-description">
+                    完整的表单控件库，包含验证状态、布局模式和交互效果
+                </p>
+                <div class="hero-actions">
+                    <a href="#form-inputs" class="btn btn-primary">查看输入框</a>
+                    <a href="#form-controls" class="btn btn-secondary">表单控件</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-cards">
+                    <div class="hero-card hero-card-1">
+                        <div class="card-icon">📝</div>
+                        <h3>输入控件</h3>
+                        <p>丰富的表单输入类型</p>
+                    </div>
+                    <div class="hero-card hero-card-2">
+                        <div class="card-icon">✅</div>
+                        <h3>验证状态</h3>
+                        <p>清晰的验证反馈机制</p>
+                    </div>
+                    <div class="hero-card hero-card-3">
+                        <div class="card-icon">🎨</div>
+                        <h3>响应式布局</h3>
+                        <p>灵活的表单布局系统</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <h3 class="sidebar-title">组件库</h3>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="forms.html" class="sidebar-link active">表单 Forms</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="hero-sections.html" class="sidebar-link">Hero 区域</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
+    <!-- Form Inputs -->
+    <section id="form-inputs" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">输入框</h2>
+                <p class="section-subtitle">基础的文本输入控件，支持多种类型和状态</p>
+            </div>
 
-        <main class="main-content">
-            <!-- Input Fields -->
-            <section class="section">
-                <h2 class="section-title">输入控件</h2>
-                <p class="section-description">基础输入控件和文本输入组件</p>
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">基础输入框</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <input type="text" placeholder="请输入内容" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
+                    </div>
+                    <div class="code-example">
+                        <code>input[type="text"] {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"text\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+                    </div>
+                </div>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">文本输入框</h3>
-                    <div class="component-preview">
-                        <form style="max-width: 500px;">
-                            <div class="form-group">
-                                <label for="username" class="form-label">用户名</label>
-                                <input type="text" id="username" class="form-input" placeholder="输入用户名" data-validate="required">
+                <div class="token-card">
+                    <h3 class="token-title">标签输入框</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <label style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-weight-medium); color: var(--color-text-primary);">用户名</label>
+                        <input type="text" placeholder="请输入用户名" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
+                    </div>
+                    <div class="code-example">
+                        <code><label>用户名</label>
+<input type="text" placeholder="请输入用户名"></code>
+                        <button class="copy-btn" onclick="copyToClipboard('<label>用户名</label>\n<input type=\"text\" placeholder=\"请输入用户名\">')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">密码输入框</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <input type="password" placeholder="请输入密码" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
+                    </div>
+                    <div class="code-example">
+                        <code>input[type="password"] {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"password\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">邮箱输入框</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <input type="email" placeholder="请输入邮箱地址" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
+                    </div>
+                    <div class="code-example">
+                        <code>input[type="email"] {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"email\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">文本域</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <textarea placeholder="请输入多行文本内容" rows="4" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base); resize: vertical;"></textarea>
+                    </div>
+                    <div class="code-example">
+                        <code>textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  resize: vertical;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('textarea {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n  resize: vertical;\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">禁用状态</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <input type="text" placeholder="禁用的输入框" disabled style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-surface-light); color: var(--color-text-muted);">
+                    </div>
+                    <div class="code-example">
+                        <code>input:disabled {
+  background-color: var(--color-surface-light);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('input:disabled {\n  background-color: var(--color-surface-light);\n  color: var(--color-text-muted);\n  cursor: not-allowed;\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Validation States -->
+    <section id="form-validation" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">验证状态</h2>
+                <p class="section-subtitle">不同验证状态的视觉反馈和提示信息</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">成功状态</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <input type="text" value="验证通过" style="width: 100%; padding: var(--space-3); border: 2px solid var(--color-success); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-surface);">
+                        <div style="margin-top: var(--space-2); color: var(--color-success); font-size: var(--font-size-sm);">
+                            ✓ 输入内容验证成功
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>input.success {
+  border-color: var(--color-success);
+  background-color: var(--color-surface);
+}
+
+.success-message {
+  color: var(--color-success);
+  font-size: var(--font-size-sm);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('input.success {\n  border-color: var(--color-success);\n  background-color: var(--color-surface);\n}\n\n.success-message {\n  color: var(--color-success);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">错误状态</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <input type="text" value="输入内容有误" style="width: 100%; padding: var(--space-3); border: 2px solid var(--color-error); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-error-light);">
+                        <div style="margin-top: var(--space-2); color: var(--color-error); font-size: var(--font-size-sm);">
+                            ✗ 输入格式不正确
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>input.error {
+  border-color: var(--color-error);
+  background-color: var(--color-error-light);
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('input.error {\n  border-color: var(--color-error);\n  background-color: var(--color-error-light);\n}\n\n.error-message {\n  color: var(--color-error);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">警告状态</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <input type="text" value="需要确认" style="width: 100%; padding: var(--space-3); border: 2px solid var(--color-warning); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-warning-light);">
+                        <div style="margin-top: var(--space-2); color: var(--color-warning); font-size: var(--font-size-sm);">
+                            ⚠ 请确认输入内容
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>input.warning {
+  border-color: var(--color-warning);
+  background-color: var(--color-warning-light);
+}
+
+.warning-message {
+  color: var(--color-warning);
+  font-size: var(--font-size-sm);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('input.warning {\n  border-color: var(--color-warning);\n  background-color: var(--color-warning-light);\n}\n\n.warning-message {\n  color: var(--color-warning);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">加载状态</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <div style="position: relative;">
+                            <input type="text" placeholder="正在验证..." readonly style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-surface-light); color: var(--color-text-muted);">
+                            <div style="position: absolute; right: var(--space-3); top: 50%; transform: translateY(-50%); width: 16px; height: 16px; border: 2px solid var(--color-border); border-top: 2px solid var(--color-primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        </div>
+                    </div>
+                    <div class="code-example">
+                        <code>.input-loading {
+  position: relative;
+}
+
+.input-loading::after {
+  content: '';
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-border);
+  border-top: 2px solid var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.input-loading {\n  position: relative;\n}\n\n.input-loading::after {\n  content: \'\';\n  position: absolute;\n  right: var(--space-3);\n  top: 50%;\n  transform: translateY(-50%);\n  width: 16px;\n  height: 16px;\n  border: 2px solid var(--color-border);\n  border-top: 2px solid var(--color-primary);\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Controls -->
+    <section id="form-controls" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">表单控件</h2>
+                <p class="section-subtitle">选择框、复选框、单选框等表单控件</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">下拉选择框</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <select style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-surface);">
+                            <option>请选择选项</option>
+                            <option>选项一</option>
+                            <option>选项二</option>
+                            <option>选项三</option>
+                        </select>
+                    </div>
+                    <div class="code-example">
+                        <code>select {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  background-color: var(--color-surface);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('select {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n  background-color: var(--color-surface);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">复选框</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <label style="display: flex; align-items: center; margin-bottom: var(--space-2);">
+                            <input type="checkbox" checked style="margin-right: var(--space-2);">
+                            <span>已选中的选项</span>
+                        </label>
+                        <label style="display: flex; align-items: center; margin-bottom: var(--space-2);">
+                            <input type="checkbox" style="margin-right: var(--space-2);">
+                            <span>未选中的选项</span>
+                        </label>
+                        <label style="display: flex; align-items: center;">
+                            <input type="checkbox" disabled style="margin-right: var(--space-2);">
+                            <span style="color: var(--color-text-muted);">禁用的选项</span>
+                        </label>
+                    </div>
+                    <div class="code-example">
+                        <code><label>
+  <input type="checkbox" checked>
+  选项文本
+</label></code>
+                        <button class="copy-btn" onclick="copyToClipboard('<label>\n  <input type=\"checkbox\" checked>\n  选项文本\n</label>')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">单选框</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <label style="display: flex; align-items: center; margin-bottom: var(--space-2);">
+                            <input type="radio" name="radio-group" checked style="margin-right: var(--space-2);">
+                            <span>选中的选项</span>
+                        </label>
+                        <label style="display: flex; align-items: center; margin-bottom: var(--space-2);">
+                            <input type="radio" name="radio-group" style="margin-right: var(--space-2);">
+                            <span>未选中的选项</span>
+                        </label>
+                        <label style="display: flex; align-items: center;">
+                            <input type="radio" name="radio-group" disabled style="margin-right: var(--space-2);">
+                            <span style="color: var(--color-text-muted);">禁用的选项</span>
+                        </label>
+                    </div>
+                    <div class="code-example">
+                        <code><label>
+  <input type="radio" name="group" checked>
+  选项文本
+</label></code>
+                        <button class="copy-btn" onclick="copyToClipboard('<label>\n  <input type=\"radio\" name=\"group\" checked>\n  选项文本\n</label>')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">文件上传</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <input type="file" style="width: 100%; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-sm);">
+                    </div>
+                    <div class="code-example">
+                        <code>input[type="file"] {
+  width: 100%;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"file\"] {\n  width: 100%;\n  padding: var(--space-2);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-sm);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">数字输入</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <input type="number" value="42" min="0" max="100" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
+                    </div>
+                    <div class="code-example">
+                        <code>input[type="number"] {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"number\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">日期选择</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <input type="date" value="2024-01-01" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
+                    </div>
+                    <div class="code-example">
+                        <code>input[type="date"] {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('input[type=\"date\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Layouts -->
+    <section id="form-layouts" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">表单布局</h2>
+                <p class="section-subtitle">常用的表单布局模式和分组方式</p>
+            </div>
+
+            <div class="tokens-grid">
+                <div class="token-card">
+                    <h3 class="token-title">垂直布局</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <form style="display: flex; flex-direction: column; gap: var(--space-4);">
+                            <div>
+                                <label style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-weight-medium);">姓名</label>
+                                <input type="text" placeholder="请输入姓名" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
                             </div>
-                            <div class="form-group">
-                                <label for="email" class="form-label">邮箱地址</label>
-                                <input type="email" id="email" class="form-input" placeholder="输入邮箱地址" data-validate="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="form-label">密码</label>
-                                <div class="password-input-wrapper">
-                                    <input type="password" id="password" class="form-input password-input" placeholder="输入密码" data-validate="password">
-                                    <button type="button" class="password-toggle" aria-label="Toggle password visibility">
-                                        <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                            <circle cx="12" cy="12" r="3"/>
-                                        </svg>
-                                        <svg class="eye-closed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden>
-                                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
-                                            <line x1="1" y1="1" x2="23" y2="23"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="textarea" class="form-label">多行文本</label>
-                                <textarea id="textarea" class="form-textarea" rows="4" placeholder="输入多行文本内容..."></textarea>
-                                <div class="form-character-count">
-                                    <span>0</span> / 500 字符
-                                </div>
+                            <div>
+                                <label style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-weight-medium);">邮箱</label>
+                                <input type="email" placeholder="请输入邮箱" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
                             </div>
                         </form>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">HTML代码</span>
-                            <button class="copy-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制代码
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code>&lt;form style="max-width: 500px;"&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label for="username" class="form-label"&gt;用户名&lt;/label&gt;
-        &lt;input type="text" id="username" class="form-input" placeholder="输入用户名" data-validate="required"&gt;
-    &lt;/div&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label for="email" class="form-label"&gt;邮箱地址&lt;/label&gt;
-        &lt;input type="email" id="email" class="form-input" placeholder="输入邮箱地址" data-validate="email"&gt;
-    &lt;/div&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label for="password" class="form-label"&gt;密码&lt;/label&gt;
-        &lt;div class="password-input-wrapper"&gt;
-            &lt;input type="password" id="password" class="form-input password-input" placeholder="输入密码" data-validate="password"&gt;
-            &lt;button type="button" class="password-toggle" aria-label="Toggle password visibility"&gt;
-                &lt;svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                    &lt;path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/&gt;
-                    &lt;circle cx="12" cy="12" r="3"/&gt;
-                &lt;/svg&gt;
-                &lt;svg class="eye-closed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden&gt;
-                    &lt;path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/&gt;
-                    &lt;line x1="1" y1="1" x2="23" y2="23"/&gt;
-                &lt;/svg&gt;
-            &lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label for="textarea" class="form-label"&gt;多行文本&lt;/label&gt;
-        &lt;textarea id="textarea" class="form-textarea" rows="4" placeholder="输入多行文本内容..."&gt;&lt;/textarea&gt;
-        &lt;div class="form-character-count"&gt;
-            &lt;span&gt;0&lt;/span&gt; / 500 字符
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-                        </div>
+                        <code>.form-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-vertical .form-group {
+  display: flex;
+  flex-direction: column;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.form-vertical {\n  display: flex;\n  flex-direction: column;\n  gap: var(--space-4);\n}\n\n.form-vertical .form-group {\n  display: flex;\n  flex-direction: column;\n}')">复制</button>
                     </div>
                 </div>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">搜索输入框</h3>
-                    <div class="component-preview">
-                        <form style="max-width: 400px;">
-                            <div class="search-input-wrapper">
-                                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="11" cy="11" r="8"/>
-                                    <path d="m21 21-4.35-4.35"/>
-                                </svg>
-                                <input type="search" class="form-input search-input" placeholder="搜索模型、教程和更多...">
-                                <button type="button" class="search-clear" hidden>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <line x1="18" y1="6" x2="6" y2="18"/>
-                                        <line x1="6" y1="6" x2="18" y2="18"/>
-                                    </svg>
-                                </button>
+                <div class="token-card">
+                    <h3 class="token-title">水平布局</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <form style="display: flex; flex-direction: column; gap: var(--space-4);">
+                            <div style="display: flex; gap: var(--space-4); align-items: center;">
+                                <label style="min-width: 80px; font-weight: var(--font-weight-medium);">姓名</label>
+                                <input type="text" placeholder="请输入姓名" style="flex: 1; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            </div>
+                            <div style="display: flex; gap: var(--space-4); align-items: center;">
+                                <label style="min-width: 80px; font-weight: var(--font-weight-medium);">邮箱</label>
+                                <input type="email" placeholder="请输入邮箱" style="flex: 1; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
                             </div>
                         </form>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">HTML代码</span>
-                            <button class="copy-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制代码
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code>&lt;form style="max-width: 400px;"&gt;
-    &lt;div class="search-input-wrapper"&gt;
-        &lt;svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-            &lt;circle cx="11" cy="11" r="8"/&gt;
-            &lt;path d="m21 21-4.35-4.35"/&gt;
-        &lt;/svg&gt;
-        &lt;input type="search" class="form-input search-input" placeholder="搜索模型、教程和更多..."&gt;
-        &lt;button type="button" class="search-clear" hidden&gt;
-            &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                &lt;line x1="18" y1="6" x2="6" y2="18"/&gt;
-                &lt;line x1="6" y1="6" x2="18" y2="18"/&gt;
-            &lt;/svg&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-                        </div>
+                        <code>.form-horizontal .form-group {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.form-horizontal label {
+  min-width: 80px;
+  font-weight: var(--font-weight-medium);
+}
+
+.form-horizontal input {
+  flex: 1;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.form-horizontal .form-group {\n  display: flex;\n  gap: var(--space-4);\n  align-items: center;\n}\n\n.form-horizontal label {\n  min-width: 80px;\n  font-weight: var(--font-weight-medium);\n}\n\n.form-horizontal input {\n  flex: 1;\n}')">复制</button>
                     </div>
                 </div>
-            </section>
 
-            <!-- Select and Dropdowns -->
-            <section class="section">
-                <h2 class="section-title">选择控件</h2>
-                <p class="section-description">下拉选择和选择器组件</p>
+                <div class="token-card">
+                    <h3 class="token-title">内联布局</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <form style="display: flex; gap: var(--space-3); align-items: center;">
+                            <input type="text" placeholder="搜索..." style="flex: 1; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            <button type="submit" style="padding: var(--space-3) var(--space-6); background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); font-weight: var(--font-weight-medium); cursor: pointer;">
+                                搜索
+                            </button>
+                        </form>
+                    </div>
+                    <div class="code-example">
+                        <code>.form-inline {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">下拉选择器</h3>
-                    <div class="component-preview">
-                        <form style="max-width: 400px;">
-                            <div class="form-group">
-                                <label for="model-type" class="form-label">模型类型</label>
-                                <div class="select-wrapper">
-                                    <select id="model-type" class="form-select">
-                                        <option value="">选择模型类型</option>
-                                        <option value="character">角色模型</option>
-                                        <option value="environment">环境模型</option>
-                                        <option value="object">道具模型</option>
-                                        <option value="vehicle">载具模型</option>
-                                    </select>
-                                    <div class="select-arrow">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M6 9l6 6 6-6"/>
-                                        </svg>
-                                    </div>
-                                </div>
+.form-inline input {
+  flex: 1;
+}
+
+.form-inline button {
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.form-inline {\n  display: flex;\n  gap: var(--space-3);\n  align-items: center;\n}\n\n.form-inline input {\n  flex: 1;\n}\n\n.form-inline button {\n  padding: var(--space-3) var(--space-6);\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <h3 class="token-title">网格布局</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <form style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                            <div>
+                                <label style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-weight-medium);">姓名</label>
+                                <input type="text" placeholder="请输入姓名" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-weight-medium);">邮箱</label>
+                                <input type="email" placeholder="请输入邮箱" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            </div>
+                            <div style="grid-column: 1 / -1;">
+                                <label style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-weight-medium);">备注</label>
+                                <textarea placeholder="请输入备注" rows="3" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); resize: vertical;"></textarea>
                             </div>
                         </form>
                     </div>
                     <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">HTML代码</span>
-                            <button class="copy-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制代码
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code>&lt;form style="max-width: 400px;"&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label for="model-type" class="form-label"&gt;模型类型&lt;/label&gt;
-        &lt;div class="select-wrapper"&gt;
-            &lt;select id="model-type" class="form-select"&gt;
-                &lt;option value=""&gt;选择模型类型&lt;/option&gt;
-                &lt;option value="character"&gt;角色模型&lt;/option&gt;
-                &lt;option value="environment"&gt;环境模型&lt;/option&gt;
-                &lt;option value="object"&gt;道具模型&lt;/option&gt;
-                &lt;option value="vehicle"&gt;载具模型&lt;/option&gt;
-            &lt;/select&gt;
-            &lt;div class="select-arrow"&gt;
-                &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                    &lt;path d="M6 9l6 6 6-6"/&gt;
-                &lt;/svg&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-                        </div>
+                        <code>.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.form-grid .form-group:last-child {
+  grid-column: 1 / -1;
+}</code>
+                        <button class="copy-btn" onclick="copyToClipboard('.form-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: var(--space-4);\n}\n\n.form-grid .form-group:last-child {\n  grid-column: 1 / -1;\n}')">复制</button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- Checkboxes and Radio Buttons -->
-            <section class="section">
-                <h2 class="section-title">复选框和单选按钮</h2>
-                <p class="section-description">用于选择的交互控件</p>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">复选框</h3>
-                    <div class="component-preview">
-                        <div style="max-width: 400px;">
-                            <div class="form-group">
-                                <label class="checkbox-wrapper">
-                                    <input type="checkbox" class="checkbox-input" checked>
-                                    <span class="checkbox-box">
-                                        <svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M20 6L9 17l-5-5"/>
-                                        </svg>
-                                    </span>
-                                    <span class="checkbox-label">同意服务条款</span>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="checkbox-wrapper">
-                                    <input type="checkbox" class="checkbox-input">
-                                    <span class="checkbox-box">
-                                        <svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M20 6L9 17l-5-5"/>
-                                        </svg>
-                                    </span>
-                                    <span class="checkbox-label">订阅新闻通讯</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">HTML代码</span>
-                            <button class="copy-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制代码
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code>&lt;div style="max-width: 400px;"&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label class="checkbox-wrapper"&gt;
-            &lt;input type="checkbox" class="checkbox-input" checked&gt;
-            &lt;span class="checkbox-box"&gt;
-                &lt;svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                    &lt;path d="M20 6L9 17l-5-5"/&gt;
-                &lt;/svg&gt;
-            &lt;/span&gt;
-            &lt;span class="checkbox-label"&gt;同意服务条款&lt;/span&gt;
-        &lt;/label&gt;
-    &lt;/div&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label class="checkbox-wrapper"&gt;
-            &lt;input type="checkbox" class="checkbox-input"&gt;
-            &lt;span class="checkbox-box"&gt;
-                &lt;svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                    &lt;path d="M20 6L9 17l-5-5"/&gt;
-                &lt;/svg&gt;
-            &lt;/span&gt;
-            &lt;span class="checkbox-label"&gt;订阅新闻通讯&lt;/span&gt;
-        &lt;/label&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Meshy.ai Design System</h3>
+                    <p>构建一致的用户体验</p>
                 </div>
-
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">单选按钮</h3>
-                    <div class="component-preview">
-                        <div style="max-width: 400px;">
-                            <div class="form-group">
-                                <label class="form-label">模型质量</label>
-                                <div class="radio-group">
-                                    <label class="radio-wrapper">
-                                        <input type="radio" name="quality" value="standard" class="radio-input" checked>
-                                        <span class="radio-circle"></span>
-                                        <span class="radio-label">标准质量</span>
-                                    </label>
-                                    <label class="radio-wrapper">
-                                        <input type="radio" name="quality" value="high" class="radio-input">
-                                        <span class="radio-circle"></span>
-                                        <span class="radio-label">高质量</span>
-                                    </label>
-                                    <label class="radio-wrapper">
-                                        <input type="radio" name="quality" value="ultra" class="radio-input">
-                                        <span class="radio-circle"></span>
-                                        <span class="radio-label">超高质量</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">HTML代码</span>
-                            <button class="copy-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制代码
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code>&lt;div style="max-width: 400px;"&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label class="form-label"&gt;模型质量&lt;/label&gt;
-        &lt;div class="radio-group"&gt;
-            &lt;label class="radio-wrapper"&gt;
-                &lt;input type="radio" name="quality" value="standard" class="radio-input" checked&gt;
-                &lt;span class="radio-circle"&gt;&lt;/span&gt;
-                &lt;span class="radio-label"&gt;标准质量&lt;/span&gt;
-            &lt;/label&gt;
-            &lt;label class="radio-wrapper"&gt;
-                &lt;input type="radio" name="quality" value="high" class="radio-input"&gt;
-                &lt;span class="radio-circle"&gt;&lt;/span&gt;
-                &lt;span class="radio-label"&gt;高质量&lt;/span&gt;
-            &lt;/label&gt;
-            &lt;label class="radio-wrapper"&gt;
-                &lt;input type="radio" name="quality" value="ultra" class="radio-input"&gt;
-                &lt;span class="radio-circle"&gt;&lt;/span&gt;
-                &lt;span class="radio-label"&gt;超高质量&lt;/span&gt;
-            &lt;/label&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                    </div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="#">文档</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">支持</a>
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Meshy.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">开关切换</h3>
-                    <div class="component-preview">
-                        <div style="max-width: 400px;">
-                            <div class="form-group">
-                                <label class="toggle-wrapper">
-                                    <input type="checkbox" class="toggle-input" checked>
-                                    <span class="toggle-slider"></span>
-                                    <span class="toggle-label">启用通知</span>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="toggle-wrapper">
-                                    <input type="checkbox" class="toggle-input">
-                                    <span class="toggle-slider"></span>
-                                    <span class="toggle-label">自动保存</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">HTML代码</span>
-                            <button class="copy-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制代码
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code>&lt;div style="max-width: 400px;"&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label class="toggle-wrapper"&gt;
-            &lt;input type="checkbox" class="toggle-input" checked&gt;
-            &lt;span class="toggle-slider"&gt;&lt;/span&gt;
-            &lt;span class="toggle-label"&gt;启用通知&lt;/span&gt;
-        &lt;/label&gt;
-    &lt;/div&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label class="toggle-wrapper"&gt;
-            &lt;input type="checkbox" class="toggle-input"&gt;
-            &lt;span class="toggle-slider"&gt;&lt;/span&gt;
-            &lt;span class="toggle-label"&gt;自动保存&lt;/span&gt;
-        &lt;/label&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <style>
+        .code-example {
+            position: relative;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            margin-top: var(--space-4);
+        }
 
-            <!-- File Upload -->
-            <section class="section">
-                <h2 class="section-title">文件上传</h2>
-                <p class="section-description">文件上传和拖拽组件</p>
+        .code-example code {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            white-space: pre-wrap;
+            display: block;
+            margin-right: 60px;
+        }
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">模型上传</h3>
-                    <div class="component-preview">
-                        <div style="max-width: 500px;">
-                            <div class="form-group">
-                                <label for="file-upload" class="form-label">上传模型文件</label>
-                                <div class="file-upload-wrapper">
-                                    <input type="file" id="file-upload" class="file-input" accept=".obj,.fbx,.gltf" multiple>
-                                    <label for="file-upload" class="file-upload-area">
-                                        <div class="file-upload-icon">
-                                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                                <polyline points="17,8 12,3 7,8"/>
-                                                <line x1="12" y1="3" x2="12" y2="15"/>
-                                            </svg>
-                                        </div>
-                                        <div class="file-upload-text">
-                                            <p class="file-upload-title">拖拽文件到这里或点击浏览</p>
-                                            <p class="file-upload-subtitle">支持 OBJ, FBX, GLTF 格式</p>
-                                        </div>
-                                    </label>
-                                    <div class="file-list" id="file-list"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">HTML代码</span>
-                            <button class="copy-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制代码
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code>&lt;div style="max-width: 500px;"&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label for="file-upload" class="form-label"&gt;上传模型文件&lt;/label&gt;
-        &lt;div class="file-upload-wrapper"&gt;
-            &lt;input type="file" id="file-upload" class="file-input" accept=".obj,.fbx,.gltf" multiple&gt;
-            &lt;label for="file-upload" class="file-upload-area"&gt;
-                &lt;div class="file-upload-icon"&gt;
-                    &lt;svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                        &lt;path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/&gt;
-                        &lt;polyline points="17,8 12,3 7,8"/&gt;
-                        &lt;line x1="12" y1="3" x2="12" y2="15"/&gt;
-                    &lt;/svg&gt;
-                &lt;/div&gt;
-                &lt;div class="file-upload-text"&gt;
-                    &lt;p class="file-upload-title"&gt;拖拽文件到这里或点击浏览&lt;/p&gt;
-                    &lt;p class="file-upload-subtitle"&gt;支持 OBJ, FBX, GLTF 格式&lt;/p&gt;
-                &lt;/div&gt;
-            &lt;/label&gt;
-            &lt;div class="file-list" id="file-list"&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        .copy-btn {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            background-color: var(--color-primary);
+            color: var(--color-text-inverse);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: var(--space-1) var(--space-2);
+            font-size: var(--font-size-xs);
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+        }
 
-            <!-- Form States -->
-            <section class="section">
-                <h2 class="section-title">表单状态</h2>
-                <p class="section-description">不同状态的表单控件展示</p>
+        .copy-btn:hover {
+            background-color: var(--color-primary-dark);
+        }
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">验证状态</h3>
-                    <div class="component-preview">
-                        <div style="max-width: 400px;">
-                            <div class="form-group form-success">
-                                <label for="success-input" class="form-label">成功状态</label>
-                                <input type="text" id="success-input" class="form-input" value="user@example.com">
-                                <div class="form-success-message">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M20 6L9 17l-5-5"/>
-                                    </svg>
-                                    邮箱格式正确
-                                </div>
-                            </div>
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
 
-                            <div class="form-group form-error">
-                                <label for="error-input" class="form-label">错误状态</label>
-                                <input type="text" id="error-input" class="form-input" value="123">
-                                <div class="form-error-message">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"/>
-                                        <line x1="15" y1="9" x2="9" y2="15"/>
-                                        <line x1="9" y1="9" x2="15" y2="15"/>
-                                    </svg>
-                                    密码至少需要8个字符
-                                </div>
-                            </div>
+        @keyframes spin {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
+    </style>
 
-                            <div class="form-group form-warning">
-                                <label for="warning-input" class="form-label">警告状态</label>
-                                <input type="text" id="warning-input" class="form-input" placeholder="输入API密钥">
-                                <div class="form-warning-message">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                                        <line x1="12" y1="9" x2="12" y2="13"/>
-                                        <line x1="12" y1="17" x2="12.01" y2="17"/>
-                                    </svg>
-                                    API使用量接近限制
-                                </div>
-                            </div>
+    <script>
+        // Navigation toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
 
-                            <div class="form-group">
-                                <label for="disabled-input" class="form-label">禁用状态</label>
-                                <input type="text" id="disabled-input" class="form-input" value="此字段已禁用" disabled>
-                            </div>
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
 
-                            <div class="form-group">
-                                <label for="readonly-input" class="form-label">只读状态</label>
-                                <input type="text" id="readonly-input" class="form-input" value="此字段为只读" readonly>
-                            </div>
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
 
-                            <div class="form-group form-loading">
-                                <label for="loading-input" class="form-label">加载状态</label>
-                                <div class="input-with-loading">
-                                    <input type="text" id="loading-input" class="form-input" value="正在验证...">
-                                    <div class="input-loading-spinner">
-                                        <div class="spinner"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">HTML代码</span>
-                            <button class="copy-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制代码
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code>&lt;div style="max-width: 400px;"&gt;
-    &lt;div class="form-group form-success"&gt;
-        &lt;label for="success-input" class="form-label"&gt;成功状态&lt;/label&gt;
-        &lt;input type="text" id="success-input" class="form-input" value="user@example.com"&gt;
-        &lt;div class="form-success-message"&gt;
-            &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                &lt;path d="M20 6L9 17l-5-5"/&gt;
-            &lt;/svg&gt;
-            邮箱格式正确
-        &lt;/div&gt;
-    &lt;/div&gt;
+            // Smooth scroll for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && document.querySelector(href)) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const offsetTop = target.offsetTop - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
 
-    &lt;div class="form-group form-error"&gt;
-        &lt;label for="error-input" class="form-label"&gt;错误状态&lt;/label&gt;
-        &lt;input type="text" id="error-input" class="form-input" value="123"&gt;
-        &lt;div class="form-error-message"&gt;
-            &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                &lt;circle cx="12" cy="12" r="10"/&gt;
-                &lt;line x1="15" y1="9" x2="9" y2="15"/&gt;
-                &lt;line x1="9" y1="9" x2="15" y2="15"/&gt;
-            &lt;/svg&gt;
-            密码至少需要8个字符
-        &lt;/div&gt;
-    &lt;/div&gt;
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showNotification('样式已复制到剪贴板');
+                }).catch(function() {
+                    showNotification('复制失败，请手动复制');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
 
-    &lt;div class="form-group form-warning"&gt;
-        &lt;label for="warning-input" class="form-label"&gt;警告状态&lt;/label&gt;
-        &lt;input type="text" id="warning-input" class="form-input" placeholder="输入API密钥"&gt;
-        &lt;div class="form-warning-message"&gt;
-            &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                &lt;path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/&gt;
-                &lt;line x1="12" y1="9" x2="12" y2="13"/&gt;
-                &lt;line x1="12" y1="17" x2="12.01" y2="17"/&gt;
-            &lt;/svg&gt;
-            API使用量接近限制
-        &lt;/div&gt;
-    &lt;/div&gt;
+                try {
+                    document.execCommand('copy');
+                    showNotification('样式已复制到剪贴板');
+                } catch (err) {
+                    showNotification('复制失败，请手动复制');
+                }
 
-    &lt;div class="form-group"&gt;
-        &lt;label for="disabled-input" class="form-label"&gt;禁用状态&lt;/label&gt;
-        &lt;input type="text" id="disabled-input" class="form-input" value="此字段已禁用" disabled&gt;
-    &lt;/div&gt;
+                document.body.removeChild(textArea);
+            }
+        }
 
-    &lt;div class="form-group"&gt;
-        &lt;label for="readonly-input" class="form-label"&gt;只读状态&lt;/label&gt;
-        &lt;input type="text" id="readonly-input" class="form-input" value="此字段为只读" readonly&gt;
-    &lt;/div&gt;
+        // Show notification
+        function showNotification(message) {
+            const existingNotification = document.querySelector('.notification-toast');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
 
-    &lt;div class="form-group form-loading"&gt;
-        &lt;label for="loading-input" class="form-label"&gt;加载状态&lt;/label&gt;
-        &lt;div class="input-with-loading"&gt;
-            &lt;input type="text" id="loading-input" class="form-input" value="正在验证..."&gt;
-            &lt;div class="input-loading-spinner"&gt;
-                &lt;div class="spinner"&gt;&lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            const notification = document.createElement('div');
+            notification.className = 'notification-toast';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--color-surface-light);
+                border: 1px solid var(--color-primary);
+                border-radius: var(--radius-md);
+                padding: var(--space-3) var(--space-4);
+                color: var(--color-text-primary);
+                font-size: var(--font-size-sm);
+                z-index: var(--z-toast);
+                transform: translateX(100%);
+                transition: transform var(--transition-normal);
+            `;
 
-            <!-- Complete Form -->
-            <section class="section">
-                <h2 class="section-title">完整表单</h2>
-                <p class="section-description">一个完整的用户注册表单示例</p>
+            document.body.appendChild(notification);
 
-                <div class="component-showcase">
-                    <h3 class="component-showcase-title">注册表单</h3>
-                    <div class="component-preview">
-                        <form style="max-width: 500px;">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="first-name" class="form-label">名字</label>
-                                    <input type="text" id="first-name" class="form-input" placeholder="输入名字" data-validate="required">
-                                </div>
-                                <div class="form-group">
-                                    <label for="last-name" class="form-label">姓氏</label>
-                                    <input type="text" id="last-name" class="form-input" placeholder="输入姓氏" data-validate="required">
-                                </div>
-                            </div>
+            requestAnimationFrame(() => {
+                notification.style.transform = 'translateX(0)';
+            });
 
-                            <div class="form-group">
-                                <label for="email" class="form-label">邮箱地址</label>
-                                <input type="email" id="email" class="form-input" placeholder="输入邮箱地址" data-validate="email" autocomplete="email">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password" class="form-label">密码</label>
-                                <div class="password-input-wrapper">
-                                    <input type="password" id="password" class="form-input password-input" placeholder="创建密码" data-validate="password" autocomplete="new-password">
-                                    <button type="button" class="password-toggle" aria-label="Toggle password visibility">
-                                        <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                            <circle cx="12" cy="12" r="3"/>
-                                        </svg>
-                                        <svg class="eye-closed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden>
-                                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
-                                            <line x1="1" y1="1" x2="23" y2="23"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="form-help">密码至少需要8个字符</div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="account-type" class="form-label">账户类型</label>
-                                <div class="select-wrapper">
-                                    <select id="account-type" class="form-select">
-                                        <option value="">选择账户类型</option>
-                                        <option value="personal">个人账户</option>
-                                        <option value="business">商业账户</option>
-                                        <option value="student">学生账户</option>
-                                    </select>
-                                    <div class="select-arrow">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M6 9l6 6 6-6"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="checkbox-wrapper">
-                                    <input type="checkbox" class="checkbox-input" required>
-                                    <span class="checkbox-box">
-                                        <svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M20 6L9 17l-5-5"/>
-                                        </svg>
-                                    </span>
-                                    <span class="checkbox-label">
-                                        我同意 <a href="#" style="color: var(--color-accent-base);">服务条款</a> 和 <a href="#" style="color: var(--color-accent-base);">隐私政策</a>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="submit" class="button button-primary button-full-width">创建账户</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="code-example">
-                        <div class="code-header">
-                            <span class="code-title">HTML代码</span>
-                            <button class="copy-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                                </svg>
-                                复制代码
-                            </button>
-                        </div>
-                        <div class="code-wrapper">
-                            <pre><code>&lt;form style="max-width: 500px;"&gt;
-    &lt;div class="form-row"&gt;
-        &lt;div class="form-group"&gt;
-            &lt;label for="first-name" class="form-label"&gt;名字&lt;/label&gt;
-            &lt;input type="text" id="first-name" class="form-input" placeholder="输入名字" data-validate="required"&gt;
-        &lt;/div&gt;
-        &lt;div class="form-group"&gt;
-            &lt;label for="last-name" class="form-label"&gt;姓氏&lt;/label&gt;
-            &lt;input type="text" id="last-name" class="form-input" placeholder="输入姓氏" data-validate="required"&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="form-group"&gt;
-        &lt;label for="email" class="form-label"&gt;邮箱地址&lt;/label&gt;
-        &lt;input type="email" id="email" class="form-input" placeholder="输入邮箱地址" data-validate="email" autocomplete="email"&gt;
-    &lt;/div&gt;
-
-    &lt;div class="form-group"&gt;
-        &lt;label for="password" class="form-label"&gt;密码&lt;/label&gt;
-        &lt;div class="password-input-wrapper"&gt;
-            &lt;input type="password" id="password" class="form-input password-input" placeholder="创建密码" data-validate="password" autocomplete="new-password"&gt;
-            &lt;button type="button" class="password-toggle" aria-label="Toggle password visibility"&gt;
-                &lt;svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                    &lt;path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/&gt;
-                    &lt;circle cx="12" cy="12" r="3"/&gt;
-                &lt;/svg&gt;
-                &lt;svg class="eye-closed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden&gt;
-                    &lt;path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/&gt;
-                    &lt;line x1="1" y1="1" x2="23" y2="23"/&gt;
-                &lt;/svg&gt;
-            &lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div class="form-help"&gt;密码至少需要8个字符&lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="form-group"&gt;
-        &lt;label for="account-type" class="form-label"&gt;账户类型&lt;/label&gt;
-        &lt;div class="select-wrapper"&gt;
-            &lt;select id="account-type" class="form-select"&gt;
-                &lt;option value=""&gt;选择账户类型&lt;/option&gt;
-                &lt;option value="personal"&gt;个人账户&lt;/option&gt;
-                &lt;option value="business"&gt;商业账户&lt;/option&gt;
-                &lt;option value="student"&gt;学生账户&lt;/option&gt;
-            &lt;/select&gt;
-            &lt;div class="select-arrow"&gt;
-                &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                    &lt;path d="M6 9l6 6 6-6"/&gt;
-                &lt;/svg&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="form-group"&gt;
-        &lt;label class="checkbox-wrapper"&gt;
-            &lt;input type="checkbox" class="checkbox-input" required&gt;
-            &lt;span class="checkbox-box"&gt;
-                &lt;svg class="checkbox-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
-                    &lt;path d="M20 6L9 17l-5-5"/&gt;
-                &lt;/svg&gt;
-            &lt;/span&gt;
-            &lt;span class="checkbox-label"&gt;
-                我同意 &lt;a href="#" style="color: var(--color-accent-base);"&gt;服务条款&lt;/a&gt; 和 &lt;a href="#" style="color: var(--color-accent-base);"&gt;隐私政策&lt;/a&gt;
-            &lt;/span&gt;
-        &lt;/label&gt;
-    &lt;/div&gt;
-
-    &lt;div class="form-actions"&gt;
-        &lt;button type="submit" class="button button-primary button-full-width"&gt;创建账户&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <script src="assets/js/scripts.js"></script>
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
