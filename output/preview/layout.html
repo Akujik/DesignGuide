@@ -97,6 +97,36 @@
                 margin-left: 0;
             }
         }
+
+        /* Article-style layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            margin: var(--space-6) 0;
+        }
+
+        .article-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .article-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-item h3 {
+            color: var(--color-text-primary);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-2);
+        }
     </style></head>
 <body>
     <!-- Desktop Sidebar Navigation -->
@@ -158,43 +188,7 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="highlight">布局系统</span>
-                </h1>
-                <p class="hero-description">
-                    现代化CSS Grid和Flexbox布局，灵活适配各种设备，构建响应式界面
-                </p>
-                <div class="hero-actions">
-                    <a href="#grid-system" class="btn btn-primary">查看网格</a>
-                    <a href="#flexbox-layout" class="btn btn-secondary">弹性布局</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-cards">
-                    <div class="hero-card hero-card-1">
-                        <div class="card-icon">📐</div>
-                        <h3>CSS Grid</h3>
-                        <p>强大的二维布局系统</p>
-                    </div>
-                    <div class="hero-card hero-card-2">
-                        <div class="card-icon">🔄</div>
-                        <h3>Flexbox</h3>
-                        <p>灵活的一维布局方案</p>
-                    </div>
-                    <div class="hero-card hero-card-3">
-                        <div class="card-icon">📱</div>
-                        <h3>响应式</h3>
-                        <p>适配多种设备尺寸</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+  
     <!-- Grid System -->
     <section id="grid-system" class="section">
         <div class="container">
@@ -203,8 +197,8 @@
                 <p class="section-subtitle">基于 CSS Grid 的响应式网格布局</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">12列网格</h3>
                     <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-2); margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-primary); height: 40px; border-radius: var(--radius-sm);"></div>
@@ -228,9 +222,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.grid-12 {\n  display: grid;\n  grid-template-columns: repeat(12, 1fr);\n  gap: var(--space-2);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">响应式网格</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface-light); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">自适应列1</div>
@@ -245,9 +239,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.grid-responsive {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: var(--space-4);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">网格区域</h3>
                     <div style="display: grid; grid-template-areas: 'header header' 'sidebar main' 'footer footer'; grid-template-columns: 200px 1fr; grid-template-rows: auto 1fr auto; gap: var(--space-2); min-height: 200px;">
                         <div style="background-color: var(--color-surface-light); padding: var(--space-2); border-radius: var(--radius-md); grid-area: header;">Header</div>
@@ -281,8 +275,8 @@
                 <p class="section-subtitle">Flexbox 布局模式和对齐方式</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">对齐方式</h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-3);">
                         <div style="display: flex; justify-content: center; align-items: center; background-color: var(--color-surface-light); padding: var(--space-4); border-radius: var(--radius-md);">
@@ -312,9 +306,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.flex-center {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.flex-between {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">方向和换行</h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-3);">
                         <div style="display: flex; gap: var(--space-2); background-color: var(--color-surface-light); padding: var(--space-4); border-radius: var(--radius-md);">
@@ -342,9 +336,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.flex-row {\n  display: flex;\n  flex-direction: row;\n  gap: var(--space-2);\n}\n\n.flex-column {\n  display: flex;\n  flex-direction: column;\n  gap: var(--space-2);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">弹性容器</h3>
                     <div style="display: flex; background-color: var(--color-surface-light); padding: var(--space-4); border-radius: var(--radius-md);">
                         <div style="flex: 1; background-color: var(--color-primary); padding: var(--space-2); border-radius: var(--radius-sm); text-align: center;">flex: 1</div>
@@ -382,8 +376,8 @@
                 <p class="section-subtitle">不同最大宽度的容器组件</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">标准容器</h3>
                     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface-light); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
@@ -398,9 +392,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 var(--space-4);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">窄容器</h3>
                     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); margin: 0 auto; max-width: 800px; margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface-light); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
@@ -415,9 +409,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.container-narrow {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 0 var(--space-4);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">宽容器</h3>
                     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); margin: 0 auto; max-width: 1400px; margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface-light); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
@@ -445,8 +439,8 @@
                 <p class="section-subtitle">常用的页面布局模式和组合</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">Holy Grail 布局</h3>
                     <div style="display: grid; grid-template-areas: 'header header header' 'nav main aside' 'footer footer footer'; grid-template-columns: 200px 1fr 200px; grid-template-rows: auto 1fr auto; min-height: 300px; gap: var(--space-2);">
                         <div style="background-color: var(--color-surface-light); padding: var(--space-3); border-radius: var(--radius-md); grid-area: header; text-align: center;">Header</div>
@@ -469,9 +463,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.holy-grail {\n  display: grid;\n  grid-template-areas: \n    \'header header header\'\n    \'nav main aside\'\n    \'footer footer footer\';\n  grid-template-columns: 200px 1fr 200px;\n  grid-template-rows: auto 1fr auto;\n  min-height: 100vh;\n  gap: var(--space-2);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">侧边栏布局</h3>
                     <div style="display: grid; grid-template-columns: 250px 1fr; gap: var(--space-4); min-height: 200px;">
                         <div style="background-color: var(--color-surface-light); padding: var(--space-4); border-radius: var(--radius-md);">
@@ -490,9 +484,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.sidebar-layout {\n  display: grid;\n  grid-template-columns: 250px 1fr;\n  gap: var(--space-4);\n  min-height: 100vh;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">卡片网格</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4);">
                         <div style="background-color: var(--color-surface-light); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">卡片1</div>

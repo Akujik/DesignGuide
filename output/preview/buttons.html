@@ -242,6 +242,36 @@
             color: var(--color-primary);
             margin-bottom: var(--space-4);
         }
+
+        /* Article-style layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            margin: var(--space-6) 0;
+        }
+
+        .article-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .article-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-item h3 {
+            color: var(--color-text-primary);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-2);
+        }
     </style>
 </head>
 <body>
@@ -305,43 +335,6 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="highlight">按钮组件</span>
-                </h1>
-                <p class="hero-description">
-                    完整的按钮组件库，包含多种样式、尺寸和状态，满足各种交互需求
-                </p>
-                <div class="hero-actions">
-                    <a href="#button-variants" class="btn btn-primary">查看样式</a>
-                    <a href="#button-states" class="btn btn-secondary">按钮状态</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-cards">
-                    <div class="hero-card hero-card-1">
-                        <div class="card-icon">🎨</div>
-                        <h3>多样化样式</h3>
-                        <p>主要、次要、幽灵等多种样式</p>
-                    </div>
-                    <div class="hero-card hero-card-2">
-                        <div class="card-icon">📏</div>
-                        <h3>灵活尺寸</h3>
-                        <p>小、中、大三种标准尺寸</p>
-                    </div>
-                    <div class="hero-card hero-card-3">
-                        <div class="card-icon">⚡</div>
-                        <h3>交互状态</h3>
-                        <p>悬停、点击、禁用等状态</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Button Variants -->
     <section id="button-variants" class="section">
         <div class="container">
@@ -350,8 +343,8 @@
                 <p class="section-subtitle">不同样式和变体的按钮组件</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">主要按钮</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; transition: background-color var(--transition-fast);">
@@ -375,9 +368,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn-primary {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: background-color var(--transition-fast);\n}\n\n.btn-primary:hover {\n  background-color: var(--color-primary-dark);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">次要按钮</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: transparent; color: var(--color-primary); border: 2px solid var(--color-primary); border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; transition: all var(--transition-fast);">
@@ -402,9 +395,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn-secondary {\n  background-color: transparent;\n  color: var(--color-primary);\n  border: 2px solid var(--color-primary);\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: all var(--transition-fast);\n}\n\n.btn-secondary:hover {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">幽灵按钮</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: transparent; color: var(--color-text-secondary); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; transition: color var(--transition-fast);">
@@ -428,7 +421,7 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn-ghost {\n  background-color: transparent;\n  color: var(--color-text-secondary);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: color var(--transition-fast);\n}\n\n.btn-ghost:hover {\n  color: var(--color-primary);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -441,8 +434,8 @@
                 <p class="section-subtitle">不同大小的按钮组件</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">小按钮</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer;">
@@ -462,9 +455,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn-small {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-sm);\n  padding: var(--space-2) var(--space-3);\n  font-size: var(--font-size-sm);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">中等按钮</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-size: var(--font-size-base); font-weight: var(--font-weight-medium); cursor: pointer;">
@@ -484,9 +477,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn-medium {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  padding: var(--space-3) var(--space-6);\n  font-size: var(--font-size-base);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">大按钮</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-lg); padding: var(--space-4) var(--space-8); font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); cursor: pointer;">
@@ -506,7 +499,7 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn-large {\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-lg);\n  padding: var(--space-4) var(--space-8);\n  font-size: var(--font-size-lg);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -519,8 +512,8 @@
                 <p class="section-subtitle">按钮的不同交互状态和可用性状态</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">悬停状态</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-primary-dark); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; transform: translateY(-2px);">
@@ -535,9 +528,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn:hover {\n  background-color: var(--color-primary-dark);\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-lg);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">禁用状态</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-surface-light); color: var(--color-text-muted); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: not-allowed; opacity: 0.6;" disabled>
@@ -555,9 +548,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn:disabled {\n  background-color: var(--color-surface-light);\n  color: var(--color-text-muted);\n  border: 1px solid var(--color-border);\n  opacity: 0.6;\n  cursor: not-allowed;\n  pointer-events: none;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">加载状态</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: not-allowed; position: relative; color: transparent;">
@@ -600,8 +593,8 @@
                 <p class="section-subtitle">结合图标和文本的按钮组合</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">左图标按钮</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; display: flex; align-items: center; gap: var(--space-2);">
@@ -623,9 +616,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn-icon-left {\n  display: flex;\n  align-items: center;\n  gap: var(--space-2);\n}\n\n.btn-icon-left svg {\n  flex-shrink: 0;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">右图标按钮</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; display: flex; align-items: center; gap: var(--space-2);">
@@ -648,9 +641,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn-icon-right {\n  display: flex;\n  align-items: center;\n  gap: var(--space-2);\n}\n\n.btn-icon-right svg {\n  flex-shrink: 0;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">纯图标按钮</h3>
                     <div style="padding: var(--space-4); text-align: center; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-surface-light); color: var(--color-text-primary); border: none; border-radius: var(--radius-full); width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
@@ -688,8 +681,8 @@
                 <p class="section-subtitle">相关按钮的组合和排列</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">水平按钮组</h3>
                     <div style="padding: var(--space-4); display: flex; gap: var(--space-2); margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md) 0 0 var(--radius-md); padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer;">
@@ -725,9 +718,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn-group {\n  display: flex;\n  overflow: hidden;\n  border-radius: var(--radius-md);\n  box-shadow: var(--shadow-md);\n}\n\n.btn-group .btn {\n  border-radius: 0;\n  border-right: 1px solid rgba(255,255,255,0.2);\n}\n\n.btn-group .btn:first-child {\n  border-radius: var(--radius-md) 0 0 var(--radius-md);\n}\n\n.btn-group .btn:last-child {\n  border-radius: 0 var(--radius-md) var(--radius-md) 0;\n  border-right: none;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">垂直按钮组</h3>
                     <div style="padding: var(--space-4); display: flex; flex-direction: column; gap: 0; margin-bottom: var(--space-4);">
                         <button style="background-color: var(--color-primary); color: var(--color-text-inverse); border: none; border-radius: var(--radius-md) var(--radius-md) 0 0; padding: var(--space-3) var(--space-6); font-weight: var(--font-weight-medium); cursor: pointer; width: 100%;">
@@ -764,7 +757,7 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.btn-group-vertical {\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  border-radius: var(--radius-md);\n  box-shadow: var(--shadow-md);\n}\n\n.btn-group-vertical .btn {\n  border-radius: 0;\n  border-bottom: 1px solid rgba(255,255,255,0.2);\n}\n\n.btn-group-vertical .btn:first-child {\n  border-radius: var(--radius-md) var(--radius-md) 0 0;\n}\n\n.btn-group-vertical .btn:last-child {\n  border-radius: 0 0 var(--radius-md) var(--radius-md);\n  border-bottom: none;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>

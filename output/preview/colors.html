@@ -405,6 +405,36 @@
             text-align: center;
             font-weight: var(--font-weight-medium);
         }
+
+        /* Article-style layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            margin: var(--space-6) 0;
+        }
+
+        .article-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .article-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-item h3 {
+            color: var(--color-text-primary);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-2);
+        }
     </style>
 </head>
 <body>
@@ -469,43 +499,7 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="highlight">颜色系统</span>
-                </h1>
-                <p class="hero-description">
-                    深色主题为基础，亮绿色为主色调，构建层次分明、对比度良好的视觉系统
-                </p>
-                <div class="hero-actions">
-                    <a href="#brand-colors" class="btn btn-primary">品牌颜色</a>
-                    <a href="#neutral-colors" class="btn btn-secondary">中性颜色</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-cards">
-                    <div class="hero-card hero-card-1">
-                        <div class="card-icon">🎨</div>
-                        <h3>品牌色彩</h3>
-                        <p>主色调和辅助色定义</p>
-                    </div>
-                    <div class="hero-card hero-card-2">
-                        <div class="card-icon">⚖️</div>
-                        <h3>对比度优化</h3>
-                        <p>确保可访问性标准</p>
-                    </div>
-                    <div class="hero-card hero-card-3">
-                        <div class="card-icon">🌙</div>
-                        <h3>深色主题</h3>
-                        <p>护眼且专业的视觉体验</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+  
     <!-- Brand Colors -->
     <section id="brand-colors" class="section">
         <div class="container">

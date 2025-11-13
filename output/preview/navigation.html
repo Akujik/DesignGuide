@@ -97,6 +97,36 @@
                 margin-left: 0;
             }
         }
+
+        /* Article-style layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            margin: var(--space-6) 0;
+        }
+
+        .article-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .article-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-item h3 {
+            color: var(--color-text-primary);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-2);
+        }
     </style></head>
 <body>
     <!-- Desktop Sidebar Navigation -->
@@ -158,43 +188,7 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="highlight">导航组件</span>
-                </h1>
-                <p class="hero-description">
-                    完整的导航系统，包含多种导航模式和交互效果
-                </p>
-                <div class="hero-actions">
-                    <a href="#horizontal-nav" class="btn btn-primary">水平导航</a>
-                    <a href="#vertical-nav" class="btn btn-secondary">垂直导航</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-cards">
-                    <div class="hero-card hero-card-1">
-                        <div class="card-icon">🧭</div>
-                        <h3>导航模式</h3>
-                        <p>多种导航布局模式</p>
-                    </div>
-                    <div class="hero-card hero-card-2">
-                        <div class="card-icon">📋</div>
-                        <h3>菜单组件</h3>
-                        <p>丰富的菜单交互效果</p>
-                    </div>
-                    <div class="hero-card hero-card-3">
-                        <div class="card-icon">🔗</div>
-                        <h3>响应式设计</h3>
-                        <p>适配不同设备尺寸</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Horizontal Navigation -->
     <section id="horizontal-nav" class="section">
         <div class="container">
@@ -203,8 +197,8 @@
                 <p class="section-subtitle">常用的水平导航栏和标签页导航</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">基础水平导航</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <nav style="display: flex; gap: var(--space-6); padding: var(--space-4); background-color: var(--color-surface); border-radius: var(--radius-md);">
@@ -237,9 +231,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.nav-horizontal {\n  display: flex;\n  gap: var(--space-6);\n  padding: var(--space-4);\n  background-color: var(--color-surface);\n  border-radius: var(--radius-md);\n}\n\n.nav-horizontal a {\n  color: var(--color-text-secondary);\n  text-decoration: none;\n  font-weight: var(--font-weight-medium);\n  transition: color var(--transition-fast);\n}\n\n.nav-horizontal a:hover,\n.nav-horizontal a.active {\n  color: var(--color-primary);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">带下划线导航</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <nav style="display: flex; gap: var(--space-8); padding: var(--space-4); background-color: var(--color-surface); border-radius: var(--radius-md);">
@@ -273,9 +267,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.nav-underline {\n  display: flex;\n  gap: var(--space-8);\n  padding: var(--space-4);\n  background-color: var(--color-surface);\n  border-radius: var(--radius-md);\n}\n\n.nav-underline a {\n  color: var(--color-text-secondary);\n  text-decoration: none;\n  padding-bottom: var(--space-2);\n  border-bottom: 2px solid transparent;\n  transition: all var(--transition-fast);\n}\n\n.nav-underline a.active,\n.nav-underline a:hover {\n  color: var(--color-primary);\n  border-bottom-color: var(--color-primary);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">标签页导航</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="border-bottom: 1px solid var(--color-border); margin-bottom: var(--space-4);">
@@ -323,9 +317,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.tabs {\n  border-bottom: 1px solid var(--color-border);\n  margin-bottom: var(--space-4);\n}\n\n.tabs nav {\n  display: flex;\n  gap: var(--space-2);\n}\n\n.tabs button {\n  padding: var(--space-3) var(--space-6);\n  background: none;\n  border: none;\n  border-bottom: 2px solid transparent;\n  color: var(--color-text-secondary);\n  cursor: pointer;\n  transition: all var(--transition-fast);\n}\n\n.tabs button.active {\n  color: var(--color-primary);\n  border-bottom-color: var(--color-primary);\n}\n\n.tab-content {\n  padding: var(--space-4);\n  background-color: var(--color-surface-light);\n  border-radius: var(--radius-md);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">面包屑导航</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <nav style="display: flex; align-items: center; gap: var(--space-2); padding: var(--space-3); background-color: var(--color-surface-light); border-radius: var(--radius-md);">
@@ -381,8 +375,8 @@
                 <p class="section-subtitle">侧边栏导航和垂直菜单组件</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">侧边栏导航</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <nav style="width: 200px; padding: var(--space-4); background-color: var(--color-surface); border-radius: var(--radius-md);">
@@ -432,9 +426,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.sidebar-nav {\n  width: 200px;\n  padding: var(--space-4);\n  background-color: var(--color-surface);\n  border-radius: var(--radius-md);\n}\n\n.sidebar-nav .nav-title {\n  margin-bottom: var(--space-4);\n  font-weight: var(--font-weight-semibold);\n  color: var(--color-text-primary);\n}\n\n.sidebar-nav a {\n  display: block;\n  padding: var(--space-2) var(--space-3);\n  color: var(--color-text-secondary);\n  text-decoration: none;\n  margin-bottom: var(--space-1);\n  border-radius: var(--radius-sm);\n  transition: all var(--transition-fast);\n}\n\n.sidebar-nav a:hover,\n.sidebar-nav a.active {\n  color: var(--color-primary);\n  background-color: var(--color-primary-light);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">折叠式侧边栏</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <nav style="width: 60px; padding: var(--space-4); background-color: var(--color-surface); border-radius: var(--radius-md);">
@@ -479,9 +473,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.sidebar-collapsed {\n  width: 60px;\n  padding: var(--space-4);\n  background-color: var(--color-surface);\n  border-radius: var(--radius-md);\n}\n\n.sidebar-collapsed a {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: var(--space-3);\n  color: var(--color-text-secondary);\n  text-decoration: none;\n  margin-bottom: var(--space-2);\n  border-radius: var(--radius-sm);\n  transition: all var(--transition-fast);\n}\n\n.sidebar-collapsed a:hover,\n.sidebar-collapsed a.active {\n  color: var(--color-primary);\n  background-color: var(--color-primary-light);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">垂直标签页</h3>
                     <div style="margin-bottom: var(--space-4); display: flex; gap: var(--space-4);">
                         <nav style="display: flex; flex-direction: column; gap: var(--space-1);">
@@ -550,8 +544,8 @@
                 <p class="section-subtitle">下拉菜单、上下文菜单和菜单组</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">下拉菜单</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="position: relative; display: inline-block;">
@@ -610,9 +604,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.dropdown {\n  position: relative;\n  display: inline-block;\n}\n\n.dropdown-menu {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  margin-top: var(--space-2);\n  min-width: 200px;\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  box-shadow: var(--shadow-lg);\n  z-index: 1000;\n}\n\n.dropdown-menu a {\n  display: block;\n  padding: var(--space-3) var(--space-4);\n  color: var(--color-text-primary);\n  text-decoration: none;\n  transition: background-color var(--transition-fast);\n}\n\n.dropdown-menu a:hover {\n  background-color: var(--color-surface-light);\n}\n\n.dropdown-menu a.disabled {\n  color: var(--color-text-muted);\n  pointer-events: none;\n}\n\n.dropdown-divider {\n  margin: var(--space-2) 0;\n  border: none;\n  border-top: 1px solid var(--color-border);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title"> mega菜单</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="position: relative; display: inline-block;">
@@ -683,9 +677,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.megamenu {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  margin-top: var(--space-2);\n  width: 600px;\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  box-shadow: var(--shadow-lg);\n  z-index: 1000;\n  padding: var(--space-6);\n}\n\n.megamenu-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  gap: var(--space-6);\n}\n\n.megamenu-column h4 {\n  margin-bottom: var(--space-3);\n  color: var(--color-text-primary);\n  font-weight: var(--font-weight-semibold);\n}\n\n.megamenu-column a {\n  display: block;\n  padding: var(--space-2) 0;\n  color: var(--color-text-secondary);\n  text-decoration: none;\n  transition: color var(--transition-fast);\n}\n\n.megamenu-column a:hover {\n  color: var(--color-primary);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">上下文菜单</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="position: relative; display: inline-block;">
@@ -753,8 +747,8 @@
                 <p class="section-subtitle">不同样式的分页导航和页码控制</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">基础分页</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <nav style="display: flex; gap: var(--space-1);">
@@ -798,9 +792,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.pagination {\n  display: flex;\n  gap: var(--space-1);\n}\n\n.pagination button {\n  padding: var(--space-2) var(--space-3);\n  background: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-sm);\n  cursor: pointer;\n  transition: all var(--transition-fast);\n}\n\n.pagination button:hover {\n  background-color: var(--color-surface-light);\n}\n\n.pagination button.active {\n  background: var(--color-primary);\n  color: var(--color-text-inverse);\n  border-color: var(--color-primary);\n}\n\n.pagination .ellipsis {\n  padding: var(--space-2) var(--space-3);\n  color: var(--color-text-muted);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">简洁分页</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <nav style="display: flex; align-items: center; gap: var(--space-4);">
@@ -834,9 +828,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.pagination-simple {\n  display: flex;\n  align-items: center;\n  gap: var(--space-4);\n}\n\n.pagination-simple button {\n  padding: var(--space-2) var(--space-3);\n  background: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-sm);\n  cursor: pointer;\n  transition: all var(--transition-fast);\n}\n\n.pagination-simple span {\n  color: var(--color-text-secondary);\n}\n\n.pagination-simple strong {\n  color: var(--color-primary);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">跳转分页</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <nav style="display: flex; align-items: center; gap: var(--space-4);">

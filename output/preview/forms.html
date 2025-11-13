@@ -242,6 +242,36 @@
             color: var(--color-primary);
             margin-bottom: var(--space-4);
         }
+
+        /* Article-style layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            margin: var(--space-6) 0;
+        }
+
+        .article-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .article-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-item h3 {
+            color: var(--color-text-primary);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-2);
+        }
     </style>
 </head>
 <body>
@@ -306,43 +336,7 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="highlight">表单组件</span>
-                </h1>
-                <p class="hero-description">
-                    完整的表单控件库，包含验证状态、布局模式和交互效果
-                </p>
-                <div class="hero-actions">
-                    <a href="#form-inputs" class="btn btn-primary">查看输入框</a>
-                    <a href="#form-controls" class="btn btn-secondary">表单控件</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-cards">
-                    <div class="hero-card hero-card-1">
-                        <div class="card-icon">📝</div>
-                        <h3>输入控件</h3>
-                        <p>丰富的表单输入类型</p>
-                    </div>
-                    <div class="hero-card hero-card-2">
-                        <div class="card-icon">✅</div>
-                        <h3>验证状态</h3>
-                        <p>清晰的验证反馈机制</p>
-                    </div>
-                    <div class="hero-card hero-card-3">
-                        <div class="card-icon">🎨</div>
-                        <h3>响应式布局</h3>
-                        <p>灵活的表单布局系统</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+  
     <!-- Form Inputs -->
     <section id="form-inputs" class="section">
         <div class="container">
@@ -351,8 +345,8 @@
                 <p class="section-subtitle">基础的文本输入控件，支持多种类型和状态</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">基础输入框</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <input type="text" placeholder="请输入内容" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
@@ -367,9 +361,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('input[type=\"text\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">标签输入框</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <label style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-weight-medium); color: var(--color-text-primary);">用户名</label>
@@ -380,9 +374,9 @@
 <input type="text" placeholder="请输入用户名"></code>
                         <button class="copy-btn" onclick="copyToClipboard('<label>用户名</label>\n<input type=\"text\" placeholder=\"请输入用户名\">')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">密码输入框</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <input type="password" placeholder="请输入密码" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
@@ -397,9 +391,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('input[type=\"password\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">邮箱输入框</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <input type="email" placeholder="请输入邮箱地址" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
@@ -414,9 +408,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('input[type=\"email\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">文本域</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <textarea placeholder="请输入多行文本内容" rows="4" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base); resize: vertical;"></textarea>
@@ -432,9 +426,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('textarea {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n  resize: vertical;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">禁用状态</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <input type="text" placeholder="禁用的输入框" disabled style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-surface-light); color: var(--color-text-muted);">
@@ -460,8 +454,8 @@
                 <p class="section-subtitle">不同验证状态的视觉反馈和提示信息</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">成功状态</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <input type="text" value="验证通过" style="width: 100%; padding: var(--space-3); border: 2px solid var(--color-success); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-surface);">
@@ -481,9 +475,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('input.success {\n  border-color: var(--color-success);\n  background-color: var(--color-surface);\n}\n\n.success-message {\n  color: var(--color-success);\n  font-size: var(--font-size-sm);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">错误状态</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <input type="text" value="输入内容有误" style="width: 100%; padding: var(--space-3); border: 2px solid var(--color-error); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-error-light);">
@@ -503,9 +497,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('input.error {\n  border-color: var(--color-error);\n  background-color: var(--color-error-light);\n}\n\n.error-message {\n  color: var(--color-error);\n  font-size: var(--font-size-sm);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">警告状态</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <input type="text" value="需要确认" style="width: 100%; padding: var(--space-3); border: 2px solid var(--color-warning); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-warning-light);">
@@ -525,9 +519,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('input.warning {\n  border-color: var(--color-warning);\n  background-color: var(--color-warning-light);\n}\n\n.warning-message {\n  color: var(--color-warning);\n  font-size: var(--font-size-sm);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">加载状态</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="position: relative;">
@@ -568,8 +562,8 @@
                 <p class="section-subtitle">选择框、复选框、单选框等表单控件</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">下拉选择框</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <select style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base); background-color: var(--color-surface);">
@@ -590,9 +584,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('select {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n  background-color: var(--color-surface);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">复选框</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <label style="display: flex; align-items: center; margin-bottom: var(--space-2);">
@@ -615,9 +609,9 @@
 </label></code>
                         <button class="copy-btn" onclick="copyToClipboard('<label>\n  <input type=\"checkbox\" checked>\n  选项文本\n</label>')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">单选框</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <label style="display: flex; align-items: center; margin-bottom: var(--space-2);">
@@ -640,9 +634,9 @@
 </label></code>
                         <button class="copy-btn" onclick="copyToClipboard('<label>\n  <input type=\"radio\" name=\"group\" checked>\n  选项文本\n</label>')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">文件上传</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <input type="file" style="width: 100%; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-sm);">
@@ -657,9 +651,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('input[type=\"file\"] {\n  width: 100%;\n  padding: var(--space-2);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-sm);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">数字输入</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <input type="number" value="42" min="0" max="100" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
@@ -674,9 +668,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('input[type=\"number\"] {\n  width: 100%;\n  padding: var(--space-3);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  font-size: var(--font-size-base);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">日期选择</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <input type="date" value="2024-01-01" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--font-size-base);">
@@ -704,8 +698,8 @@
                 <p class="section-subtitle">常用的表单布局模式和分组方式</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">垂直布局</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <form style="display: flex; flex-direction: column; gap: var(--space-4);">
@@ -732,9 +726,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.form-vertical {\n  display: flex;\n  flex-direction: column;\n  gap: var(--space-4);\n}\n\n.form-vertical .form-group {\n  display: flex;\n  flex-direction: column;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">水平布局</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <form style="display: flex; flex-direction: column; gap: var(--space-4);">
@@ -765,9 +759,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.form-horizontal .form-group {\n  display: flex;\n  gap: var(--space-4);\n  align-items: center;\n}\n\n.form-horizontal label {\n  min-width: 80px;\n  font-weight: var(--font-weight-medium);\n}\n\n.form-horizontal input {\n  flex: 1;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">内联布局</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <form style="display: flex; gap: var(--space-3); align-items: center;">
@@ -799,9 +793,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.form-inline {\n  display: flex;\n  gap: var(--space-3);\n  align-items: center;\n}\n\n.form-inline input {\n  flex: 1;\n}\n\n.form-inline button {\n  padding: var(--space-3) var(--space-6);\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">网格布局</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <form style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">

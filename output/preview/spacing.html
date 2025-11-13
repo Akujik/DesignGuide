@@ -97,6 +97,36 @@
                 margin-left: 0;
             }
         }
+
+        /* Article-style layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            margin: var(--space-6) 0;
+        }
+
+        .article-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .article-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-item h3 {
+            color: var(--color-text-primary);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-2);
+        }
     </style></head>
 <body>
     <!-- Desktop Sidebar Navigation -->
@@ -158,43 +188,7 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="highlight">间距系统</span>
-                </h1>
-                <p class="hero-description">
-                    基于4px网格系统的标准化间距规范，确保界面元素的一致性和协调性
-                </p>
-                <div class="hero-actions">
-                    <a href="#spacing-scale" class="btn btn-primary">查看间距</a>
-                    <a href="#spacing-rules" class="btn btn-secondary">使用规则</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-cards">
-                    <div class="hero-card hero-card-1">
-                        <div class="card-icon">📏</div>
-                        <h3>4px网格</h3>
-                        <p>基于4px倍数的间距系统</p>
-                    </div>
-                    <div class="hero-card hero-card-2">
-                        <div class="card-icon">🎯</div>
-                        <h3>一致性</h3>
-                        <p>统一的间距使用规范</p>
-                    </div>
-                    <div class="hero-card hero-card-3">
-                        <div class="card-icon">⚖️</div>
-                        <h3>平衡</h3>
-                        <p>视觉平衡与层次感</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Spacing Scale -->
     <section id="spacing-scale" class="section">
         <div class="container">
@@ -203,8 +197,8 @@
                 <p class="section-subtitle">基于4px网格的标准化间距值</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 4px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 1</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">4px</div>
@@ -213,9 +207,9 @@
                         <code>padding: var(--space-1);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-1);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 8px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 2</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">8px</div>
@@ -224,9 +218,9 @@
                         <code>padding: var(--space-2);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-2);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 12px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 3</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">12px</div>
@@ -235,9 +229,9 @@
                         <code>padding: var(--space-3);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-3);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 16px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 4</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">16px</div>
@@ -246,9 +240,9 @@
                         <code>padding: var(--space-4);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-4);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 20px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 5</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">20px</div>
@@ -257,9 +251,9 @@
                         <code>padding: var(--space-5);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-5);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 24px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 6</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">24px</div>
@@ -268,9 +262,9 @@
                         <code>padding: var(--space-6);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-6);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 32px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 8</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">32px</div>
@@ -279,9 +273,9 @@
                         <code>padding: var(--space-8);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-8);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 40px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 10</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">40px</div>
@@ -290,9 +284,9 @@
                         <code>padding: var(--space-10);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-10);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 48px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 12</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">48px</div>
@@ -301,9 +295,9 @@
                         <code>padding: var(--space-12);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-12);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 64px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 16</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">64px</div>
@@ -312,9 +306,9 @@
                         <code>padding: var(--space-16);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-16);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div class="spacing-visual" style="height: 80px; background-color: var(--color-primary); margin-bottom: var(--space-4);"></div>
                     <h3 class="token-title">Space 20</h3>
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">80px</div>
@@ -336,8 +330,8 @@
                 <p class="section-subtitle">不同场景下的间距使用示例</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">内边距 Padding</h3>
                     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-4);">
                         内边距示例内容
@@ -346,9 +340,9 @@
                         <code>padding: var(--space-4);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-4);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">外边距 Margin</h3>
                     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3); margin-top: var(--space-4);">
                         上外边距示例
@@ -357,9 +351,9 @@
                         <code>margin-top: var(--space-4);</code>
                         <button class="copy-btn" onclick="copyToClipboard('margin-top: var(--space-4);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">间距 Gap</h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-3);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3);">项目1</div>
@@ -383,8 +377,8 @@
                 <p class="section-subtitle">组件间的标准间距规范</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">卡片间距</h3>
                     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3);">卡片1</div>
@@ -394,9 +388,9 @@
                         <code>gap: var(--space-4);</code>
                         <button class="copy-btn" onclick="copyToClipboard('gap: var(--space-4);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">列表间距</h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-2);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-3);">列表项1</div>
@@ -406,9 +400,9 @@
                         <code>gap: var(--space-2);</code>
                         <button class="copy-btn" onclick="copyToClipboard('gap: var(--space-2);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">表单间距</h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-4);">
                         <input type="text" placeholder="输入框" style="padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); background-color: var(--color-surface); color: var(--color-text-primary);">
@@ -431,8 +425,8 @@
                 <p class="section-subtitle">页面布局的间距规范</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">页面间距</h3>
                     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-8); margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-primary); height: 40px; border-radius: var(--radius-sm);"></div>
@@ -441,9 +435,9 @@
                         <code>padding: var(--space-8);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-8);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">区块间距</h3>
                     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-primary); height: 40px; border-radius: var(--radius-sm); margin-bottom: var(--space-4);"></div>
@@ -453,9 +447,9 @@
                         <code>padding: var(--space-6);</code>
                         <button class="copy-btn" onclick="copyToClipboard('padding: var(--space-6);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">内容间距</h3>
                     <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-primary); height: 40px; border-radius: var(--radius-sm);"></div>
@@ -477,8 +471,8 @@
                 <p class="section-subtitle">间距使用的最佳实践和规则</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">一致性原则</h3>
                     <div style="color: var(--color-text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4);">
                         <ul style="padding-left: var(--space-4); margin: 0;">
@@ -492,9 +486,9 @@
                         <code>/* 推荐 */\npadding: var(--space-4);\n\n/* 避免 */\npadding: 15px;</code>
                         <button class="copy-btn" onclick="copyToClipboard('/* 推荐 */\npadding: var(--space-4);\n\n/* 避免 */\npadding: 15px;')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">间距层级</h3>
                     <div style="color: var(--color-text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4);">
                         <ul style="padding-left: var(--space-4); margin: 0;">
@@ -508,9 +502,9 @@
                         <code>/* 元素间距 */\ngap: var(--space-2);\n\n/* 组件间距 */\ngap: var(--space-6);</code>
                         <button class="copy-btn" onclick="copyToClipboard('/* 元素间距 */\ngap: var(--space-2);\n\n/* 组件间距 */\ngap: var(--space-6);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">响应式间距</h3>
                     <div style="color: var(--color-text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-4);">
                         <ul style="padding-left: var(--space-4); margin: 0;">

@@ -97,6 +97,36 @@
                 margin-left: 0;
             }
         }
+
+        /* Article-style layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            margin: var(--space-6) 0;
+        }
+
+        .article-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .article-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-item h3 {
+            color: var(--color-text-primary);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-2);
+        }
     </style>
 </head>
 <body>
@@ -160,43 +190,7 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-        <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="highlight">Hero 区域</span>
-                </h1>
-                <p class="hero-description">
-                    完整的Hero区域设计模式，包含多种布局、动画效果和交互组件
-                </p>
-                <div class="hero-actions">
-                    <a href="#centered-hero" class="btn btn-primary">居中布局</a>
-                    <a href="#split-hero" class="btn btn-secondary">分屏布局</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-cards">
-                    <div class="hero-card hero-card-1">
-                        <div class="card-icon">🎨</div>
-                        <h3>布局模式</h3>
-                        <p>多种Hero区域布局</p>
-                    </div>
-                    <div class="hero-card hero-card-2">
-                        <div class="card-icon">✨</div>
-                        <h3>动画效果</h3>
-                        <p>流畅的交互动画</p>
-                    </div>
-                    <div class="hero-card hero-card-3">
-                        <div class="card-icon">🎯</div>
-                        <h3>行动号召</h3>
-                        <p>有效的CTA设计</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+      
     <!-- Centered Hero -->
     <section id="centered-hero" class="section">
         <div class="container">
@@ -205,8 +199,8 @@
                 <p class="section-subtitle">内容居中的Hero区域布局，适合品牌展示和重要信息传达</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">基础居中Hero</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="text-align: center; padding: var(--space-16) var(--space-8); background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%); border-radius: var(--radius-lg);">
@@ -255,9 +249,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.hero-centered {\n  text-align: center;\n  padding: var(--space-16) var(--space-8);\n  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%);\n  border-radius: var(--radius-lg);\n}\n\n.hero-centered h1 {\n  font-size: var(--font-size-4xl);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-text-primary);\n  margin-bottom: var(--space-4);\n}\n\n.hero-centered p {\n  font-size: var(--font-size-xl);\n  color: var(--color-text-secondary);\n  margin-bottom: var(--space-8);\n  max-width: 600px;\n  margin-left: auto;\n  margin-right: auto;\n}\n\n.hero-centered .actions {\n  display: flex;\n  gap: var(--space-4);\n  justify-content: center;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">全屏居中Hero</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="height: 500px; display: flex; align-items: center; justify-content: center; background-color: var(--color-surface); border-radius: var(--radius-lg); position: relative; overflow: hidden;">
@@ -304,9 +298,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.hero-fullscreen {\n  height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--color-surface);\n  position: relative;\n  overflow: hidden;\n}\n\n.hero-fullscreen::before {\n  content: \'\';\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: radial-gradient(circle at center, var(--color-primary-light) 0%, transparent 70%);\n  opacity: 0.3;\n}\n\n.hero-fullscreen .content {\n  text-align: center;\n  z-index: 1;\n  padding: var(--space-8);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">带背景图的Hero</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="height: 400px; border-radius: var(--radius-lg); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
@@ -375,8 +369,8 @@
                 <p class="section-subtitle">左右分屏或图文并茂的Hero区域布局</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">左右分屏Hero</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; min-height: 400px; border-radius: var(--radius-lg); overflow: hidden;">
@@ -424,9 +418,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.hero-split {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  min-height: 400px;\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n}\n\n.hero-split .content {\n  padding: var(--space-8);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  background-color: var(--color-surface);\n}\n\n.hero-split .visual {\n  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">图文并列Hero</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="display: grid; grid-template-columns: 2fr 3fr; gap: var(--space-8); align-items: center;">
@@ -479,9 +473,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.hero-side-by-side {\n  display: grid;\n  grid-template-columns: 2fr 3fr;\n  gap: var(--space-8);\n  align-items: center;\n}\n\n.hero-side-by-side .visual {\n  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);\n  height: 300px;\n  border-radius: var(--radius-lg);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  font-size: 60px;\n}\n\n.hero-side-by-side .content h1 {\n  font-size: var(--font-size-3xl);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-text-primary);\n  margin-bottom: var(--space-4);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">重叠式Hero</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="position: relative; min-height: 400px; border-radius: var(--radius-lg); overflow: hidden; background-color: var(--color-surface-light);">
@@ -544,8 +538,8 @@
                 <p class="section-subtitle">不同内容类型和重点的Hero区域设计</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">文本密集型Hero</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="padding: var(--space-12) var(--space-8); background-color: var(--color-surface); border-radius: var(--radius-lg);">
@@ -594,9 +588,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.hero-text-heavy {\n  padding: var(--space-12) var(--space-8);\n  background-color: var(--color-surface);\n  border-radius: var(--radius-lg);\n}\n\n.hero-text-heavy h1 {\n  font-size: var(--font-size-3xl);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-text-primary);\n  margin-bottom: var(--space-6);\n}\n\n.hero-text-heavy .content {\n  font-size: var(--font-size-lg);\n  color: var(--color-text-secondary);\n  line-height: var(--line-height-relaxed);\n  margin-bottom: var(--space-6);\n  max-width: 800px;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">特性展示Hero</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="padding: var(--space-12) var(--space-8); background: linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface) 100%); border-radius: var(--radius-lg);">
@@ -662,9 +656,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.hero-features {\n  padding: var(--space-12) var(--space-8);\n  background: linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface) 100%);\n  border-radius: var(--radius-lg);\n}\n\n.hero-features h1 {\n  font-size: var(--font-size-4xl);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-text-primary);\n  margin-bottom: var(--space-8);\n  text-align: center;\n}\n\n.hero-features .features {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: var(--space-6);\n  margin-bottom: var(--space-8);\n}\n\n.hero-features .feature {\n  text-align: center;\n}\n\n.hero-features .feature-icon {\n  font-size: 40px;\n  margin-bottom: var(--space-3);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">产品展示Hero</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="padding: var(--space-12) var(--space-8); background-color: var(--color-surface); border-radius: var(--radius-lg);">
@@ -738,8 +732,8 @@
                 <p class="section-subtitle">Hero区域的动画和交互效果</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">淡入动画</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="padding: var(--space-12) var(--space-8); background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%); border-radius: var(--radius-lg); opacity: 0; animation: fadeIn 1s ease-out forwards;">
@@ -797,9 +791,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.hero-fade-in {\n  padding: var(--space-12) var(--space-8);\n  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%);\n  border-radius: var(--radius-lg);\n  opacity: 0;\n  animation: fadeIn 1s ease-out forwards;\n}\n\n.hero-fade-in h1 {\n  opacity: 0;\n  animation: fadeInUp 0.8s ease-out 0.3s forwards;\n}\n\n.hero-fade-in p {\n  opacity: 0;\n  animation: fadeInUp 0.8s ease-out 0.6s forwards;\n}\n\n.hero-fade-in .actions {\n  opacity: 0;\n  animation: fadeInUp 0.8s ease-out 0.9s forwards;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}\n\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">悬停效果</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="padding: var(--space-12) var(--space-8); background-color: var(--color-surface); border-radius: var(--radius-lg); text-align: center;">
@@ -845,9 +839,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.hero-hover .btn-hover {\n  padding: var(--space-3) var(--space-6);\n  background-color: var(--color-primary);\n  color: var(--color-text-inverse);\n  border: none;\n  border-radius: var(--radius-md);\n  font-weight: var(--font-weight-medium);\n  cursor: pointer;\n  transition: all var(--transition-fast);\n  transform: translateY(0);\n}\n\n.btn-hover:hover {\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-lg);\n}\n\n.btn-scale:hover {\n  transform: scale(1.05);\n}\n\n.btn-color:hover {\n  background-color: var(--color-primary-dark);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">滚动动画</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="padding: var(--space-12) var(--space-8); background: linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface) 100%); border-radius: var(--radius-lg); position: relative; overflow: hidden;">

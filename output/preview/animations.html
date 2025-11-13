@@ -243,6 +243,36 @@
             color: var(--color-primary);
             margin-bottom: var(--space-4);
         }
+
+        /* Article-style layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            margin: var(--space-6) 0;
+        }
+
+        .article-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .article-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-item h3 {
+            color: var(--color-text-primary);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-2);
+        }
     </style>
 </head>
 <body>
@@ -307,43 +337,6 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="highlight">动效系统</span>
-                </h1>
-                <p class="hero-description">
-                    流畅自然的动画和过渡效果，提升用户体验和交互感知
-                </p>
-                <div class="hero-actions">
-                    <a href="#animations" class="btn btn-primary">查看动效</a>
-                    <a href="#transitions" class="btn btn-secondary">过渡效果</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-cards">
-                    <div class="hero-card hero-card-1">
-                        <div class="card-icon">⚡</div>
-                        <h3>快速响应</h3>
-                        <p>高性能动画效果</p>
-                    </div>
-                    <div class="hero-card hero-card-2">
-                        <div class="card-icon">🎯</div>
-                        <h3>精确控制</h3>
-                        <p>标准化的时长和缓动</p>
-                    </div>
-                    <div class="hero-card hero-card-3">
-                        <div class="card-icon">🔄</div>
-                        <h3>一致性</h3>
-                        <p>统一的交互体验</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Animation Tokens -->
     <section id="animations" class="section">
         <div class="container">
@@ -352,8 +345,8 @@
                 <p class="section-subtitle">标准化的动画时长和缓动函数</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">动画时长</h3>
                     <div class="duration-showcase">
                         <div class="duration-item">
@@ -378,9 +371,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">缓动函数</h3>
                     <div class="easing-showcase">
                         <div class="easing-item">
@@ -405,9 +398,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">性能优化</h3>
                     <div class="performance-tips">
                         <div class="tip-item">
@@ -432,7 +425,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>

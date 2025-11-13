@@ -97,6 +97,36 @@
                 margin-left: 0;
             }
         }
+
+        /* Article-style layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            margin: var(--space-6) 0;
+        }
+
+        .article-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .article-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-item h3 {
+            color: var(--color-text-primary);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-2);
+        }
     </style></head>
 <body>
     <!-- Desktop Sidebar Navigation -->
@@ -158,43 +188,7 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="highlight">字体系统</span>
-                </h1>
-                <p class="hero-description">
-                    Inter字体族为基础，构建层次分明的文本系统，支持多语言和响应式排版
-                </p>
-                <div class="hero-actions">
-                    <a href="#font-sizes" class="btn btn-primary">查看字号</a>
-                    <a href="#font-weights" class="btn btn-secondary">字重规范</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-cards">
-                    <div class="hero-card hero-card-1">
-                        <div class="card-icon">🔤</div>
-                        <h3>字体族</h3>
-                        <p>Inter为主的多字体族</p>
-                    </div>
-                    <div class="hero-card hero-card-2">
-                        <div class="card-icon">📏</div>
-                        <h3>字号比例</h3>
-                        <p>基于黄金比例的字号系统</p>
-                    </div>
-                    <div class="hero-card hero-card-3">
-                        <div class="card-icon">⚖️</div>
-                        <h3>字重层次</h3>
-                        <p>清晰的字重分级系统</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Font Families -->
     <section id="font-families" class="section">
         <div class="container">
@@ -203,8 +197,8 @@
                 <p class="section-subtitle">标准化的字体选择，确保跨平台一致性</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">主字体</h3>
                     <div style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); margin-bottom: var(--space-4);">
                         Inter, -apple-system, BlinkMacSystemFont
@@ -213,9 +207,9 @@
                         <code>font-family: var(--font-family-primary);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-family: var(--font-family-primary);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">等宽字体</h3>
                     <div style="font-family: var(--font-family-mono); font-size: var(--font-size-xl); margin-bottom: var(--space-4);">
                         'SF Mono', Monaco, 'Cascadia Code'
@@ -224,9 +218,9 @@
                         <code>font-family: var(--font-family-mono);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-family: var(--font-family-mono);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">字体对比</h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-3);">
                         <div style="font-family: var(--font-family-primary);">
@@ -251,80 +245,80 @@
                 <p class="section-subtitle">基于比例的字号系统，确保视觉层次清晰</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <div style="font-size: var(--font-size-5xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-2);">48px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-5xl)</div>
                     <div class="code-example">
                         <code>font-size: var(--font-size-5xl);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-5xl);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-2);">36px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-4xl)</div>
                     <div class="code-example">
                         <code>font-size: var(--font-size-4xl);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-4xl);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">30px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-3xl)</div>
                     <div class="code-example">
                         <code>font-size: var(--font-size-3xl);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-3xl);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">24px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-2xl)</div>
                     <div class="code-example">
                         <code>font-size: var(--font-size-2xl);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-2xl);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-size: var(--font-size-xl); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">20px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-xl)</div>
                     <div class="code-example">
                         <code>font-size: var(--font-size-xl);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-xl);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium); margin-bottom: var(--space-2);">18px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-lg)</div>
                     <div class="code-example">
                         <code>font-size: var(--font-size-lg);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-lg);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-size: var(--font-size-base); margin-bottom: var(--space-2);">16px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-base)</div>
                     <div class="code-example">
                         <code>font-size: var(--font-size-base);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-base);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-size: var(--font-size-sm); margin-bottom: var(--space-2);">14px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-sm)</div>
                     <div class="code-example">
                         <code>font-size: var(--font-size-sm);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-sm);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-size: var(--font-size-xs); margin-bottom: var(--space-2);">12px</div>
                     <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-size-xs)</div>
                     <div class="code-example">
@@ -344,35 +338,35 @@
                 <p class="section-subtitle">标准化的字重使用，确保文本层次分明</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <div style="font-weight: var(--font-weight-bold); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Bold 700</div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-bold)</div>
                     <div class="code-example">
                         <code>font-weight: var(--font-weight-bold);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-bold);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-weight: var(--font-weight-semibold); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Semibold 600</div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-semibold)</div>
                     <div class="code-example">
                         <code>font-weight: var(--font-weight-semibold);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-semibold);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-weight: var(--font-weight-medium); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Medium 500</div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-medium)</div>
                     <div class="code-example">
                         <code>font-weight: var(--font-weight-medium);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-weight: var(--font-weight-medium);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="font-weight: var(--font-weight-normal); font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Regular 400</div>
                     <div style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">var(--font-weight-normal)</div>
                     <div class="code-example">
@@ -392,8 +386,8 @@
                 <p class="section-subtitle">标准化的行高设置，确保良好的阅读体验</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <div style="line-height: var(--line-height-tight); font-size: var(--font-size-lg); margin-bottom: var(--space-2);">
                         紧凑行高<br>1.25
                     </div>
@@ -402,9 +396,9 @@
                         <code>line-height: var(--line-height-tight);</code>
                         <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-tight);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="line-height: var(--line-height-normal); font-size: var(--font-size-lg); margin-bottom: var(--space-2);">
                         标准行高<br>1.5
                     </div>
@@ -413,9 +407,9 @@
                         <code>line-height: var(--line-height-normal);</code>
                         <button class="copy-btn" onclick="copyToClipboard('line-height: var(--line-height-normal);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <div style="line-height: var(--line-height-relaxed); font-size: var(--font-size-lg); margin-bottom: var(--space-2);">
                         宽松行高<br>1.75
                     </div>
@@ -437,8 +431,8 @@
                 <p class="section-subtitle">常用的文本样式组合和排版效果</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">标题样式</h3>
                     <h1 style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-2);">主标题 H1</h1>
                     <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2);">副标题 H2</h2>
@@ -447,9 +441,9 @@
                         <code>/* H1 Style */\nfont-size: var(--font-size-3xl);\nfont-weight: var(--font-weight-bold);\nline-height: var(--line-height-tight);</code>
                         <button class="copy-btn" onclick="copyToClipboard('/* H1 Style */\nfont-size: var(--font-size-3xl);\nfont-weight: var(--font-weight-bold);\nline-height: var(--line-height-tight);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">正文样式</h3>
                     <p style="font-size: var(--font-size-base); line-height: var(--line-height-normal); margin-bottom: var(--space-2);">
                         这是正文内容，使用标准的字号和行高，确保良好的阅读体验。Inter字体在屏幕显示时具有良好的可读性。
@@ -458,9 +452,9 @@
                         <code>font-size: var(--font-size-base);\nline-height: var(--line-height-normal);\ncolor: var(--color-text-primary);</code>
                         <button class="copy-btn" onclick="copyToClipboard('font-size: var(--font-size-base);\nline-height: var(--line-height-normal);\ncolor: var(--color-text-primary);')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">辅助文本</h3>
                     <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-2);">
                         这是辅助文本，用于显示次要信息或说明内容。使用较小的字号和较淡的颜色。

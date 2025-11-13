@@ -242,6 +242,36 @@
             color: var(--color-primary);
             margin-bottom: var(--space-4);
         }
+
+        /* Article-style layout */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-8);
+            margin: var(--space-6) 0;
+        }
+
+        .article-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: all var(--transition-normal);
+        }
+
+        .article-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-item h3 {
+            color: var(--color-text-primary);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-2);
+        }
     </style>
 </head>
 <body>
@@ -305,43 +335,7 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="highlight">卡片组件</span>
-                </h1>
-                <p class="hero-description">
-                    灵活多样的卡片组件，用于展示内容、数据和信息，支持多种布局和交互模式
-                </p>
-                <div class="hero-actions">
-                    <a href="#card-types" class="btn btn-primary">查看类型</a>
-                    <a href="#card-layouts" class="btn btn-secondary">卡片布局</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-cards">
-                    <div class="hero-card hero-card-1">
-                        <div class="card-icon">🎴</div>
-                        <h3>基础卡片</h3>
-                        <p>简洁的内容容器</p>
-                    </div>
-                    <div class="hero-card hero-card-2">
-                        <div class="card-icon">📊</div>
-                        <h3>数据卡片</h3>
-                        <p>展示统计和信息</p>
-                    </div>
-                    <div class="hero-card hero-card-3">
-                        <div class="card-icon">🖼️</div>
-                        <h3>媒体卡片</h3>
-                        <p>图片和媒体展示</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Basic Cards -->
     <section id="card-types" class="section">
         <div class="container">
@@ -350,8 +344,8 @@
                 <p class="section-subtitle">最基本的卡片组件和结构</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">简单卡片</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 300px;">
@@ -380,9 +374,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.card {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-6);\n  max-width: 300px;\n}\n\n.card-title {\n  font-size: var(--font-size-lg);\n  font-weight: var(--font-weight-semibold);\n  margin-bottom: var(--space-3);\n  color: var(--color-text-primary);\n}\n\n.card-text {\n  color: var(--color-text-secondary);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">带头部的卡片</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; max-width: 300px;">
@@ -414,9 +408,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.card-with-header {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  max-width: 300px;\n}\n\n.card-header {\n  background-color: var(--color-surface-light);\n  padding: var(--space-4);\n  border-bottom: 1px solid var(--color-border);\n}\n\n.card-body {\n  padding: var(--space-6);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">带操作的卡片</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 300px;">
@@ -457,8 +451,8 @@
                 <p class="section-subtitle">包含图片、图标或其他媒体内容的卡片</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">图片卡片</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; max-width: 300px;">
@@ -499,9 +493,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.card-image {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  overflow: hidden;\n  max-width: 300px;\n}\n\n.card-image-wrapper {\n  background-color: var(--color-surface-light);\n  height: 160px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.card-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">图标卡片</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); text-align: center; max-width: 300px;">
@@ -550,8 +544,8 @@
                 <p class="section-subtitle">展示统计数据、指标和信息的卡片</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">统计卡片</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 300px;">
@@ -592,9 +586,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.card-stats {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-6);\n  max-width: 300px;\n}\n\n.stats-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: var(--space-4);\n}\n\n.stats-value {\n  font-size: var(--font-size-3xl);\n  font-weight: var(--font-weight-bold);\n  color: var(--color-text-primary);\n  margin-bottom: var(--space-2);\n}\n\n.stats-change {\n  color: var(--color-text-muted);\n  font-size: var(--font-size-sm);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">进度卡片</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 300px;">
@@ -648,8 +642,8 @@
                 <p class="section-subtitle">不同的卡片排列和组合方式</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">卡片网格</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4);">
@@ -676,9 +670,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.card-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: var(--space-4);\n}\n\n.card-grid-item {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-4);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">卡片列表</h3>
                     <div style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-4); display: flex; align-items: center; gap: var(--space-3);">
@@ -731,8 +725,8 @@
                 <p class="section-subtitle">具有交互效果的卡片组件</p>
             </div>
 
-            <div class="tokens-grid">
-                <div class="token-card">
+            <div class="article-list">
+                <article class="article-item">
                     <h3 class="token-title">可点击卡片</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 300px; cursor: pointer; transition: all var(--transition-fast);">
@@ -758,9 +752,9 @@
 }</code>
                         <button class="copy-btn" onclick="copyToClipboard('.card-clickable {\n  background-color: var(--color-surface);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-lg);\n  padding: var(--space-6);\n  max-width: 300px;\n  cursor: pointer;\n  transition: all var(--transition-fast);\n}\n\n.card-clickable:hover {\n  border-color: var(--color-primary);\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-lg);\n}')">复制</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="token-card">
+                <article class="article-item">
                     <h3 class="token-title">展开式卡片</h3>
                     <div style="margin-bottom: var(--space-4);">
                         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; max-width: 300px;">
