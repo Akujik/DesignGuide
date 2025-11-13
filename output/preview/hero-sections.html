@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero 区域 - Meshy.ai 设计系统</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">Hero 区域组件</h1>
+                <p class="header-subtitle">首屏展示和用户引导组件</p>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="header-link">返回首页</a>
+                <button id="theme-toggle" class="button button-ghost" title="切换主题">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="preview-container">
+        <aside class="sidebar">
+            <nav>
+                <h3 class="sidebar-title">设计令牌</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="colors.html" class="sidebar-link">颜色系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="typography.html" class="sidebar-link">字体系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="spacing.html" class="sidebar-link">间距系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="layout.html" class="sidebar-link">布局系统</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="animations.html" class="sidebar-link">动效系统</a>
+                    </li>
+                </ul>
+
+                <h3 class="sidebar-title">组件库</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="buttons.html" class="sidebar-link">按钮 Buttons</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="cards.html" class="sidebar-link">卡片 Cards</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="forms.html" class="sidebar-link">表单 Forms</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="navigation.html" class="sidebar-link">导航 Navigation</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="hero-sections.html" class="sidebar-link active">Hero 区域</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Homepage Hero -->
+            <section class="section">
+                <h2 class="section-title">主页 Hero 区域</h2>
+                <p class="section-description">品牌展示和主导航的组合，用于网站首页首屏</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">标准主页头部</h3>
+                    <div class="component-preview">
+                        <div class="demo-hero-header">
+                            <div class="demo-hero-container">
+                                <div class="demo-hero-brand">
+                                    <a href="#" class="demo-brand-link" aria-label="Meshy">
+                                        <svg class="demo-brand-logo" viewBox="0 0 167 64" fill="none">
+                                            <defs>
+                                                <linearGradient id="demo-brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#c5f955" />
+                                                    <stop offset="50%" style="stop-color:#ff97c2" />
+                                                    <stop offset="100%" style="stop-color:#ff3e8f" />
+                                                </linearGradient>
+                                            </defs>
+                                            <rect x="2" y="2" width="60" height="60" rx="12" fill="url(#demo-brand-gradient)"/>
+                                            <text x="70" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#ffffff">Meshy</text>
+                                        </svg>
+                                    </a>
+                                </div>
+
+                                <nav class="demo-hero-nav">
+                                    <ul class="demo-nav-list">
+                                        <li class="demo-nav-item">
+                                            <a href="#" class="demo-nav-link">Features</a>
+                                        </li>
+                                        <li class="demo-nav-item">
+                                            <a href="#" class="demo-nav-link">Pricing</a>
+                                        </li>
+                                        <li class="demo-nav-item demo-nav-dropdown">
+                                            <button class="demo-nav-link dropdown-toggle">
+                                                Resources
+                                                <svg class="demo-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path d="M6 9l6 6 6-6"/>
+                                                </svg>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                                <div class="demo-hero-actions">
+                                    <button class="button button-secondary">Sign In</button>
+                                    <button class="button button-primary">Get Started Free</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-code">
+                        <button class="copy-button" data-code="homepage-hero">复制代码</button>
+                        <pre><code id="homepage-hero-code" class="language-html">&lt;header class="hero-header"&gt;
+  &lt;div class="hero-container"&gt;
+    &lt;div class="hero-brand"&gt;
+      &lt;a href="/" class="brand-link" aria-label="Meshy"&gt;
+        &lt;svg class="brand-logo" viewBox="0 0 167 64" fill="none"&gt;
+          &lt;defs&gt;
+            &lt;linearGradient id="brand-gradient"&gt;
+              &lt;stop offset="0%" style="stop-color:#c5f955" /&gt;
+              &lt;stop offset="100%" style="stop-color:#ff3e8f" /&gt;
+            &lt;/linearGradient&gt;
+          &lt;/defs&gt;
+          &lt;!-- Logo SVG paths --&gt;
+        &lt;/svg&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;nav class="hero-nav"&gt;
+      &lt;ul class="nav-list"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a href="/features" class="nav-link"&gt;Features&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a href="/pricing" class="nav-link"&gt;Pricing&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="hero-actions"&gt;
+      &lt;button class="button button-secondary"&gt;Sign In&lt;/button&gt;
+      &lt;button class="button button-primary"&gt;Get Started Free&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Full-Screen Hero -->
+            <section class="section">
+                <h2 class="section-title">全屏 Hero 区域</h2>
+                <p class="section-description">沉浸式首屏体验，突出核心价值主张</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">全屏展示组件</h3>
+                    <div class="component-preview">
+                        <div class="demo-hero-fullscreen">
+                            <div class="demo-hero-background">
+                                <div class="demo-hero-gradient"></div>
+                                <div class="demo-hero-pattern"></div>
+                            </div>
+
+                            <div class="demo-hero-content">
+                                <h1 class="demo-hero-title">
+                                    AI-Powered 3D Model Generation
+                                </h1>
+                                <p class="demo-hero-subtitle">
+                                    Create stunning 3D models from text descriptions in seconds.
+                                </p>
+
+                                <div class="demo-hero-cta">
+                                    <button class="button button-primary button-large">
+                                        Start Creating Free
+                                    </button>
+                                    <button class="button button-ghost button-large">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <polygon points="5,3 19,12 5,21"/>
+                                        </svg>
+                                        Watch Demo
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="demo-hero-visual">
+                                <div class="demo-hero-showcase">
+                                    <div class="demo-hero-image-placeholder">
+                                        <svg viewBox="0 0 400 300" fill="none">
+                                            <rect width="400" height="300" rx="16" fill="var(--color-bg-sub)"/>
+                                            <rect x="100" y="75" width="200" height="150" rx="8" fill="url(#demo-model-gradient)"/>
+                                            <text x="200" y="155" text-anchor="middle" font-family="Inter" font-size="16" fill="var(--color-label-soft)">3D Model Preview</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-code">
+                        <button class="copy-button" data-code="fullscreen-hero">复制代码</button>
+                        <pre><code id="fullscreen-hero-code" class="language-html">&lt;section class="hero-fullscreen"&gt;
+  &lt;div class="hero-background"&gt;
+    &lt;div class="hero-gradient"&gt;&lt;/div&gt;
+    &lt;div class="hero-pattern"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="hero-content"&gt;
+    &lt;h1 class="hero-title"&gt;
+      AI-Powered 3D Model Generation
+    &lt;/h1&gt;
+    &lt;p class="hero-subtitle"&gt;
+      Create stunning 3D models from text descriptions in seconds.
+    &lt;/p&gt;
+
+    &lt;div class="hero-cta"&gt;
+      &lt;button class="button button-primary button-large"&gt;
+        Start Creating Free
+      &lt;/button&gt;
+      &lt;button class="button button-ghost button-large"&gt;
+        Watch Demo
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Split-Screen Hero -->
+            <section class="section">
+                <h2 class="section-title">分屏 Hero 区域</h2>
+                <p class="section-description">左右布局，适合功能介绍和产品展示</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">分屏展示组件</h3>
+                    <div class="component-preview">
+                        <div class="demo-hero-split">
+                            <div class="demo-hero-split-container">
+                                <div class="demo-hero-split-content">
+                                    <div class="demo-hero-content-left">
+                                        <h1 class="demo-hero-title">
+                                            Transform Ideas into 3D Models
+                                        </h1>
+                                        <p class="demo-hero-description">
+                                            Meshy uses cutting-edge AI to convert your text descriptions into high-quality 3D models.
+                                        </p>
+
+                                        <div class="demo-hero-features">
+                                            <div class="demo-feature-item">
+                                                <svg class="demo-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path d="M20 6L9 17l-5-5"/>
+                                                </svg>
+                                                <span>Text to 3D in seconds</span>
+                                            </div>
+                                            <div class="demo-feature-item">
+                                                <svg class="demo-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path d="M20 6L9 17l-5-5"/>
+                                                </svg>
+                                                <span>High-quality output</span>
+                                            </div>
+                                            <div class="demo-feature-item">
+                                                <svg class="demo-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path d="M20 6L9 17l-5-5"/>
+                                                </svg>
+                                                <span>Multiple format support</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="demo-hero-actions">
+                                            <button class="button button-primary button-large">
+                                                Start Free Trial
+                                            </button>
+                                            <button class="button button-secondary button-large">
+                                                View Gallery
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="demo-hero-split-visual">
+                                    <div class="demo-hero-showcase-3d">
+                                        <div class="demo-model-viewer">
+                                            <div class="demo-model-mesh"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-code">
+                        <button class="copy-button" data-code="split-hero">复制代码</button>
+                        <pre><code id="split-hero-code" class="language-html">&lt;section class="hero-split"&gt;
+  &lt;div class="hero-split-container"&gt;
+    &lt;div class="hero-split-content"&gt;
+      &lt;div class="hero-content-left"&gt;
+        &lt;h1 class="hero-title"&gt;
+          Transform Ideas into 3D Models
+        &lt;/h1&gt;
+        &lt;p class="hero-description"&gt;
+          Meshy uses cutting-edge AI to convert text descriptions into 3D models.
+        &lt;/p&gt;
+
+        &lt;div class="hero-features"&gt;
+          &lt;div class="feature-item"&gt;
+            &lt;!-- Feature icon and text --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="hero-actions"&gt;
+          &lt;button class="button button-primary button-large"&gt;
+            Start Free Trial
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="hero-split-visual"&gt;
+      &lt;!-- 3D model showcase --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feature Showcase Hero -->
+            <section class="section">
+                <h2 class="section-title">功能展示 Hero 区域</h2>
+                <p class="section-description">以卡片网格形式展示核心功能</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">功能卡片网格</h3>
+                    <div class="component-preview">
+                        <div class="demo-hero-feature">
+                            <div class="demo-hero-feature-container">
+                                <div class="demo-hero-feature-header">
+                                    <h1 class="demo-hero-feature-title">
+                                        AI-Powered 3D Model Generation
+                                    </h1>
+                                    <p class="demo-hero-feature-subtitle">
+                                        From text to 3D in seconds with advanced artificial intelligence.
+                                    </p>
+                                </div>
+
+                                <div class="demo-hero-feature-grid">
+                                    <div class="demo-feature-card">
+                                        <div class="demo-feature-icon-large">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="demo-feature-title">Text to 3D</h3>
+                                        <p class="demo-feature-description">
+                                            Simply describe your model in natural language.
+                                        </p>
+                                    </div>
+
+                                    <div class="demo-feature-card">
+                                        <div class="demo-feature-icon-large">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="demo-feature-title">High Quality</h3>
+                                        <p class="demo-feature-description">
+                                            Production-ready models with clean topology.
+                                        </p>
+                                    </div>
+
+                                    <div class="demo-feature-card">
+                                        <div class="demo-feature-icon-large">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                                <polyline points="21,15 16,10 5,21"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="demo-feature-title">Multiple Formats</h3>
+                                        <p class="demo-feature-description">
+                                            Export to OBJ, FBX, GLTF, and other formats.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="demo-hero-feature-cta">
+                                    <button class="button button-primary button-large">
+                                        Get Started Free
+                                    </button>
+                                    <p class="demo-cta-description">
+                                        No credit card required • 100 free models per month
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-code">
+                        <button class="copy-button" data-code="feature-hero">复制代码</button>
+                        <pre><code id="feature-hero-code" class="language-html">&lt;section class="hero-feature"&gt;
+  &lt;div class="hero-feature-container"&gt;
+    &lt;div class="hero-feature-header"&gt;
+      &lt;h1 class="hero-feature-title"&gt;
+        AI-Powered 3D Model Generation
+      &lt;/h1&gt;
+      &lt;p class="hero-feature-subtitle"&gt;
+        From text to 3D in seconds with AI.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="hero-feature-grid"&gt;
+      &lt;div class="feature-card"&gt;
+        &lt;div class="feature-icon-large"&gt;
+          &lt;!-- Icon SVG --&gt;
+        &lt;/div&gt;
+        &lt;h3 class="feature-title"&gt;Text to 3D&lt;/h3&gt;
+        &lt;p class="feature-description"&gt;
+          Simply describe your model in natural language.
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;!-- More feature cards --&gt;
+    &lt;/div&gt;
+
+    &lt;div class="hero-feature-cta"&gt;
+      &lt;button class="button button-primary button-large"&gt;
+        Get Started Free
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hero 区域设计令牌 -->
+            <section class="section">
+                <h2 class="section-title">设计令牌</h2>
+                <p class="section-description">Hero 区域专用的设计变量</p>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">颜色规范</h3>
+                    <div class="component-preview">
+                        <div class="color-swatches">
+                            <div class="color-swatch">
+                                <div class="color-sample" style="background-color: #c5f955;" data-color="#c5f955"></div>
+                                <div class="color-info">
+                                    <span class="color-name">主渐变色起始</span>
+                                    <span class="color-value">--color-accent-base</span>
+                                    <span class="color-hex">#c5f955</span>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-sample" style="background-color: #ff3e8f;" data-color="#ff3e8f"></div>
+                                <div class="color-info">
+                                    <span class="color-name">主渐变色结束</span>
+                                    <span class="color-value">--color-accent-support-base</span>
+                                    <span class="color-hex">#ff3e8f</span>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-sample" style="background-color: #ff97c2;" data-color="#ff97c2"></div>
+                                <div class="color-info">
+                                    <span class="color-name">渐变色中间</span>
+                                    <span class="color-value">--color-accent-support-highlight</span>
+                                    <span class="color-hex">#ff97c2</span>
+                                </div>
+                            </div>
+                            <div class="color-swatch">
+                                <div class="color-sample" style="background-color: #181818;" data-color="#181818"></div>
+                                <div class="color-info">
+                                    <span class="color-name">背景色</span>
+                                    <span class="color-value">--color-bg-base</span>
+                                    <span class="color-hex">#181818</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-showcase">
+                    <h3 class="component-showcase-title">间距规范</h3>
+                    <div class="component-preview">
+                        <div class="spacing-demo">
+                            <div class="spacing-item">
+                                <div class="spacing-box" style="height: 48px;">
+                                    <span>Header Height (Mobile)</span>
+                                </div>
+                                <span class="spacing-value">3rem / 48px</span>
+                            </div>
+                            <div class="spacing-item">
+                                <div class="spacing-box" style="height: 72px;">
+                                    <span>Header Height (Desktop)</span>
+                                </div>
+                                <span class="spacing-value">4.5rem / 72px</span>
+                            </div>
+                            <div class="spacing-item">
+                                <div class="spacing-box" style="height: 120px;">
+                                    <span>Hero Section Padding</span>
+                                </div>
+                                <span class="spacing-value">7.5rem / 120px</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

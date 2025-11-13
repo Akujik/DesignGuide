@@ -2,7 +2,7 @@
 
 ## 概述
 
-Meshy.ai 的布局系统采用现代化的 CSS Grid 和 Flexbox 技术，结合响应式设计原则，提供了灵活、可扩展的布局解决方案。系统支持从移动端到大屏幕的全响应式适配。
+Meshy.ai 的布局系统采用现代化的 CSS Grid 和 Flexbox 技术，结合响应式设计原则，提供了灵活、可扩展的布局解决方案。系统支持从移动端到大屏幕的全响应式适配，特别针对 Hero 区域的首屏展示进行了优化。
 
 ## 网格系统 (Grid System)
 
@@ -518,23 +518,86 @@ Meshy.ai 的布局系统采用现代化的 CSS Grid 和 Flexbox 技术，结合�
 
 ## 特殊布局场景
 
-### 英雄区域布局
+### Hero 区域布局
+
+#### Hero 区域设计原则
+Hero 区域是用户访问网站时首先看到的区域，需要：
+- 突出核心价值主张
+- 提供清晰的行动号召
+- 保持品牌一致性
+- 优化首屏加载性能
+- 支持各种设备尺寸
+
+#### 标准 Hero 头部布局
 ```css
-/* 全屏英雄区域 */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+/* Hero 头部导航 */
+.hero-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: var(--color-bg-base);
+  border-bottom: 1px solid var(--color-bg-border);
+  transition: all var(--duration-fast) var(--ease-smooth);
+  backdrop-filter: blur(10px);
+  background-color: rgba(24, 24, 24, 0.95);
 }
 
-.hero-content {
-  text-align: center;
-  z-index: 2;
-  max-width: 800px;
-  padding: var(--p-2xl);
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem; /* 移动端高度 */
+  padding: 0 var(--p-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .hero-container {
+    height: 4.5rem; /* 桌面端高度 */
+    padding: 0 var(--p-2xl);
+  }
+}
+
+.hero-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hero-nav {
+  display: none;
+  flex: 1;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .hero-nav {
+    display: flex;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+}
+```
+
+#### 全屏 Hero 布局
+```css
+/* 全屏英雄区域 */
+.hero-fullscreen {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-bg-base);
 }
 
 .hero-background {
@@ -544,6 +607,366 @@ Meshy.ai 的布局系统采用现代化的 CSS Grid 和 Flexbox 技术，结合�
   right: 0;
   bottom: 0;
   z-index: 1;
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center,
+    rgba(197, 249, 85, 0.1) 0%,
+    transparent 50%);
+}
+
+.hero-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(197, 249, 85, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(255, 62, 143, 0.05) 0%, transparent 50%);
+  background-size: 100% 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  padding: var(--p-3xl);
+}
+
+.hero-title {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-label-title);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--p-xl);
+  background: linear-gradient(135deg,
+    var(--color-accent-base),
+    var(--color-accent-support-base));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: var(--text-xl);
+  color: var(--color-label-soft);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--p-3xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-lg);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hero-cta {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+```
+
+#### 分屏 Hero 布局
+```css
+/* 分屏英雄区域 */
+.hero-split {
+  padding: var(--p-5xl) 0;
+  background-color: var(--color-bg-base);
+}
+
+.hero-split-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-3xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--p-lg);
+}
+
+@media (min-width: 1024px) {
+  .hero-split-container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.hero-split-content {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .hero-split-content {
+    order: 1;
+  }
+}
+
+.hero-split-visual {
+  order: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-split-visual {
+    order: 2;
+  }
+}
+
+.hero-content-left .hero-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-label-title);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--p-xl);
+}
+
+.hero-description {
+  font-size: var(--text-lg);
+  color: var(--color-label-soft);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--p-3xl);
+}
+
+.hero-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-md);
+  margin-bottom: var(--p-3xl);
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--p-md);
+  color: var(--color-label-base);
+  font-size: var(--text-base);
+}
+
+.hero-showcase-3d {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 500px;
+  margin: 0 auto;
+  background: linear-gradient(135deg,
+    var(--color-accent-bg),
+    var(--color-accent-support-base) 0.1);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+```
+
+#### 功能展示 Hero 布局
+```css
+/* 功能展示英雄区域 */
+.hero-feature {
+  padding: var(--p-5xl) 0;
+  background: linear-gradient(135deg,
+    var(--color-bg-base) 0%,
+    var(--color-bg-sub) 100%);
+}
+
+.hero-feature-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--p-lg);
+  text-align: center;
+}
+
+.hero-feature-header {
+  margin-bottom: var(--p-5xl);
+}
+
+.hero-feature-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-label-title);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--p-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-feature-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-label-soft);
+  line-height: var(--leading-relaxed);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--p-3xl);
+  margin-bottom: var(--p-5xl);
+}
+
+.feature-card {
+  background-color: var(--color-bg-sub);
+  border: 1px solid var(--color-bg-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--p-3xl);
+  text-align: left;
+  transition: all var(--duration-normal) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--color-accent-base),
+    var(--color-accent-support-base));
+  transform: scaleX(0);
+  transition: transform var(--duration-normal) var(--ease-smooth);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-accent-base);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-icon-large {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg,
+    var(--color-accent-base),
+    var(--color-accent-support-base));
+  border-radius: var(--radius-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-bg-base);
+  margin-bottom: var(--p-xl);
+}
+
+.feature-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-label-title);
+  margin-bottom: var(--p-md);
+}
+
+.feature-description {
+  color: var(--color-label-soft);
+  line-height: var(--leading-relaxed);
+}
+```
+
+#### Hero 区域响应式设计
+```css
+/* 移动端 Hero 优化 */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: var(--text-3xl);
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-lg);
+  }
+
+  .hero-cta {
+    width: 100%;
+  }
+
+  .hero-cta .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-split-container {
+    padding: 0 var(--p-md);
+  }
+
+  .hero-feature-grid {
+    grid-template-columns: 1fr;
+    gap: var(--p-2xl);
+  }
+}
+
+/* 平板设备适配 */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .hero-title {
+    font-size: var(--text-4xl);
+  }
+
+  .hero-split-container {
+    padding: 0 var(--p-xl);
+  }
+
+  .hero-feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 大屏设备优化 */
+@media (min-width: 1440px) {
+  .hero-title {
+    font-size: var(--text-6xl);
+  }
+
+  .hero-container {
+    max-width: 1400px;
+  }
+
+  .hero-fullscreen {
+    min-height: 100vh;
+  }
+}
+```
+
+#### Hero 区域性能优化
+```css
+/* 避免重排的动画 */
+.hero-animate {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* 使用 GPU 加速 */
+.hero-parallax {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 延迟加载背景 */
+.hero-lazy-bg {
+  background-image: none;
+  background-color: var(--color-bg-base);
+}
+
+.hero-lazy-bg.loaded {
+  background-image: url('hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.3s ease;
 }
 ```
 
