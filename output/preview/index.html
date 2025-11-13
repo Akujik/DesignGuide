@@ -4,35 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meshy.ai Design System Preview</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/design-system.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        meshy: {
-                            50: '#f8fdf4',
-                            100: '#f1f8e9',
-                            200: '#dcfce7',
-                            300: '#bbf7d0',
-                            400: '#86efac',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        }
-                    }
-                }
+    <style>
+        /* Sidebar Navigation Styles */
+        .sidebar-desktop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background-color: var(--color-surface);
+            border-right: 1px solid var(--color-border);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .sidebar-content {
+            padding: var(--space-6);
+        }
+
+        .sidebar-header h2 {
+            color: var(--color-primary);
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-8);
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .nav-section h3 {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-3);
+        }
+
+        .nav-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-section li {
+            margin-bottom: var(--space-2);
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: var(--space-2) var(--space-3);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            font-size: var(--font-size-sm);
+        }
+
+        .sidebar-link:hover {
+            background-color: var(--color-surface-light);
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .sidebar-link.active {
+            background-color: var(--color-primary);
+            color: var(--color-text-inverse);
+            font-weight: var(--font-weight-semibold);
+            box-shadow: 0 2px 4px rgba(197, 249, 85, 0.2);
+        }
+
+        /* Enhanced scrollbar styling */
+        .sidebar-desktop::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar-desktop::-webkit-scrollbar-track {
+            background: var(--color-surface);
+        }
+
+        .sidebar-desktop::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: 3px;
+        }
+
+        .sidebar-desktop::-webkit-scrollbar-thumb:hover {
+            background: var(--color-text-muted);
+        }
+
+        /* Enhanced component cards */
+        .component-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-4);
+            transition: transform var(--transition-normal);
+        }
+
+        .component-link:hover .component-icon {
+            transform: scale(1.1);
+        }
+
+        /* Better button styling */
+        .btn {
+            transition: all var(--transition-normal);
+            border: 1px solid transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(197, 249, 85, 0.15);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-light);
+            border-color: var(--color-primary-light);
+        }
+
+        /* Main content adjustment for sidebar */
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 1024px) {
+            .sidebar-desktop {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 0;
             }
         }
-    </script>
-    <style>
+
         /* Additional styles for preview system */
         .component-grid {
             display: grid;
@@ -55,11 +165,12 @@
         }
 
         .component-link:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(197, 249, 85, 0.1), 0 8px 10px -6px rgba(197, 249, 85, 0.1);
             border-color: var(--color-primary);
             text-decoration: none;
             color: inherit;
+            background-color: var(--color-surface-lighter);
         }
 
         .component-link .nav-link {
@@ -124,6 +235,19 @@
             border-radius: var(--radius-xl);
             padding: var(--space-6);
             margin: var(--space-8) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            opacity: 0.7;
         }
 
         .feature-highlight h3 {
@@ -132,45 +256,39 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900">
+<body>
     <!-- Desktop Sidebar Navigation -->
-    <div class="hidden lg:fixed lg:inset-0 lg:z-40 lg:flex lg:flex-col">
-        <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white dark:bg-gray-900 px-6 pb-4 ring-1 ring-gray-900/10">
-            <div class="flex h-16 shrink-0 items-center">
-                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Meshy.ai</h2>
+    <div class="sidebar-desktop">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2>Meshy.ai</h2>
             </div>
-            <nav class="flex flex-1 flex-col">
-                <ul role="list" class="flex flex-1 flex-col gap-y-7">
-                    <li>
-                        <ul role="list" class="-mx-2 space-y-1">
-                            <li>
-                                <h3 class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">设计令牌</h3>
-                                <ul class="space-y-1">
-                                    <li><a href="#colors" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 group flex gap-x-3 rounded-md p-2 text-sm font-semibold">颜色系统</a></li>
-                                    <li><a href="#typography" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 group flex gap-x-3 rounded-md p-2 text-sm font-semibold">字体系统</a></li>
-                                    <li><a href="#spacing" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 group flex gap-x-3 rounded-md p-2 text-sm font-semibold">间距系统</a></li>
-                                    <li><a href="#layout" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 group flex gap-x-3 rounded-md p-2 text-sm font-semibold">布局系统</a></li>
-                                    <li><a href="#animations" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 group flex gap-x-3 rounded-md p-2 text-sm font-semibold">动效系统</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3 class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3 mt-6">UI组件</h3>
-                                <ul class="space-y-1">
-                                    <li><a href="#buttons" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 group flex gap-x-3 rounded-md p-2 text-sm font-semibold">按钮组件</a></li>
-                                    <li><a href="#cards" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 group flex gap-x-3 rounded-md p-2 text-sm font-semibold">卡片组件</a></li>
-                                    <li><a href="#forms" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 group flex gap-x-3 rounded-md p-2 text-sm font-semibold">表单组件</a></li>
-                                    <li><a href="#navigation" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 group flex gap-x-3 rounded-md p-2 text-sm font-semibold">导航组件</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3 class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3 mt-6">模式与指南</h3>
-                                <ul class="space-y-1">
-                                    <li><a href="#hero-sections" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 group flex gap-x-3 rounded-md p-2 text-sm font-semibold">Hero区域</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>设计令牌</h3>
+                    <ul>
+                        <li><a href="#colors" class="sidebar-link">颜色系统</a></li>
+                        <li><a href="#typography" class="sidebar-link">字体系统</a></li>
+                        <li><a href="#spacing" class="sidebar-link">间距系统</a></li>
+                        <li><a href="#layout" class="sidebar-link">布局系统</a></li>
+                        <li><a href="#animations" class="sidebar-link">动效系统</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>UI组件</h3>
+                    <ul>
+                        <li><a href="#buttons" class="sidebar-link">按钮组件</a></li>
+                        <li><a href="#cards" class="sidebar-link">卡片组件</a></li>
+                        <li><a href="#forms" class="sidebar-link">表单组件</a></li>
+                        <li><a href="#navigation" class="sidebar-link">导航组件</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <h3>模式与指南</h3>
+                    <ul>
+                        <li><a href="#hero-sections" class="sidebar-link">Hero区域</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </div>
@@ -197,135 +315,163 @@
     </nav>
 
     <!-- Main Content Area -->
-    <div class="lg:pl-72 xl:pl-80">
+    <div class="main-content">
         <!-- Hero Section -->
-        <section class="bg-gradient-to-br from-green-50 to-white dark:from-gray-900 dark:to-gray-800 py-12">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="flex-1 text-center lg:text-left">
-                        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                            <span class="text-meshy-600">Design System</span> Preview
-                        </h1>
-                        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
-                            探索 Meshy.ai 设计系统的完整组件库，快速查找和使用设计令牌、UI组件及最佳实践
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <a href="#components" class="bg-meshy-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-meshy-700 transition-colors">查看组件</a>
-                            <a href="#design-tokens" class="border border-meshy-600 text-meshy-600 px-6 py-3 rounded-lg font-medium hover:bg-meshy-50 transition-colors">设计令牌</a>
-                        </div>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="highlight">Design System</span> Preview
+                    </h1>
+                    <p class="hero-description">
+                        探索 Meshy.ai 设计系统的完整组件库，快速查找和使用设计令牌、UI组件及最佳实践
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#components" class="btn btn-primary">查看组件</a>
+                        <a href="#design-tokens" class="btn btn-outline">设计令牌</a>
                     </div>
-                    <div class="flex-1">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
-                                <div class="text-3xl mb-4">🎨</div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">设计令牌</h3>
-                                <p class="text-gray-600 dark:text-gray-400">颜色、字体、间距等核心设计元素</p>
-                            </div>
-                            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
-                                <div class="text-3xl mb-4">🧩</div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">UI组件</h3>
-                                <p class="text-gray-600 dark:text-gray-400">可复用的交互组件库</p>
-                            </div>
-                            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow">
-                                <div class="text-3xl mb-4">📋</div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">代码示例</h3>
-                                <p class="text-gray-600 dark:text-gray-400">完整的实现代码和使用指南</p>
-                            </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-cards">
+                        <div class="hero-card hero-card-1">
+                            <div class="card-icon">🎨</div>
+                            <h3>设计令牌</h3>
+                            <p>颜色、字体、间距等核心设计元素</p>
+                        </div>
+                        <div class="hero-card hero-card-2">
+                            <div class="card-icon">🧩</div>
+                            <h3>UI组件</h3>
+                            <p>可复用的交互组件库</p>
+                        </div>
+                        <div class="hero-card hero-card-3">
+                            <div class="card-icon">📋</div>
+                            <h3>代码示例</h3>
+                            <p>完整的实现代码和使用指南</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-    <!-- Design Tokens Section -->
-    <section id="design-tokens" class="py-16 bg-white dark:bg-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">设计令牌</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">核心设计元素的详细规范和使用指南，确保设计一致性和可维护性</p>
+      <!-- Design Tokens -->
+    <section id="design-tokens" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">设计令牌</h2>
+                <p class="section-subtitle">核心设计元素的详细规范和使用指南</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="colors.html" class="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 dark:border-gray-600 hover:border-meshy-500">
-                    <div class="text-3xl mb-4 group-hover:text-meshy-600 transition-colors">🎨</div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-meshy-600 transition-colors">颜色系统</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">完整的颜色调色板，包括主色、辅助色、状态色和语义化颜色</p>
-                    <div class="text-sm text-meshy-600 font-medium">查看颜色令牌 →</div>
+            <div class="component-grid">
+                <a href="colors.html" class="component-link">
+                    <div class="component-icon">🎨</div>
+                    <h3 class="component-title">颜色系统</h3>
+                    <p class="component-description">完整的颜色调色板，包括主色、辅助色、状态色和语义化颜色。支持主题切换和对比度检查。</p>
+                    <div class="component-meta">
+                        <span class="nav-link">查看颜色令牌 →</span>
+                        <br>包含：主色调、辅助色、背景色、文本色、状态色
+                    </div>
                 </a>
 
-                <a href="typography.html" class="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 dark:border-gray-600 hover:border-meshy-500">
-                    <div class="text-3xl mb-4 group-hover:text-meshy-600 transition-colors">✏️</div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-meshy-600 transition-colors">字体系统</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">字体族、字号、行高、字重的规范化定义，支持多语言排版</p>
-                    <div class="text-sm text-meshy-600 font-medium">查看字体令牌 →</div>
+                <a href="typography.html" class="component-link">
+                    <div class="component-icon">✏️</div>
+                    <h3 class="component-title">字体系统</h3>
+                    <p class="component-description">字体族、字号、行高、字重的规范化定义。支持多语言和响应式排版。</p>
+                    <div class="component-meta">
+                        <span class="nav-link">查看字体令牌 →</span>
+                        <br>包含：字体族、字号比例、字重、行高、文本样式
+                    </div>
                 </a>
 
-                <a href="spacing.html" class="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 dark:border-gray-600 hover:border-meshy-500">
-                    <div class="text-3xl mb-4 group-hover:text-meshy-600 transition-colors">📏</div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-meshy-600 transition-colors">间距系统</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">基于4px网格系统的标准化间距规范</p>
-                    <div class="text-sm text-meshy-600 font-medium">查看间距令牌 →</div>
+                <a href="spacing.html" class="component-link">
+                    <div class="component-icon">📏</div>
+                    <h3 class="component-title">间距系统</h3>
+                    <p class="component-description">标准化的间距规范，基于4px网格系统。确保界面元素的一致性和协调性。</p>
+                    <div class="component-meta">
+                        <span class="nav-link">查看间距令牌 →</span>
+                        <br>包含：基础间距、组件间距、布局间距
+                    </div>
                 </a>
 
-                <a href="layout.html" class="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 dark:border-gray-600 hover:border-meshy-500">
-                    <div class="text-3xl mb-4 group-hover:text-meshy-600 transition-colors">📐</div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-meshy-600 transition-colors">布局系统</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">网格系统、容器规范、响应式断点定义</p>
-                    <div class="text-sm text-meshy-600 font-medium">查看布局令牌 →</div>
+                <a href="layout.html" class="component-link">
+                    <div class="component-icon">📐</div>
+                    <h3 class="component-title">布局系统</h3>
+                    <p class="component-description">网格系统、容器规范、响应式断点。支持各种设备和屏幕尺寸的布局需求。</p>
+                    <div class="component-meta">
+                        <span class="nav-link">查看布局令牌 →</span>
+                        <br>包含：网格系统、容器、断点、区域布局
+                    </div>
                 </a>
 
-                <a href="animations.html" class="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 dark:border-gray-600 hover:border-meshy-500">
-                    <div class="text-3xl mb-4 group-hover:text-meshy-600 transition-colors">⚡</div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-meshy-600 transition-colors">动效系统</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">动画时长、缓动函数、过渡效果定义</p>
-                    <div class="text-sm text-meshy-600 font-medium">查看动效令牌 →</div>
+                <a href="animations.html" class="component-link">
+                    <div class="component-icon">⚡</div>
+                    <h3 class="component-title">动效系统</h3>
+                    <p class="component-description">动画时长、缓动函数、过渡效果的定义。提供流畅自然的交互体验。</p>
+                    <div class="component-meta">
+                        <span class="nav-link">查看动效令牌 →</span>
+                        <br>包含：动画时长、缓动函数、过渡效果
+                    </div>
                 </a>
 
-                <a href="hero-sections.html" class="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 dark:border-gray-600 hover:border-meshy-500">
-                    <div class="text-3xl mb-4 group-hover:text-meshy-600 transition-colors">🏠</div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-meshy-600 transition-colors">Hero区域</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">首页头部区域的布局规范和设计模式</p>
-                    <div class="text-sm text-meshy-600 font-medium">查看Hero规范 →</div>
+                <a href="hero-sections.html" class="component-link">
+                    <div class="component-icon">🏠</div>
+                    <h3 class="component-title">Hero区域</h3>
+                    <p class="component-description">首页头部区域的布局规范和设计模式。包括全屏、分屏、功能展示等类型。</p>
+                    <div class="component-meta">
+                        <span class="nav-link">查看Hero规范 →</span>
+                        <br>包含：标准Hero、全屏Hero、分屏Hero
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Components Section -->
-    <section id="components" class="py-16 bg-gray-50 dark:bg-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">UI组件</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">可复用的用户界面组件和交互模式，提供一致的用户体验</p>
+    <!-- Components -->
+    <section id="components" class="section section-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">UI组件</h2>
+                <p class="section-subtitle">可复用的用户界面组件和交互模式</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="buttons.html" class="group bg-white dark:bg-gray-800 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 dark:border-gray-700 hover:border-meshy-500">
-                    <div class="text-3xl mb-4 group-hover:text-meshy-600 transition-colors">🔘</div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-meshy-600 transition-colors">按钮组件</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">各种类型和状态的按钮，支持不同尺寸和图标组合</p>
-                    <div class="text-sm text-meshy-600 font-medium">查看按钮组件 →</div>
+            <div class="component-grid">
+                <a href="buttons.html" class="component-link">
+                    <div class="component-icon">🔘</div>
+                    <h3 class="component-title">按钮组件</h3>
+                    <p class="component-description">各种类型和状态的按钮，包括主要按钮、次要按钮、幽灵按钮等。支持不同尺寸和图标组合。</p>
+                    <div class="component-meta">
+                        <span class="nav-link">查看按钮组件 →</span>
+                        <br>包含：主要按钮、次要按钮、链接按钮、图标按钮
+                    </div>
                 </a>
 
-                <a href="cards.html" class="group bg-white dark:bg-gray-800 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 dark:border-gray-700 hover:border-meshy-500">
-                    <div class="text-3xl mb-4 group-hover:text-meshy-600 transition-colors">🃏</div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-meshy-600 transition-colors">卡片组件</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">内容容器组件，支持多种布局方式和变体</p>
-                    <div class="text-sm text-meshy-600 font-medium">查看卡片组件 →</div>
+                <a href="cards.html" class="component-link">
+                    <div class="component-icon">🃏</div>
+                    <h3 class="component-title">卡片组件</h3>
+                    <p class="component-description">内容容器组件，支持多种布局方式。包括基础卡片、产品卡片、用户卡片等变体。</p>
+                    <div class="component-meta">
+                        <span class="nav-link">查看卡片组件 →</span>
+                        <br>包含：基础卡片、可点击卡片、媒体卡片
+                    </div>
                 </a>
 
-                <a href="forms.html" class="group bg-white dark:bg-gray-800 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 dark:border-gray-700 hover:border-meshy-500">
-                    <div class="text-3xl mb-4 group-hover:text-meshy-600 transition-colors">📝</div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-meshy-600 transition-colors">表单组件</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">完整的表单元素集合，支持验证和错误状态</p>
-                    <div class="text-sm text-meshy-600 font-medium">查看表单组件 →</div>
+                <a href="forms.html" class="component-link">
+                    <div class="component-icon">📝</div>
+                    <h3 class="component-title">表单组件</h3>
+                    <p class="component-description">完整的表单元素集合，包括输入框、选择器、开关等。支持验证和错误状态。</p>
+                    <div class="component-meta">
+                        <span class="nav-link">查看表单组件 →</span>
+                        <br>包含：输入框、选择器、开关、验证状态
+                    </div>
                 </a>
 
-                <a href="navigation.html" class="group bg-white dark:bg-gray-800 p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 dark:border-gray-700 hover:border-meshy-500">
-                    <div class="text-3xl mb-4 group-hover:text-meshy-600 transition-colors">🧭</div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-meshy-600 transition-colors">导航组件</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">导航和菜单组件，支持多层级导航结构</p>
-                    <div class="text-sm text-meshy-600 font-medium">查看导航组件 →</div>
+                <a href="navigation.html" class="component-link">
+                    <div class="component-icon">🧭</div>
+                    <h3 class="component-title">导航组件</h3>
+                    <p class="component-description">导航和菜单组件，包括顶部导航、侧边栏、面包屑等。支持多层级导航。</p>
+                    <div class="component-meta">
+                        <span class="nav-link">查看导航组件 →</span>
+                        <br>包含：顶部导航、侧边栏、标签页、面包屑
+                    </div>
                 </a>
             </div>
         </div>

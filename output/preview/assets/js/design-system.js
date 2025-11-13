@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sidebar navigation active state management
     function updateActiveNavigation(targetId) {
         // Update desktop sidebar
-        const sidebarLinks = document.querySelectorAll('.hidden.lg\\:fixed a[href^="#"]');
+        const sidebarLinks = document.querySelectorAll('.sidebar-link[href^="#"]');
         sidebarLinks.forEach(link => {
-            link.classList.remove('bg-meshy-50', 'dark:bg-meshy-900/20', 'text-meshy-600', 'dark:text-meshy-400');
+            link.classList.remove('active');
             if (link.getAttribute('href') === targetId) {
-                link.classList.add('bg-meshy-50', 'dark:bg-meshy-900/20', 'text-meshy-600', 'dark:text-meshy-400');
+                link.classList.add('active');
             }
         });
     }
