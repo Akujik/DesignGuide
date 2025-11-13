@@ -870,3 +870,193 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ========================================
+   PREVIEW PAGE LAYOUT STYLES
+   ======================================== */
+
+/* Sidebar Navigation */
+.sidebar-desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    z-index: 100;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.sidebar-content {
+    padding: var(--space-6);
+}
+
+.sidebar-header h2 {
+    color: var(--color-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-8);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.nav-section h3 {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-3);
+}
+
+.nav-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-section li {
+    margin-bottom: var(--space-2);
+}
+
+.sidebar-link {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    font-size: var(--font-size-sm);
+}
+
+.sidebar-link:hover {
+    background-color: var(--color-surface-light);
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.sidebar-link.active {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: 0 2px 4px rgba(197, 249, 85, 0.2);
+}
+
+/* Enhanced scrollbar styling for sidebar */
+.sidebar-desktop::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-desktop::-webkit-scrollbar-track {
+    background: var(--color-surface);
+}
+
+.sidebar-desktop::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+}
+
+.sidebar-desktop::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+    .sidebar-desktop {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Article-style layout for clean component display */
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: var(--space-6) 0;
+}
+
+.article-item {
+    padding: var(--space-6) 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: none;
+}
+
+.article-item:last-child {
+    border-bottom: none;
+}
+
+.article-item:hover {
+    border-color: var(--color-border);
+    box-shadow: none;
+    background: transparent;
+}
+
+.article-item h3 {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-2);
+}
+
+/* Keep code examples functional */
+.code-example {
+    position: relative;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.copy-btn {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--font-size-xs);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.copy-btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.copy-btn:active {
+    transform: translateY(1px);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
