@@ -6,9 +6,10 @@
     <title>布局系统 - Meshy.ai 设计系统</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header glass-header">
         <div class="header-content">
             <div>
                 <h1 class="header-title">布局系统</h1>
@@ -21,7 +22,42 @@
         </div>
     </header>
 
-    <div class="preview-container">
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Modern Hero Section -->
+    <section class="modern-hero">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="modern-hero-content">
+            <h1 class="modern-hero-title animate-fadeInUp">
+                Meshy.ai 布局系统
+            </h1>
+            <p class="modern-hero-subtitle animate-fadeInUp animate-delay-1">
+                现代化CSS Grid和Flexbox布局，灵活适配各种设备
+            </p>
+            <div class="animate-fadeInUp animate-delay-2">
+                <button class="modern-button">
+                    探索布局系统
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modern-bg">
+        <div class="preview-container">
         <aside class="sidebar">
             <nav>
                 <h3 class="sidebar-title">设计令牌</h3>
@@ -67,22 +103,22 @@
                 <h2 class="section-title">网格系统</h2>
                 <p class="section-description">基于 CSS Grid 的响应式网格布局</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-fadeInUp">
                     <h3 class="component-showcase-title">12列网格</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div class="grid">
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 1</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 2</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 3</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 4</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 5</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 6</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 7</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 8</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 9</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 10</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 11</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 12</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-1" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 1</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-2" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 2</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-3" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 3</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-4" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 4</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-5" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 5</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-1" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 6</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-2" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 7</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-3" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 8</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-4" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 9</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-5" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 10</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-1" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 11</div>
+                            <div class="interactive-card animate-scaleIn animate-delay-2" style="background: var(--color-accent-bg); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">Col 12</div>
                         </div>
                     </div>
                 </div>
@@ -93,19 +129,19 @@
                 <h2 class="section-title">弹性布局</h2>
                 <p class="section-description">Flexbox 布局模式和对齐方式</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-slideInLeft">
                     <h3 class="component-showcase-title">对齐方式</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div style="display: flex; flex-direction: column; gap: var(--gap-lg);">
-                            <div class="flex justify-center items-center" style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md);">居中对齐</div>
-                            <div class="flex justify-between items-center" style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md);">
+                            <div class="flex justify-center items-center interactive-card animate-fadeInUp animate-delay-1" style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md);">居中对齐</div>
+                            <div class="flex justify-between items-center interactive-card animate-fadeInUp animate-delay-2" style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md);">
                                 <span>左对齐</span>
                                 <span>右对齐</span>
                             </div>
-                            <div class="flex justify-around items-center" style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md);">
-                                <span>项目 1</span>
-                                <span>项目 2</span>
-                                <span>项目 3</span>
+                            <div class="flex justify-around items-center interactive-card animate-fadeInUp animate-delay-3" style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md);">
+                                <span class="animate-scaleIn animate-delay-1">项目 1</span>
+                                <span class="animate-scaleIn animate-delay-2">项目 2</span>
+                                <span class="animate-scaleIn animate-delay-3">项目 3</span>
                             </div>
                         </div>
                     </div>
@@ -117,17 +153,17 @@
                 <h2 class="section-title">容器系统</h2>
                 <p class="section-description">不同最大宽度的容器组件</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-slideInRight">
                     <h3 class="component-showcase-title">容器尺寸</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div style="display: flex; flex-direction: column; gap: var(--gap-lg);">
-                            <div class="container container-narrow" style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
+                            <div class="container container-narrow interactive-card animate-fadeInUp animate-delay-1" style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
                                 <p style="margin: 0; text-align: center; color: var(--color-label-soft);">窄容器 (max-width: 800px)</p>
                             </div>
-                            <div class="container" style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
+                            <div class="container interactive-card animate-fadeInUp animate-delay-2" style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
                                 <p style="margin: 0; text-align: center; color: var(--color-label-soft);">标准容器 (max-width: 1200px)</p>
                             </div>
-                            <div class="container container-wide" style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
+                            <div class="container container-wide interactive-card animate-fadeInUp animate-delay-3" style="border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg);">
                                 <p style="margin: 0; text-align: center; color: var(--color-label-soft);">宽容器 (max-width: 1400px)</p>
                             </div>
                         </div>
@@ -135,6 +171,7 @@
                 </div>
             </section>
         </main>
+        </div> <!-- Close modern-bg -->
     </div>
 
     <script src="assets/js/scripts.js"></script>

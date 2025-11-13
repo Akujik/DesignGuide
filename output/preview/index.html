@@ -6,9 +6,10 @@
     <title>Meshy.ai 设计系统 - 预览系统</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header glass-header">
         <div class="header-content">
             <div>
                 <h1 class="header-title">Meshy.ai 设计系统</h1>
@@ -23,7 +24,42 @@
         </div>
     </header>
 
-    <div class="preview-container">
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Modern Hero Section -->
+    <section class="modern-hero">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="modern-hero-content">
+            <h1 class="modern-hero-title animate-fadeInUp">
+                Meshy.ai 设计系统
+            </h1>
+            <p class="modern-hero-subtitle animate-fadeInUp animate-delay-1">
+                完整的设计令牌和组件库，构建一致的数字体验
+            </p>
+            <div class="animate-fadeInUp animate-delay-2">
+                <button class="modern-button">
+                    探索设计系统
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modern-bg">
+        <div class="preview-container">
         <aside class="sidebar">
             <nav>
                 <h3 class="sidebar-title">设计令牌</h3>
@@ -574,6 +610,7 @@
                 </div>
             </section>
         </main>
+        </div> <!-- Close modern-bg -->
     </div>
 
     <script src="assets/js/scripts.js"></script>

@@ -6,6 +6,7 @@
     <title>动效系统 - Meshy.ai 设计系统</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <style>
         /* Additional animation styles */
         @keyframes fadeIn {
@@ -47,7 +48,7 @@
     </style>
 </head>
 <body>
-    <header class="header">
+    <header class="header glass-header">
         <div class="header-content">
             <div>
                 <h1 class="header-title">动效系统</h1>
@@ -60,7 +61,42 @@
         </div>
     </header>
 
-    <div class="preview-container">
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Modern Hero Section -->
+    <section class="modern-hero">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="modern-hero-content">
+            <h1 class="modern-hero-title animate-fadeInUp">
+                Meshy.ai 动效系统
+            </h1>
+            <p class="modern-hero-subtitle animate-fadeInUp animate-delay-1">
+                流畅自然的动画效果，提升用户体验和品牌感知
+            </p>
+            <div class="animate-fadeInUp animate-delay-2">
+                <button class="modern-button">
+                    探索动效规范
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modern-bg">
+        <div class="preview-container">
         <aside class="sidebar">
             <nav>
                 <h3 class="sidebar-title">设计令牌</h3>
@@ -106,16 +142,16 @@
                 <h2 class="section-title">动画效果</h2>
                 <p class="section-description">不同的动画效果示例</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-fadeInUp">
                     <h3 class="component-showcase-title">动画演示</h3>
-                    <div class="component-preview">
-                        <div class="demo-box animation-fade-in">
+                    <div class="component-preview-enhanced">
+                        <div class="demo-box animation-fade-in interactive-card animate-scaleIn animate-delay-1">
                             淡入动画效果
                         </div>
-                        <div class="demo-box animation-slide-right">
+                        <div class="demo-box animation-slide-right interactive-card animate-slideInLeft animate-delay-2">
                             滑入动画效果
                         </div>
-                        <div class="demo-box animation-bounce">
+                        <div class="demo-box animation-bounce interactive-card animate-fadeInUp animate-delay-3">
                             弹跳动画效果
                         </div>
                     </div>
@@ -127,16 +163,19 @@
                 <h2 class="section-title">过渡效果</h2>
                 <p class="section-description">交互式过渡效果</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-slideInLeft">
                     <h3 class="component-showcase-title">悬停过渡</h3>
-                    <div class="component-preview">
-                        <button class="button button-primary">
-                            悬停查看过渡效果
-                        </button>
+                    <div class="component-preview-enhanced">
+                        <div class="button-showcase-enhanced">
+                            <button class="button button-primary interactive-card animate-scaleIn animate-delay-1">
+                                悬停查看过渡效果
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
+        </div> <!-- Close modern-bg -->
     </div>
 
     <script src="assets/js/scripts.js"></script>

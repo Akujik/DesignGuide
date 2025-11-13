@@ -6,9 +6,10 @@
     <title>间距系统 - Meshy.ai 设计系统</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header glass-header">
         <div class="header-content">
             <div>
                 <h1 class="header-title">间距系统</h1>
@@ -21,7 +22,42 @@
         </div>
     </header>
 
-    <div class="preview-container">
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Modern Hero Section -->
+    <section class="modern-hero">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="modern-hero-content">
+            <h1 class="modern-hero-title animate-fadeInUp">
+                Meshy.ai 间距系统
+            </h1>
+            <p class="modern-hero-subtitle animate-fadeInUp animate-delay-1">
+                基于4px单位的数学化间距系统，确保视觉一致性
+            </p>
+            <div class="animate-fadeInUp animate-delay-2">
+                <button class="modern-button">
+                    探索间距规范
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modern-bg">
+        <div class="preview-container">
         <aside class="sidebar">
             <nav>
                 <h3 class="sidebar-title">设计令牌</h3>
@@ -67,47 +103,47 @@
                 <h2 class="section-title">间距规范</h2>
                 <p class="section-description">基于 4px 基础单位的数学化间距系统</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-fadeInUp">
                     <h3 class="component-showcase-title">间距层级</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--gap-xl);">
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-fadeInUp animate-delay-1">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-xs); margin-bottom: var(--p-sm);">4px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-xs</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-fadeInUp animate-delay-2">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-sm); margin-bottom: var(--p-sm);">8px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-sm</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-fadeInUp animate-delay-3">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-md); margin-bottom: var(--p-sm);">12px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-md</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-fadeInUp animate-delay-4">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-lg); margin-bottom: var(--p-sm);">16px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-lg</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-fadeInUp animate-delay-5">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-xl); margin-bottom: var(--p-sm);">20px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-xl</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-scaleIn animate-delay-1">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-2xl); margin-bottom: var(--p-sm);">24px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-2xl</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-scaleIn animate-delay-2">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-3xl); margin-bottom: var(--p-sm);">32px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-3xl</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-scaleIn animate-delay-3">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-4xl); margin-bottom: var(--p-sm);">40px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-4xl</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-scaleIn animate-delay-4">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-5xl); margin-bottom: var(--p-sm);">48px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-5xl</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-scaleIn animate-delay-5">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-6xl); margin-bottom: var(--p-sm);">64px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--spacing-6xl</div>
                             </div>
@@ -121,17 +157,17 @@
                 <h2 class="section-title">外间距和内间距</h2>
                 <p class="section-description">外间距 (margin) 和内间距 (padding) 的使用示例</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-slideInLeft">
                     <h3 class="component-showcase-title">间距对比</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap-xl);">
-                            <div>
+                            <div class="interactive-card animate-fadeInUp animate-delay-1">
                                 <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">内间距 (Padding)</h4>
                                 <div style="background: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-2xl);">
                                     <p style="margin: 0; color: var(--color-label-soft);">这个元素使用了内间距，内容与边框之间有 24px 的间距。</p>
                                 </div>
                             </div>
-                            <div>
+                            <div class="interactive-card animate-fadeInUp animate-delay-2">
                                 <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">外间距 (Margin)</h4>
                                 <div style="background: var(--color-bg-sub); border: 1px solid var(--color-bg-border); border-radius: var(--radius-lg); padding: var(--p-lg); margin-bottom: var(--m-xl);">
                                     <p style="margin: 0; color: var(--color-label-soft);">这个元素下方有 24px 的外间距，与下一个元素保持距离。</p>
@@ -150,11 +186,11 @@
                 <h2 class="section-title">元素间距</h2>
                 <p class="section-description">Flexbox 和 Grid 中的间距 (gap)</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-slideInRight">
                     <h3 class="component-showcase-title">间距大小对比</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--gap-xl);">
-                            <div>
+                            <div class="interactive-card animate-scaleIn animate-delay-1">
                                 <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">小间距</h4>
                                 <div class="flex flex-column gap-sm">
                                     <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 1</div>
@@ -162,7 +198,7 @@
                                     <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 3</div>
                                 </div>
                             </div>
-                            <div>
+                            <div class="interactive-card animate-scaleIn animate-delay-2">
                                 <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">中间距</h4>
                                 <div class="flex flex-column gap-md">
                                     <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 1</div>
@@ -170,7 +206,7 @@
                                     <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 3</div>
                                 </div>
                             </div>
-                            <div>
+                            <div class="interactive-card animate-scaleIn animate-delay-3">
                                 <h4 style="color: var(--color-label-base); margin-bottom: var(--p-lg);">大间距</h4>
                                 <div class="flex flex-column gap-lg">
                                     <div style="background: var(--color-bg-sub); padding: var(--p-lg); border-radius: var(--radius-md); text-align: center;">项目 1</div>
@@ -182,14 +218,16 @@
                     </div>
                 </div>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-2">
                     <h3 class="component-showcase-title">水平间距</h3>
-                    <div class="component-preview">
-                        <div class="flex items-center gap-lg" style="background: var(--color-bg-sub); padding: var(--p-xl); border-radius: var(--radius-lg);">
-                            <div style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 1</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 2</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 3</div>
-                            <div style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 4</div>
+                    <div class="component-preview-enhanced">
+                        <div class="interactive-card animate-slideInLeft" style="background: var(--color-bg-sub); padding: var(--p-xl); border-radius: var(--radius-lg);">
+                            <div class="flex items-center gap-lg">
+                                <div class="animate-scaleIn animate-delay-1" style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 1</div>
+                                <div class="animate-scaleIn animate-delay-2" style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 2</div>
+                                <div class="animate-scaleIn animate-delay-3" style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 3</div>
+                                <div class="animate-scaleIn animate-delay-4" style="background: var(--color-accent-bg); padding: var(--p-md) var(--p-lg); border-radius: var(--radius-md);">元素 4</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -200,43 +238,43 @@
                 <h2 class="section-title">圆角系统</h2>
                 <p class="section-description">统一的圆角规范和视觉效果</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-scaleIn">
                     <h3 class="component-showcase-title">圆角大小</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: var(--gap-xl);">
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-fadeInUp animate-delay-1">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-xs); padding: var(--p-xl); margin-bottom: var(--p-sm);">2px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-xs</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-fadeInUp animate-delay-2">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-sm); padding: var(--p-xl); margin-bottom: var(--p-sm);">4px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-sm</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-fadeInUp animate-delay-3">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-md); padding: var(--p-xl); margin-bottom: var(--p-sm);">6px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-md</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-fadeInUp animate-delay-4">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-lg); padding: var(--p-xl); margin-bottom: var(--p-sm);">8px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-lg</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-fadeInUp animate-delay-5">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">12px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-xl</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-scaleIn animate-delay-1">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-2xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">16px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-2xl</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-scaleIn animate-delay-2">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-3xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">24px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-3xl</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-scaleIn animate-delay-3">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-4xl); padding: var(--p-xl); margin-bottom: var(--p-sm);">32px</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-4xl</div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center interactive-card animate-scaleIn animate-delay-4">
                                 <div style="background: var(--color-accent-bg); border-radius: var(--radius-full); width: 80px; height: 80px; line-height: 80px; margin: 0 auto var(--p-sm);">∞</div>
                                 <div style="color: var(--color-label-soft); font-size: var(--text-xs);">--radius-full</div>
                             </div>
@@ -250,21 +288,21 @@
                 <h2 class="section-title">组件中的间距应用</h2>
                 <p class="section-description">间距在不同组件中的实际应用示例</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-slideInLeft">
                     <h3 class="component-showcase-title">按钮间距</h3>
-                    <div class="component-preview">
-                        <div class="flex gap-lg items-center">
-                            <button class="button button-primary button-small">小按钮</button>
-                            <button class="button button-primary">中按钮</button>
-                            <button class="button button-primary button-large">大按钮</button>
+                    <div class="component-preview-enhanced">
+                        <div class="button-showcase-enhanced">
+                            <button class="button button-primary button-small interactive-card animate-scaleIn animate-delay-1">小按钮</button>
+                            <button class="button button-primary interactive-card animate-scaleIn animate-delay-2">中按钮</button>
+                            <button class="button button-primary button-large interactive-card animate-scaleIn animate-delay-3">大按钮</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-slideInRight">
                     <h3 class="component-showcase-title">卡片间距</h3>
-                    <div class="component-preview grid grid-responsive">
-                        <div class="card">
+                    <div class="component-preview-enhanced grid grid-responsive">
+                        <div class="card interactive-card animate-fadeInUp animate-delay-1">
                             <div class="card-header">
                                 <h3 class="card-title">卡片 1</h3>
                             </div>
@@ -272,7 +310,7 @@
                                 <p>卡片内部使用标准间距，确保内容层次清晰。</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card interactive-card animate-fadeInUp animate-delay-2">
                             <div class="card-header">
                                 <h3 class="card-title">卡片 2</h3>
                             </div>
@@ -280,7 +318,7 @@
                                 <p>卡片之间使用大间距，提供良好的视觉分离。</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card interactive-card animate-fadeInUp animate-delay-3">
                             <div class="card-header">
                                 <h3 class="card-title">卡片 3</h3>
                             </div>
@@ -291,18 +329,18 @@
                     </div>
                 </div>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-3">
                     <h3 class="component-showcase-title">表单间距</h3>
-                    <div class="component-preview" style="max-width: 400px;">
-                        <div class="form-group">
+                    <div class="component-preview-enhanced interactive-card animate-scaleIn" style="max-width: 400px;">
+                        <div class="form-group animate-slideInLeft animate-delay-1">
                             <label class="form-label">用户名</label>
                             <input type="text" class="form-input" placeholder="输入用户名">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group animate-slideInLeft animate-delay-2">
                             <label class="form-label">邮箱</label>
                             <input type="email" class="form-input" placeholder="输入邮箱">
                         </div>
-                        <button class="button button-primary button-full-width">提交</button>
+                        <button class="button button-primary button-full-width animate-scaleIn animate-delay-3">提交</button>
                     </div>
                 </div>
             </section>
@@ -312,12 +350,12 @@
                 <h2 class="section-title">CSS 变量参考</h2>
                 <p class="section-description">间距系统使用的 CSS 变量</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-4">
                     <h3 class="component-showcase-title">间距 CSS 变量</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div style="font-family: var(--font-mono); font-size: var(--text-sm);">
                             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--gap-lg);">
-                                <div>
+                                <div class="interactive-card animate-slideInLeft animate-delay-1">
                                     <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">基础间距</h4>
                                     <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
                                         --spacing-unit: 0.25rem;<br>
@@ -328,7 +366,7 @@
                                         --spacing-xl: 1.25rem;
                                     </div>
                                 </div>
-                                <div>
+                                <div class="interactive-card animate-slideInLeft animate-delay-2">
                                     <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">大间距</h4>
                                     <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
                                         --spacing-2xl: 1.5rem;<br>
@@ -338,7 +376,7 @@
                                         --spacing-6xl: 4rem;
                                     </div>
                                 </div>
-                                <div>
+                                <div class="interactive-card animate-slideInRight animate-delay-1">
                                     <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">内间距</h4>
                                     <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
                                         --p-xs: var(--spacing-xs);<br>
@@ -348,7 +386,7 @@
                                         --p-xl: var(--spacing-xl);
                                     </div>
                                 </div>
-                                <div>
+                                <div class="interactive-card animate-slideInRight animate-delay-2">
                                     <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">外间距</h4>
                                     <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
                                         --m-xs: var(--spacing-xs);<br>
@@ -358,7 +396,7 @@
                                         --m-xl: var(--spacing-xl);
                                     </div>
                                 </div>
-                                <div>
+                                <div class="interactive-card animate-scaleIn animate-delay-1">
                                     <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">元素间距</h4>
                                     <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
                                         --gap-xs: var(--spacing-xs);<br>
@@ -368,7 +406,7 @@
                                         --gap-xl: var(--spacing-xl);
                                     </div>
                                 </div>
-                                <div>
+                                <div class="interactive-card animate-scaleIn animate-delay-2">
                                     <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--p-sm); color: var(--color-label-base);">圆角</h4>
                                     <div style="color: var(--color-label-soft); line-height: var(--leading-relaxed);">
                                         --radius-xs: 0.125rem;<br>
@@ -386,6 +424,7 @@
                 </div>
             </section>
         </main>
+        </div> <!-- Close modern-bg -->
     </div>
 
     <script src="assets/js/scripts.js"></script>

@@ -6,9 +6,10 @@
     <title>颜色系统 - Meshy.ai 设计系统</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header glass-header">
         <div class="header-content">
             <div>
                 <h1 class="header-title">颜色系统</h1>
@@ -21,7 +22,42 @@
         </div>
     </header>
 
-    <div class="preview-container">
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Modern Hero Section -->
+    <section class="modern-hero">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="modern-hero-content">
+            <h1 class="modern-hero-title animate-fadeInUp">
+                Meshy.ai 颜色系统
+            </h1>
+            <p class="modern-hero-subtitle animate-fadeInUp animate-delay-1">
+                深色主题为基础，亮绿色为主色调，构建层次分明、对比度良好的视觉系统
+            </p>
+            <div class="animate-fadeInUp animate-delay-2">
+                <button class="modern-button">
+                    探索颜色规范
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modern-bg">
+        <div class="preview-container">
         <aside class="sidebar">
             <nav>
                 <h3 class="sidebar-title">设计令牌</h3>
@@ -67,11 +103,11 @@
                 <h2 class="section-title">品牌颜色</h2>
                 <p class="section-description">Meshy.ai 的核心品牌颜色，用于主要的交互元素和品牌识别</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-fadeInUp">
                     <h3 class="component-showcase-title">主色调</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div class="color-palette">
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-1">
                                 <div class="color-preview" style="background-color: #c5f955;" data-color="#c5f955"></div>
                                 <div class="color-info">
                                     <div class="color-name">主绿色</div>
@@ -79,7 +115,7 @@
                                     <div class="color-usage">--color-accent-base</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-2">
                                 <div class="color-preview" style="background-color: #a8e328;" data-color="#a8e328"></div>
                                 <div class="color-info">
                                     <div class="color-name">主绿色悬停</div>
@@ -87,7 +123,7 @@
                                     <div class="color-usage">--color-accent-base-hover</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-3">
                                 <div class="color-preview" style="background-color: #c5f95526;" data-color="#c5f95526"></div>
                                 <div class="color-info">
                                     <div class="color-name">主绿色背景</div>
@@ -95,7 +131,7 @@
                                     <div class="color-usage">--color-accent-bg</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-4">
                                 <div class="color-preview" style="background-color: #dcfa9d;" data-color="#dcfa9d"></div>
                                 <div class="color-info">
                                     <div class="color-name">主绿色高亮</div>
@@ -128,11 +164,11 @@
                     </div>
                 </div>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-2">
                     <h3 class="component-showcase-title">辅助色系</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div class="color-palette">
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-slideInLeft animate-delay-1">
                                 <div class="color-preview" style="background-color: #ff3e8f;" data-color="#ff3e8f"></div>
                                 <div class="color-info">
                                     <div class="color-name">辅助洋红</div>
@@ -140,7 +176,7 @@
                                     <div class="color-usage">--color-accent-support-base</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-slideInRight animate-delay-2">
                                 <div class="color-preview" style="background-color: #ff97c2;" data-color="#ff97c2"></div>
                                 <div class="color-info">
                                     <div class="color-name">辅助粉色</div>
@@ -158,11 +194,11 @@
                 <h2 class="section-title">背景颜色</h2>
                 <p class="section-description">用于构建界面层次和视觉分离的背景色系统</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-scaleIn">
                     <h3 class="component-showcase-title">深色主题背景</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div class="color-palette">
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-1">
                                 <div class="color-preview" style="background-color: #181818;" data-color="#181818"></div>
                                 <div class="color-info">
                                     <div class="color-name">主背景</div>
@@ -170,7 +206,7 @@
                                     <div class="color-usage">--color-bg-base</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-2">
                                 <div class="color-preview" style="background-color: #1e1e1e;" data-color="#1e1e1e"></div>
                                 <div class="color-info">
                                     <div class="color-name">次要背景</div>
@@ -178,7 +214,7 @@
                                     <div class="color-usage">--color-bg-sub</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-3">
                                 <div class="color-preview" style="background-color: #262626;" data-color="#262626"></div>
                                 <div class="color-info">
                                     <div class="color-name">悬停背景</div>
@@ -186,7 +222,7 @@
                                     <div class="color-usage">--color-bg-base-hover</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-4">
                                 <div class="color-preview" style="background-color: #303030;" data-color="#303030"></div>
                                 <div class="color-info">
                                     <div class="color-name">阴影背景</div>
@@ -194,7 +230,7 @@
                                     <div class="color-usage">--color-bg-shade</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-5">
                                 <div class="color-preview" style="background-color: #3f3f3f;" data-color="#3f3f3f"></div>
                                 <div class="color-info">
                                     <div class="color-name">边框颜色</div>
@@ -202,7 +238,7 @@
                                     <div class="color-usage">--color-bg-border</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-scaleIn animate-delay-1">
                                 <div class="color-preview" style="background-color: #ffffff0d;" data-color="#ffffff0d"></div>
                                 <div class="color-info">
                                     <div class="color-name">半透明白色</div>
@@ -220,11 +256,11 @@
                 <h2 class="section-title">文本颜色</h2>
                 <p class="section-description">用于文本内容层次和可读性的颜色系统</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-slideInLeft">
                     <h3 class="component-showcase-title">文本层次</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div class="color-palette">
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-1">
                                 <div class="color-preview" style="background-color: #ffffff;" data-color="#ffffff"></div>
                                 <div class="color-info">
                                     <div class="color-name">标题文本</div>
@@ -232,7 +268,7 @@
                                     <div class="color-usage">--color-label-title</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-2">
                                 <div class="color-preview" style="background-color: #dedede;" data-color="#dedede"></div>
                                 <div class="color-info">
                                     <div class="color-name">主要文本</div>
@@ -240,7 +276,7 @@
                                     <div class="color-usage">--color-label-base</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-3">
                                 <div class="color-preview" style="background-color: #9b9b9b;" data-color="#9b9b9b"></div>
                                 <div class="color-info">
                                     <div class="color-name">次要文本</div>
@@ -248,7 +284,7 @@
                                     <div class="color-usage">--color-label-soft</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-4">
                                 <div class="color-preview" style="background-color: #696969;" data-color="#696969"></div>
                                 <div class="color-info">
                                     <div class="color-name">静音文本</div>
@@ -256,7 +292,7 @@
                                     <div class="color-usage">--color-label-muted</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-fadeInUp animate-delay-5">
                                 <div class="color-preview" style="background-color: #505050;" data-color="#505050"></div>
                                 <div class="color-info">
                                     <div class="color-name">淡化文本</div>
@@ -274,11 +310,11 @@
                 <h2 class="section-title">语义颜色</h2>
                 <p class="section-description">用于状态指示和反馈的语义化颜色</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-slideInRight">
                     <h3 class="component-showcase-title">状态色</h3>
-                    <div class="component-preview">
+                    <div class="component-preview-enhanced">
                         <div class="color-palette">
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-scaleIn animate-delay-1">
                                 <div class="color-preview" style="background-color: #f33;" data-color="#f33"></div>
                                 <div class="color-info">
                                     <div class="color-name">错误状态</div>
@@ -286,7 +322,7 @@
                                     <div class="color-usage">--color-semantic-error-base</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-scaleIn animate-delay-2">
                                 <div class="color-preview" style="background-color: #2ee040;" data-color="#2ee040"></div>
                                 <div class="color-info">
                                     <div class="color-name">成功状态</div>
@@ -294,7 +330,7 @@
                                     <div class="color-usage">--color-semantic-success-base</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-scaleIn animate-delay-3">
                                 <div class="color-preview" style="background-color: #f6992b;" data-color="#f6992b"></div>
                                 <div class="color-info">
                                     <div class="color-name">警告状态</div>
@@ -302,7 +338,7 @@
                                     <div class="color-usage">--color-semantic-warning-base</div>
                                 </div>
                             </div>
-                            <div class="color-swatch">
+                            <div class="color-swatch-enhanced interactive-card animate-scaleIn animate-delay-4">
                                 <div class="color-preview" style="background-color: #3b82f6;" data-color="#3b82f6"></div>
                                 <div class="color-info">
                                     <div class="color-name">信息状态</div>
@@ -320,15 +356,15 @@
                 <h2 class="section-title">颜色使用示例</h2>
                 <p class="section-description">实际应用中的颜色组合示例</p>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-3">
                     <h3 class="component-showcase-title">按钮颜色组合</h3>
-                    <div class="component-preview">
-                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-lg);">
-                            <button class="button button-primary">主要按钮</button>
-                            <button class="button button-secondary">次要按钮</button>
-                            <button class="button button-success">成功按钮</button>
-                            <button class="button button-warning">警告按钮</button>
-                            <button class="button button-error">错误按钮</button>
+                    <div class="component-preview-enhanced">
+                        <div class="button-showcase-enhanced">
+                            <button class="button button-primary animate-scaleIn animate-delay-1">主要按钮</button>
+                            <button class="button button-secondary animate-scaleIn animate-delay-2">次要按钮</button>
+                            <button class="button button-success animate-scaleIn animate-delay-3">成功按钮</button>
+                            <button class="button button-warning animate-scaleIn animate-delay-4">警告按钮</button>
+                            <button class="button button-error animate-scaleIn animate-delay-5">错误按钮</button>
                         </div>
                     </div>
                     <div class="code-example">
@@ -352,20 +388,21 @@
                     </div>
                 </div>
 
-                <div class="component-showcase">
+                <div class="component-showcase-enhanced animate-fadeInUp animate-delay-4">
                     <h3 class="component-showcase-title">状态标签示例</h3>
-                    <div class="component-preview">
-                        <div style="display: flex; flex-wrap: wrap; gap: var(--gap-md);">
-                            <span class="tag tag-success">成功</span>
-                            <span class="tag tag-warning">警告</span>
-                            <span class="tag tag-error">错误</span>
-                            <span class="tag tag-default">默认</span>
-                            <span class="tag tag-primary">主要</span>
+                    <div class="component-preview-enhanced">
+                        <div class="button-showcase-enhanced">
+                            <span class="tag tag-success interactive-card animate-scaleIn animate-delay-1">成功</span>
+                            <span class="tag tag-warning interactive-card animate-scaleIn animate-delay-2">警告</span>
+                            <span class="tag tag-error interactive-card animate-scaleIn animate-delay-3">错误</span>
+                            <span class="tag tag-default interactive-card animate-scaleIn animate-delay-4">默认</span>
+                            <span class="tag tag-primary interactive-card animate-scaleIn animate-delay-5">主要</span>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
+        </div> <!-- Close modern-bg -->
     </div>
 
     <script src="assets/js/scripts.js"></script>
