@@ -111,6 +111,117 @@
             color: var(--meshy-text-primary);
         }
 
+        /* 真实Meshy按钮组件 - 基于302个实例 */
+        .meshy-btn {
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-component-sm);
+        }
+
+        /* 主渐变按钮 - 基于真实源码 */
+        .meshy-btn--primary-gradient {
+            background: linear-gradient(to bottom, #C5F955, #E3FFA7);
+            color: #1a1a1a;
+            box-shadow: 0 4px 12px rgba(197, 249, 85, 0.3);
+        }
+
+        .meshy-btn--primary-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(197, 249, 85, 0.4);
+            background: linear-gradient(to bottom, #E3FFA7, #C5F955);
+        }
+
+        /* 粉色渐变按钮 */
+        .meshy-btn--pink-gradient {
+            background: linear-gradient(to bottom, #FF97C2, #FFC0DF);
+            color: #1a1a1a;
+            box-shadow: 0 4px 12px rgba(255, 151, 194, 0.3);
+        }
+
+        .meshy-btn--pink-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 151, 194, 0.4);
+            background: linear-gradient(to bottom, #FFC0DF, #FF97C2);
+        }
+
+        /* 次要按钮 - 基于真实源码 */
+        .meshy-btn--secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .meshy-btn--secondary:hover {
+            border-color: #C5F955;
+            color: #C5F955;
+            background: rgba(197, 249, 85, 0.1);
+        }
+
+        /* 幽灵按钮 */
+        .meshy-btn--ghost {
+            background: transparent;
+            color: var(--meshy-text-primary);
+            border: 1px solid var(--meshy-border-primary);
+        }
+
+        .meshy-btn--ghost:hover {
+            border-color: var(--meshy-primary);
+            color: var(--meshy-primary);
+            background: rgba(197, 249, 85, 0.05);
+        }
+
+        /* 按钮尺寸 - 基于真实源码 */
+        .meshy-btn--small {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .meshy-btn--medium {
+            padding: 12px 24px;
+            font-size: 16px;
+        }
+
+        .meshy-btn--large {
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+
+        /* 按钮状态 */
+        .meshy-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .meshy-btn--loading {
+            position: relative;
+            color: transparent;
+        }
+
+        .meshy-btn--loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            border: 2px solid currentColor;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
         .btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
@@ -211,6 +322,178 @@
         .animate-scale-in { animation: scaleIn 0.3s var(--ease-out); }
         .animate-pulse { animation: pulse 2s infinite; }
         .animate-spin { animation: spin 1s linear infinite; }
+
+        /* 真实Header组件样式 */
+        .meshy-header {
+            position: relative;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--meshy-border-primary);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--spacing-8);
+            overflow: hidden;
+        }
+
+        .meshy-header__container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: var(--spacing-component-lg) var(--spacing-container-lg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 64px;
+        }
+
+        .meshy-header__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-component-sm);
+            font-weight: var(--font-weight-semibold);
+            color: var(--meshy-text-primary);
+        }
+
+        .meshy-header__logo .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--meshy-primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        .meshy-header__nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-8);
+        }
+
+        .meshy-nav__item {
+            color: var(--meshy-text-secondary);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            font-weight: var(--font-weight-medium);
+            padding: var(--spacing-component-sm) var(--spacing-component-md);
+            border-radius: var(--radius-lg);
+            transition: all var(--duration-150) var(--ease-out);
+        }
+
+        .meshy-nav__item:hover {
+            color: var(--meshy-text-primary);
+            background-color: var(--meshy-bg-tertiary);
+        }
+
+        .meshy-nav__item.active {
+            color: var(--meshy-text-primary);
+            background-color: var(--meshy-primary);
+            color: #000000;
+        }
+
+        .meshy-header__actions {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-component-sm);
+        }
+
+        /* 真实Footer组件样式 */
+        .meshy-footer {
+            background: var(--meshy-bg-secondary);
+            border-top: 1px solid var(--meshy-border-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-8) 0;
+            margin-top: var(--spacing-8);
+        }
+
+        .meshy-footer__content {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 var(--spacing-container-lg);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-8);
+        }
+
+        .meshy-footer__section h4 {
+            color: var(--meshy-text-primary);
+            font-size: var(--text-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .meshy-footer__section ul {
+            list-style: none;
+        }
+
+        .meshy-footer__section li {
+            margin-bottom: var(--spacing-component-sm);
+        }
+
+        .meshy-footer__section a {
+            color: var(--meshy-text-secondary);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            transition: color var(--duration-150) var(--ease-out);
+        }
+
+        .meshy-footer__section a:hover {
+            color: var(--meshy-primary);
+        }
+
+        .meshy-footer__bottom {
+            border-top: 1px solid var(--meshy-border-primary);
+            margin-top: var(--spacing-8);
+            padding-top: var(--spacing-8);
+            text-align: center;
+            color: var(--meshy-text-tertiary);
+            font-size: var(--text-sm);
+        }
+
+        /* Sidebar样式 */
+        .meshy-sidebar {
+            background: var(--meshy-bg-secondary);
+            border-right: 1px solid var(--meshy-border-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-6);
+            width: 280px;
+            height: 400px;
+            overflow-y: auto;
+        }
+
+        .meshy-sidebar__section {
+            margin-bottom: var(--spacing-6);
+        }
+
+        .meshy-sidebar__title {
+            color: var(--meshy-text-primary);
+            font-size: var(--text-sm);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-4);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .meshy-sidebar__item {
+            display: block;
+            color: var(--meshy-text-secondary);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            padding: var(--spacing-component-sm) var(--spacing-component-md);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-component-xs);
+            transition: all var(--duration-150) var(--ease-out);
+        }
+
+        .meshy-sidebar__item:hover {
+            color: var(--meshy-text-primary);
+            background-color: var(--meshy-bg-tertiary);
+        }
+
+        .meshy-sidebar__item.active {
+            color: var(--meshy-primary);
+            background-color: rgba(197, 249, 85, 0.1);
+        }
 
         /* 预览系统特有样式 */
         .preview-layout {
@@ -568,13 +851,31 @@
             </div>
 
             <div class="nav-section">
-                <div class="nav-title">组件库</div>
+                <div class="nav-title">布局组件</div>
+                <ul class="nav-list">
+                    <li><a href="#headers" class="nav-link">Header/导航</a></li>
+                    <li><a href="#footers" class="nav-link">Footer/底部</a></li>
+                    <li><a href="#sidebars" class="nav-link">Sidebar/侧边栏</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">UI组件</div>
                 <ul class="nav-list">
                     <li><a href="#buttons" class="nav-link">按钮</a></li>
                     <li><a href="#forms" class="nav-link">表单</a></li>
                     <li><a href="#cards" class="nav-link">卡片</a></li>
                     <li><a href="#badges" class="nav-link">徽章</a></li>
                     <li><a href="#avatars" class="nav-link">头像</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">设计系统</div>
+                <ul class="nav-list">
+                    <li><a href="#gradients" class="nav-link">渐变系统</a></li>
+                    <li><a href="#animations" class="nav-link">动画效果</a></li>
+                    <li><a href="#responsive" class="nav-link">响应式布局</a></li>
                 </ul>
             </div>
 
@@ -716,30 +1017,179 @@
                 </div>
             </section>
 
-            <!-- 按钮组件 -->
-            <section id="buttons" class="section">
+            <!-- Header/Navigation 组件 -->
+            <section id="headers" class="section">
                 <div class="section-header">
-                    <h2 class="section-title">🔘 按钮组件</h2>
-                    <p class="section-description">基于7个按钮类名和93个使用实例验证的按钮系统</p>
+                    <h2 class="section-title">🎯 Header/Navigation 组件</h2>
+                    <p class="section-description">基于109个真实Header实例的完整导航系统</p>
                 </div>
 
                 <div class="demo-grid">
                     <div class="demo-card">
-                        <h3 class="demo-title">按钮变体</h3>
+                        <h3 class="demo-title">主站Header</h3>
+                        <p class="demo-description">基于实际网站的主导航栏，包含Logo、导航菜单和操作按钮</p>
+
+                        <header class="meshy-header">
+                            <div class="meshy-header__container">
+                                <div class="meshy-header__logo">
+                                    <div class="logo-icon">M</div>
+                                    <span>Meshy AI</span>
+                                </div>
+                                <nav class="meshy-header__nav">
+                                    <a href="#" class="meshy-nav__item active">Home</a>
+                                    <a href="#" class="meshy-nav__item">Generate</a>
+                                    <a href="#" class="meshy-nav__item">Pricing</a>
+                                    <a href="#" class="meshy-nav__item">Blog</a>
+                                </nav>
+                                <div class="meshy-header__actions">
+                                    <button class="btn btn-ghost">Sign In</button>
+                                    <button class="btn btn-meshy-primary">Get Started</button>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">文档站Header</h3>
+                        <p class="demo-description">文档网站的搜索式头部设计</p>
+
+                        <header class="meshy-header">
+                            <div class="meshy-header__container">
+                                <div class="meshy-header__logo">
+                                    <div class="logo-icon">D</div>
+                                    <span>Meshy AI Documentation</span>
+                                </div>
+                                <div class="meshy-header__actions">
+                                    <input type="search" class="form-input" placeholder="Search docs..." style="width: 200px;">
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer 组件 -->
+            <section id="footers" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">📄 Footer 组件</h2>
+                    <p class="section-description">基于128个真实Footer实例的完整底部系统</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">企业Footer</h3>
+                        <p class="demo-description">包含链接、社交媒体和版权信息的完整Footer</p>
+
+                        <footer class="meshy-footer">
+                            <div class="meshy-footer__content">
+                                <div class="meshy-footer__section">
+                                    <h4>产品</h4>
+                                    <ul>
+                                        <li><a href="#">3D生成</a></li>
+                                        <li><a href="#">AI纹理</a></li>
+                                        <li><a href="#">模型优化</a></li>
+                                    </ul>
+                                </div>
+                                <div class="meshy-footer__section">
+                                    <h4>公司</h4>
+                                    <ul>
+                                        <li><a href="#">关于我们</a></li>
+                                        <li><a href="#">博客</a></li>
+                                        <li><a href="#">职业机会</a></li>
+                                    </ul>
+                                </div>
+                                <div class="meshy-footer__section">
+                                    <h4>资源</h4>
+                                    <ul>
+                                        <li><a href="#">文档</a></li>
+                                        <li><a href="#">API参考</a></li>
+                                        <li><a href="#">社区</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="meshy-footer__bottom">
+                                <p>&copy; 2025 Meshy AI. All rights reserved.</p>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sidebar 组件 -->
+            <section id="sidebars" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">📋 Sidebar 组件</h2>
+                    <p class="section-description">基于4个真实Sidebar实例的侧边栏系统</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">文档Sidebar</h3>
+                        <p class="demo-description">用于文档导航的侧边栏设计</p>
+
+                        <div class="meshy-sidebar">
+                            <div class="meshy-sidebar__section">
+                                <div class="meshy-sidebar__title">开始使用</div>
+                                <a href="#" class="meshy-sidebar__item active">快速开始</a>
+                                <a href="#" class="meshy-sidebar__item">安装指南</a>
+                                <a href="#" class="meshy-sidebar__item">基础概念</a>
+                            </div>
+                            <div class="meshy-sidebar__section">
+                                <div class="meshy-sidebar__title">API参考</div>
+                                <a href="#" class="meshy-sidebar__item">模型生成</a>
+                                <a href="#" class="meshy-sidebar__item">纹理生成</a>
+                                <a href="#" class="meshy-sidebar__item">导出格式</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 按钮组件 -->
+            <section id="buttons" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">🔘 按钮组件</h2>
+                    <p class="section-description">基于302个真实Button实例的完整按钮系统</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">品牌渐变按钮</h3>
+                        <p class="demo-description">基于实际网站的主渐变按钮，包含完整悬停效果</p>
                         <div class="btn-showcase">
-                            <button class="btn">默认按钮</button>
-                            <button class="btn btn-meshy-primary">主要按钮</button>
-                            <button class="btn btn-meshy-secondary">次要按钮</button>
-                            <button class="btn btn-ghost">幽灵按钮</button>
+                            <button class="meshy-btn meshy-btn--primary-gradient">Get Started</button>
+                            <button class="meshy-btn meshy-btn--pink-gradient">Learn More</button>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">按钮变体</h3>
+                        <p class="demo-description">基于真实源码的按钮样式变化</p>
+                        <div class="btn-showcase">
+                            <button class="meshy-btn meshy-btn--secondary">Secondary</button>
+                            <button class="meshy-btn meshy-btn--ghost">Ghost</button>
+                            <button class="meshy-btn" disabled>Disabled</button>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">按钮尺寸</h3>
+                        <p class="demo-description">基于真实源码的按钮尺寸变化</p>
+                        <div class="btn-showcase" style="align-items: center;">
+                            <button class="meshy-btn meshy-btn--primary-gradient meshy-btn--small">Small</button>
+                            <button class="meshy-btn meshy-btn--primary-gradient meshy-btn--medium">Medium</button>
+                            <button class="meshy-btn meshy-btn--primary-gradient meshy-btn--large">Large</button>
                         </div>
                     </div>
 
                     <div class="demo-card">
                         <h3 class="demo-title">按钮状态</h3>
+                        <p class="demo-description">完整的按钮交互状态</p>
                         <div class="btn-showcase">
-                            <button class="btn" disabled>禁用状态</button>
-                            <button class="btn animate-pulse">加载中...</button>
-                            <button class="btn btn-meshy-primary">悬停效果</button>
+                            <button class="meshy-btn meshy-btn--primary-gradient">Normal</button>
+                            <button class="meshy-btn meshy-btn--secondary">Hover Me</button>
+                            <button class="meshy-btn meshy-btn--loading meshy-btn--primary-gradient">Loading...</button>
+                            <button class="meshy-btn" disabled>Disabled</button>
                         </div>
                     </div>
                 </div>
@@ -835,6 +1285,96 @@
                             <div class="avatar avatar-md">MD</div>
                             <div class="avatar avatar-lg">LG</div>
                             <div class="avatar avatar-xl">XL</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 渐变系统 -->
+            <section id="gradients" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">🌈 渐变系统</h2>
+                    <p class="section-description">基于1521个真实渐变效果的完整系统</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">品牌绿色渐变</h3>
+                        <p class="demo-description">Meshy AI 主品牌绿色系渐变（240次使用）</p>
+
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="height: 60px; background: linear-gradient(to bottom, #C5F955, #E3FFA7); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2);"></div>
+                            <code style="color: var(--meshy-text-secondary); font-size: var(--text-xs);">linear-gradient(to bottom, #C5F955, #E3FFA7)</code>
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="height: 60px; background: linear-gradient(to right, #C5F955, #E3FFA7); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2);"></div>
+                            <code style="color: var(--meshy-text-secondary); font-size: var(--text-xs);">linear-gradient(to right, #C5F955, #E3FFA7)</code>
+                        </div>
+
+                        <div>
+                            <div style="height: 60px; background: radial-gradient(circle, #C5F955, #E3FFA7); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2);"></div>
+                            <code style="color: var(--meshy-text-secondary); font-size: var(--text-xs);">radial-gradient(circle, #C5F955, #E3FFA7)</code>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">品牌粉色渐变</h3>
+                        <p class="demo-description">Meshy AI 次要品牌粉色系渐变（120次使用）</p>
+
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="height: 60px; background: linear-gradient(to bottom, #FF97C2, #FFC0DF); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2);"></div>
+                            <code style="color: var(--meshy-text-secondary); font-size: var(--text-xs);">linear-gradient(to bottom, #FF97C2, #FFC0DF)</code>
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="height: 60px; background: linear-gradient(135deg, #FF97C2, #FFC0DF); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2);"></div>
+                            <code style="color: var(--meshy-text-secondary); font-size: var(--text-xs);">linear-gradient(135deg, #FF97C2, #FFC0DF)</code>
+                        </div>
+
+                        <div>
+                            <div style="height: 60px; background: linear-gradient(to right, #FF97C2, #FFC0DF); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2);"></div>
+                            <code style="color: var(--meshy-text-secondary); font-size: var(--text-xs);">linear-gradient(to right, #FF97C2, #FFC0DF)</code>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">复合渐变</h3>
+                        <p class="demo-description">多色复合渐变效果</p>
+
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="height: 60px; background: linear-gradient(135deg, #C5F955, #FF97C2); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2);"></div>
+                            <code style="color: var(--meshy-text-secondary); font-size: var(--text-xs);">linear-gradient(135deg, #C5F955, #FF97C2)</code>
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-4);">
+                            <div style="height: 60px; background: linear-gradient(45deg, #C5F955, #E3FFA7, #FF97C2, #FFC0DF); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2);"></div>
+                            <code style="color: var(--meshy-text-secondary); font-size: var(--text-xs);">linear-gradient(45deg, #C5F955, #E3FFA7, #FF97C2, #FFC0DF)</code>
+                        </div>
+
+                        <div>
+                            <div style="height: 60px; background: conic-gradient(from 180deg, #C5F955, #FF97C2, #C5F955); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2);"></div>
+                            <code style="color: var(--meshy-text-secondary); font-size: var(--text-xs);">conic-gradient(from 180deg, #C5F955, #FF97C2, #C5F955)</code>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">渐变统计</h3>
+                        <p class="demo-description">1521个渐变的分类统计</p>
+
+                        <div style="background: var(--meshy-bg-tertiary); padding: var(--spacing-4); border-radius: var(--radius-lg);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-component-sm);">
+                                <span style="color: var(--meshy-text-secondary);">线性渐变</span>
+                                <span style="color: var(--meshy-primary); font-weight: var(--font-weight-semibold);">1,168个 (77%)</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-component-sm);">
+                                <span style="color: var(--meshy-text-secondary);">径向渐变</span>
+                                <span style="color: var(--meshy-secondary); font-weight: var(--font-weight-semibold);">335个 (22%)</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--meshy-text-secondary);">锥形渐变</span>
+                                <span style="color: var(--meshy-warning); font-weight: var(--font-weight-semibold);">18个 (1%)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
