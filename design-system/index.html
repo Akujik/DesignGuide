@@ -670,8 +670,7 @@
 
         /* 预览系统特有样式 */
         .preview-layout {
-            display: grid;
-            grid-template-columns: 280px 1fr;
+            display: flex;
             min-height: 100vh;
         }
 
@@ -680,15 +679,19 @@
             border-right: 1px solid var(--meshy-border-primary);
             padding: var(--meshy-container-padding);
             overflow-y: auto;
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 280px;
             height: 100vh;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .main-content {
             padding: var(--meshy-container-padding);
             max-width: none;
+            margin-left: 280px;
+            flex: 1;
         }
 
         .logo {
@@ -920,9 +923,14 @@
 
             .sidebar {
                 position: static;
+                width: auto;
                 height: auto;
                 border-right: none;
                 border-bottom: 1px solid var(--border-light);
+            }
+
+            .main-content {
+                margin-left: 0;
             }
 
             .demo-grid {
