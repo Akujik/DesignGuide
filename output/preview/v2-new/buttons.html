@@ -9,282 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .component-showcase {
-            margin-bottom: var(--space-12);
-        }
-
-        .variant-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-6);
-            margin-bottom: var(--space-6);
-        }
-
-        .variant-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            transition: all var(--transition-normal);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .variant-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .variant-header {
-            padding: var(--space-5);
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .variant-title {
-            font-size: var(--text-lg);
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: var(--space-2);
-        }
-
-        .variant-description {
-            font-size: var(--text-sm);
-            color: var(--gray-600);
-            line-height: 1.5;
-        }
-
-        .variant-body {
-            padding: var(--space-6);
-        }
-
-        .component-preview {
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            border-radius: var(--radius-lg);
-            padding: var(--space-6);
-            margin-bottom: var(--space-4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 80px;
-            gap: var(--space-3);
-            flex-wrap: wrap;
-        }
-
-        .component-preview::before {
-            content: 'Preview';
-            position: absolute;
-            top: var(--space-2);
-            right: var(--space-2);
-            font-size: var(--text-xs);
-            color: var(--gray-400);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* 按钮样式 */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-2);
-            padding: var(--space-3) var(--space-6);
-            border: none;
-            border-radius: var(--radius-md);
-            font-size: var(--text-sm);
-            font-weight: 500;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all var(--transition-fast);
-            white-space: nowrap;
-        }
-
-        .btn:hover {
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn:active {
-            transform: translateY(0);
-        }
-
-        .btn-primary {
-            background: var(--primary-500);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-600);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-500);
-            border: 2px solid var(--primary-500);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-500);
-            color: white;
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: var(--gray-600);
-        }
-
-        .btn-ghost:hover {
-            background: var(--gray-100);
-            color: var(--gray-800);
-        }
-
-        .btn-success {
-            background: var(--color-success);
-            color: white;
-        }
-
-        .btn-warning {
-            background: var(--color-warning);
-            color: var(--gray-800);
-        }
-
-        .btn-error {
-            background: var(--color-error);
-            color: white;
-        }
-
-        .btn-sm {
-            padding: var(--space-2) var(--space-4);
-            font-size: var(--text-xs);
-        }
-
-        .btn-lg {
-            padding: var(--space-4) var(--space-8);
-            font-size: var(--text-base);
-        }
-
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .btn:disabled:hover {
-            transform: none;
-            box-shadow: none;
-        }
-
-        .btn-icon {
-            padding: var(--space-3);
-            border-radius: var(--radius-full);
-        }
-
-        .btn-loading {
-            position: relative;
-            color: transparent;
-            pointer-events: none;
-        }
-
-        .btn-loading::after {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            margin: auto;
-            border: 2px solid transparent;
-            border-top: 2px solid currentColor;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-        }
-
-        .button-group {
-            display: flex;
-            gap: var(--space-2);
-        }
-
-        .button-group .btn {
-            border-radius: 0;
-        }
-
-        .button-group .btn:first-child {
-            border-radius: var(--radius-md) 0 0 var(--radius-md);
-        }
-
-        .button-group .btn:last-child {
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-        }
-
-        .code-showcase {
-            background: var(--gray-900);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            margin-top: var(--space-4);
-        }
-
-        .code-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--space-3) var(--space-4);
-            background: var(--gray-800);
-            border-bottom: 1px solid var(--gray-700);
-        }
-
-        .code-title {
-            font-size: var(--text-sm);
-            font-weight: 500;
-            color: var(--gray-300);
-        }
-
-        .code-actions {
-            display: flex;
-            gap: var(--space-2);
-        }
-
-        .code-btn {
-            padding: var(--space-1) var(--space-3);
-            background: var(--gray-700);
-            border: none;
-            border-radius: var(--radius-sm);
-            color: var(--gray-300);
-            font-size: var(--text-xs);
-            cursor: pointer;
-            transition: all var(--transition-fast);
-        }
-
-        .code-btn:hover {
-            background: var(--gray-600);
-            color: var(--white);
-        }
-
-        .code-content {
-            padding: var(--space-4);
-            overflow-x: auto;
-        }
-
-        .code-content pre {
-            margin: 0;
-            font-family: var(--font-family-mono);
-            font-size: var(--text-sm);
-            line-height: 1.5;
-            color: var(--gray-100);
-        }
-
-        .icon {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
+        /* 使用正确的深色主题CSS变量 */
         .usage-patterns {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -292,28 +17,28 @@
         }
 
         .pattern-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
             border-radius: var(--radius-xl);
             padding: var(--space-6);
         }
 
         .pattern-title {
-            font-size: var(--text-lg);
-            font-weight: 600;
-            color: var(--gray-900);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
             margin-bottom: var(--space-3);
         }
 
         .pattern-description {
-            font-size: var(--text-sm);
-            color: var(--gray-600);
-            line-height: 1.5;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            line-height: var(--line-height-normal);
             margin-bottom: var(--space-4);
         }
 
         .pattern-example {
-            background: var(--gray-50);
+            background: var(--color-surface-light);
             border-radius: var(--radius-lg);
             padding: var(--space-4);
             display: flex;

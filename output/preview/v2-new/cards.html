@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片组件 - Meshy.ai Design System</title>
+    <link rel="stylesheet" href="assets/css/design-system.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 卡片组件特定样式 */
+        .card-example {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+            justify-content: center;
+        }
+
+        .card-example .card {
+            max-width: 320px;
+            width: 100%;
+        }
+
+        .card-demo {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--color-surface-light) 0%, var(--color-surface-lighter) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-4);
+        }
+
+        .card-list-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .card-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .card-list-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-inverse);
+            flex-shrink: 0;
+        }
+
+        .card-list-content {
+            flex: 1;
+        }
+
+        .card-list-title {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-1);
+        }
+
+        .card-list-description {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .card-action {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .card-action:hover {
+            color: var(--color-primary);
+        }
+
+        .card-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: var(--space-4);
+            padding: var(--space-4) 0;
+        }
+
+        .card-stat {
+            text-align: center;
+        }
+
+        .card-stat-number {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-1);
+        }
+
+        .card-stat-label {
+            font-size: var(--font-size-xs);
+            color: var(--color-text-muted);
+        }
+
+        /* 响应式卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-layout">
+        <!-- 侧边栏导航 -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">M</div>
+                    <h1>Meshy.ai</h1>
+                </div>
+                <div class="subtitle">Design System v2.0</div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <!-- 基础设计系统 -->
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <span class="section-icon">🎨</span>
+                        基础设计系统
+                    </div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="colors.html" class="nav-link">
+                                <span class="nav-icon">🎨</span>
+                                颜色规范
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="typography.html" class="nav-link">
+                                <span class="nav-icon">📝</span>
+                                字体系统
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="spacing.html" class="nav-link">
+                                <span class="nav-icon">📏</span>
+                                间距规范
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="layout.html" class="nav-link">
+                                <span class="nav-icon">📐</span>
+                                布局系统
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="animations.html" class="nav-link">
+                                <span class="nav-icon">⚡</span>
+                                动效系统
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 核心组件 -->
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <span class="section-icon">🔧</span>
+                        核心组件
+                    </div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="buttons.html" class="nav-link">
+                                <span class="nav-icon">🔘</span>
+                                按钮组件
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="cards.html" class="nav-link active">
+                                <span class="nav-icon">🃏</span>
+                                卡片组件
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="forms.html" class="nav-link">
+                                <span class="nav-icon">📝</span>
+                                表单组件
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="navigation.html" class="nav-link">
+                                <span class="nav-icon">🧭</span>
+                                导航组件
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 移动端菜单按钮 -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+        </button>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 顶部工具栏 -->
+            <header class="top-header">
+                <div class="top-header-content">
+                    <nav class="breadcrumb">
+                        <div class="breadcrumb-item">
+                            <a href="index.html" class="breadcrumb-link">首页</a>
+                        </div>
+                        <div class="breadcrumb-item">
+                            <a href="#" class="breadcrumb-link">核心组件</a>
+                        </div>
+                        <div class="breadcrumb-item">
+                            <span class="breadcrumb-current">卡片组件</span>
+                        </div>
+                    </nav>
+
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                            </svg>
+                            <input type="text" class="search-input" placeholder="搜索卡片组件...">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 内容容器 -->
+            <div class="content-container">
+                <!-- 页面标题 -->
+                <div class="showcase-header">
+                    <div class="section-icon">🃏</div>
+                    <h1 class="showcase-title">卡片组件</h1>
+                    <p class="section-description">
+                        内容容器组件，支持多种布局方式。包括基础卡片、产品卡片、用户卡片等变体，为不同类型的内容提供统一的展示容器。
+                    </p>
+                </div>
+
+                <!-- 基础卡片 -->
+                <component-showcase>
+                    <div class="showcase-header">
+                        <h2 class="showcase-title">基础卡片</h2>
+                        <p class="showcase-subtitle">最基本的卡片组件和结构</p>
+                    </div>
+
+                    <div class="variant-grid">
+                        <div class="variant-card">
+                            <div class="variant-header">
+                                <h3 class="variant-title">简单卡片</h3>
+                                <p class="variant-description">包含标题和描述的基础卡片</p>
+                            </div>
+                            <div class="variant-body">
+                                <div class="card-example">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">卡片标题</h4>
+                                            <p class="card-text">这是一个简单的卡片示例，包含标题和描述文本。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span class="code-title">HTML</span>
+                                        <div class="code-actions">
+                                            <button class="code-btn" onclick="copyCode('card-basic')">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="code-content">
+                                        <pre id="card-basic"><code>&lt;div class="card"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h4 class="card-title"&gt;卡片标题&lt;/h4&gt;
+    &lt;p class="card-text"&gt;这是一个简单的卡片示例，包含标题和描述文本。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="variant-card">
+                            <div class="variant-header">
+                                <h3 class="variant-title">带头部的卡片</h3>
+                                <p class="variant-description">包含标题头部和主体内容的卡片</p>
+                            </div>
+                            <div class="variant-body">
+                                <div class="card-example">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">产品特性</h4>
+                                            <p class="card-subtitle">了解我们的核心功能</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">探索我们产品的主要特性，了解如何帮助您提升工作效率。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span class="code-title">HTML</span>
+                                        <div class="code-actions">
+                                            <button class="code-btn" onclick="copyCode('card-header')">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="code-content">
+                                        <pre id="card-header"><code>&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;h4 class="card-title"&gt;产品特性&lt;/h4&gt;
+    &lt;p class="card-subtitle"&gt;了解我们的核心功能&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;p class="card-text"&gt;探索我们产品的主要特性，了解如何帮助您提升工作效率。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="variant-card">
+                            <div class="variant-header">
+                                <h3 class="variant-title">带底部的卡片</h3>
+                                <p class="variant-description">包含标题、主体内容和底部的完整卡片</p>
+                            </div>
+                            <div class="variant-body">
+                                <div class="card-example">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">用户设置</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">管理您的个人资料和偏好设置。</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="#" class="card-action">
+                                                查看详情
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M5 12h14m-7-7l7 7-7-7"/>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span class="code-title">HTML</span>
+                                        <div class="code-actions">
+                                            <button class="code-btn" onclick="copyCode('card-footer')">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="code-content">
+                                        <pre id="card-footer"><code>&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;h4 class="card-title"&gt;用户设置&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;p class="card-text"&gt;管理您的个人资料和偏好设置。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="card-footer"&gt;
+    &lt;a href="#" class="card-action"&gt;查看详情&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </component-showcase>
+
+                <!-- 卡片布局 -->
+                <component-showcase>
+                    <div class="showcase-header">
+                        <h2 class="showcase-title">卡片布局</h2>
+                        <p class="showcase-subtitle">不同内容和布局的卡片变体</p>
+                    </div>
+
+                    <div class="variant-grid">
+                        <div class="variant-card">
+                            <div class="variant-header">
+                                <h3 class="variant-title">列表卡片</h3>
+                                <p class="variant-description">包含列表项的卡片布局</p>
+                            </div>
+                            <div class="variant-body">
+                                <div class="card-example">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">任务列表</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="card-list-item">
+                                                <div class="card-list-icon">✓</div>
+                                                <div class="card-list-content">
+                                                    <div class="card-list-title">完成项目规划</div>
+                                                    <div class="card-list-description">已完成的任务</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-list-item">
+                                                <div class="card-list-icon">○</div>
+                                                <div class="card-list-content">
+                                                    <div class="card-list-title">代码审查</div>
+                                                    <div class="card-list-description">待处理的任务</div>
+                                                </div>
+                                            </div>
+                                            <div class="card-list-item">
+                                                <div class="card-list-icon">○</div>
+                                                <div class="card-list-content">
+                                                    <div class="card-list-title">文档更新</div>
+                                                    <div class="card-list-description">待处理的任务</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span class="code-title">HTML</span>
+                                        <div class="code-actions">
+                                            <button class="code-btn" onclick="copyCode('card-list')">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="code-content">
+                                        <pre id="card-list"><code>&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;h4 class="card-title"&gt;任务列表&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;div class="card-list-item"&gt;
+      &lt;div class="card-list-icon"&gt;✓&lt;/div&gt;
+      &lt;div class="card-list-content"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card-list-item"&gt;
+      &lt;div class="card-list-icon"&gt;○&lt;/div&gt;
+      &lt;div class="card-list-content"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="variant-card">
+                            <div class="variant-header">
+                                <h3 class="variant-title">统计卡片</h3>
+                                <p class="variant-description">展示数据统计的卡片</p>
+                            </div>
+                            <div class="variant-body">
+                                <div class="card-example">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">项目统计</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="card-stats">
+                                                <div class="card-stat">
+                                                    <div class="card-stat-number">42</div>
+                                                    <div class="card-stat-label">总项目</div>
+                                                </div>
+                                                <div class="card-stat">
+                                                    <div class="card-stat-number">38</div>
+                                                    <div class="card-stat-label">已完成</div>
+                                                </div>
+                                                <div class="card-stat">
+                                                    <div class="card-stat-number">4</div>
+                                                    <div class="card-stat-label">进行中</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span class="code-title">HTML</span>
+                                        <div class="code-actions">
+                                            <button class="code-btn" onclick="copyCode('card-stats')">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="code-content">
+                                        <pre id="card-stats"><code>&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;h4 class="card-title"&gt;项目统计&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;div class="card-stats"&gt;
+      &lt;div class="card-stat"&gt;
+        &lt;div class="card-stat-number"&gt;42&lt;/div&gt;
+        &lt;div class="card-stat-label"&gt;总项目&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="card-stat"&gt;
+        &lt;div class="card-stat-number"&gt;38&lt;/div&gt;
+        &lt;div class="card-stat-label"&gt;已完成&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="variant-card">
+                            <div class="variant-header">
+                                <h3 class="variant-title">图片卡片</h3>
+                                <p class="variant-description">包含图片展示的卡片</p>
+                            </div>
+                            <div class="variant-body">
+                                <div class="card-example">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-image">
+                                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                                    <polyline points="21 15 16 10 5 21"/>
+                                                </svg>
+                                                <div>图片占位符</div>
+                                            </div>
+                                            <h4 class="card-title">产品展示</h4>
+                                            <p class="card-text">展示产品图片和相关信息，吸引用户注意力。</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-primary">查看详情</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span class="code-title">HTML</span>
+                                        <div class="code-actions">
+                                            <button class="code-btn" onclick="copyCode('card-image')">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="code-content">
+                                        <pre id="card-image"><code>&lt;div class="card"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;div class="card-image"&gt;
+      &lt;!-- 图片内容 --&gt;
+    &lt;/div&gt;
+    &lt;h4 class="card-title"&gt;产品展示&lt;/h4&gt;
+    &lt;p class="card-text"&gt;展示产品图片和相关信息，吸引用户注意力。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="card-footer"&gt;
+    &lt;button class="btn btn-primary"&gt;查看详情&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </component-showcase>
+
+                <!-- 卡片状态 -->
+                <component-showcase>
+                    <div class="showcase-header">
+                        <h2 class="showcase-title">卡片状态</h2>
+                        <p class="showcase-subtitle">不同的交互状态和视觉效果</p>
+                    </div>
+
+                    <div class="variant-grid">
+                        <div class="variant-card">
+                            <div class="variant-header">
+                                <h3 class="variant-title">可点击卡片</h3>
+                                <p class="variant-description">整个卡片可点击，适合链接到详情页</p>
+                            </div>
+                            <div class="variant-body">
+                                <div class="card-example">
+                                    <a href="#" class="card" style="text-decoration: none; color: inherit;">
+                                        <div class="card-header">
+                                            <h4 class="card-title">可点击卡片</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">点击卡片可跳转到详情页面，提供更好的用户体验。</p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span class="code-title">HTML</span>
+                                        <div class="code-actions">
+                                            <button class="code-btn" onclick="copyCode('card-clickable')">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="code-content">
+                                        <pre id="card-clickable"><code>&lt;a href="#" class="card" style="text-decoration: none; color: inherit;"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;h4 class="card-title"&gt;可点击卡片&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;p class="card-text"&gt;点击卡片可跳转到详情页面。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="variant-card">
+                            <div class="variant-header">
+                                <h3 class="variant-title">加载状态卡片</h3>
+                                <p class="variant-description">显示加载状态的卡片</p>
+                            </div>
+                            <div class="variant-body">
+                                <div class="card-example">
+                                    <div class="card" style="opacity: 0.7; pointer-events: none;">
+                                        <div class="card-header">
+                                            <h4 class="card-title">加载中...</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">正在加载内容，请稍候...</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span class="code-title">HTML</span>
+                                        <div class="code-actions">
+                                            <button class="code-btn" onclick="copyCode('card-loading')">复制</button>
+                                        </div>
+                                    </div>
+                                    <div class="code-content">
+                                        <pre id="card-loading"><code>&lt;div class="card" style="opacity: 0.7; pointer-events: none;"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;h4 class="card-title"&gt;加载中...&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;p class="card-text"&gt;正在加载内容，请稍候...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </component-showcase>
+
+                <!-- 响应式布局 -->
+                <component-showcase>
+                    <div class="showcase-header">
+                        <h2 class="showcase-title">响应式布局</h2>
+                        <p class="showcase-subtitle">卡片在不同屏幕尺寸下的布局展示</p>
+                    </div>
+
+                    <div class="variant-card">
+                        <div class="variant-header">
+                            <h3 class="variant-title">响应式网格</h3>
+                            <p class="variant-description">卡片网格会根据屏幕大小自动调整</p>
+                        </div>
+                        <div class="variant-body">
+                            <div class="card-grid">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">响应式卡片 1</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">这个卡片会在不同屏幕尺寸下自适应布局。</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">响应式卡片 2</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">在大屏幕上会并排显示，小屏幕上会垂直堆叠。</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">响应式卡片 3</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">网格布局会自动调整每行的卡片数量。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-title">HTML</span>
+                                    <div class="code-actions">
+                                        <button class="code-btn" onclick="copyCode('card-grid')">复制</button>
+                                    </div>
+                                </div>
+                                <div class="code-content">
+                                    <pre id="card-grid"><code>&lt;div class="card-grid"&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+      &lt;h4 class="card-title"&gt;响应式卡片 1&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body"&gt;
+      &lt;p class="card-text"&gt;内容...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card"&gt;
+    &lt;!-- 更多卡片 --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </component-showcase>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/design-system.js"></script>
+    <script>
+        // 复制代码功能
+        function copyCode(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const code = codeElement.textContent;
+
+            navigator.clipboard.writeText(code).then(() => {
+                console.log('代码已复制到剪贴板');
+            });
+        }
+    </script>
+</body>
+</html>
