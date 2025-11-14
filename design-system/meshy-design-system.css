@@ -53,6 +53,17 @@
   --meshy-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --meshy-font-mono: 'JetBrains Mono', 'SF Mono', monospace;
 
+  /* 字体大小 */
+  --meshy-text-xs: 0.75rem;
+  --meshy-text-sm: 0.875rem;
+  --meshy-text-base: 1rem;
+  --meshy-text-lg: 1.125rem;
+  --meshy-text-xl: 1.25rem;
+  --meshy-text-2xl: 1.5rem;
+  --meshy-text-3xl: 1.875rem;
+  --meshy-text-4xl: 2.25rem;
+  --meshy-text-5xl: 3rem;
+
   /* 间距系统 */
   --meshy-space-xs: 4px;
   --meshy-space-sm: 8px;
@@ -66,6 +77,7 @@
   --meshy-radius-md: 8px;
   --meshy-radius-lg: 12px;
   --meshy-radius-xl: 16px;
+  --meshy-radius-2xl: 24px;
   --meshy-radius-full: 50px;
 
   /* 过渡动画 */
@@ -1261,6 +1273,343 @@ body {
   }
 }
 
+/* ===== MESHY AI 模型展示轮播组件 ===== */
+
+/* 模型展示轮播容器 */
+.meshy-model-showcase {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* 标题区域 */
+.meshy-showcase__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.meshy-showcase__title-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.meshy-showcase__icon {
+  width: 24px;
+  height: 24px;
+  color: var(--meshy-text-primary);
+  flex-shrink: 0;
+}
+
+.meshy-showcase__title {
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--meshy-text-primary);
+  margin: 0;
+}
+
+/* 控制按钮容器 */
+.meshy-showcase__controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.meshy-showcase__btn {
+  background: var(--meshy-bg-tertiary);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--meshy-text-primary);
+}
+
+.meshy-showcase__btn:hover {
+  transform: scale(1.05);
+  background: var(--meshy-bg-primary);
+}
+
+.meshy-showcase__btn:active {
+  transform: scale(0.95);
+}
+
+.meshy-showcase__btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.meshy-showcase__btn svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+/* 轮播视口 */
+.meshy-showcase__viewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+/* 滚动轨道 */
+.meshy-showcase__track {
+  display: flex;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* 模型卡片 */
+.meshy-model-card {
+  min-width: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 16px;
+  background: var(--meshy-bg-strong);
+  border-radius: 24px;
+  width: 200px; /* 移动端默认宽度 */
+}
+
+.meshy-model-card__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+}
+
+.meshy-model-card__link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: all 0.1s ease-out;
+}
+
+.meshy-model-card__link:hover,
+.meshy-model-card__link:focus {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.meshy-model-card__link:focus {
+  outline: 2px solid var(--meshy-primary);
+  outline-offset: 2px;
+}
+
+/* 图片区域 */
+.meshy-model-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--meshy-bg-strong);
+}
+
+.meshy-model-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease-out;
+}
+
+.meshy-model-card__image.primary {
+  opacity: 1;
+}
+
+.meshy-model-card__image.secondary {
+  opacity: 0;
+}
+
+.meshy-model-card__container:hover .meshy-model-card__image.primary {
+  opacity: 0;
+}
+
+.meshy-model-card__container:hover .meshy-model-card__image.secondary {
+  opacity: 1;
+}
+
+/* 悬停信息覆盖层 */
+.meshy-model-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+}
+
+.meshy-model-card__container:hover .meshy-model-card__overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.meshy-model-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 4px 8px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.meshy-model-card__badge svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* 用户信息区域 */
+.meshy-model-card__user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px 20px;
+}
+
+.meshy-model-card__user-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--meshy-text-primary);
+  transition: opacity 0.2s ease;
+}
+
+.meshy-model-card__user-link:hover {
+  opacity: 0.8;
+}
+
+.meshy-model-card__avatar {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 0.5px solid var(--meshy-bg-translucent);
+}
+
+.meshy-model-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meshy-model-card__avatar-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--meshy-primary);
+  border: 2px solid var(--meshy-bg-strong);
+}
+
+.meshy-model-card__avatar-badge::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.meshy-model-card__username {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* 响应式卡片宽度 */
+@media (min-width: 640px) {
+  .meshy-model-card {
+    width: 240px;
+    margin-right: 24px;
+  }
+
+  .meshy-showcase__header {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .meshy-model-card {
+    width: 300px;
+    margin-right: 24px;
+  }
+
+  .meshy-model-card__username {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .meshy-model-card {
+    margin-right: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .meshy-showcase__header {
+    padding: 0 32px;
+  }
+
+  .meshy-showcase__title {
+    font-size: 1.5rem;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .meshy-model-card__container:hover .meshy-model-card__image.primary,
+  .meshy-model-card__container:hover .meshy-model-card__image.secondary {
+    opacity: inherit;
+  }
+
+  .meshy-model-card__container:hover .meshy-model-card__overlay {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* 焦点样式 */
+.meshy-showcase__btn:focus,
+.meshy-model-card__link:focus {
+  outline: 2px solid var(--meshy-primary);
+  outline-offset: 2px;
+}
+
+/* 键盘导航支持 */
+.meshy-model-showcase:focus-within .meshy-showcase__track {
+  transition: none;
+}
+
 /* ===== 打印样式 ===== */
 @media print {
   .meshy-sidebar,
@@ -1275,5 +1624,256 @@ body {
   body {
     background: white;
     color: black;
+  }
+
+  .meshy-model-showcase {
+    max-width: none;
+    padding: 0;
+  }
+
+  .meshy-showcase__controls {
+    display: none;
+  }
+
+  .meshy-showcase__viewport {
+    overflow: visible;
+  }
+
+  .meshy-showcase__track {
+    display: block;
+    white-space: normal;
+  }
+
+  .meshy-model-card {
+    break-inside: avoid;
+    margin-bottom: 24px;
+    margin-right: 0;
+  }
+}
+
+/* ===== MESHY AI 订阅组件 ===== */
+
+/* 订阅组件容器 */
+.meshy-newsletter-subscription {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--meshy-space-xl);
+  background: var(--meshy-bg-secondary);
+  border-radius: var(--meshy-radius-2xl);
+  padding: var(--meshy-space-xl);
+}
+
+/* 内容区域 */
+.meshy-newsletter__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--meshy-space-sm);
+}
+
+/* 标题样式 */
+.meshy-newsletter__title {
+  color: var(--meshy-text-primary);
+  font-size: var(--meshy-text-xl);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.meshy-newsletter__description {
+  color: var(--meshy-text-tertiary);
+  font-size: var(--meshy-text-sm);
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 表单容器 */
+.meshy-newsletter__form-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--meshy-space-md); /* 16px */
+}
+
+/* 表单布局 */
+.meshy-newsletter__form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--meshy-space-md); /* 16px */
+}
+
+/* 响应式表单布局 */
+@media (min-width: 640px) {
+  .meshy-newsletter__form {
+    flex-direction: row;
+    gap: var(--meshy-space-sm); /* 8px */
+  }
+}
+
+/* 输入框容器 */
+.meshy-newsletter__input-wrapper {
+  height: var(--meshy-input-height, 40px);
+  width: 100%;
+  flex: 1;
+}
+
+/* 表单字段容器 */
+.meshy-form-field {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--meshy-space-sm); /* 8px */
+}
+
+/* 订阅输入框 - 复用系统表单样式 */
+.meshy-newsletter__input {
+  width: 100%;
+  height: var(--meshy-input-height, 40px);
+  border-radius: var(--meshy-radius-xl); /* 12px */
+  background: var(--meshy-bg-base);
+}
+
+/* 表单状态样式 - 使用系统颜色令牌 */
+.meshy-newsletter__form[data-status="default"] .meshy-newsletter__input {
+  border-color: var(--meshy-border-primary);
+}
+
+.meshy-newsletter__form[data-status="default"] .meshy-newsletter__input:hover {
+  border-color: var(--meshy-border-secondary);
+}
+
+.meshy-newsletter__form[data-status="default"] .meshy-newsletter__input:focus {
+  border-color: var(--meshy-primary);
+}
+
+/* 错误状态 */
+.meshy-newsletter__form[data-status="error"] .meshy-newsletter__input {
+  border-color: var(--meshy-error);
+  color: var(--meshy-error);
+}
+
+.meshy-newsletter__form[data-status="error"] .meshy-newsletter__input:focus {
+  border-color: var(--meshy-error);
+}
+
+.meshy-newsletter__form[data-status="error"] .meshy-newsletter__input::placeholder {
+  color: var(--meshy-error-tertiary);
+}
+
+/* 成功状态 */
+.meshy-newsletter__form[data-status="success"] .meshy-newsletter__input {
+  border-color: var(--meshy-success);
+  color: var(--meshy-success);
+}
+
+/* 警告状态 */
+.meshy-newsletter__form[data-status="warning"] .meshy-newsletter__input {
+  border-color: var(--meshy-warning);
+}
+
+.meshy-newsletter__form[data-status="warning"] .meshy-newsletter__input:focus {
+  border-color: var(--meshy-warning);
+}
+
+/* 订阅按钮 - 复用系统按钮样式 */
+.meshy-newsletter__btn {
+  width: 100%;
+  white-space: nowrap;
+  gap: var(--meshy-space-sm); /* 8px */
+}
+
+@media (min-width: 640px) {
+  .meshy-newsletter__btn {
+    width: auto;
+  }
+}
+
+/* 按钮状态 - 使用系统过渡效果 */
+.meshy-newsletter__btn:active {
+  opacity: var(--meshy-opacity-active);
+  transform: scale(0.98);
+  transition: all var(--meshy-transition-fast);
+}
+
+/* 状态消息 */
+.meshy-newsletter__message {
+  margin-top: var(--meshy-space-sm); /* 8px */
+  font-size: var(--meshy-text-sm); /* 14px */
+  font-weight: var(--meshy-font-medium);
+}
+
+.meshy-newsletter__success-message {
+  color: var(--meshy-success);
+  display: none;
+}
+
+.meshy-newsletter__error-message {
+  color: var(--meshy-error);
+  display: none;
+}
+
+/* 成功状态显示 */
+.meshy-newsletter__form[data-status="success"] .meshy-newsletter__success-message {
+  display: block;
+}
+
+/* 错误状态显示 */
+.meshy-newsletter__form[data-status="error"] .meshy-newsletter__error-message {
+  display: block;
+}
+
+/* 加载状态 */
+.meshy-newsletter__form[data-status="loading"] .meshy-newsletter__btn {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.meshy-newsletter__form[data-status="loading"] .meshy-btn__text {
+  display: none;
+}
+
+.meshy-newsletter__form[data-status="loading"] .meshy-btn__loading {
+  display: inline-flex;
+}
+
+/* 禁用状态 */
+.meshy-newsletter__form[data-status="disabled"] .meshy-newsletter__btn {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.meshy-newsletter__form[data-status="disabled"] .meshy-newsletter__input {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* 焦点样式 - 使用系统主色 */
+.meshy-newsletter__input:focus,
+.meshy-newsletter__btn:focus {
+  outline: 2px solid var(--meshy-primary);
+  outline-offset: 2px;
+}
+
+/* 打印样式 */
+@media print {
+  .meshy-newsletter-subscription {
+    max-width: none;
+    padding: 0;
+    background: white;
+    border: 1px solid #000;
+  }
+
+  .meshy-newsletter__form {
+    flex-direction: column;
+  }
+
+  .meshy-newsletter__btn {
+    width: 100%;
   }
 }

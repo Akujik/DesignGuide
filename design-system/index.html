@@ -1381,6 +1381,8 @@
                 <ul class="nav-list">
                     <li><a href="#buttons" class="nav-link">按钮</a></li>
                     <li><a href="#user-stories" class="nav-link">用户故事轮播</a></li>
+                    <li><a href="#model-showcase" class="nav-link">模型展示轮播</a></li>
+                    <li><a href="#newsletter" class="nav-link">订阅组件</a></li>
                     <li><a href="#forms" class="nav-link">表单</a></li>
                     <li><a href="#cards" class="nav-link">卡片</a></li>
                     <li><a href="#badges" class="nav-link">徽章</a></li>
@@ -2766,6 +2768,378 @@ CSS类名统计:
                 </div>
             </section>
 
+            <!-- Model Showcase 模型展示轮播 -->
+            <section id="model-showcase" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">🎮 Model Showcase 模型展示轮播</h2>
+                    <p class="section-description">基于真实Meshy网站的3D模型展示组件，支持图片切换和用户信息展示</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">基础模型展示</h3>
+                        <p class="demo-description">完整的3D模型轮播展示，包含hover图片切换和用户信息</p>
+
+                        <div class="meshy-model-showcase">
+                            <div class="meshy-showcase__header">
+                                <div class="meshy-showcase__title-section">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meshy-showcase__icon">
+                                        <path d="M21 16.008v-8.018a1.98 1.98 0 0 0 -1 -1.717l-7 -4.008a2.016 2.016 0 0 0 -2 0l-7 4.008c-.619 .355 -1 1.01 -1 1.718v8.018c0 .709 .381 1.363 1 1.717l7 4.008a2.016 2.016 0 0 0 2 0l7 -4.008c.619 -.355 1 -1.01 1 -1.718z"></path>
+                                        <path d="M12 22v-10"></path>
+                                        <path d="M12 12l8.73 -5.04"></path>
+                                        <path d="M3.27 6.96l8.73 5.04"></path>
+                                    </svg>
+                                    <h2 class="meshy-showcase__title">模型</h2>
+                                </div>
+                                <div class="meshy-showcase__controls">
+                                    <button class="meshy-showcase__btn meshy-showcase__btn--prev">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12l14 0"></path>
+                                            <path d="M5 12l6 6"></path>
+                                            <path d="M5 12l6 -6"></path>
+                                        </svg>
+                                    </button>
+                                    <button class="meshy-showcase__btn meshy-showcase__btn--next">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12l14 0"></path>
+                                            <path d="M13 18l6 -6"></path>
+                                            <path d="M13 6l6 6"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="meshy-showcase__viewport">
+                                <div class="meshy-showcase__track">
+                                    <div class="meshy-model-card">
+                                        <div class="meshy-model-card__container group">
+                                            <a href="#" class="meshy-model-card__link">
+                                                <div class="meshy-model-card__image-wrapper">
+                                                    <img class="meshy-model-card__image primary" src="https://via.placeholder.com/300x300/C5F955/000000?text=Model+1" alt="3D模型1">
+                                                    <img class="meshy-model-card__image secondary" src="https://via.placeholder.com/300x300/E3FFA7/000000?text=Hover+1" alt="3D模型1预览">
+                                                    <div class="meshy-model-card__overlay">
+                                                        <div class="meshy-model-card__badge">
+                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M15 8h.01"></path>
+                                                                <path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z"></path>
+                                                                <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5"></path>
+                                                                <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3"></path>
+                                                            </svg>
+                                                            <span>图片生成模型</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div class="meshy-model-card__user-info">
+                                                <div class="meshy-model-card__avatar-wrapper">
+                                                    <a href="#" class="meshy-model-card__user-link">
+                                                        <div class="meshy-model-card__avatar">
+                                                            <img src="https://via.placeholder.com/64x64/4A90E2/FFFFFF?text=A" alt="用户头像">
+                                                            <div class="meshy-model-card__avatar-badge"></div>
+                                                        </div>
+                                                        <div class="meshy-model-card__username">用户名称</div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="meshy-model-card">
+                                        <div class="meshy-model-card__container group">
+                                            <a href="#" class="meshy-model-card__link">
+                                                <div class="meshy-model-card__image-wrapper">
+                                                    <img class="meshy-model-card__image primary" src="https://via.placeholder.com/300x300/FFE141/000000?text=Model+2" alt="3D模型2">
+                                                    <img class="meshy-model-card__image secondary" src="https://via.placeholder.com/300x300/F9CB55/000000?text=Hover+2" alt="3D模型2预览">
+                                                    <div class="meshy-model-card__overlay">
+                                                        <div class="meshy-model-card__badge">
+                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M15 8h.01"></path>
+                                                                <path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z"></path>
+                                                                <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5"></path>
+                                                                <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3"></path>
+                                                            </svg>
+                                                            <span>图片生成模型</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div class="meshy-model-card__user-info">
+                                                <div class="meshy-model-card__avatar-wrapper">
+                                                    <a href="#" class="meshy-model-card__user-link">
+                                                        <div class="meshy-model-card__avatar">
+                                                            <img src="https://via.placeholder.com/64x64/76ADFF/FFFFFF?text=B" alt="用户头像">
+                                                            <div class="meshy-model-card__avatar-badge"></div>
+                                                        </div>
+                                                        <div class="meshy-model-card__username">创作者B</div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="meshy-model-card">
+                                        <div class="meshy-model-card__container group">
+                                            <a href="#" class="meshy-model-card__link">
+                                                <div class="meshy-model-card__image-wrapper">
+                                                    <img class="meshy-model-card__image primary" src="https://via.placeholder.com/300x300/5297FF/FFFFFF?text=Model+3" alt="3D模型3">
+                                                    <img class="meshy-model-card__image secondary" src="https://via.placeholder.com/300x300/3A5AFF/FFFFFF?text=Hover+3" alt="3D模型3预览">
+                                                    <div class="meshy-model-card__overlay">
+                                                        <div class="meshy-model-card__badge">
+                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M15 8h.01"></path>
+                                                                <path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z"></path>
+                                                                <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5"></path>
+                                                                <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3"></path>
+                                                            </svg>
+                                                            <span>图片生成模型</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div class="meshy-model-card__user-info">
+                                                <div class="meshy-model-card__avatar-wrapper">
+                                                    <a href="#" class="meshy-model-card__user-link">
+                                                        <div class="meshy-model-card__avatar">
+                                                            <img src="https://via.placeholder.com/64x64/E97103/FFFFFF?text=C" alt="用户头像">
+                                                            <div class="meshy-model-card__avatar-badge"></div>
+                                                        </div>
+                                                        <div class="meshy-model-card__username">设计师C</div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="meshy-model-card">
+                                        <div class="meshy-model-card__container group">
+                                            <a href="#" class="meshy-model-card__link">
+                                                <div class="meshy-model-card__image-wrapper">
+                                                    <img class="meshy-model-card__image primary" src="https://via.placeholder.com/300x300/FEFFC5/000000?text=Model+4" alt="3D模型4">
+                                                    <img class="meshy-model-card__image secondary" src="https://via.placeholder.com/300x300/FFCCC5/000000?text=Hover+4" alt="3D模型4预览">
+                                                    <div class="meshy-model-card__overlay">
+                                                        <div class="meshy-model-card__badge">
+                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                <path d="M15 8h.01"></path>
+                                                                <path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z"></path>
+                                                                <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5"></path>
+                                                                <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3"></path>
+                                                            </svg>
+                                                            <span>图片生成模型</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div class="meshy-model-card__user-info">
+                                                <div class="meshy-model-card__avatar-wrapper">
+                                                    <a href="#" class="meshy-model-card__user-link">
+                                                        <div class="meshy-model-card__avatar">
+                                                            <img src="https://via.placeholder.com/64x64/1C3BDD/FFFFFF?text=D" alt="用户头像">
+                                                            <div class="meshy-model-card__avatar-badge"></div>
+                                                        </div>
+                                                        <div class="meshy-model-card__username">艺术家D</div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">组件特性</h3>
+                        <p class="demo-description">模型展示轮播组件的核心功能特点</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <ul style="color: var(--meshy-text-primary); line-height: 1.6; margin: 0; padding-left: 20px;">
+                                <li><strong>图片切换</strong>: 鼠标悬停时自动切换展示图片</li>
+                                <li><strong>用户信息</strong>: 显示创作者头像和用户名</li>
+                                <li><strong>响应式设计</strong>: 自适应不同屏幕尺寸</li>
+                                <li><strong>平滑滚动</strong>: 硬件加速的轮播动画</li>
+                                <li><strong>触摸支持</strong>: 移动端滑动手势操作</li>
+                                <li><strong>键盘导航</strong>: 完整的键盘操作支持</li>
+                                <li><strong>无障碍</strong>: ARIA属性和屏幕阅读器支持</li>
+                                <li><strong>性能优化</strong>: 图片懒加载和GPU加速</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">响应式断点</h3>
+                        <p class="demo-description">基于真实网站的响应式设计规范</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <div style="display: grid; gap: var(--meshy-space-sm);">
+                                <div style="padding: var(--meshy-space-sm); background: var(--meshy-bg-tertiary); border-radius: var(--meshy-radius-sm);">
+                                    <div style="color: var(--meshy-primary); font-weight: 600; font-size: 0.9rem;">移动端 (默认)</div>
+                                    <div style="color: var(--meshy-text-secondary); font-size: 0.8rem;">卡片宽度: 200px, 间距: 16px</div>
+                                </div>
+                                <div style="padding: var(--meshy-space-sm); background: var(--meshy-bg-tertiary); border-radius: var(--meshy-radius-sm);">
+                                    <div style="color: var(--meshy-primary); font-weight: 600; font-size: 0.9rem;">小屏幕 (≥640px)</div>
+                                    <div style="color: var(--meshy-text-secondary); font-size: 0.8rem;">卡片宽度: 240px, 间距: 24px</div>
+                                </div>
+                                <div style="padding: var(--meshy-space-sm); background: var(--meshy-bg-tertiary); border-radius: var(--meshy-radius-sm);">
+                                    <div style="color: var(--meshy-primary); font-weight: 600; font-size: 0.9rem;">平板端 (≥768px)</div>
+                                    <div style="color: var(--meshy-text-secondary); font-size: 0.8rem;">卡片宽度: 300px, 间距: 24px</div>
+                                </div>
+                                <div style="padding: var(--meshy-space-sm); background: var(--meshy-bg-tertiary); border-radius: var(--meshy-radius-sm);">
+                                    <div style="color: var(--meshy-primary); font-weight: 600; font-size: 0.9rem;">桌面端 (≥1024px)</div>
+                                    <div style="color: var(--meshy-text-secondary); font-size: 0.8rem;">卡片宽度: 300px, 间距: 32px</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Subscription 订阅组件 -->
+            <section id="newsletter" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">📧 Newsletter Subscription 订阅组件</h2>
+                    <p class="section-description">基于真实Meshy网站的邮件订阅表单组件，支持完整的表单验证和状态管理</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">基础订阅组件</h3>
+                        <p class="demo-description">完整的邮件订阅表单，包含实时验证和状态反馈</p>
+
+                        <div class="meshy-newsletter-subscription">
+                            <div class="meshy-newsletter__content">
+                                <div class="meshy-newsletter__header">
+                                    <h2 class="meshy-newsletter__title">订阅更新</h2>
+                                    <p class="meshy-newsletter__description">加入我们的新闻通讯，以便了解所有Meshy的事情</p>
+                                </div>
+                            </div>
+
+                            <div class="meshy-newsletter__form-container">
+                                <form class="meshy-newsletter__form" data-status="default">
+                                    <div class="meshy-newsletter__input-wrapper">
+                                        <div class="meshy-form-field">
+                                            <input
+                                                id="newsletter-email-demo"
+                                                type="email"
+                                                class="meshy-form-input meshy-newsletter__input"
+                                                placeholder="输入您的电子邮件..."
+                                                autocomplete="off"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="meshy-btn meshy-btn--primary meshy-newsletter__btn">
+                                        <span class="meshy-btn__text">订阅</span>
+                                        <span class="meshy-btn__loading" style="display: none;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;">
+                                                <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                                                <path d="M3 12a9 9 0 0 1 9-9"></path>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </form>
+
+                                <div class="meshy-newsletter__message" style="display: none;">
+                                    <span class="meshy-newsletter__success-message">✓ 订阅成功！感谢您的关注。</span>
+                                    <span class="meshy-newsletter__error-message">请输入有效的邮箱地址</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">状态演示</h3>
+                        <p class="demo-description">展示不同状态的订阅组件样式</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <div style="margin-bottom: var(--meshy-space-md);">
+                                <div style="font-weight: 600; color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">默认状态</div>
+                                <form class="meshy-newsletter__form" data-status="default" style="display: flex; gap: var(--meshy-space-sm);">
+                                    <input type="email" class="meshy-form-input meshy-newsletter__input" placeholder="输入邮箱..." style="flex: 1;">
+                                    <button type="submit" class="meshy-btn meshy-btn--primary" style="width: auto;">订阅</button>
+                                </form>
+                            </div>
+
+                            <div style="margin-bottom: var(--meshy-space-md);">
+                                <div style="font-weight: 600; color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">错误状态</div>
+                                <form class="meshy-newsletter__form" data-status="error">
+                                    <input type="email" class="meshy-form-input meshy-newsletter__input" value="invalid-email" style="flex: 1;">
+                                    <div class="meshy-newsletter__error-message" style="display: block; margin-top: var(--meshy-space-sm);">请输入有效的邮箱地址</div>
+                                </form>
+                            </div>
+
+                            <div style="margin-bottom: var(--meshy-space-md);">
+                                <div style="font-weight: 600; color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">成功状态</div>
+                                <form class="meshy-newsletter__form" data-status="success">
+                                    <input type="email" class="meshy-form-input meshy-newsletter__input" value="user@example.com" disabled style="flex: 1;">
+                                    <div class="meshy-newsletter__success-message" style="display: block; margin-top: var(--meshy-space-sm);">✓ 订阅成功！</div>
+                                </form>
+                            </div>
+
+                            <div>
+                                <div style="font-weight: 600; color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">加载状态</div>
+                                <form class="meshy-newsletter__form" data-status="loading" style="display: flex; gap: var(--meshy-space-sm);">
+                                    <input type="email" class="meshy-form-input meshy-newsletter__input" value="user@example.com" disabled style="flex: 1;">
+                                    <button type="submit" class="meshy-btn meshy-btn--primary" disabled style="width: auto;">
+                                        <span style="display: none;">订阅</span>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;">
+                                            <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                                            <path d="M3 12a9 9 0 0 1 9-9"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">组件特性</h3>
+                        <p class="demo-description">订阅组件的核心功能特点</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <ul style="color: var(--meshy-text-primary); line-height: 1.6; margin: 0; padding-left: 20px;">
+                                <li><strong>实时验证</strong>: 输入时自动验证邮箱格式</li>
+                                <li><strong>状态管理</strong>: 支持默认、错误、成功、加载等多种状态</li>
+                                <li><strong>响应式设计</strong>: 移动端和桌面端自适应布局</li>
+                                <li><strong>无障碍支持</strong>: 完整的ARIA属性和键盘导航</li>
+                                <li><strong>防抖处理</strong>: 避免频繁的验证请求</li>
+                                <li><strong>键盘快捷键</strong>: 支持ESC重置和Ctrl+Enter提交</li>
+                                <li><strong>错误处理</strong>: 完善的错误提示和恢复机制</li>
+                                <li><strong>视觉反馈</strong>: 清晰的状态指示和消息提示</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">内嵌使用</h3>
+                        <p class="demo-description">在卡片中嵌入的简化订阅组件</p>
+
+                        <div class="meshy-card">
+                            <div class="meshy-card__body">
+                                <h3 style="margin: 0 0 var(--meshy-space-sm) 0;">保持更新</h3>
+                                <p style="margin: 0 0 var(--meshy-space-md) 0; color: var(--meshy-text-secondary); font-size: 0.9rem;">
+                                    订阅获取最新的产品更新和独家优惠信息。
+                                </p>
+
+                                <div class="meshy-newsletter-subscription" style="background: transparent; padding: 0; gap: var(--meshy-space-md);">
+                                    <form class="meshy-newsletter__form" style="gap: var(--meshy-space-sm);">
+                                        <input
+                                            type="email"
+                                            class="meshy-form-input meshy-newsletter__input"
+                                            placeholder="您的邮箱地址"
+                                            style="height: var(--meshy-input-height, 40px); font-size: var(--meshy-text-sm);"
+                                        >
+                                        <button type="submit" class="meshy-btn meshy-btn--primary" style="height: var(--meshy-input-height, 40px); width: auto; font-size: var(--meshy-text-sm);">
+                                            订阅
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Navigation Components 导航组件 -->
             <section id="navigation-components" class="section">
                 <div class="section-header">
@@ -3445,7 +3819,503 @@ CSS类名统计:
         // 在DOM加载完成后初始化
         document.addEventListener('DOMContentLoaded', function() {
             initUserStoryCarousels();
+            initModelShowcaseCarousels();
+            initNewsletterSubscriptions();
+            initializeNewsletterWithUrlParams();
         });
+
+        // ===== 模型展示轮播组件 =====
+        class ModelShowcaseCarousel {
+            constructor(container) {
+                this.container = container;
+                this.track = container.querySelector('.meshy-showcase__track');
+                this.cards = Array.from(container.querySelectorAll('.meshy-model-card'));
+                this.prevBtn = container.querySelector('.meshy-showcase__btn--prev');
+                this.nextBtn = container.querySelector('.meshy-showcase__btn--next');
+
+                this.currentIndex = 0;
+                this.cardWidth = 200; // 默认移动端宽度
+                this.gap = 16;
+                this.isAnimating = false;
+
+                this.init();
+            }
+
+            init() {
+                this.updateCardWidth();
+                this.setupEventListeners();
+                this.updateButtons();
+                this.setupKeyboardNavigation();
+                this.preloadSecondaryImages();
+                this.setupAccessibility();
+            }
+
+            updateCardWidth() {
+                const width = window.innerWidth;
+                if (width >= 768) {
+                    this.cardWidth = 300; // 平板和桌面
+                    this.gap = width >= 1024 ? 32 : 24;
+                } else if (width >= 640) {
+                    this.cardWidth = 240; // 大手机
+                    this.gap = 24;
+                } else {
+                    this.cardWidth = 200; // 移动端
+                    this.gap = 16;
+                }
+            }
+
+            setupEventListeners() {
+                // 按钮事件
+                this.prevBtn?.addEventListener('click', () => this.prev());
+                this.nextBtn?.addEventListener('click', () => this.next());
+
+                // 窗口调整
+                window.addEventListener('resize', () => {
+                    this.updateCardWidth();
+                    this.goToCard(this.currentIndex, false); // 无动画重定位
+                });
+
+                // 触摸支持
+                this.setupTouchSupport();
+            }
+
+            next() {
+                if (this.isAnimating) return;
+
+                const maxIndex = Math.max(0, this.cards.length - this.getVisibleCards());
+                if (this.currentIndex < maxIndex) {
+                    this.goToCard(this.currentIndex + 1);
+                }
+            }
+
+            prev() {
+                if (this.isAnimating) return;
+
+                if (this.currentIndex > 0) {
+                    this.goToCard(this.currentIndex - 1);
+                }
+            }
+
+            goToCard(index, animate = true) {
+                if (this.isAnimating || index < 0 || index >= this.cards.length) return;
+
+                this.isAnimating = true;
+                this.currentIndex = index;
+
+                const offset = -(index * (this.cardWidth + this.gap));
+
+                if (animate) {
+                    this.track.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                } else {
+                    this.track.style.transition = 'none';
+                }
+
+                this.track.style.transform = `translate3d(${offset}px, 0, 0)`;
+
+                this.updateButtons();
+                this.updateAccessibility();
+
+                if (animate) {
+                    setTimeout(() => {
+                        this.isAnimating = false;
+                    }, 300);
+                } else {
+                    this.isAnimating = false;
+                }
+            }
+
+            getVisibleCards() {
+                const containerWidth = this.container.offsetWidth;
+                return Math.floor(containerWidth / (this.cardWidth + this.gap));
+            }
+
+            updateButtons() {
+                const maxIndex = Math.max(0, this.cards.length - this.getVisibleCards());
+
+                if (this.prevBtn) {
+                    this.prevBtn.disabled = this.currentIndex <= 0;
+                }
+
+                if (this.nextBtn) {
+                    this.nextBtn.disabled = this.currentIndex >= maxIndex;
+                }
+            }
+
+            setupTouchSupport() {
+                let startX = 0;
+                let currentX = 0;
+                let isDragging = false;
+
+                this.track.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                    this.track.style.transition = 'none';
+                }, { passive: true });
+
+                this.track.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+
+                    currentX = e.touches[0].clientX;
+                    const diff = currentX - startX;
+                    const baseOffset = -(this.currentIndex * (this.cardWidth + this.gap));
+
+                    this.track.style.transform = `translate3d(${baseOffset + diff}px, 0, 0)`;
+                }, { passive: true });
+
+                this.track.addEventListener('touchend', (e) => {
+                    if (!isDragging) return;
+
+                    isDragging = false;
+                    const diff = currentX - startX;
+                    const threshold = this.cardWidth / 4;
+
+                    if (Math.abs(diff) > threshold) {
+                        if (diff > 0) {
+                            this.prev();
+                        } else {
+                            this.next();
+                        }
+                    } else {
+                        this.goToCard(this.currentIndex); // 回弹到原位
+                    }
+                });
+            }
+
+            setupKeyboardNavigation() {
+                this.container.setAttribute('tabindex', '0');
+
+                this.container.addEventListener('keydown', (e) => {
+                    switch(e.key) {
+                        case 'ArrowLeft':
+                            e.preventDefault();
+                            this.prev();
+                            break;
+                        case 'ArrowRight':
+                            e.preventDefault();
+                            this.next();
+                            break;
+                        case 'Home':
+                            e.preventDefault();
+                            this.goToCard(0);
+                            break;
+                        case 'End':
+                            e.preventDefault();
+                            this.goToCard(this.cards.length - 1);
+                            break;
+                    }
+                });
+            }
+
+            preloadSecondaryImages() {
+                // 预加载hover状态的图片
+                this.cards.forEach(card => {
+                    const secondaryImage = card.querySelector('.meshy-model-card__image.secondary');
+                    if (secondaryImage && secondaryImage.src && secondaryImage.src.includes('placeholder')) {
+                        // 在实际使用中，这里会预加载真实的图片
+                        const img = new Image();
+                        img.src = secondaryImage.src;
+                    }
+                });
+            }
+
+            setupAccessibility() {
+                // 设置ARIA属性
+                this.container.setAttribute('role', 'region');
+                this.container.setAttribute('aria-label', '3D模型展示轮播');
+
+                if (this.prevBtn) {
+                    this.prevBtn.setAttribute('aria-label', '上一个模型');
+                }
+
+                if (this.nextBtn) {
+                    this.nextBtn.setAttribute('aria-label', '下一个模型');
+                }
+
+                const viewport = this.container.querySelector('.meshy-showcase__viewport');
+                if (viewport) {
+                    viewport.setAttribute('aria-live', 'polite');
+                }
+
+                this.updateAccessibility();
+            }
+
+            updateAccessibility() {
+                const totalCards = this.cards.length;
+                const currentPosition = this.currentIndex + 1;
+                const visibleCount = this.getVisibleCards();
+
+                this.container.setAttribute('aria-label',
+                    `3D模型展示轮播，显示第 ${currentPosition}-${Math.min(currentPosition + visibleCount - 1, totalCards)} 个，共 ${totalCards} 个模型`
+                );
+
+                // 更新当前活动卡片的焦点状态
+                this.cards.forEach((card, index) => {
+                    const link = card.querySelector('.meshy-model-card__link');
+                    if (link) {
+                        if (index >= this.currentIndex && index < this.currentIndex + visibleCount) {
+                            link.setAttribute('aria-current', 'true');
+                        } else {
+                            link.setAttribute('aria-current', 'false');
+                        }
+                    }
+                });
+            }
+        }
+
+        // 初始化所有模型展示轮播组件
+        function initModelShowcaseCarousels() {
+            const carousels = document.querySelectorAll('.meshy-model-showcase');
+            carousels.forEach(carousel => new ModelShowcaseCarousel(carousel));
+        }
+
+        // ===== 订阅组件 =====
+        class NewsletterSubscription {
+            constructor(container) {
+                this.container = container;
+                this.form = container.querySelector('.meshy-newsletter__form');
+                this.emailInput = container.querySelector('.meshy-newsletter__input');
+                this.submitBtn = container.querySelector('.meshy-newsletter__btn');
+                this.messageContainer = container.querySelector('.meshy-newsletter__message');
+
+                this.status = 'default';
+                this.debounceTimer = null;
+                this.debounceDelay = 300;
+
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.setupAccessibility();
+            }
+
+            setupEventListeners() {
+                // 表单提交
+                this.form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleSubmit();
+                });
+
+                // 输入验证
+                this.emailInput.addEventListener('input', () => {
+                    this.debounceValidate();
+                });
+
+                // 输入框焦点事件
+                this.emailInput.addEventListener('focus', () => {
+                    this.clearErrorState();
+                });
+
+                // 键盘快捷键
+                this.form.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        this.reset();
+                        this.emailInput.blur();
+                    }
+                });
+            }
+
+            handleSubmit() {
+                const email = this.emailInput.value.trim();
+
+                // 验证邮箱
+                if (!this.isValidEmail(email)) {
+                    this.setErrorState('请输入有效的邮箱地址');
+                    return;
+                }
+
+                // 显示加载状态
+                this.setLoadingState();
+
+                // 模拟API调用
+                this.subscribeEmail(email)
+                    .then(() => {
+                        this.setSuccessState();
+                        this.showSuccessMessage('订阅成功！感谢您的关注。');
+                    })
+                    .catch((error) => {
+                        this.setErrorState(error.message || '订阅失败，请稍后重试');
+                    });
+            }
+
+            async subscribeEmail(email) {
+                // 模拟API延迟
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        // 模拟90%成功率
+                        if (Math.random() > 0.1) {
+                            resolve({ success: true, email });
+                        } else {
+                            reject(new Error('网络错误，请稍后重试'));
+                        }
+                    }, 1500);
+                });
+            }
+
+            debounceValidate() {
+                clearTimeout(this.debounceTimer);
+                this.debounceTimer = setTimeout(() => {
+                    this.validateEmail();
+                }, this.debounceDelay);
+            }
+
+            validateEmail() {
+                const email = this.emailInput.value.trim();
+                const isValid = this.isValidEmail(email);
+
+                if (isValid && this.status === 'error') {
+                    this.clearErrorState();
+                }
+            }
+
+            isValidEmail(email) {
+                if (!email) return false;
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            setDefaultState() {
+                this.status = 'default';
+                this.form.setAttribute('data-status', 'default');
+                this.emailInput.disabled = false;
+                this.submitBtn.disabled = false;
+                this.hideMessage();
+            }
+
+            setLoadingState() {
+                this.status = 'loading';
+                this.form.setAttribute('data-status', 'loading');
+                this.emailInput.disabled = true;
+                this.submitBtn.disabled = true;
+                this.hideMessage();
+            }
+
+            setSuccessState() {
+                this.status = 'success';
+                this.form.setAttribute('data-status', 'success');
+                this.emailInput.disabled = true;
+                this.submitBtn.disabled = true;
+            }
+
+            setErrorState(message) {
+                this.status = 'error';
+                this.form.setAttribute('data-status', 'error');
+                this.emailInput.disabled = false;
+                this.submitBtn.disabled = false;
+                this.showErrorMessage(message);
+
+                // 焦点到输入框
+                this.emailInput.focus();
+            }
+
+            setDisabledState() {
+                this.status = 'disabled';
+                this.form.setAttribute('data-status', 'disabled');
+                this.emailInput.disabled = true;
+                this.submitBtn.disabled = true;
+            }
+
+            clearErrorState() {
+                if (this.status === 'error') {
+                    this.setDefaultState();
+                }
+            }
+
+            reset() {
+                this.emailInput.value = '';
+                this.setDefaultState();
+            }
+
+            showSuccessMessage(message) {
+                this.messageContainer.style.display = 'block';
+                const successMsg = this.container.querySelector('.meshy-newsletter__success-message');
+                successMsg.textContent = message;
+                successMsg.style.display = 'block';
+
+                const errorMsg = this.container.querySelector('.meshy-newsletter__error-message');
+                errorMsg.style.display = 'none';
+            }
+
+            showErrorMessage(message) {
+                this.messageContainer.style.display = 'block';
+                const errorMsg = this.container.querySelector('.meshy-newsletter__error-message');
+                errorMsg.textContent = message;
+                errorMsg.style.display = 'block';
+
+                const successMsg = this.container.querySelector('.meshy-newsletter__success-message');
+                successMsg.style.display = 'none';
+            }
+
+            hideMessage() {
+                this.messageContainer.style.display = 'none';
+                const successMsg = this.container.querySelector('.meshy-newsletter__success-message');
+                const errorMsg = this.container.querySelector('.meshy-newsletter__error-message');
+                successMsg.style.display = 'none';
+                errorMsg.style.display = 'none';
+            }
+
+            setupAccessibility() {
+                // 设置ARIA属性
+                this.emailInput.setAttribute('aria-label', '电子邮箱地址');
+                this.emailInput.setAttribute('aria-required', 'true');
+                this.emailInput.setAttribute('aria-invalid', 'false');
+                this.emailInput.setAttribute('autocomplete', 'email');
+
+                this.submitBtn.setAttribute('aria-label', '订阅新闻通讯');
+
+                // 动态更新ARIA属性
+                this.updateAccessibility();
+            }
+
+            updateAccessibility() {
+                const email = this.emailInput.value.trim();
+                const isValid = this.isValidEmail(email);
+
+                this.emailInput.setAttribute('aria-invalid', (!isValid && email.length > 0) ? 'true' : 'false');
+
+                // 更新表单的ARIA描述
+                if (this.status === 'error') {
+                    this.form.setAttribute('aria-describedby', 'newsletter-error');
+                } else if (this.status === 'success') {
+                    this.form.setAttribute('aria-describedby', 'newsletter-success');
+                } else {
+                    this.form.removeAttribute('aria-describedby');
+                }
+            }
+        }
+
+        // 初始化所有订阅组件
+        function initNewsletterSubscriptions() {
+            const subscriptions = document.querySelectorAll('.meshy-newsletter-subscription');
+            subscriptions.forEach(subscription => new NewsletterSubscription(subscription));
+        }
+
+        // 全局键盘快捷键
+        document.addEventListener('keydown', (e) => {
+            // Ctrl+Enter 或 Cmd+Enter 快速提交订阅表单
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                const activeElement = document.activeElement;
+                if (activeElement && activeElement.classList.contains('meshy-newsletter__input')) {
+                    e.preventDefault();
+                    activeElement.form?.requestSubmit();
+                }
+            }
+        });
+
+        // 支持URL参数预填充邮箱
+        function initializeNewsletterWithUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email');
+
+            if (email) {
+                const input = document.querySelector('#newsletter-email-demo');
+                if (input) {
+                    input.value = email;
+                    input.dispatchEvent(new Event('input'));
+                }
+            }
+        }
     </script>
 </body>
 </html>
