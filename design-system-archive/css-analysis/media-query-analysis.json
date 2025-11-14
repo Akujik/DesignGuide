@@ -1,0 +1,1746 @@
+{
+  "summary": {
+    "totalMediaQueries": 422,
+    "touchPatterns": 0,
+    "printStyles": 6,
+    "highDPI": 0,
+    "darkMode": 0,
+    "reducedMotion": 0,
+    "tailwindResponsive": 428
+  },
+  "breakpoints": {
+    "1024px": 3,
+    "640px": 20,
+    "416px": 1,
+    "768px": 1,
+    "1280px": 11,
+    "1536px": 1,
+    "879px": 6,
+    "462px": 18,
+    "599px": 18,
+    "600px": 18,
+    "868px": 24,
+    "899px": 18,
+    "900px": 18,
+    "1440px": 24,
+    "40rem": 12,
+    "48rem": 22,
+    "80rem": 12,
+    "96rem": 12,
+    "799px": 6,
+    "800px": 6,
+    "1152px": 5,
+    "30rem": 21,
+    "64rem": 10,
+    "70rem": 25,
+    "90rem": 10,
+    "120rem": 5,
+    "140rem": 5,
+    "960px": 5,
+    "1100px": 5,
+    "1200px": 4,
+    "1340px": 4,
+    "410px": 5
+  },
+  "responsivePatterns": {},
+  "designApproach": {
+    "mobileFirst": 23,
+    "desktopFirst": 326,
+    "primary": "desktop-first"
+  },
+  "accessibility": {
+    "reducedMotion": false,
+    "darkMode": false,
+    "highDPI": false
+  },
+  "allQueries": [
+    {
+      "query": "@media (min-width:1024px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:1024px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:416px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:768px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:1024px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:1280px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:1536px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (max-width:879px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media not all and (min-width:1440px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media not all and (min-width:868px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (max-width:599px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (max-width:899px) and (min-width:600px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (max-width:799px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (min-width:800px)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media print",
+      "site": "Introduction - Meshy Docs (2025_11_14 03：02：58)"
+    },
+    {
+      "query": "@media screen and (min-width:1152px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:64rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:90rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:120rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:140rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media not all and (min-width:1280px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media not all and (min-width:70rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media not all and (min-width:48rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media not all and (min-width:30rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:960px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:1100px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:1200px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:1280px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:1340px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:64rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:90rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media only screen and (max-width:410px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (max-width:879px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media not all and (min-width:1440px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media not all and (min-width:868px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (max-width:599px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (max-width:899px) and (min-width:600px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (max-width:799px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:800px)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media print",
+      "site": "Blog - Meshy (2025_11_13 22：13：06)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media screen and (min-width:1152px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:64rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:90rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:120rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:140rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media not all and (min-width:1280px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media not all and (min-width:70rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media not all and (min-width:48rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media not all and (min-width:30rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:960px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:1100px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:1280px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:64rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:90rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media only screen and (max-width:410px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (max-width:879px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media not all and (min-width:1440px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media not all and (min-width:868px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (max-width:599px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (max-width:899px) and (min-width:600px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (max-width:799px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:800px)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media print",
+      "site": "Meshy AI - The #1 AI 3D Model Generator (2025_11_9 00：23：32)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:64rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:90rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:120rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:140rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media not all and (min-width:1280px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media not all and (min-width:70rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media not all and (min-width:48rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media not all and (min-width:30rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:960px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:1100px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:1200px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:1280px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:1340px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:64rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:90rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media screen and (min-width:1152px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media only screen and (max-width:410px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (max-width:879px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media not all and (min-width:1440px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media not all and (min-width:868px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (max-width:599px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (max-width:899px) and (min-width:600px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (max-width:799px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (min-width:800px)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media print",
+      "site": "Careers - Meshy AI (2025_11_13 22：52：04)"
+    },
+    {
+      "query": "@media screen and (min-width:1152px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:64rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:90rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:120rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:140rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media not all and (min-width:1280px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media not all and (min-width:70rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media not all and (min-width:48rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media not all and (min-width:30rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:960px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:1100px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:1200px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:1280px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:1340px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:64rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:90rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media only screen and (max-width:410px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (max-width:879px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media not all and (min-width:1440px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media not all and (min-width:868px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (max-width:599px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (max-width:899px) and (min-width:600px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (max-width:799px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (min-width:800px)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media print",
+      "site": "API Platform - Meshy (2025_11_13 22：04：05)"
+    },
+    {
+      "query": "@media screen and (min-width:1152px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:64rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:90rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:120rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:140rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media not all and (min-width:1280px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media not all and (min-width:70rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media not all and (min-width:48rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media not all and (min-width:30rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:960px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:1100px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:1200px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:1280px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:1340px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:30rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:64rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:90rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:70rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media only screen and (max-width:410px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (max-width:879px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:599px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:600px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:899px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:40rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:48rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:80rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:96rem)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (forced-colors:active)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media not all and (min-width:1440px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media not all and (min-width:868px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:462px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:640px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:868px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:900px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:1440px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (max-width:599px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (max-width:899px) and (min-width:600px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (max-width:799px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (min-width:800px)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media (hover:hover)",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    },
+    {
+      "query": "@media print",
+      "site": "Contact Us - Meshy (2025_11_13 22：52：57)"
+    }
+  ]
+}
