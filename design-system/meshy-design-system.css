@@ -611,15 +611,14 @@ body {
 
 /* 主要渐变按钮 */
 .meshy-btn--primary-gradient {
-  background: linear-gradient(to bottom, var(--meshy-primary), var(--meshy-primary-hover));
-  color: var(--meshy-bg-primary);
+  background: linear-gradient(to bottom, #C5F955, #E3FFA7);
+  color: #1a1a1a;
   box-shadow: 0 4px 12px rgba(197, 249, 85, 0.3);
 }
 
 .meshy-btn--primary-gradient:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(197, 249, 85, 0.4);
-  background: linear-gradient(to bottom, var(--meshy-primary-hover), var(--meshy-primary));
 }
 
 /* 次要按钮 */
@@ -654,6 +653,12 @@ body {
 }
 
 /* 大尺寸按钮 */
+.meshy-btn--medium {
+  padding: 12px 24px;
+  font-size: 15px;
+  min-height: 48px;
+}
+
 .meshy-btn--large {
   padding: 16px 32px;
   font-size: 16px;
@@ -991,6 +996,269 @@ body {
 .meshy-theme-toggle:focus {
   outline: 2px solid var(--meshy-primary);
   outline-offset: 2px;
+}
+
+/* ===== 用户故事轮播组件 ===== */
+
+/* 轮播容器 */
+.meshy-user-stories-carousel {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* 标题区域 */
+.meshy-carousel__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding: 0 16px;
+}
+
+.meshy-carousel__title {
+  font-size: clamp(2rem, 5vw, 6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--meshy-text-primary);
+  margin: 0;
+  font-family: var(--meshy-font-primary);
+}
+
+/* 控制按钮容器 */
+.meshy-carousel__controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.meshy-carousel__btn {
+  background: var(--meshy-bg-tertiary);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--meshy-text-primary);
+}
+
+.meshy-carousel__btn:hover {
+  transform: scale(1.05);
+  background: var(--meshy-bg-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.meshy-carousel__btn:active {
+  transform: scale(0.95);
+}
+
+.meshy-carousel__btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.meshy-carousel__btn:disabled:hover {
+  background: var(--meshy-bg-tertiary);
+  transform: none;
+  box-shadow: none;
+}
+
+/* 轮播视口 */
+.meshy-carousel__viewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  position: relative;
+}
+
+/* 滚动轨道 */
+.meshy-carousel__track {
+  display: flex;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  transform: translateZ(0); /* 硬件加速 */
+}
+
+/* 故事卡片 */
+.meshy-story-card {
+  display: block;
+  min-width: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  text-decoration: none;
+  background: var(--meshy-bg-secondary);
+  transition: all 0.2s ease-out;
+  margin-right: 16px;
+  width: 280px; /* 移动端默认宽度 */
+  position: relative;
+}
+
+.meshy-story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.meshy-story-card:hover .meshy-story-card__content {
+  background: var(--meshy-bg-tertiary);
+}
+
+/* 卡片图片 */
+.meshy-story-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* 卡片内容 */
+.meshy-story-card__content {
+  background: var(--meshy-bg-secondary);
+  padding: 16px;
+  height: auto;
+  min-height: 80px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--meshy-text-primary);
+  transition: background-color 0.2s ease-out;
+  line-height: 1.4;
+  font-family: var(--meshy-font-secondary);
+}
+
+/* 响应式卡片宽度 */
+@media (min-width: 640px) {
+  .meshy-carousel__header {
+    padding: 0 24px;
+  }
+
+  .meshy-user-stories-carousel {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .meshy-story-card {
+    width: 400px;
+    margin-right: 24px;
+  }
+
+  .meshy-story-card__image {
+    height: 255px;
+  }
+
+  .meshy-story-card__content {
+    padding: 20px;
+    font-size: 16px;
+    min-height: 60px;
+  }
+
+  .meshy-carousel__btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .meshy-carousel__btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .meshy-story-card {
+    margin-right: 32px;
+  }
+
+  .meshy-carousel__header {
+    padding: 0 32px;
+  }
+
+  .meshy-user-stories-carousel {
+    padding: 0 32px;
+  }
+
+  .meshy-carousel__title {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .meshy-carousel__title {
+    font-size: 6rem;
+  }
+
+  .meshy-carousel__header {
+    padding: 0 32px;
+  }
+
+  .meshy-user-stories-carousel {
+    padding: 0 32px;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .meshy-story-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .meshy-story-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* 焦点样式 */
+.meshy-carousel__btn:focus,
+.meshy-story-card:focus {
+  outline: 2px solid var(--meshy-primary);
+  outline-offset: 2px;
+}
+
+/* 键盘导航支持 */
+.meshy-user-stories-carousel:focus-within .meshy-carousel__track {
+  transition: none;
+}
+
+/* 打印样式 */
+@media print {
+  .meshy-user-stories-carousel {
+    max-width: none;
+    padding: 0;
+  }
+
+  .meshy-carousel__controls {
+    display: none;
+  }
+
+  .meshy-carousel__viewport {
+    overflow: visible;
+  }
+
+  .meshy-carousel__track {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    transform: none !important;
+  }
+
+  .meshy-story-card {
+    width: auto !important;
+    margin: 0;
+    break-inside: avoid;
+  }
 }
 
 /* ===== 打印样式 ===== */
