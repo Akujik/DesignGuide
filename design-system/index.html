@@ -683,6 +683,7 @@
             position: sticky;
             top: 0;
             height: 100vh;
+            z-index: 100;
         }
 
         .main-content {
@@ -923,6 +924,17 @@
                 border-right: none;
                 border-bottom: 1px solid var(--border-light);
             }
+
+            .demo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: var(--spacing-4);
+            }
+
+            /* Header/Footer组件特殊处理 - 确保在平板上也能正常显示 */
+            #headers .demo-grid,
+            #footers .demo-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -934,6 +946,50 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Header组件移动端优化 */
+            .meshy-header {
+                padding: var(--spacing-component-sm) var(--spacing-component-md);
+            }
+
+            .meshy-header__container {
+                flex-direction: column;
+                gap: var(--spacing-component-sm);
+            }
+
+            .meshy-header__logo {
+                font-size: var(--text-lg);
+            }
+
+            .meshy-header__nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: var(--spacing-component-sm);
+            }
+
+            .meshy-nav__item {
+                padding: var(--spacing-component-xs) var(--spacing-component-sm);
+                font-size: var(--text-sm);
+            }
+
+            .meshy-header__actions {
+                width: 100%;
+                justify-content: center;
+                gap: var(--spacing-component-sm);
+            }
+
+            /* Footer组件移动端优化 */
+            .meshy-footer__content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-6);
+            }
+
+            .meshy-footer__section {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
             .btn-showcase {
                 flex-direction: column;
                 align-items: stretch;
@@ -1017,9 +1073,6 @@
                 <ul class="nav-list">
                     <li><a href="#overview" class="nav-link active">系统概览</a></li>
                     <li><a href="#colors" class="nav-link">颜色系统</a></li>
-                    <li><a href="#typography" class="nav-link">字体排版</a></li>
-                    <li><a href="#spacing" class="nav-link">间距布局</a></li>
-                    <li><a href="#animations" class="nav-link">动画效果</a></li>
                 </ul>
             </div>
 
@@ -1046,9 +1099,13 @@
             <div class="nav-section">
                 <div class="nav-title">设计系统</div>
                 <ul class="nav-list">
+                    <li><a href="#typography" class="nav-link">字体排版</a></li>
+                    <li><a href="#spacing" class="nav-link">间距布局</a></li>
+                    <li><a href="#responsive" class="nav-link">响应式布局</a></li>
+                    <li><a href="#breadcrumbs" class="nav-link">面包屑导航</a></li>
+                    <li><a href="#navigation-components" class="nav-link">导航组件</a></li>
                     <li><a href="#gradients" class="nav-link">渐变系统</a></li>
                     <li><a href="#animations" class="nav-link">动画效果</a></li>
-                    <li><a href="#responsive" class="nav-link">响应式布局</a></li>
                 </ul>
             </div>
 
@@ -1184,6 +1241,148 @@
                             <div class="color-info">
                                 <div class="color-name">Error</div>
                                 <div class="color-value">#ff3b30 (90次使用)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Typography 字体排版系统 -->
+            <section id="typography" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">📝 Typography 字体排版系统</h2>
+                    <p class="section-description">基于真实网站的字体层次和排版规范</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">标题层次</h3>
+                        <p class="demo-description">从H1到H4的完整标题层次系统</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <h1 style="color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-md); font-size: 2.5rem; font-weight: 700;">Heading 1 - 主标题</h1>
+                            <h2 style="color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-md); font-size: 2rem; font-weight: 600;">Heading 2 - 二级标题</h2>
+                            <h3 style="color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-md); font-size: 1.5rem; font-weight: 600;">Heading 3 - 三级标题</h3>
+                            <h4 style="color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-md); font-size: 1.25rem; font-weight: 500;">Heading 4 - 四级标题</h4>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">正文样式</h3>
+                        <p class="demo-description">不同大小的正文和辅助文字样式</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <p style="color: var(--meshy-text-primary); font-size: 1rem; line-height: 1.6; margin-bottom: var(--meshy-space-md);">
+                                这是主要的正文内容，使用标准字体大小和行高，确保良好的可读性。
+                            </p>
+                            <p style="color: var(--meshy-text-secondary); font-size: 0.875rem; line-height: 1.5; margin-bottom: var(--meshy-space-md);">
+                                这是次要的文字内容，使用较小的字体和较淡的颜色，用于补充说明。
+                            </p>
+                            <p style="color: var(--meshy-text-tertiary); font-size: 0.75rem; line-height: 1.4;">
+                                这是辅助文字，使用最小的字体和最淡的颜色，用于标签和注释。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">字体样式</h3>
+                        <p class="demo-description">不同字体粗细和样式的展示</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <p style="font-weight: 300; color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">Thin (300) - 超细字体</p>
+                            <p style="font-weight: 400; color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">Regular (400) - 常规字体</p>
+                            <p style="font-weight: 500; color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">Medium (500) - 中等字体</p>
+                            <p style="font-weight: 600; color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">SemiBold (600) - 半粗字体</p>
+                            <p style="font-weight: 700; color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">Bold (700) - 粗体字体</p>
+                            <p style="font-style: italic; color: var(--meshy-text-secondary);">Italic - 斜体字体</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">代码字体</h3>
+                        <p class="demo-description">用于代码和技术的等宽字体</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <code style="background: var(--meshy-bg-tertiary); color: var(--meshy-primary); padding: 2px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace;">inline-code</code>
+                            <pre style="background: var(--meshy-bg-tertiary); color: var(--meshy-text-primary); padding: var(--meshy-space-md); border-radius: var(--meshy-radius-sm); margin-top: var(--meshy-space-md); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; overflow-x: auto;"><code>function createMeshyModel() {
+  const model = new MeshyAI();
+  return model.generate();
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Spacing 间距系统 -->
+            <section id="spacing" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">📐 Spacing 间距系统</h2>
+                    <p class="section-description">统一的间距规范，确保视觉一致性</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">基础间距</h3>
+                        <p class="demo-description">从4px到48px的标准化间距系统</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <div style="margin-bottom: var(--meshy-space-xs);">
+                                <div style="height: 4px; background: var(--meshy-primary); border-radius: 2px;"></div>
+                                <small style="color: var(--meshy-text-tertiary);">xs: 4px</small>
+                            </div>
+                            <div style="margin-bottom: var(--meshy-space-sm);">
+                                <div style="height: 8px; background: var(--meshy-secondary); border-radius: 2px;"></div>
+                                <small style="color: var(--meshy-text-tertiary);">sm: 8px</small>
+                            </div>
+                            <div style="margin-bottom: var(--meshy-space-md);">
+                                <div style="height: 16px; background: var(--meshy-success); border-radius: 2px;"></div>
+                                <small style="color: var(--meshy-text-tertiary);">md: 16px</small>
+                            </div>
+                            <div style="margin-bottom: var(--meshy-space-lg);">
+                                <div style="height: 24px; background: var(--meshy-warning); border-radius: 2px;"></div>
+                                <small style="color: var(--meshy-text-tertiary);">lg: 24px</small>
+                            </div>
+                            <div style="margin-bottom: var(--meshy-space-xl);">
+                                <div style="height: 32px; background: var(--meshy-error); border-radius: 2px;"></div>
+                                <small style="color: var(--meshy-text-tertiary);">xl: 32px</small>
+                            </div>
+                            <div>
+                                <div style="height: 48px; background: var(--meshy-info); border-radius: 2px;"></div>
+                                <small style="color: var(--meshy-text-tertiary);">2xl: 48px</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">组件间距</h3>
+                        <p class="demo-description">组件内部和组件之间的间距应用</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <div style="background: var(--meshy-bg-tertiary); padding: var(--meshy-space-md); border-radius: var(--meshy-radius-sm); margin-bottom: var(--meshy-space-md);">
+                                <div style="background: var(--meshy-primary); height: 20px; border-radius: 4px; margin-bottom: var(--meshy-space-sm);"></div>
+                                <div style="background: var(--meshy-text-tertiary); height: 16px; border-radius: 4px; width: 80%;"></div>
+                            </div>
+                            <div style="background: var(--meshy-bg-tertiary); padding: var(--meshy-space-md); border-radius: var(--meshy-radius-sm);">
+                                <div style="background: var(--meshy-secondary); height: 20px; border-radius: 4px; margin-bottom: var(--meshy-space-sm);"></div>
+                                <div style="background: var(--meshy-text-tertiary); height: 16px; border-radius: 4px; width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">布局间距</h3>
+                        <p class="demo-description">页面和布局层级的大间距应用</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-xl); border-radius: var(--meshy-radius-md);">
+                            <div style="background: var(--meshy-bg-tertiary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md); margin-bottom: var(--meshy-space-xl);">
+                                <h4 style="color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-md);">主要内容区</h4>
+                                <div style="background: var(--meshy-primary); height: 12px; border-radius: 3px; margin-bottom: var(--meshy-space-sm);"></div>
+                                <div style="background: var(--meshy-text-tertiary); height: 12px; border-radius: 3px; width: 90%;"></div>
+                            </div>
+                            <div style="background: var(--meshy-bg-tertiary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                                <h4 style="color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-md);">次要内容区</h4>
+                                <div style="background: var(--meshy-secondary); height: 12px; border-radius: 3px; margin-bottom: var(--meshy-space-sm);"></div>
+                                <div style="background: var(--meshy-text-tertiary); height: 12px; border-radius: 3px; width: 85%;"></div>
                             </div>
                         </div>
                     </div>
@@ -1818,6 +2017,259 @@ CSS类名统计:
 - Semi Design: 12,435个组件匹配
 - Tailwind CSS: 428个响应式类
 - 自定义组件: 混合使用
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Responsive Layout 响应式布局系统 -->
+            <section id="responsive" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">📱 Responsive Layout 响应式布局系统</h2>
+                    <p class="section-description">基于422个@media规则的完整响应式设计系统</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">响应式断点</h3>
+                        <p class="demo-description">完整的响应式断点系统</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <div style="margin-bottom: var(--meshy-space-md);">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--meshy-space-sm); background: var(--meshy-bg-tertiary); border-radius: var(--meshy-radius-sm); margin-bottom: var(--meshy-space-sm);">
+                                    <span style="color: var(--meshy-text-primary); font-weight: 600;">移动端</span>
+                                    <span style="color: var(--meshy-text-secondary); font-size: 0.875rem;">&lt; 640px</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--meshy-space-sm); background: var(--meshy-bg-tertiary); border-radius: var(--meshy-radius-sm); margin-bottom: var(--meshy-space-sm);">
+                                    <span style="color: var(--meshy-text-primary); font-weight: 600;">平板</span>
+                                    <span style="color: var(--meshy-text-secondary); font-size: 0.875rem;">640px - 768px</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--meshy-space-sm); background: var(--meshy-bg-tertiary); border-radius: var(--meshy-radius-sm); margin-bottom: var(--meshy-space-sm);">
+                                    <span style="color: var(--meshy-text-primary); font-weight: 600;">小桌面</span>
+                                    <span style="color: var(--meshy-text-secondary); font-size: 0.875rem;">768px - 1024px</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--meshy-space-sm); background: var(--meshy-bg-tertiary); border-radius: var(--meshy-radius-sm);">
+                                    <span style="color: var(--meshy-text-primary); font-weight: 600;">大桌面</span>
+                                    <span style="color: var(--meshy-text-secondary); font-size: 0.875rem;">&gt; 1024px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">响应式网格</h3>
+                        <p class="demo-description">自适应网格布局系统</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--meshy-space-md); margin-bottom: var(--meshy-space-md);">
+                                <div style="background: var(--meshy-primary); height: 60px; border-radius: var(--meshy-radius-sm); display: flex; align-items: center; justify-content: center; color: #000; font-weight: 600;">Item 1</div>
+                                <div style="background: var(--meshy-secondary); height: 60px; border-radius: var(--meshy-radius-sm); display: flex; align-items: center; justify-content: center; color: #000; font-weight: 600;">Item 2</div>
+                                <div style="background: var(--meshy-success); height: 60px; border-radius: var(--meshy-radius-sm); display: flex; align-items: center; justify-content: center; color: #000; font-weight: 600;">Item 3</div>
+                                <div style="background: var(--meshy-warning); height: 60px; border-radius: var(--meshy-radius-sm); display: flex; align-items: center; justify-content: center; color: #000; font-weight: 600;">Item 4</div>
+                            </div>
+                            <p style="color: var(--meshy-text-tertiary); font-size: 0.75rem; text-align: center;">自动适应网格 - 根据容器大小调整列数</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">响应式文字</h3>
+                        <p class="demo-description">根据屏幕大小调整的文字系统</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <h1 style="color: var(--meshy-text-primary); font-size: clamp(1.5rem, 5vw, 2.5rem); margin-bottom: var(--meshy-space-sm);">响应式主标题</h1>
+                            <p style="color: var(--meshy-text-secondary); font-size: clamp(0.875rem, 2.5vw, 1rem); margin-bottom: var(--meshy-space-md);">这段文字会根据屏幕大小自动调整大小，确保在各种设备上都有良好的阅读体验。</p>
+                            <div style="background: var(--meshy-bg-tertiary); padding: var(--meshy-space-md); border-radius: var(--meshy-radius-sm);">
+                                <p style="color: var(--meshy-text-tertiary); font-size: 0.75rem;">字体大小: clamp(0.875rem, 2.5vw, 1rem)</p>
+                                <p style="color: var(--meshy-text-tertiary); font-size: 0.75rem;">最小: 14px, 理想: 2.5vw, 最大: 16px</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">移动优先设计</h3>
+                        <p class="demo-description">从移动端开始的设计方法</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <div style="margin-bottom: var(--meshy-space-md);">
+                                <h4 style="color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">基础样式 (移动端)</h4>
+                                <div style="background: var(--meshy-bg-tertiary); padding: var(--meshy-space-sm); border-radius: var(--meshy-radius-sm); margin-bottom: var(--meshy-space-sm);">
+                                    <div style="display: flex; flex-direction: column; gap: var(--meshy-space-sm);">
+                                        <div style="background: var(--meshy-primary); height: 20px; border-radius: 3px;"></div>
+                                        <div style="background: var(--meshy-text-tertiary); height: 16px; border-radius: 3px; width: 90%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--meshy-text-primary); margin-bottom: var(--meshy-space-sm);">增强样式 (桌面端)</h4>
+                                <div style="background: var(--meshy-bg-tertiary); padding: var(--meshy-space-sm); border-radius: var(--meshy-radius-sm);">
+                                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: var(--meshy-space-md); align-items: start;">
+                                        <div style="background: var(--meshy-primary); height: 40px; border-radius: 3px;"></div>
+                                        <div style="display: flex; flex-direction: column; gap: var(--meshy-space-xs);">
+                                            <div style="background: var(--meshy-text-tertiary); height: 16px; border-radius: 3px; width: 100%;"></div>
+                                            <div style="background: var(--meshy-text-tertiary); height: 16px; border-radius: 3px; width: 80%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Breadcrumbs 面包屑导航 -->
+            <section id="breadcrumbs" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">🧭 Breadcrumbs 面包屑导航</h2>
+                    <p class="section-description">完整的导航路径指示系统</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">基础面包屑</h3>
+                        <p class="demo-description">简洁的路径导航</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <nav style="display: flex; align-items: center; gap: var(--meshy-space-sm); flex-wrap: wrap;">
+                                <a href="#" style="color: var(--meshy-text-secondary); text-decoration: none;">首页</a>
+                                <span style="color: var(--meshy-text-tertiary);">/</span>
+                                <a href="#" style="color: var(--meshy-text-secondary); text-decoration: none;">产品</a>
+                                <span style="color: var(--meshy-text-tertiary);">/</span>
+                                <span style="color: var(--meshy-text-primary); font-weight: 500;">3D模型生成</span>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">图标面包屑</h3>
+                        <p class="demo-description">带图标的视觉导航</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <nav style="display: flex; align-items: center; gap: var(--meshy-space-sm); flex-wrap: wrap;">
+                                <span style="color: var(--meshy-primary);">🏠</span>
+                                <a href="#" style="color: var(--meshy-text-secondary); text-decoration: none;">首页</a>
+                                <span style="color: var(--meshy-text-tertiary);">→</span>
+                                <span style="color: var(--meshy-secondary);">🎨</span>
+                                <a href="#" style="color: var(--meshy-text-secondary); text-decoration: none;">设计</a>
+                                <span style="color: var(--meshy-text-tertiary);">→</span>
+                                <span style="color: var(--meshy-primary);">🚀</span>
+                                <span style="color: var(--meshy-text-primary); font-weight: 500;">模型生成器</span>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">下拉面包屑</h3>
+                        <p class="demo-description">包含下拉菜单的导航</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <nav style="display: flex; align-items: center; gap: var(--meshy-space-sm); flex-wrap: wrap;">
+                                <a href="#" style="color: var(--meshy-text-secondary); text-decoration: none;">首页</a>
+                                <span style="color: var(--meshy-text-tertiary);">▶</span>
+                                <div style="position: relative; display: inline-block;">
+                                    <button style="background: var(--meshy-bg-tertiary); color: var(--meshy-text-primary); border: 1px solid var(--meshy-border-primary); padding: 4px 8px; border-radius: var(--meshy-radius-sm); font-size: 0.875rem; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                                        产品 ▼
+                                    </button>
+                                </div>
+                                <span style="color: var(--meshy-text-tertiary);">▶</span>
+                                <span style="color: var(--meshy-text-primary); font-weight: 500;">AI生成</span>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">移动端面包屑</h3>
+                        <p class="demo-description">适配移动端的简化导航</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <nav style="display: flex; align-items: center; gap: var(--meshy-space-sm); flex-wrap: wrap;">
+                                <button style="background: none; border: none; color: var(--meshy-text-secondary); font-size: 1.2rem; cursor: pointer;">←</button>
+                                <span style="color: var(--meshy-text-primary); font-weight: 500; font-size: 0.9rem;">返回上一级</span>
+                            </nav>
+                            <div style="margin-top: var(--meshy-space-sm); padding-top: var(--meshy-space-sm); border-top: 1px solid var(--meshy-border-primary);">
+                                <p style="color: var(--meshy-text-tertiary); font-size: 0.75rem;">完整路径: 首页 > 产品 > AI生成</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Components 导航组件 -->
+            <section id="navigation-components" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">🧭 Navigation Components 导航组件</h2>
+                    <p class="section-description">完整的导航系统组件</p>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3 class="demo-title">标签页导航</h3>
+                        <p class="demo-description">水平标签页切换</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <div style="display: flex; border-bottom: 1px solid var(--meshy-border-primary); margin-bottom: var(--meshy-space-md);">
+                                <button style="background: none; border: none; color: var(--meshy-primary); padding: var(--meshy-space-sm) var(--meshy-space-md); border-bottom: 2px solid var(--meshy-primary); cursor: pointer;">概览</button>
+                                <button style="background: none; border: none; color: var(--meshy-text-secondary); padding: var(--meshy-space-sm) var(--meshy-space-md); cursor: pointer;">功能</button>
+                                <button style="background: none; border: none; color: var(--meshy-text-secondary); padding: var(--meshy-space-sm) var(--meshy-space-md); cursor: pointer;">定价</button>
+                                <button style="background: none; border: none; color: var(--meshy-text-secondary); padding: var(--meshy-space-sm) var(--meshy-space-md); cursor: pointer;">文档</button>
+                            </div>
+                            <div style="padding: var(--meshy-space-md); background: var(--meshy-bg-tertiary); border-radius: var(--meshy-radius-sm);">
+                                <p style="color: var(--meshy-text-primary);">当前选中: 概览</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">垂直导航</h3>
+                        <p class="demo-description">侧边栏垂直导航</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <nav style="display: flex; flex-direction: column; gap: 2px;">
+                                <a href="#" style="background: var(--meshy-primary); color: #000; padding: var(--meshy-space-sm) var(--meshy-space-md); border-radius: var(--meshy-radius-sm); text-decoration: none; font-weight: 500;">📊 仪表盘</a>
+                                <a href="#" style="color: var(--meshy-text-secondary); padding: var(--meshy-space-sm) var(--meshy-space-md); border-radius: var(--meshy-radius-sm); text-decoration: none;">🎨 项目管理</a>
+                                <a href="#" style="color: var(--meshy-text-secondary); padding: var(--meshy-space-sm) var(--meshy-space-md); border-radius: var(--meshy-radius-sm); text-decoration: none;">🔧 工具设置</a>
+                                <a href="#" style="color: var(--meshy-text-secondary); padding: var(--meshy-space-sm) var(--meshy-space-md); border-radius: var(--meshy-radius-sm); text-decoration: none;">👤 账户信息</a>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">步骤导航</h3>
+                        <p class="demo-description">多步骤流程指示</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                                    <div style="width: 24px; height: 24px; background: var(--meshy-primary); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; margin-bottom: 4px;">1</div>
+                                    <span style="color: var(--meshy-text-primary); font-size: 0.75rem;">上传</span>
+                                </div>
+                                <div style="flex: 1; height: 2px; background: var(--meshy-primary); margin: 0 8px;"></div>
+                                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                                    <div style="width: 24px; height: 24px; background: var(--meshy-primary); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; margin-bottom: 4px;">2</div>
+                                    <span style="color: var(--meshy-text-primary); font-size: 0.75rem;">设置</span>
+                                </div>
+                                <div style="flex: 1; height: 2px; background: var(--meshy-border-primary); margin: 0 8px;"></div>
+                                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                                    <div style="width: 24px; height: 24px; background: var(--meshy-border-secondary); color: var(--meshy-text-tertiary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; margin-bottom: 4px;">3</div>
+                                    <span style="color: var(--meshy-text-tertiary); font-size: 0.75rem;">完成</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3 class="demo-title">分页导航</h3>
+                        <p class="demo-description">页面分页控制</p>
+
+                        <div style="background: var(--meshy-bg-secondary); padding: var(--meshy-space-lg); border-radius: var(--meshy-radius-md);">
+                            <div style="display: flex; align-items: center; gap: var(--meshy-space-sm);">
+                                <button style="background: var(--meshy-bg-tertiary); color: var(--meshy-text-tertiary); border: 1px solid var(--meshy-border-primary); padding: 6px 10px; border-radius: var(--meshy-radius-sm); cursor: pointer;">←</button>
+                                <button style="background: var(--meshy-primary); color: #000; border: 1px solid var(--meshy-primary); padding: 6px 10px; border-radius: var(--meshy-radius-sm); cursor: pointer;">1</button>
+                                <button style="background: var(--meshy-bg-tertiary); color: var(--meshy-text-primary); border: 1px solid var(--meshy-border-primary); padding: 6px 10px; border-radius: var(--meshy-radius-sm); cursor: pointer;">2</button>
+                                <button style="background: var(--meshy-bg-tertiary); color: var(--meshy-text-primary); border: 1px solid var(--meshy-border-primary); padding: 6px 10px; border-radius: var(--meshy-radius-sm); cursor: pointer;">3</button>
+                                <span style="color: var(--meshy-text-tertiary);">...</span>
+                                <button style="background: var(--meshy-bg-tertiary); color: var(--meshy-text-primary); border: 1px solid var(--meshy-border-primary); padding: 6px 10px; border-radius: var(--meshy-radius-sm); cursor: pointer;">10</button>
+                                <button style="background: var(--meshy-bg-tertiary); color: var(--meshy-text-primary); border: 1px solid var(--meshy-border-primary); padding: 6px 10px; border-radius: var(--meshy-radius-sm); cursor: pointer;">→</button>
+                            </div>
                         </div>
                     </div>
                 </div>

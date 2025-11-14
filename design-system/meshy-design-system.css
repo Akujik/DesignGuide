@@ -150,7 +150,7 @@ body {
   background: var(--meshy-bg-secondary);
   border-right: 1px solid var(--meshy-border-primary);
   overflow-y: auto;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .meshy-sidebar__container {
