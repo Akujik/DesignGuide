@@ -824,6 +824,7 @@
             border-radius: var(--radius-xl);
             padding: var(--spacing-6);
             box-shadow: var(--shadow-sm);
+            position: relative;
         }
 
         .demo-title {
@@ -876,6 +877,56 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
             border-color: var(--meshy-primary);
+        }
+
+        /* 源代码查看按钮 */
+        .code-view-btn {
+            position: absolute;
+            top: var(--spacing-3);
+            right: var(--spacing-3);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            z-index: 1000;
+            opacity: 0.8;
+        }
+
+        .code-view-btn:hover {
+            background: var(--meshy-bg-tertiary);
+            border-color: var(--meshy-primary);
+            color: var(--meshy-primary);
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .code-view-btn:active {
+            transform: scale(0.95);
+        }
+
+        .code-view-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* 确保演示卡片有相对定位，用于按钮定位 */
+        .demo-card {
+            position: relative;
+        }
+
+        /* 改进悬停效果 */
+        .demo-card:hover .code-view-btn {
+            opacity: 1;
+            transform: scale(1.1);
         }
 
         .feature-icon {
@@ -1347,9 +1398,224 @@
             align-items: center;
             flex-wrap: wrap;
         }
+
+        /* 代码查看模态框 */
+        .code-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: var(--spacing-4);
+        }
+
+        .code-modal.active {
+            display: flex;
+        }
+
+        .code-modal-content {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            max-width: 90vw;
+            max-height: 90vh;
+            width: 800px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .code-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-4);
+            border-bottom: 1px solid var(--border-light);
+            background: var(--bg-secondary);
+        }
+
+        .code-modal-title {
+            font-size: var(--text-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+
+        .code-modal-close {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: var(--spacing-2);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .code-modal-close:hover {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .code-modal-tabs {
+            display: flex;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .code-modal-tab {
+            padding: var(--spacing-3) var(--spacing-4);
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: var(--text-sm);
+            font-weight: var(--font-weight-medium);
+            transition: all var(--transition-base);
+            border-bottom: 2px solid transparent;
+        }
+
+        .code-modal-tab.active {
+            color: var(--meshy-primary);
+            background: var(--bg-primary);
+            border-bottom-color: var(--meshy-primary);
+        }
+
+        .code-modal-tab:hover:not(.active) {
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+        }
+
+        .code-modal-body {
+            flex: 1;
+            padding: var(--spacing-4);
+            overflow: auto;
+            background: var(--bg-primary);
+        }
+
+        .code-modal-code {
+            display: none;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-4);
+            overflow: auto;
+            height: 100%;
+            white-space: pre;
+            color: var(--text-primary);
+        }
+
+        .code-modal-code.active {
+            display: block;
+        }
+
+        .code-copy-btn {
+            background: var(--meshy-primary);
+            color: var(--text-primary);
+            border: none;
+            padding: var(--spacing-2) var(--spacing-3);
+            border-radius: var(--radius-lg);
+            font-size: var(--text-sm);
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+
+        .code-copy-btn:hover {
+            background: var(--meshy-primary-hover);
+            transform: scale(1.05);
+        }
+
+        .code-copy-btn:active {
+            transform: scale(0.95);
+        }
+
+        .code-copy-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .code-modal-content {
+                width: 100vw;
+                height: 100vh;
+                max-width: none;
+                max-height: none;
+                border-radius: 0;
+            }
+
+            .code-modal-header,
+            .code-modal-body {
+                padding: var(--spacing-3);
+            }
+
+            .code-modal-code {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- 代码查看模态框 -->
+    <div class="code-modal" id="codeModal">
+        <div class="code-modal-content">
+            <div class="code-modal-header">
+                <h3 class="code-modal-title">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 18l6-6-6-6"></path>
+                        <path d="M8 6l-6 6 6 6"></path>
+                    </svg>
+                    组件源代码
+                </h3>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <button class="code-copy-btn" onclick="copyCode()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        复制代码
+                    </button>
+                    <button class="code-modal-close" onclick="closeCodeModal()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6L6 18"></path>
+                            <path d="M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="code-modal-tabs">
+                <button class="code-modal-tab active" onclick="switchCodeTab('html')">HTML</button>
+                <button class="code-modal-tab" onclick="switchCodeTab('css')">CSS</button>
+                <button class="code-modal-tab" onclick="switchCodeTab('javascript')">JavaScript</button>
+            </div>
+            <div class="code-modal-body">
+                <div class="code-modal-code active" id="html-code"></div>
+                <div class="code-modal-code" id="css-code"></div>
+                <div class="code-modal-code" id="javascript-code"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="preview-layout">
         <!-- 侧边导航 -->
         <nav class="sidebar">
@@ -4316,6 +4582,527 @@ CSS类名统计:
                 }
             }
         }
+
+        // ===== 代码查看功能 =====
+
+        // 组件代码数据存储
+        const componentCodeData = {
+            'brand-colors': {
+                html: `<div class="color-swatch">
+    <div class="color-preview" style="background-color: var(--meshy-green-200);"></div>
+    <div class="color-info">
+        <div class="color-name">Meshy Green Primary</div>
+        <div class="color-value">#c5f955</div>
+    </div>
+</div>`,
+                css: `.color-swatch {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+}
+
+.color-preview {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+}
+
+.color-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.color-name {
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+}
+
+.color-value {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    font-family: monospace;
+}`,
+                javascript: `// 颜色交互功能
+document.querySelectorAll('.color-swatch').forEach(swatch => {
+    swatch.addEventListener('click', function() {
+        const colorValue = this.querySelector('.color-value').textContent;
+        navigator.clipboard.writeText(colorValue);
+
+        // 显示复制成功提示
+        const originalText = this.querySelector('.color-value').textContent;
+        this.querySelector('.color-value').textContent = '已复制!';
+        setTimeout(() => {
+            this.querySelector('.color-value').textContent = originalText;
+        }, 1000);
+    });
+});`
+            },
+            'buttons-primary': {
+                html: `<button class="meshy-btn meshy-btn--primary">
+    <span>主要按钮</span>
+</button>
+
+<button class="meshy-btn meshy-btn--primary" disabled>
+    <span>禁用按钮</span>
+</button>`,
+                css: `.meshy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3) var(--spacing-4);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+}
+
+.meshy-btn--primary {
+    background: var(--meshy-primary);
+    color: var(--text-primary);
+}
+
+.meshy-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.meshy-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}`,
+                javascript: `// 按钮交互功能
+document.querySelectorAll('.meshy-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        // 添加点击反馈
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});`
+            },
+            'newsletter-subscription': {
+                html: `<div class="meshy-newsletter-subscription">
+    <div class="meshy-newsletter__content">
+        <div class="meshy-newsletter__header">
+            <h2 class="meshy-newsletter__title">订阅更新</h2>
+            <p class="meshy-newsletter__description">加入我们的新闻通讯，以便了解所有Meshy的事情</p>
+        </div>
+    </div>
+
+    <div class="meshy-newsletter__form-container">
+        <form class="meshy-newsletter__form" data-status="default">
+            <div class="meshy-newsletter__input-wrapper">
+                <div class="meshy-form-field">
+                    <input
+                        id="newsletter-email"
+                        type="email"
+                        class="meshy-form-input meshy-newsletter__input"
+                        placeholder="输入您的电子邮件..."
+                        autocomplete="off"
+                        required
+                    />
+                </div>
+            </div>
+
+            <button type="submit" class="meshy-btn meshy-btn--primary meshy-newsletter__btn">
+                <span class="meshy-btn__text">订阅</span>
+            </button>
+        </form>
+    </div>
+</div>`,
+                css: `.meshy-newsletter-subscription {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: var(--meshy-space-xl);
+    background: var(--meshy-bg-secondary);
+    border-radius: var(--meshy-radius-2xl);
+    padding: var(--meshy-space-xl);
+}
+
+.meshy-newsletter__title {
+    color: var(--meshy-text-primary);
+    font-size: var(--meshy-text-xl);
+    font-weight: var(--meshy-font-semibold);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.meshy-newsletter__description {
+    color: var(--meshy-text-tertiary);
+    font-size: var(--meshy-text-sm);
+    font-weight: var(--meshy-font-normal);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.meshy-newsletter__form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: var(--meshy-space-md);
+}
+
+@media (min-width: 640px) {
+    .meshy-newsletter__form {
+        flex-direction: row;
+        gap: var(--meshy-space-sm);
+    }
+}
+
+.meshy-newsletter__input {
+    width: 100%;
+    height: var(--meshy-input-height, 40px);
+    border-radius: var(--meshy-radius-xl);
+    background: var(--meshy-bg-base);
+}
+
+.meshy-form-input {
+    width: 100%;
+    background: var(--meshy-bg-tertiary);
+    border: 1px solid var(--meshy-border-primary);
+    border-radius: var(--meshy-radius-md);
+    padding: 12px 16px;
+    color: var(--meshy-text-primary);
+    font-size: 14px;
+    transition: all var(--meshy-transition-fast);
+}
+
+.meshy-form-input:focus {
+    outline: none;
+    border-color: var(--meshy-primary);
+    box-shadow: 0 0 0 3px rgba(197, 249, 85, 0.1);
+}`,
+                javascript: `class NewsletterSubscription {
+    constructor(container) {
+        this.container = container;
+        this.form = container.querySelector('.meshy-newsletter__form');
+        this.emailInput = container.querySelector('.meshy-newsletter__input');
+        this.submitBtn = container.querySelector('.meshy-newsletter__btn');
+        this.status = 'default';
+        this.init();
+    }
+
+    init() {
+        this.setupEventListeners();
+    }
+
+    setupEventListeners() {
+        this.form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleSubmit();
+        });
+
+        this.emailInput.addEventListener('input', () => {
+            this.validateEmail();
+            this.clearErrorState();
+        });
+    }
+
+    handleSubmit() {
+        const email = this.emailInput.value.trim();
+
+        if (!this.isValidEmail(email)) {
+            this.setErrorState('请输入有效的邮箱地址');
+            return;
+        }
+
+        this.setLoadingState();
+
+        // 模拟API调用
+        setTimeout(() => {
+            this.setSuccessState();
+            this.showSuccessMessage('订阅成功！感谢您的关注。');
+        }, 1500);
+    }
+
+    isValidEmail(email) {
+        if (!email) return false;
+        const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    setLoadingState() {
+        this.status = 'loading';
+        this.form.setAttribute('data-status', 'loading');
+        this.emailInput.disabled = true;
+        this.submitBtn.disabled = true;
+    }
+
+    setSuccessState() {
+        this.status = 'success';
+        this.form.setAttribute('data-status', 'success');
+    }
+
+    setErrorState(message) {
+        this.status = 'error';
+        this.form.setAttribute('data-status', 'error');
+        this.showErrorMessage(message);
+        this.emailInput.focus();
+    }
+}
+
+// 初始化订阅组件
+document.addEventListener('DOMContentLoaded', () => {
+    const subscriptions = document.querySelectorAll('.meshy-newsletter-subscription');
+    subscriptions.forEach(subscription => new NewsletterSubscription(subscription));
+});`
+            }
+        };
+
+        let currentComponent = null;
+        let currentTab = 'html';
+
+        // 打开代码查看模态框
+        function openCodeModal(componentId) {
+            const modal = document.getElementById('codeModal');
+            const component = componentCodeData[componentId];
+
+            if (!component) {
+                console.error('组件代码数据未找到:', componentId);
+                return;
+            }
+
+            currentComponent = component;
+
+            // 设置代码内容
+            document.getElementById('html-code').textContent = component.html || '// HTML代码暂未提供';
+            document.getElementById('css-code').textContent = component.css || '// CSS代码暂未提供';
+            document.getElementById('javascript-code').textContent = component.javascript || '// JavaScript代码暂未提供';
+
+            // 显示模态框
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // 重置到HTML标签页
+            switchCodeTab('html');
+        }
+
+        // 关闭代码查看模态框
+        function closeCodeModal() {
+            const modal = document.getElementById('codeModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            currentComponent = null;
+        }
+
+        // 切换代码标签页
+        function switchCodeTab(tab) {
+            currentTab = tab;
+
+            // 更新标签状态
+            document.querySelectorAll('.code-modal-tab').forEach(t => {
+                t.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // 更新代码显示
+            document.querySelectorAll('.code-modal-code').forEach(code => {
+                code.classList.remove('active');
+            });
+            document.getElementById(tab + '-code').classList.add('active');
+        }
+
+        // 复制代码功能
+        function copyCode() {
+            if (!currentComponent) return;
+
+            const codeText = currentComponent[currentTab] || '';
+            navigator.clipboard.writeText(codeText).then(() => {
+                // 显示复制成功反馈
+                const copyBtn = document.querySelector('.code-copy-btn');
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = `
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                    已复制!
+                `;
+                copyBtn.style.background = 'var(--meshy-success)';
+
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                    copyBtn.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('复制失败:', err);
+            });
+        }
+
+        // ESC键关闭模态框
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCodeModal();
+            }
+        });
+
+        // 点击模态框外部关闭
+        document.getElementById('codeModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeCodeModal();
+            }
+        });
+
+        // 初始化代码查看按钮
+        function initializeCodeViewButtons() {
+            // 为所有演示卡片添加代码查看按钮
+            const demoCards = document.querySelectorAll('.demo-card');
+            console.log(`找到 ${demoCards.length} 个演示卡片`);
+
+            demoCards.forEach((card, index) => {
+                const title = card.querySelector('.demo-title');
+                if (title) {
+                    const titleText = title.textContent.trim();
+
+                    // 先检查是否已有按钮，避免重复添加
+                    if (card.querySelector('.code-view-btn')) {
+                        return;
+                    }
+
+                    // 根据标题匹配具体组件代码，否则生成通用代码
+                    let componentId = null;
+
+                    if (titleText === '品牌主色') {
+                        componentId = 'brand-colors';
+                    } else if (titleText === '品牌渐变按钮' ||
+                              titleText === '按钮变体' ||
+                              titleText === '按钮尺寸' ||
+                              titleText === '按钮状态') {
+                        componentId = 'buttons-primary';
+                    } else if (titleText === '基础订阅组件') {
+                        componentId = 'newsletter-subscription';
+                    } else {
+                        // 为所有其他组件生成通用ID
+                        componentId = `component-${index}`;
+                        // 为通用组件生成代码
+                        generateGenericComponentCode(componentId, titleText, card);
+                    }
+
+                    addCodeButtonToCard(card, componentId);
+                }
+            });
+        }
+
+        // 生成通用组件代码
+        function generateGenericComponentCode(componentId, titleText, card) {
+            const demoContent = card.querySelector('.demo-content') || card.querySelector('[style*="background"], [style*="padding"]');
+            let htmlContent = '';
+            let cssContent = '';
+
+            if (demoContent) {
+                htmlContent = demoContent.outerHTML || demoContent.innerHTML || '';
+            } else {
+                // 如果找不到具体内容，从card中提取主要结构
+                const innerContent = card.querySelector('h3').nextElementSibling;
+                if (innerContent) {
+                    htmlContent = innerContent.outerHTML || '';
+                }
+            }
+
+            // 清理和格式化代码
+            htmlContent = htmlContent
+                .replace(/style="([^"]+)"/g, (match, style) => {
+                    // 简化内联样式，使其更易读
+                    return 'style="' + style.replace(/;\s*/g, ';\n    ') + '"';
+                })
+                .replace(/></g, '>\n    <');
+
+            cssContent = `/* ${titleText} 组件样式 */
+.demo-component {
+    /* 使用设计系统令牌 */
+    background: var(--meshy-bg-secondary);
+    color: var(--meshy-text-primary);
+    border-radius: var(--meshy-radius-lg);
+    padding: var(--meshy-space-lg);
+    /* 根据具体需求调整样式 */
+}`;
+
+            // 存储到组件代码数据中
+            componentCodeData[componentId] = {
+                title: titleText,
+                html: htmlContent || `<div class="demo-component">\n    <!-- ${titleText} 组件内容 -->\n</div>`,
+                css: cssContent,
+                js: `// ${titleText} 组件交互逻辑
+document.addEventListener('DOMContentLoaded', function() {
+    const component = document.querySelector('.demo-component');
+    // 添加组件交互逻辑
+});`
+            };
+        }
+
+        // 为卡片添加代码查看按钮
+        function addCodeButtonToCard(card, componentId) {
+            // 检查是否已有按钮
+            if (card.querySelector('.code-view-btn')) {
+                return;
+            }
+
+            // 确保卡片有相对定位
+            const cardStyle = window.getComputedStyle(card);
+            if (cardStyle.position === 'static') {
+                card.style.position = 'relative';
+            }
+
+            const button = document.createElement('button');
+            button.className = 'code-view-btn';
+            button.setAttribute('data-component-id', componentId);
+            button.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 18l6-6-6-6"></path>
+                    <path d="M8 6l-6 6 6 6"></path>
+                </svg>
+            `;
+            button.setAttribute('title', '查看源代码');
+            button.setAttribute('aria-label', '查看组件源代码');
+
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openCodeModal(componentId);
+            });
+
+            // 添加到卡片的右上角
+            card.appendChild(button);
+        }
+
+        // 页面加载完成后初始化
+        function initCodeViewFeature() {
+            console.log('开始初始化代码查看功能...');
+            initializeCodeViewButtons();
+
+            // 验证按钮添加情况
+            setTimeout(() => {
+                const buttons = document.querySelectorAll('.code-view-btn');
+                const cards = document.querySelectorAll('.demo-card');
+                console.log(`初始化完成: ${buttons.length} 个按钮已添加，总共 ${cards.length} 个演示卡片`);
+
+                // 显示每个按钮的组件ID
+                buttons.forEach((btn, index) => {
+                    const componentId = btn.getAttribute('data-component-id');
+                    console.log(`按钮 ${index + 1}: ${componentId}`);
+                });
+            }, 1000);
+        }
+
+        // 多种初始化方式确保功能启动
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCodeViewFeature);
+        } else {
+            // DOM已经加载完成
+            setTimeout(initCodeViewFeature, 100);
+        }
+
     </script>
 </body>
 </html>
