@@ -1,0 +1,625 @@
+/* Meshy AI 设计系统样式 - 基于真实源文件 v2.0 */
+
+/* ===== 基础重置 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== 核心CSS变量 - 暗色主题优先 ===== */
+:root {
+  /* 背景色系 */
+  --meshy-bg-primary: #0a0a0a;
+  --meshy-bg-secondary: #1a1a1a;
+  --meshy-bg-tertiary: #2a2a2a;
+  --meshy-bg-quaternary: #333333;
+
+  /* 文字色系 */
+  --meshy-text-primary: #ffffff;
+  --meshy-text-secondary: #a0a0a0;
+  --meshy-text-tertiary: #666666;
+  --meshy-text-quaternary: #444444;
+
+  /* 品牌色系 */
+  --meshy-primary: #C5F955;
+  --meshy-primary-hover: #E3FFA7;
+  --meshy-secondary: #FF97C2;
+  --meshy-secondary-hover: #FFC0DF;
+
+  /* 功能色系 */
+  --meshy-success: #69FFE5;
+  --meshy-warning: #FFF75D;
+  --meshy-error: #FF4757;
+  --meshy-info: #6DD8FF;
+
+  /* 边框和分隔线 */
+  --meshy-border-primary: rgba(255, 255, 255, 0.1);
+  --meshy-border-secondary: rgba(255, 255, 255, 0.05);
+  --meshy-border-tertiary: rgba(255, 255, 255, 0.02);
+
+  /* 阴影系统 */
+  --meshy-shadow-small: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --meshy-shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --meshy-shadow-large: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  /* 布局变量 */
+  --meshy-header-height: 64px;
+  --meshy-sidebar-width: 280px;
+  --meshy-container-max-width: 1200px;
+  --meshy-container-padding: 24px;
+
+  /* 字体系统 */
+  --meshy-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --meshy-font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  /* 间距系统 */
+  --meshy-space-xs: 4px;
+  --meshy-space-sm: 8px;
+  --meshy-space-md: 16px;
+  --meshy-space-lg: 24px;
+  --meshy-space-xl: 32px;
+  --meshy-space-2xl: 48px;
+
+  /* 圆角系统 */
+  --meshy-radius-sm: 6px;
+  --meshy-radius-md: 8px;
+  --meshy-radius-lg: 12px;
+  --meshy-radius-xl: 16px;
+  --meshy-radius-full: 50px;
+
+  /* 过渡动画 */
+  --meshy-transition-fast: 0.15s ease;
+  --meshy-transition-normal: 0.2s ease;
+  --meshy-transition-slow: 0.3s ease;
+}
+
+/* ===== 基础样式 ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--meshy-font-family);
+  background: var(--meshy-bg-primary);
+  color: var(--meshy-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== 布局组件 ===== */
+.meshy-container {
+  max-width: var(--meshy-container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--meshy-container-padding);
+}
+
+/* Header组件 */
+.meshy-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--meshy-header-height);
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--meshy-border-primary);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--meshy-container-padding);
+}
+
+.meshy-header__container {
+  width: 100%;
+  max-width: var(--meshy-container-max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meshy-header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--meshy-space-sm);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--meshy-text-primary);
+}
+
+.meshy-header__logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--meshy-primary), var(--meshy-secondary));
+  border-radius: var(--meshy-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--meshy-bg-primary);
+  font-weight: bold;
+}
+
+/* Sidebar组件 */
+.meshy-sidebar {
+  position: fixed;
+  left: 0;
+  top: var(--meshy-header-height);
+  bottom: 0;
+  width: var(--meshy-sidebar-width);
+  background: var(--meshy-bg-secondary);
+  border-right: 1px solid var(--meshy-border-primary);
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.meshy-sidebar__container {
+  padding: var(--meshy-space-lg);
+}
+
+.meshy-sidebar__header {
+  margin-bottom: var(--meshy-space-lg);
+}
+
+.meshy-sidebar__title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--meshy-text-tertiary);
+  margin-bottom: var(--meshy-space-md);
+}
+
+.meshy-sidebar__nav {
+  list-style: none;
+}
+
+.meshy-sidebar__item {
+  margin-bottom: 2px;
+}
+
+.meshy-sidebar__link {
+  display: block;
+  padding: var(--meshy-space-sm) var(--meshy-space-md);
+  color: var(--meshy-text-secondary);
+  text-decoration: none;
+  border-radius: var(--meshy-radius-sm);
+  font-size: 14px;
+  transition: all var(--meshy-transition-fast);
+}
+
+.meshy-sidebar__link:hover,
+.meshy-sidebar__link.active {
+  color: var(--meshy-primary);
+  background: rgba(197, 249, 85, 0.1);
+}
+
+/* Main内容区 */
+.meshy-main {
+  margin-left: var(--meshy-sidebar-width);
+  margin-top: var(--meshy-header-height);
+  min-height: calc(100vh - var(--meshy-header-height));
+}
+
+.meshy-main__container {
+  padding: var(--meshy-space-2xl);
+  max-width: calc(var(--meshy-container-max-width) - var(--meshy-sidebar-width));
+}
+
+/* ===== 按钮组件 ===== */
+.meshy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--meshy-space-sm);
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--meshy-radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--meshy-transition-normal);
+  min-height: 44px; /* 触摸目标最小尺寸 */
+}
+
+/* 主要渐变按钮 */
+.meshy-btn--primary-gradient {
+  background: linear-gradient(to bottom, var(--meshy-primary), var(--meshy-primary-hover));
+  color: var(--meshy-bg-primary);
+  box-shadow: 0 4px 12px rgba(197, 249, 85, 0.3);
+}
+
+.meshy-btn--primary-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(197, 249, 85, 0.4);
+  background: linear-gradient(to bottom, var(--meshy-primary-hover), var(--meshy-primary));
+}
+
+/* 次要按钮 */
+.meshy-btn--secondary {
+  background: transparent;
+  color: var(--meshy-text-primary);
+  border: 1px solid var(--meshy-border-primary);
+}
+
+.meshy-btn--secondary:hover {
+  background: var(--meshy-bg-tertiary);
+  border-color: var(--meshy-primary);
+  color: var(--meshy-primary);
+}
+
+/* 幽灵按钮 */
+.meshy-btn--ghost {
+  background: transparent;
+  color: var(--meshy-text-secondary);
+}
+
+.meshy-btn--ghost:hover {
+  background: var(--meshy-bg-tertiary);
+  color: var(--meshy-text-primary);
+}
+
+/* 小尺寸按钮 */
+.meshy-btn--small {
+  padding: 8px 16px;
+  font-size: 12px;
+  min-height: 36px;
+}
+
+/* 大尺寸按钮 */
+.meshy-btn--large {
+  padding: 16px 32px;
+  font-size: 16px;
+  min-height: 52px;
+}
+
+/* ===== 卡片组件 ===== */
+.meshy-card {
+  background: var(--meshy-bg-secondary);
+  border: 1px solid var(--meshy-border-primary);
+  border-radius: var(--meshy-radius-lg);
+  overflow: hidden;
+  transition: all var(--meshy-transition-normal);
+}
+
+.meshy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--meshy-shadow-large);
+  border-color: rgba(197, 249, 85, 0.3);
+}
+
+.meshy-card__header {
+  padding: var(--meshy-space-lg) var(--meshy-space-lg) 0;
+}
+
+.meshy-card__title {
+  color: var(--meshy-text-primary);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: var(--meshy-space-sm);
+}
+
+.meshy-card__body {
+  padding: var(--meshy-space-md) var(--meshy-space-lg) var(--meshy-space-lg);
+  color: var(--meshy-text-secondary);
+  line-height: 1.6;
+}
+
+.meshy-card__footer {
+  padding: 0 var(--meshy-space-lg) var(--meshy-space-lg);
+  display: flex;
+  gap: var(--meshy-space-sm);
+  justify-content: flex-end;
+}
+
+/* ===== 表单组件 ===== */
+.meshy-form-group {
+  margin-bottom: var(--meshy-space-lg);
+}
+
+.meshy-form-label {
+  display: block;
+  color: var(--meshy-text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: var(--meshy-space-sm);
+}
+
+.meshy-form-input,
+.meshy-form-textarea {
+  width: 100%;
+  background: var(--meshy-bg-tertiary);
+  border: 1px solid var(--meshy-border-primary);
+  border-radius: var(--meshy-radius-md);
+  padding: 12px 16px;
+  color: var(--meshy-text-primary);
+  font-size: 14px;
+  transition: all var(--meshy-transition-fast);
+}
+
+.meshy-form-input::placeholder,
+.meshy-form-textarea::placeholder {
+  color: var(--meshy-text-tertiary);
+}
+
+.meshy-form-input:focus,
+.meshy-form-textarea:focus {
+  outline: none;
+  border-color: var(--meshy-primary);
+  box-shadow: 0 0 0 3px rgba(197, 249, 85, 0.1);
+}
+
+.meshy-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ===== 徽章组件 ===== */
+.meshy-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--meshy-radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.meshy-badge--primary {
+  background: rgba(197, 249, 85, 0.2);
+  color: var(--meshy-primary);
+}
+
+.meshy-badge--secondary {
+  background: rgba(255, 151, 194, 0.2);
+  color: var(--meshy-secondary);
+}
+
+.meshy-badge--success {
+  background: rgba(105, 255, 229, 0.2);
+  color: var(--meshy-success);
+}
+
+.meshy-badge--new {
+  background: linear-gradient(135deg, var(--meshy-primary), var(--meshy-secondary));
+  color: var(--meshy-bg-primary);
+}
+
+/* ===== 头像组件 ===== */
+.meshy-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--meshy-radius-full);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--meshy-primary), var(--meshy-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--meshy-bg-primary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.meshy-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meshy-avatar--small {
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.meshy-avatar--large {
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+}
+
+/* ===== 工具类 ===== */
+.meshy-text-gradient {
+  background: linear-gradient(135deg, var(--meshy-primary), var(--meshy-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.meshy-bg-glass {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.meshy-border-gradient {
+  position: relative;
+  background: linear-gradient(135deg, var(--meshy-bg-secondary), var(--meshy-bg-tertiary));
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.meshy-border-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--meshy-primary), var(--meshy-secondary));
+  opacity: 0.3;
+}
+
+/* ===== 网格系统 ===== */
+.meshy-grid {
+  display: grid;
+  gap: var(--meshy-space-lg);
+}
+
+.meshy-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.meshy-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.meshy-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ===== 主题切换按钮 ===== */
+.meshy-theme-toggle {
+  position: fixed;
+  top: calc(var(--meshy-header-height) + var(--meshy-space-lg));
+  right: var(--meshy-space-lg);
+  z-index: 1001;
+  background: var(--meshy-bg-tertiary);
+  border: 1px solid var(--meshy-border-primary);
+  border-radius: var(--meshy-radius-full);
+  padding: var(--meshy-space-sm);
+  cursor: pointer;
+  transition: all var(--meshy-transition-fast);
+}
+
+.meshy-theme-toggle:hover {
+  background: var(--meshy-bg-quaternary);
+  border-color: var(--meshy-primary);
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 1024px) {
+  .meshy-sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--meshy-transition-normal);
+  }
+
+  .meshy-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .meshy-main {
+    margin-left: 0;
+  }
+
+  .meshy-main__container {
+    max-width: var(--meshy-container-max-width);
+  }
+
+  .meshy-grid--3,
+  .meshy-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .meshy-container {
+    padding: 0 var(--meshy-space-md);
+  }
+
+  .meshy-header {
+    padding: 0 var(--meshy-space-md);
+  }
+
+  .meshy-main__container {
+    padding: var(--meshy-space-lg) var(--meshy-space-md);
+  }
+
+  .meshy-grid--2,
+  .meshy-grid--3,
+  .meshy-grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .meshy-card__header {
+    padding: var(--meshy-space-md) var(--meshy-space-md) 0;
+  }
+
+  .meshy-card__body {
+    padding: var(--meshy-space-sm) var(--meshy-space-md) var(--meshy-space-md);
+  }
+
+  .meshy-card__footer {
+    padding: 0 var(--meshy-space-md) var(--meshy-space-md);
+  }
+
+  .meshy-btn--large {
+    padding: 14px 28px;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .meshy-header__logo span {
+    display: none;
+  }
+
+  .meshy-theme-toggle {
+    top: var(--meshy-space-md);
+    right: var(--meshy-space-md);
+  }
+}
+
+/* ===== 移动端菜单按钮 ===== */
+.meshy-mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--meshy-text-primary);
+  cursor: pointer;
+  padding: var(--meshy-space-sm);
+}
+
+@media (max-width: 1024px) {
+  .meshy-mobile-menu-toggle {
+    display: block;
+  }
+}
+
+/* ===== 滚动条样式 ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--meshy-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--meshy-border-primary);
+  border-radius: var(--meshy-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--meshy-border-secondary);
+}
+
+/* ===== 焦点样式 ===== */
+.meshy-btn:focus,
+.meshy-form-input:focus,
+.meshy-form-textarea:focus,
+.meshy-theme-toggle:focus {
+  outline: 2px solid var(--meshy-primary);
+  outline-offset: 2px;
+}
+
+/* ===== 打印样式 ===== */
+@media print {
+  .meshy-sidebar,
+  .meshy-theme-toggle {
+    display: none;
+  }
+
+  .meshy-main {
+    margin-left: 0;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}

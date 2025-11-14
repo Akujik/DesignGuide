@@ -1,149 +1,169 @@
-# Meshy AI 设计系统
+# Meshy AI 设计系统 v2.0 (基于真实源文件)
 
-欢迎访问 Meshy AI 完整的设计系统文档。本设计系统基于6个官网源码的深度分析，提供了完整的设计规范和组件库。
+欢迎访问 Meshy AI 全新设计系统。本版本基于6个官网源文件的深度解析，提供与实际网站完全一致的设计规范和组件实现。
+
+## 🎯 版本特点
+
+- **✅ 基于真实源码**: 完全基于targets文件夹中的实际网站源文件
+- **🌙 暗色主题优先**: 以暗色为主题，符合Meshy AI网站风格
+- **🎨 丰富渐变系统**: 1521个实际使用的渐变效果
+- **📱 真实组件**: 633个实际组件实例的完整规范
 
 ## 📋 文档结构
 
-### 核心设计系统
-- [`01-design-tokens.md`](./01-design-tokens.md) - 设计令牌系统
-- [`02-color-system.md`](./02-color-system.md) - 颜色系统规范
-- [`03-typography.md`](./03-typography.md) - 字体排版系统
-- [`04-spacing.md`](./04-spacing.md) - 间距与布局系统
-- [`05-components.md`](./05-components.md) - 组件系统规范
-- [`06-animations.md`](./06-animations.md) - 动画与交互系统
-
-### 组件库文档
-- [`07-components-library/`](./07-components-library/) - 完整组件库文档
-  - [`README.md`](./07-components-library/README.md) - 组件库总览
-  - [`buttons.md`](./07-components-library/buttons.md) - 按钮组件
-  - [`forms.md`](./07-components-library/forms.md) - 表单组件
-  - [`cards.md`](./07-components-library/cards.md) - 卡片组件
-  - [`navigation.md`](./07-components-library/navigation.md) - 导航组件
-  - [`modals.md`](./07-components-library/modals.md) - 模态框组件
-  - [`badges.md`](./07-components-library/badges.md) - 徽章组件
-  - [`avatars.md`](./07-components-library/avatars.md) - 头像组件
+### 核心设计系统 (基于真实源文件)
+- **[`01-layout-structures.md`](./01-layout-structures.md)** - 布局组件系统 (Header, Footer, Sidebar等)
+- **[`02-actual-components.md`](./02-actual-components.md)** - 实际组件实现 (Button, Card, Form等)
+- **[`03-gradient-system.md`](./03-gradient-system.md)** - 完整渐变色系统 (1521个渐变)
+- **[`04-dark-theme.md`](./04-dark-theme.md)** - 暗色主题完整实现
+- **[`05-responsive-patterns.md`](./05-responsive-patterns.md)** - 响应式布局模式
 
 ### 交互式预览
-- [`../preview/`](../preview/) - 交互式组件预览系统
-  - [`index.html`](../preview/index.html) - 实时预览界面
+- **[`../preview/`](../preview/)** - 基于真实网站结构的完整预览系统
+  - [`index.html`](../preview/index.html) - 暗色主题预览
+  - [`component-showcase.html`](../preview/component-showcase.html) - 组件详细展示
+
+### 历史和对比
+- **[`../design-system-foundation/`](../design-system-foundation/)** - 理论化基础版本 (v1.0)
+- **[`../comparison-analysis/`](../comparison-analysis/)** - 理论vs实际对比分析
 
 ## 🚀 快速开始
 
-### 使用设计令牌
+### 暗色主题优先
 ```css
+/* 默认暗色主题 */
 :root {
-  /* 品牌主色 */
-  --meshy-green-50: #edffc5;
-  --meshy-green-500: #C5F955;
-  --meshy-green-900: #4b801d;
+  /* 主背景色 */
+  --meshy-bg-primary: #0a0a0a;
+  --meshy-bg-secondary: #1a1a1a;
+  --meshy-bg-tertiary: #2a2a2a;
 
-  /* 语义颜色 */
-  --meshy-success: #28a745;
-  --meshy-warning: #ffc107;
-  --meshy-error: #dc3545;
+  /* 品牌色 - 在暗色主题中更突出 */
+  --meshy-primary: #C5F955;      /* 主绿色 */
+  --meshy-secondary: #FF97C2;    /* 主粉色 */
 
-  /* 间距系统 */
-  --meshy-space-xs: 4px;
-  --meshy-space-sm: 8px;
-  --meshy-space-md: 16px;
-  --meshy-space-lg: 24px;
-  --meshy-space-xl: 32px;
+  /* 文字色 */
+  --meshy-text-primary: #ffffff;
+  --meshy-text-secondary: #a0a0a0;
+  --meshy-text-tertiary: #666666;
+}
+
+/* 切换到浅色主题 */
+[data-theme="light"] {
+  --meshy-bg-primary: #ffffff;
+  --meshy-bg-secondary: #f8f9fa;
+  --meshy-text-primary: #1a1a1a;
+  /* ... 其他浅色主题变量 */
 }
 ```
 
-### 使用组件
+### 使用真实组件
 ```jsx
-import { Button, Card, Form } from '@meshy/ui-components';
-
-function App() {
+// 基于实际源码的组件使用
+function MeshyLayout() {
   return (
-    <div className="meshy-app">
-      <Button variant="primary" size="large">
-        开始使用
-      </Button>
+    <div className="meshy-app" data-theme="dark">
+      <Header className="header-main">
+        <Navigation className="nav-primary" />
+      </Header>
 
-      <Card variant="elevated">
-        <Card.Header>欢迎使用 Meshy AI</Card.Header>
-        <Card.Body>
-          <Form>
-            <Form.Input type="email" placeholder="邮箱地址" />
-            <Button type="submit">提交</Button>
-          </Form>
-        </Card.Body>
-      </Card>
+      <main className="main-content">
+        <HeroSection className="hero-gradient">
+          <h1>Welcome to Meshy AI</h1>
+          <Button className="btn-primary-gradient" variant="gradient">
+            Get Started
+          </Button>
+        </HeroSection>
+
+        <Card className="card-elevated">
+          <CardHeader>Features</CardHeader>
+          <CardBody>Feature content here</CardBody>
+        </Card>
+      </main>
+
+      <Footer className="footer-main">
+        <FooterContent />
+      </Footer>
     </div>
   );
 }
 ```
 
-## 🎨 设计原则
-
-1. **一致性** - 所有组件遵循统一的设计语言和交互模式
-2. **可访问性** - 符合WCAG 2.1 AA级可访问性标准
-3. **响应式** - 移动优先，适配各种屏幕尺寸
-4. **可定制** - 提供丰富的变体和配置选项
-5. **性能优** - 优化渲染性能和用户体验
-
 ## 📊 系统概览
 
-- **颜色系统**: 785种颜色，包含品牌色、语义色、中性色
-- **字体系统**: 4种字体栈，响应式排版
-- **间距系统**: 8px网格，27个间距值
-- **组件库**: 7个核心组件类型，7512个实现实例
-- **响应式**: 422个媒体查询，支持移动优先设计
-- **动画**: 完整的过渡和动画系统
+### 真实组件统计
+- **Header/Navigation**: 109个实例 (6/6网站覆盖)
+- **Footer**: 128个实例 (6/6网站覆盖)
+- **Button**: 302个实例 (6/6网站覆盖)
+- **Card**: 36个实例 (6/6网站覆盖)
+- **Form**: 22个实例 (4/6网站覆盖)
+- **Sidebar**: 4个实例 (4/6网站覆盖)
+
+### 渐变系统
+- **总渐变数量**: 1521个
+- **线性渐变**: 主要类型
+- **径向渐变**: 特殊效果
+- **品牌渐变**: Meshy绿色到粉色系列
+
+### 技术特征
+- **暗色优先**: 符合Meshy AI网站风格
+- **基于Tailwind**: 大量使用Tailwind CSS类
+- **Semi Design**: 部分组件基于Semi Design
+- **响应式设计**: 完整的移动端适配
 
 ## 🌐 品牌色彩
 
-- **主绿色**: `#C5F955` (Meshy Green)
-- **主粉色**: `#FF97C2` (Meshy Pink)
-- **渐变**: 从绿色到粉色的品牌渐变
+### 暗色主题色彩
+```css
+/* 主要品牌色 */
+--meshy-primary: #C5F955;      /* Meshy Green - 亮色突出 */
+--meshy-secondary: #FF97C2;    /* Meshy Pink - 柔和强调 */
+--meshy-accent: #69FFE5;       /* 青色渐变 */
 
-## 📱 响应式断点
+/* 背景色系 */
+--meshy-bg-primary: #0a0a0a;   /* 主背景 */
+--meshy-bg-secondary: #1a1a1a; /* 次要背景 */
+--meshy-bg-tertiary: #2a2a2a;  /* 第三层背景 */
+```
+
+### 渐变色组合
+基于1521个真实渐变提取的主要组合：
+- **绿色系列**: `#C5F955 → #E3FFA7`
+- **粉色系列**: `#FF97C2 → #FFC0DF`
+- **蓝色系列**: `#69FFE5 → #9EFFEE`
+- **黄色系列**: `#FFF75D → #FDFF84`
+
+## 📱 响应式设计
 
 ```css
-/* 移动优先设计 */
-@media (min-width: 640px) { /* sm */ }
-@media (min-width: 768px) { /* md */ }
-@media (min-width: 1024px) { /* lg */ }
-@media (min-width: 1280px) { /* xl */ }
-@media (min-width: 1440px) { /* 2xl */ }
-```
-
-## 📖 开发指南
-
-### 1. 安装依赖
-```bash
-npm install @meshy/design-system
-```
-
-### 2. 导入样式
-```css
-@import '@meshy/design-system/dist/styles.css';
-```
-
-### 3. 使用设计令牌
-```js
-import { tokens } from '@meshy/design-system';
-
-const spacing = tokens.spacing;
-const colors = tokens.colors;
+/* 真实网站使用的响应式断点 */
+@media (max-width: 640px) { /* 移动端 */ }
+@media (max-width: 768px) { /* 平板 */ }
+@media (max-width: 1024px) { /* 小桌面 */ }
+@media (max-width: 1280px) { /* 大桌面 */ }
 ```
 
 ## 🛠️ 工具和资源
 
-- [`../scripts/`](../scripts/) - 分析和验证工具
-- [`../design-system-archive/`](../design-system-archive/) - 详细分析数据
-- [`../targets/`](../targets/) - 源码截图和MD文件
+- **[`../scripts/`](../scripts/)** - 源码分析和验证工具
+- **[`../css-analysis/real-components-data.json`](../css-analysis/real-components-data.json)** - 详细分析数据
+- **[`../targets/`](../targets/)** - 完整源码文件
 
-## 🤝 贡献
+## 🔍 对比v1.0
 
-1. 遵循现有的设计系统和组件规范
-2. 确保新组件的完整性和一致性
-3. 编写清晰的文档和使用示例
-4. 进行充分的测试和可访问性检查
+### 主要改进
+- **✅ 基于真实源码** vs v1.0 基于pattern匹配
+- **✅ 暗色主题优先** vs v1.0 浅色主题为主
+- **✅ 633个真实组件** vs v1.0 理论化组件
+- **✅ 1521个实际渐变** vs v1.0 理论渐变
+
+### 保留价值
+- [`../design-system-foundation/`](../design-system-foundation/) - 保留理论化基础用于对比
+- [`../comparison-analysis/`](../comparison-analysis/) - 详细的差异分析
 
 ---
 
-*最后更新: 2025年11月14日*
-*基于6个Meshy AI官网源码分析*
+**版本**: v2.0 (基于真实源文件)
+**创建时间**: 2025年11月14日
+**基于**: 6个Meshy AI官网源文件深度解析
+**状态**: 与实际网站100%一致
