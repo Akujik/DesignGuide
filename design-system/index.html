@@ -576,6 +576,26 @@
             transform: none !important;
         }
 
+        /* Header和Footer组件演示区域特殊处理 - 每行只显示一个组件 */
+        #headers .demo-grid,
+        #footers .demo-grid {
+            grid-template-columns: 1fr !important;
+            gap: var(--spacing-8) !important;
+        }
+
+        /* 确保header演示卡片有足够的空间 */
+        #headers .demo-card,
+        #footers .demo-card {
+            min-width: 100%;
+        }
+
+        /* Header演示样式优化 */
+        #headers .meshy-header {
+            overflow: visible;
+            white-space: nowrap;
+            min-width: 100%;
+        }
+
         .meshy-sidebar__section {
             margin-bottom: var(--spacing-6);
         }
