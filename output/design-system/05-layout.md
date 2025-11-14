@@ -1,1124 +1,822 @@
-# 布局系统规范 (Layout System Specification)
+# 布局系统 (Layout System)
+
+> Meshy AI 的网格、容器和页面布局指南
 
 ## 概述
 
-Meshy.ai 的布局系统采用现代化的 CSS Grid 和 Flexbox 技术，结合响应式设计原则，提供了灵活、可扩展的布局解决方案。系统支持从移动端到大屏幕的全响应式适配，特别针对 Hero 区域的首屏展示进行了优化。
+Meshy AI的布局系统基于现代CSS Grid和Flexbox技术，提供灵活、响应式的布局解决方案。系统支持多种布局模式，从简单的组件排列到复杂的页面结构，确保在所有设备上都有良好的用户体验。
 
-## 网格系统 (Grid System)
+## 网格系统
 
-### 基础网格
+### 基础网格概念
+
 ```css
 /* 12列网格系统 */
-.grid {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: var(--gap-lg);
-  max-width: 1200px;
+  gap: var(--spacing-md);
+  max-width: var(--container-5xl);
   margin: 0 auto;
+  padding: 0 var(--page-horizontal-padding);
 }
-
-/* 网格列 */
-.col-1 { grid-column: span 1; }
-.col-2 { grid-column: span 2; }
-.col-3 { grid-column: span 3; }
-.col-4 { grid-column: span 4; }
-.col-5 { grid-column: span 5; }
-.col-6 { grid-column: span 6; }
-.col-7 { grid-column: span 7; }
-.col-8 { grid-column: span 8; }
-.col-9 { grid-column: span 9; }
-.col-10 { grid-column: span 10; }
-.col-11 { grid-column: span 11; }
-.col-12 { grid-column: span 12; }
 ```
 
 ### 响应式网格
+
 ```css
-/* 移动优先响应式网格 */
-.grid-responsive {
+/* 移动优先的响应式网格 */
+.responsive-grid {
   display: grid;
-  gap: var(--gap-md);
   grid-template-columns: 1fr;
+  gap: var(--spacing-md);
 }
 
 /* 平板设备 */
 @media (min-width: 768px) {
-  .grid-responsive {
-    grid-template-columns: repeat(6, 1fr);
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* 桌面设备 */
 @media (min-width: 1024px) {
-  .grid-responsive {
-    grid-template-columns: repeat(12, 1fr);
+  .responsive-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* 大屏幕设备 */
-@media (min-width: 1440px) {
-  .grid-responsive {
-    max-width: 1400px;
+/* 大屏设备 */
+@media (min-width: 1280px) {
+  .responsive-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 ```
 
-### 特殊网格布局
+### 网格间距
+
 ```css
-/* 2列布局 */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--gap-xl);
+/* 不同断点的网格间距 */
+.grid-gap-sm { gap: var(--spacing-sm); }
+.grid-gap-md { gap: var(--spacing-md); }
+.grid-gap-lg { gap: var(--spacing-lg); }
+.grid-gap-xl { gap: var(--spacing-xl); }
+
+/* 响应式网格间距 */
+.grid-gap-responsive {
+  gap: var(--spacing-sm);
 }
 
-/* 3列布局 */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap-xl);
+@media (min-width: 768px) {
+  .grid-gap-responsive {
+    gap: var(--spacing-md);
+  }
 }
 
-/* 4列布局 */
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--gap-lg);
-}
-
-/* 不对称布局 */
-.grid-asymmetric {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--gap-2xl);
-}
-
-/* 主边栏布局 */
-.grid-sidebar {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: var(--gap-3xl);
+@media (min-width: 1024px) {
+  .grid-gap-responsive {
+    gap: var(--spacing-lg);
+  }
 }
 ```
 
-## 容器系统 (Container System)
+## 容器系统
 
 ### 页面容器
+
 ```css
-/* 基础容器 */
+/* 标准页面容器 */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-5xl);
   margin: 0 auto;
-  padding: 0 var(--p-lg);
+  padding: 0 var(--page-horizontal-padding);
 }
 
-/* 窄容器 */
+/* 紧凑容器 */
 .container-narrow {
-  max-width: 800px;
+  max-width: var(--container-3xl);
 }
 
-/* 宽容器 */
+/* 宽松容器 */
 .container-wide {
-  max-width: 1400px;
+  max-width: var(--container-7xl);
 }
 
 /* 全宽容器 */
-.container-fluid {
+.container-full {
   max-width: none;
-  padding: 0 var(--p-lg);
+  padding: 0;
 }
 ```
 
-### 响应式容器
+### 区域容器
+
 ```css
-/* 响应式内边距 */
-.container-responsive {
-  width: 100%;
+/* 主内容区域 */
+.main-content {
+  max-width: var(--thread-content-width);
   margin: 0 auto;
-  padding: 0 var(--p-md);
+  padding: var(--spacing-lg);
 }
 
-@media (min-width: 768px) {
-  .container-responsive {
-    padding: 0 var(--p-xl);
-  }
+/* 侧边栏容器 */
+.sidebar {
+  width: var(--sidebar-width);
+  padding: var(--spacing-md);
 }
 
-@media (min-width: 1024px) {
-  .container-responsive {
-    padding: 0 var(--p-3xl);
-  }
+/* 次要内容区域 */
+.secondary-content {
+  max-width: var(--container-lg);
+  margin: 0 auto;
 }
 ```
 
-## 弹性布局 (Flexbox System)
+## Flexbox布局
 
-### 基础弹性容器
+### 基础Flexbox
+
 ```css
-/* 行方向弹性布局 */
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-/* 弹性对齐 */
+/* 水平居中 */
 .flex-center {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
+/* 水平均匀分布 */
 .flex-between {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-.flex-around {
-  display: flex;
   align-items: center;
-  justify-content: space-around;
 }
 
-.flex-start {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.flex-end {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-```
-
-### 弹性项目属性
-```css
-/* 弹性增长 */
-.flex-grow-0 { flex-grow: 0; }
-.flex-grow-1 { flex-grow: 1; }
-
-/* 弹性收缩 */
-.flex-shrink-0 { flex-shrink: 0; }
-.flex-shrink-1 { flex-shrink: 1; }
-
-/* 弹性基础 */
-.flex-basis-0 { flex-basis: 0; }
-.flex-basis-auto { flex-basis: auto; }
-
-/* 自对齐 */
-.self-start { align-self: flex-start; }
-.self-center { align-self: center; }
-.self-end { align-self: flex-end; }
-.self-stretch { align-self: stretch; }
-```
-
-## 响应式断点 (Breakpoints)
-
-### 断点定义
-```css
-/* 断点变量 */
---breakpoint-sm: 640px;   /* 小屏幕 */
---breakpoint-md: 768px;   /* 平板 */
---breakpoint-lg: 1024px;  /* 桌面 */
---breakpoint-xl: 1280px;  /* 大桌面 */
---breakpoint-2xl: 1536px; /* 超大桌面 */
-```
-
-### 响应式工具类
-```css
-/* 显示/隐藏 */
-.sm-hidden { display: none; }
-.md-hidden { display: none; }
-.lg-hidden { display: none; }
-
-@media (min-width: 640px) {
-  .sm-visible { display: block; }
-  .sm-hidden { display: none; }
-}
-
-@media (min-width: 768px) {
-  .md-visible { display: block; }
-  .md-hidden { display: none; }
-}
-
-@media (min-width: 1024px) {
-  .lg-visible { display: block; }
-  .lg-hidden { display: none; }
-}
-```
-
-## 页面布局模式 (Page Layout Patterns)
-
-### 标准页面布局
-```css
-/* 页面基础结构 */
-.page {
-  min-height: 100vh;
+/* 垂直布局 */
+.flex-column {
   display: flex;
   flex-direction: column;
 }
 
-.page-header {
-  flex-shrink: 0;
-  padding: var(--p-lg) 0;
-  border-bottom: 1px solid var(--color-bg-border);
-}
-
-.page-main {
-  flex: 1;
-  padding: var(--p-3xl) 0;
-}
-
-.page-footer {
-  flex-shrink: 0;
-  padding: var(--p-2xl) 0;
-  border-top: 1px solid var(--color-bg-border);
-}
-```
-
-### 仪表板布局
-```css
-/* 仪表板网格布局 */
-.dashboard {
-  display: grid;
-  grid-template-areas:
-    "sidebar header"
-    "sidebar main";
-  grid-template-columns: 250px 1fr;
-  grid-template-rows: auto 1fr;
-  height: 100vh;
-}
-
-.dashboard-header {
-  grid-area: header;
-  background: var(--color-bg-base);
-  border-bottom: 1px solid var(--color-bg-border);
-}
-
-.dashboard-sidebar {
-  grid-area: sidebar;
-  background: var(--color-bg-sub);
-  border-right: 1px solid var(--color-bg-border);
-}
-
-.dashboard-main {
-  grid-area: main;
-  overflow-y: auto;
-  padding: var(--p-2xl);
-}
-```
-
-### 卡片布局
-```css
-/* 卡片网格 */
-.card-grid {
-  display: grid;
-  gap: var(--gap-xl);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-/* 卡片列表 */
-.card-list {
+/* 换行布局 */
+.flex-wrap {
   display: flex;
-  flex-direction: column;
-  gap: var(--gap-lg);
-}
-
-/* 卡片瀑布流 */
-.card-masonry {
-  column-count: 3;
-  column-gap: var(--gap-xl);
-}
-
-.card-masonry-item {
-  break-inside: avoid;
-  margin-bottom: var(--gap-xl);
-}
-
-@media (max-width: 768px) {
-  .card-masonry {
-    column-count: 1;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .card-masonry {
-    column-count: 2;
-  }
-}
-```
-
-## 组件布局 (Component Layout)
-
-### 表单布局
-```css
-/* 表单网格 */
-.form-grid {
-  display: grid;
-  gap: var(--gap-lg);
-  grid-template-columns: 1fr;
-}
-
-.form-grid-2 {
-  grid-template-columns: 1fr 1fr;
-}
-
-.form-grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.form-grid-responsive {
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .form-grid-responsive {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .form-grid-responsive {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
 }
 ```
 
 ### 导航布局
+
 ```css
 /* 水平导航 */
 .nav-horizontal {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: var(--p-lg) var(--p-2xl);
-}
-
-.nav-items {
-  display: flex;
-  align-items: center;
-  gap: var(--gap-lg);
+  gap: var(--spacing-lg);
 }
 
 /* 垂直导航 */
 .nav-vertical {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xs);
-  padding: var(--p-lg);
+  gap: var(--spacing-sm);
 }
 
-.nav-section {
+/* 响应式导航 */
+.nav-responsive {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-sm);
-  margin-bottom: var(--m-xl);
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .nav-responsive {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 ```
 
-### 文章布局
+### 卡片布局
+
 ```css
-/* 文章容器 */
-.article {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--p-2xl) var(--p-lg);
+/* 卡片网格 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
 }
 
-.article-header {
-  margin-bottom: var(--m-3xl);
-}
-
-.article-content {
+/* 卡片列表 */
+.card-list {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
+  gap: var(--spacing-md);
 }
 
-.article-sidebar {
-  display: none;
+/* 水平卡片 */
+.card-horizontal {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+```
+
+## 页面布局模式
+
+### 1. 标准页面布局
+
+```css
+/* 头部 + 主内容 + 侧边栏 + 页脚 */
+.page-layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main sidebar"
+    "footer footer";
+  grid-template-columns: 1fr var(--sidebar-width);
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.page-header {
+  grid-area: header;
+}
+
+.page-main {
+  grid-area: main;
+  padding: var(--spacing-lg);
+}
+
+.page-sidebar {
+  grid-area: sidebar;
+  background-color: var(--background-subtle-color);
+}
+
+.page-footer {
+  grid-area: footer;
+}
+```
+
+### 2. 单栏布局
+
+```css
+/* 简单单栏布局 */
+.single-column {
+  max-width: var(--container-3xl);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--page-horizontal-padding);
+}
+
+/* 文档页面布局 */
+.document-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.document-header {
+  padding: var(--spacing-lg) 0;
+}
+
+.document-content {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+}
+
+.document-footer {
+  padding: var(--spacing-lg) 0;
+}
+```
+
+### 3. 双栏布局
+
+```css
+/* 主内容 + 侧边栏 */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr var(--sidebar-width);
+  gap: var(--spacing-xl);
+  max-width: var(--container-7xl);
+  margin: 0 auto;
+  padding: 0 var(--page-horizontal-padding);
+}
+
+/* 响应式双栏 */
+.two-column-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
 }
 
 @media (min-width: 1024px) {
-  .article-with-sidebar {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: var(--gap-3xl);
-  }
-
-  .article-sidebar {
-    display: block;
+  .two-column-responsive {
+    grid-template-columns: 2fr 1fr;
   }
 }
 ```
 
-## 布局工具类 (Layout Utilities)
+### 4. 三栏布局
 
-### 尺寸工具
 ```css
-/* 宽度 */
-.w-full { width: 100%; }
-.w-auto { width: auto; }
-.w-screen { width: 100vw; }
-
-/* 最大宽度 */
-.max-w-xs { max-width: 320px; }
-.max-w-sm { max-width: 640px; }
-.max-w-md { max-width: 768px; }
-.max-w-lg { max-width: 1024px; }
-.max-w-xl { max-width: 1280px; }
-
-/* 高度 */
-.h-full { height: 100%; }
-.h-screen { height: 100vh; }
-.h-auto { height: auto; }
-
-/* 最小高度 */
-.min-h-screen { min-height: 100vh; }
-```
-
-### 定位工具
-```css
-/* 相对定位 */
-.relative { position: relative; }
-.absolute { position: absolute; }
-.fixed { position: fixed; }
-.sticky { position: sticky; }
-
-/* 定位偏移 */
-.top-0 { top: 0; }
-.right-0 { right: 0; }
-.bottom-0 { bottom: 0; }
-.left-0 { left: 0; }
-
-/* 层级 */
-.z-10 { z-index: 10; }
-.z-20 { z-index: 20; }
-.z-30 { z-index: 30; }
-.z-50 { z-index: 50; }
-```
-
-### 溢出控制
-```css
-.overflow-hidden { overflow: hidden; }
-.overflow-visible { overflow: visible; }
-.overflow-scroll { overflow: scroll; }
-.overflow-auto { overflow: auto; }
-
-.overflow-x-hidden { overflow-x: hidden; }
-.overflow-y-auto { overflow-y: auto; }
-```
-
-## 特殊布局场景
-
-### Hero 区域布局
-
-#### Hero 区域设计原则
-Hero 区域是用户访问网站时首先看到的区域，需要：
-- 突出核心价值主张
-- 提供清晰的行动号召
-- 保持品牌一致性
-- 优化首屏加载性能
-- 支持各种设备尺寸
-
-#### 标准 Hero 头部布局
-```css
-/* Hero 头部导航 */
-.hero-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background-color: var(--color-bg-base);
-  border-bottom: 1px solid var(--color-bg-border);
-  transition: all var(--duration-fast) var(--ease-smooth);
-  backdrop-filter: blur(10px);
-  background-color: rgba(24, 24, 24, 0.95);
+/* 左侧边栏 + 主内容 + 右侧边栏 */
+.three-column {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width);
+  gap: var(--spacing-xl);
+  max-width: var(--container-9xl);
+  margin: 0 auto;
+  padding: 0 var(--page-horizontal-padding);
 }
 
-.hero-container {
+/* 响应式三栏 */
+.three-column-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .three-column-responsive {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .three-column-responsive {
+    grid-template-columns: 200px 1fr 200px;
+  }
+}
+```
+
+## 组件布局
+
+### 1. 头部组件
+
+```css
+/* 标准头部 */
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 3rem; /* 移动端高度 */
-  padding: 0 var(--p-lg);
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: var(--spacing-md) var(--page-horizontal-padding);
+  background-color: var(--background-base-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
-@media (min-width: 640px) {
-  .hero-container {
-    height: 4.5rem; /* 桌面端高度 */
-    padding: 0 var(--p-2xl);
-  }
-}
-
-.hero-brand {
+.header-brand {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
+  gap: var(--spacing-md);
 }
 
-.hero-nav {
-  display: none;
-  flex: 1;
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .hero-nav {
-    display: flex;
-  }
-}
-
-.hero-actions {
+.header-nav {
   display: flex;
   align-items: center;
-  gap: var(--gap-md);
+  gap: var(--spacing-lg);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
 }
 ```
 
-#### 全屏 Hero 布局
+### 2. 侧边栏组件
+
 ```css
-/* 全屏英雄区域 */
-.hero-fullscreen {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: var(--color-bg-base);
-}
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-
-.hero-gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at center,
-    rgba(197, 249, 85, 0.1) 0%,
-    transparent 50%);
-}
-
-.hero-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(197, 249, 85, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(255, 62, 143, 0.05) 0%, transparent 50%);
-  background-size: 100% 100%;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  max-width: 800px;
-  padding: var(--p-3xl);
-}
-
-.hero-title {
-  font-size: var(--text-5xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-label-title);
-  line-height: var(--leading-tight);
-  margin-bottom: var(--p-xl);
-  background: linear-gradient(135deg,
-    var(--color-accent-base),
-    var(--color-accent-support-base));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-subtitle {
-  font-size: var(--text-xl);
-  color: var(--color-label-soft);
-  line-height: var(--leading-relaxed);
-  margin-bottom: var(--p-3xl);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-cta {
-  display: flex;
-  flex-direction: column;
-  gap: var(--p-lg);
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .hero-cta {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-```
-
-#### 分屏 Hero 布局
-```css
-/* 分屏英雄区域 */
-.hero-split {
-  padding: var(--p-5xl) 0;
-  background-color: var(--color-bg-base);
-}
-
-.hero-split-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--gap-3xl);
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--p-lg);
-}
-
-@media (min-width: 1024px) {
-  .hero-split-container {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-}
-
-.hero-split-content {
-  order: 2;
-}
-
-@media (min-width: 1024px) {
-  .hero-split-content {
-    order: 1;
-  }
-}
-
-.hero-split-visual {
-  order: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .hero-split-visual {
-    order: 2;
-  }
-}
-
-.hero-content-left .hero-title {
-  font-size: var(--text-4xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-label-title);
-  line-height: var(--leading-tight);
-  margin-bottom: var(--p-xl);
-}
-
-.hero-description {
-  font-size: var(--text-lg);
-  color: var(--color-label-soft);
-  line-height: var(--leading-relaxed);
-  margin-bottom: var(--p-3xl);
-}
-
-.hero-features {
-  display: flex;
-  flex-direction: column;
-  gap: var(--p-md);
-  margin-bottom: var(--p-3xl);
-}
-
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: var(--p-md);
-  color: var(--color-label-base);
-  font-size: var(--text-base);
-}
-
-.hero-showcase-3d {
-  position: relative;
-  aspect-ratio: 1;
-  max-width: 500px;
-  margin: 0 auto;
-  background: linear-gradient(135deg,
-    var(--color-accent-bg),
-    var(--color-accent-support-base) 0.1);
-  border-radius: var(--radius-2xl);
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-```
-
-#### 功能展示 Hero 布局
-```css
-/* 功能展示英雄区域 */
-.hero-feature {
-  padding: var(--p-5xl) 0;
-  background: linear-gradient(135deg,
-    var(--color-bg-base) 0%,
-    var(--color-bg-sub) 100%);
-}
-
-.hero-feature-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--p-lg);
-  text-align: center;
-}
-
-.hero-feature-header {
-  margin-bottom: var(--p-5xl);
-}
-
-.hero-feature-title {
-  font-size: var(--text-4xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-label-title);
-  line-height: var(--leading-tight);
-  margin-bottom: var(--p-xl);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-feature-subtitle {
-  font-size: var(--text-lg);
-  color: var(--color-label-soft);
-  line-height: var(--leading-relaxed);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.hero-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--p-3xl);
-  margin-bottom: var(--p-5xl);
-}
-
-.feature-card {
-  background-color: var(--color-bg-sub);
-  border: 1px solid var(--color-bg-border);
-  border-radius: var(--radius-2xl);
-  padding: var(--p-3xl);
-  text-align: left;
-  transition: all var(--duration-normal) var(--ease-smooth);
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg,
-    var(--color-accent-base),
-    var(--color-accent-support-base));
-  transform: scaleX(0);
-  transition: transform var(--duration-normal) var(--ease-smooth);
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  border-color: var(--color-accent-base);
-}
-
-.feature-card:hover::before {
-  transform: scaleX(1);
-}
-
-.feature-icon-large {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg,
-    var(--color-accent-base),
-    var(--color-accent-support-base));
-  border-radius: var(--radius-2xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-bg-base);
-  margin-bottom: var(--p-xl);
-}
-
-.feature-title {
-  font-size: var(--text-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-label-title);
-  margin-bottom: var(--p-md);
-}
-
-.feature-description {
-  color: var(--color-label-soft);
-  line-height: var(--leading-relaxed);
-}
-```
-
-#### Hero 区域响应式设计
-```css
-/* 移动端 Hero 优化 */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: var(--text-3xl);
-  }
-
-  .hero-subtitle {
-    font-size: var(--text-lg);
-  }
-
-  .hero-cta {
-    width: 100%;
-  }
-
-  .hero-cta .button {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .hero-split-container {
-    padding: 0 var(--p-md);
-  }
-
-  .hero-feature-grid {
-    grid-template-columns: 1fr;
-    gap: var(--p-2xl);
-  }
-}
-
-/* 平板设备适配 */
-@media (min-width: 769px) and (max-width: 1023px) {
-  .hero-title {
-    font-size: var(--text-4xl);
-  }
-
-  .hero-split-container {
-    padding: 0 var(--p-xl);
-  }
-
-  .hero-feature-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 大屏设备优化 */
-@media (min-width: 1440px) {
-  .hero-title {
-    font-size: var(--text-6xl);
-  }
-
-  .hero-container {
-    max-width: 1400px;
-  }
-
-  .hero-fullscreen {
-    min-height: 100vh;
-  }
-}
-```
-
-#### Hero 区域性能优化
-```css
-/* 避免重排的动画 */
-.hero-animate {
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-/* 使用 GPU 加速 */
-.hero-parallax {
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* 延迟加载背景 */
-.hero-lazy-bg {
-  background-image: none;
-  background-color: var(--color-bg-base);
-}
-
-.hero-lazy-bg.loaded {
-  background-image: url('hero-background.jpg');
-  background-size: cover;
-  background-position: center;
-  transition: opacity 0.3s ease;
-}
-```
-
-### 模态框布局
-```css
-/* 模态框容器 */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-}
-
-.modal-content {
-  background: var(--color-bg-base);
-  border-radius: var(--radius-xl);
-  max-width: 90vw;
-  max-height: 90vh;
-  overflow: auto;
-  padding: var(--p-2xl);
-}
-```
-
-### 侧边栏布局
-```css
-/* 可收缩侧边栏 */
-.sidebar-layout {
-  display: flex;
-  min-height: 100vh;
-}
-
+/* 可折叠侧边栏 */
 .sidebar {
-  width: 250px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background-color: var(--background-subtle-color);
+  border-right: 1px solid var(--border-color);
+  transition: transform var(--default-transition-duration);
 }
 
 .sidebar.collapsed {
   transform: translateX(-100%);
 }
 
-.main-content {
-  flex: 1;
-  padding: var(--p-2xl);
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 40;
-  }
-
-  .main-content {
-    margin-left: 0;
+@media (min-width: 768px) {
+  .sidebar.collapsed {
+    transform: translateX(calc(-1 * var(--sidebar-width) + var(--sidebar-width-collapsed)));
+    width: var(--sidebar-width-collapsed);
   }
 }
 ```
 
-## 布局性能优化
+### 3. 卡片组件
 
-### 布局避免重排
 ```css
-/* 使用 transform 而不是改变位置属性 */
-.smooth-move {
-  transform: translateX(100px);
-  /* 而不是 left: 100px */
+/* 标准卡片 */
+.card {
+  background-color: var(--background-raised-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
 }
 
-/* 使用 opacity 进行动画 */
-.smooth-fade {
-  opacity: 0.5;
-  /* 而不是 visibility: hidden */
+.card-header {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-content {
+  margin-bottom: var(--spacing-md);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
 }
 ```
 
-### 布局包含块
+### 4. 表单布局
+
 ```css
-/* 创建包含块 */
-.layout-contain {
-  contain: layout;
+/* 垂直表单 */
+.form-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
 }
 
-/* 同时包含布局和绘制 */
-.layout-paint-contain {
-  contain: layout paint;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
-```
 
-## 布局最佳实践
+.form-label {
+  font-weight: var(--font-weight-medium);
+}
 
-### 移动优先原则
-```css
-/* 移动优先的网格布局 */
-.responsive-grid {
+.form-input {
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+/* 水平表单 */
+.form-horizontal {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--gap-md);
+  grid-template-columns: auto 1fr;
+  gap: var(--spacing-md);
+  align-items: center;
 }
 
 @media (min-width: 768px) {
-  .responsive-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .form-horizontal {
+    grid-template-columns: 200px 1fr;
+  }
+}
+```
+
+## 响应式布局
+
+### 断点策略
+
+```css
+/* 移动优先的断点 */
+/* xs: 0px - 639px (默认) */
+/* sm: 640px - 767px */
+/* md: 768px - 1023px */
+/* lg: 1024px - 1279px */
+/* xl: 1280px - 1535px */
+/* 2xl: 1536px+ */
+
+.responsive-layout {
+  /* 移动布局 - 单列 */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .responsive-layout {
+    /* 平板布局 - 双列 */
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-lg);
   }
 }
 
 @media (min-width: 1024px) {
-  .responsive-grid {
+  .responsive-layout {
+    /* 桌面布局 - 三列 */
+    grid-template-columns: 250px 1fr 250px;
+  }
+}
+```
+
+### 容器查询 (现代浏览器)
+
+```css
+/* 基于容器宽度的响应式 */
+.container-query {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .container-query .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container (min-width: 700px) {
+  .container-query .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 ```
 
-### 内容优先布局
+## 特殊布局场景
+
+### 1. 侧边栏布局
+
 ```css
-/* 内容优先的文档流 */
-.content-first {
-  display: flex;
-  flex-direction: column;
+/* 固定侧边栏 */
+.layout-with-sidebar {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: 100vh;
 }
 
-@media (min-width: 1024px) {
-  .content-first {
-    flex-direction: row;
+/* 可切换侧边栏 */
+.layout-toggle-sidebar {
+  display: grid;
+  grid-template-columns: var(--sidebar-default-width) 1fr;
+  transition: grid-template-columns var(--default-transition-duration);
+}
+
+.layout-toggle-sidebar.sidebar-expanded {
+  grid-template-columns: var(--sidebar-pinned-width) 1fr;
+}
+```
+
+### 2. 页脚布局
+
+```css
+/* 粘性页脚 */
+.sticky-footer-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.sticky-footer-content {
+  flex: 1;
+}
+
+.sticky-footer {
+  margin-top: auto;
+}
+
+/* 固定页脚 */
+.fixed-footer-layout {
+  padding-bottom: var(--footer-height);
+}
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-height);
+}
+```
+
+### 3. 网格重叠布局
+
+```css
+/* 网格重叠 */
+.overlap-layout {
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "content";
+}
+
+.overlap-hero {
+  grid-area: hero;
+  margin-bottom: -4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.overlap-content {
+  grid-area: content;
+  position: relative;
+  z-index: 2;
+  background-color: var(--background-base-color);
+  padding-top: 6rem;
+}
+```
+
+## 布局工具类
+
+### 显示工具类
+
+```css
+/* Flexbox */
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+/* Grid */
+.grid { display: grid; }
+.inline-grid { display: inline-grid; }
+
+/* 块级 */
+.block { display: block; }
+.inline-block { display: inline-block; }
+.hidden { display: none; }
+```
+
+### 对齐工具类
+
+```css
+/* Justify Content */
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+
+/* Align Items */
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.items-stretch { align-items: stretch; }
+```
+
+### 位置工具类
+
+```css
+/* Position */
+.static { position: static; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/* Top/Right/Bottom/Left */
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.top-0 { top: 0; }
+.right-0 { right: 0; }
+.bottom-0 { bottom: 0; }
+.left-0 { left: 0; }
+```
+
+## 可访问性考虑
+
+### 1. 跳转链接
+
+```css
+/* 跳转到主内容 */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--background-inverse-color);
+  color: var(--foreground-inverse-color);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+```
+
+### 2. 布局顺序
+
+```css
+/* 保持逻辑的DOM顺序 */
+.accessible-layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "navigation"
+    "main"
+    "complementary"
+    "contentinfo";
+}
+
+.accessible-header { grid-area: header; }
+.accessible-nav { grid-area: navigation; }
+.accessible-main { grid-area: main; }
+.accessible-aside { grid-area: complementary; }
+.accessible-footer { grid-area: contentinfo; }
+```
+
+### 3. 响应式导航
+
+```css
+/* 移动设备隐藏导航，显示汉堡菜单 */
+@media (max-width: 767px) {
+  .responsive-nav {
+    display: none;
   }
 
-  .sidebar {
-    order: 2;
-  }
-
-  .main {
-    order: 1;
-    flex: 1;
+  .responsive-nav[aria-expanded="true"] {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background-base-color);
   }
 }
 ```
 
-## 布局速查表
+## 性能优化
 
-| 布局类型 | 适用场景 | 关键属性 | 断点支持 |
-|----------|----------|----------|----------|
-| 12列网格 | 复杂页面布局 | Grid, repeat(12, 1fr) | 完整 |
-| 弹性布局 | 组件内部排列 | Flexbox, justify-content | 完整 |
-| 卡片网格 | 内容展示 | Grid, auto-fit, minmax | 完整 |
-| 主边栏布局 | 文章/产品页 | Grid, 2fr 1fr | 完整 |
-| 英雄区域 | 首页头部 | Flexbox, min-height | 基础 |
-| 模态框 | 弹窗组件 | Fixed, Flexbox center | 基础 |
+### 1. 布局优化
+
+```css
+/* 使用 containment 提升性能 */
+.layout-contained {
+  contain: layout style paint;
+}
+
+/* 避免复杂的布局重排 */
+.optimized-layout {
+  will-change: transform;
+  transform: translateZ(0); /* 硬件加速 */
+}
+```
+
+### 2. 滚动性能
+
+```css
+/* 平滑滚动 */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* 滚动捕捉 */
+.scroll-snap {
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-snap-item {
+  scroll-snap-align: start;
+}
+```
+
+## 最佳实践
+
+### 1. DO's ✅
+
+- 使用语义化HTML标签
+- 保持布局的响应式
+- 确保良好的可访问性
+- 使用一致的间距系统
+- 测试不同设备的表现
+
+### 2. DON'Ts ❌
+
+- 避免固定宽度的布局
+- 不要忽略移动端体验
+- 避免过度嵌套的布局
+- 不要忽视可访问性
+- 避免使用魔法数字
+
+## 测试清单
+
+### 功能测试
+- [ ] 响应式布局正确工作
+- [ ] 侧边栏折叠功能正常
+- [ ] 网格系统在所有断点下工作
+- [ ] 容器最大宽度正确应用
+
+### 可视测试
+- [ ] 布局在不同屏幕尺寸下美观
+- [ ] 间距一致且和谐
+- [ ] 元素对齐正确
+- [ ] 文本可读性好
+
+### 可访问性测试
+- [ ] 键盘导航正常
+- [ ] 屏幕阅读器友好
+- [ ] 跳转链接工作
+- [ ] 焦点指示器清晰
+
+---
+
+*最后更新: 2025年11月14日*

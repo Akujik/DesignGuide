@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark" style="color-scheme: dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meshy AI 设计系统 - 深色主题</title>
+    <style>
+        /* 基于实际源代码的CSS变量 */
+        :root {
+            /* Meshy AI 品牌色系 */
+            --s-color-brand-primary-default: #0057ff;
+            --s-color-brand-primary-hover: #004ad9;
+            --s-color-brand-primary-pressed: #003db3;
+
+            /* 渐变特色色 */
+            --gradient-primary: linear-gradient(45deg, #C5F955 0%, #FF97C2 100%);
+            --gradient-primary-hover: linear-gradient(45deg, #B6FF19 0%, #FF6FAA 100%);
+            --gradient-secondary: linear-gradient(45deg, #F9E855 0%, #E99430 100%);
+            --gradient-tertiary: linear-gradient(270deg, #96b3ff -1.16%, #b155f9 98.84%);
+
+            /* 深色主题背景 */
+            --semi-color-bg-0: #16161a;
+            --semi-color-bg-1: #232429;
+            --semi-color-bg-2: #35363c;
+            --semi-color-bg-3: #43444a;
+            --semi-color-bg-4: #4f5159;
+
+            /* 文本颜色 */
+            --semi-color-text-0: rgba(249, 249, 249, 1);
+            --semi-color-text-1: rgba(249, 249, 249, 0.8);
+            --semi-color-text-2: rgba(249, 249, 249, 0.6);
+            --semi-color-text-3: rgba(249, 249, 249, 0.35);
+
+            /* 边框颜色 */
+            --semi-color-border: rgba(255, 255, 255, 0.08);
+
+            /* 字体系统 */
+            --s-font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                             'SF Pro SC', 'SF Pro Display', 'SF Pro Icons',
+                             'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+                             'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+            /* 字体大小 */
+            --s-font-h1: 600 26px/36px var(--s-font-family);
+            --s-font-h2: 700 20px/32px var(--s-font-family);
+            --s-font-h3: 600 16px/24px var(--s-font-family);
+            --s-font-base: 400 16px/24px var(--s-font-family);
+            --s-font-base-strong: 500 16px/24px var(--s-font-family);
+            --s-font-small: 400 14px/22px var(--s-font-family);
+            --s-font-xs: 400 12px/18px var(--s-font-family);
+
+            /* 圆角系统 */
+            --s-radius-xxs: 4px;
+            --s-radius-xs: 8px;
+            --s-radius-s: 12px;
+            --s-radius-m: 16px;
+            --s-radius-l: 20px;
+            --s-radius-xl: 24px;
+            --s-radius-xxl: 32px;
+            --s-radius-xxxl: 36px;
+
+            /* 间距系统 */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-xxl: 48px;
+
+            /* 阴影系统 */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+            /* 过渡效果 */
+            --transition-base: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* 侧边栏宽度 */
+            --sidebar-width: 320px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: var(--s-font-base);
+            color: var(--semi-color-text-0);
+            background-color: var(--semi-color-bg-0);
+            min-height: 100vh;
+        }
+
+        /* 布局系统 */
+        .app-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--semi-color-bg-1);
+            border-right: 1px solid var(--semi-color-border);
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            z-index: 40;
+        }
+
+        .sidebar-header {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--semi-color-border);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            font: var(--s-font-h2);
+            color: var(--semi-color-text-0);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: var(--s-radius-m);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--semi-color-bg-0);
+        }
+
+        .sidebar-content {
+            padding: var(--spacing-lg);
+        }
+
+        .sidebar-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .sidebar-title {
+            font: var(--s-font-xs);
+            color: var(--semi-color-text-2);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--spacing-md);
+            padding: 0 var(--spacing-sm);
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-item {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-sm);
+            color: var(--semi-color-text-1);
+            text-decoration: none;
+            border-radius: var(--s-radius-s);
+            font: var(--s-font-small);
+            transition: var(--transition-base);
+        }
+
+        .sidebar-link:hover {
+            color: var(--semi-color-text-0);
+            background-color: var(--semi-color-bg-3);
+        }
+
+        .sidebar-link.active {
+            color: var(--s-color-brand-primary-default);
+            background-color: rgba(0, 87, 255, 0.1);
+        }
+
+        .sidebar-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            background-color: var(--semi-color-bg-0);
+        }
+
+        /* 顶部导航栏 */
+        .top-header {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background-color: var(--semi-color-bg-1);
+            border-bottom: 1px solid var(--semi-color-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .top-header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-md) var(--spacing-lg);
+            height: 72px;
+        }
+
+        .header-title {
+            font: var(--s-font-h1);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        /* 页面内容 */
+        .page-content {
+            padding: var(--spacing-xxl);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .section-title {
+            font: var(--s-font-h2);
+            margin-bottom: var(--spacing-lg);
+            color: var(--semi-color-text-0);
+        }
+
+        .section-description {
+            font: var(--s-font-base);
+            color: var(--semi-color-text-1);
+            margin-bottom: var(--spacing-xl);
+            max-width: 800px;
+        }
+
+        /* 组件展示网格 */
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        /* 按钮组件 */
+        .button-showcase {
+            background-color: var(--semi-color-bg-1);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-l);
+            padding: var(--spacing-lg);
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: var(--s-radius-xxxl);
+            font: var(--s-font-small);
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+
+        .btn-primary {
+            background-color: var(--s-color-brand-primary-default);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--s-color-brand-primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: var(--semi-color-bg-3);
+            color: var(--semi-color-text-0);
+            border: 1px solid var(--semi-color-border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--semi-color-bg-4);
+            border-color: var(--semi-color-text-2);
+        }
+
+        .btn-gradient {
+            background: var(--gradient-primary);
+            color: var(--semi-color-bg-0);
+        }
+
+        .btn-gradient:hover {
+            background: var(--gradient-primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* 卡片组件 */
+        .card {
+            background-color: var(--semi-color-bg-1);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-l);
+            padding: var(--spacing-lg);
+            transition: var(--transition-base);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--s-color-brand-primary-default);
+        }
+
+        .card-header {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .card-title {
+            font: var(--s-font-h3);
+            color: var(--semi-color-text-0);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .card-description {
+            font: var(--s-font-small);
+            color: var(--semi-color-text-1);
+        }
+
+        .card-content {
+            font: var(--s-font-base);
+            color: var(--semi-color-text-1);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 表单组件 */
+        .form-showcase {
+            background-color: var(--semi-color-bg-1);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-l);
+            padding: var(--spacing-lg);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-label {
+            display: block;
+            font: var(--s-font-base-strong);
+            color: var(--semi-color-text-0);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: var(--spacing-md);
+            background-color: var(--semi-color-bg-2);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-s);
+            color: var(--semi-color-text-0);
+            font: var(--s-font-base);
+            transition: var(--transition-base);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--s-color-brand-primary-default);
+            box-shadow: 0 0 0 2px rgba(0, 87, 255, 0.2);
+        }
+
+        .form-input::placeholder {
+            color: var(--semi-color-text-2);
+        }
+
+        /* 颜色展示 */
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .color-swatch {
+            height: 120px;
+            border-radius: var(--s-radius-l);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .color-value {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--s-radius-xs);
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 12px;
+            position: absolute;
+            bottom: var(--spacing-md);
+            left: var(--spacing-md);
+            right: var(--spacing-md);
+            text-align: center;
+        }
+
+        .color-info {
+            margin-top: var(--spacing-sm);
+            text-align: center;
+        }
+
+        .color-name {
+            font: var(--s-font-base-strong);
+            color: var(--semi-color-text-0);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .color-usage {
+            font: var(--s-font-xs);
+            color: var(--semi-color-text-2);
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 300ms ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        /* 移动菜单按钮 */
+        .mobile-menu-toggle {
+            background: none;
+            border: none;
+            padding: var(--spacing-sm);
+            cursor: pointer;
+            color: var(--semi-color-text-0);
+        }
+
+        .menu-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-line {
+            width: 100%;
+            height: 2px;
+            background-color: currentColor;
+            transition: var(--transition-base);
+        }
+
+        /* 代码展示 */
+        .code-block {
+            background-color: var(--semi-color-bg-2);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-s);
+            padding: var(--spacing-md);
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            color: var(--semi-color-text-1);
+            overflow-x: auto;
+            margin: var(--spacing-lg) 0;
+        }
+
+        /* 标签系统 */
+        .tag {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background-color: var(--semi-color-bg-3);
+            color: var(--semi-color-text-1);
+            border-radius: var(--s-radius-xxxl);
+            font: var(--s-font-xs);
+            font-weight: 500;
+            margin-right: var(--spacing-xs);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .tag.primary {
+            background-color: rgba(0, 87, 255, 0.2);
+            color: var(--s-color-brand-primary-default);
+        }
+
+        /* 状态指示器 */
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font: var(--s-font-small);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .status-dot.success {
+            background-color: #22c55e;
+        }
+
+        .status-dot.warning {
+            background-color: #f59e0b;
+        }
+
+        .status-dot.error {
+            background-color: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-layout">
+        <!-- 侧边栏 -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">
+                    <div class="logo-icon">M</div>
+                    <span>Meshy AI</span>
+                </a>
+            </div>
+            <div class="sidebar-content">
+                <!-- 设计令牌 -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">设计令牌</h3>
+                    <nav class="sidebar-nav">
+                        <div class="sidebar-item">
+                            <a href="#design-tokens" class="sidebar-link active">
+                                <span class="sidebar-icon">🎨</span>
+                                <span>设计令牌基础</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#colors" class="sidebar-link">
+                                <span class="sidebar-icon">🌈</span>
+                                <span>颜色系统</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#typography" class="sidebar-link">
+                                <span class="sidebar-icon">📝</span>
+                                <span>排版系统</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#spacing" class="sidebar-link">
+                                <span class="sidebar-icon">📏</span>
+                                <span>间距系统</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- 组件库 -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">组件库</h3>
+                    <nav class="sidebar-nav">
+                        <div class="sidebar-item">
+                            <a href="#buttons" class="sidebar-link">
+                                <span class="sidebar-icon">🔘</span>
+                                <span>按钮组件</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#cards" class="sidebar-link">
+                                <span class="sidebar-icon">🃏</span>
+                                <span>卡片组件</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#forms" class="sidebar-link">
+                                <span class="sidebar-icon">📋</span>
+                                <span>表单组件</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#navigation" class="sidebar-link">
+                                <span class="sidebar-icon">🧭</span>
+                                <span>导航组件</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 顶部导航栏 -->
+            <header class="top-header">
+                <div class="top-header-container">
+                    <button class="mobile-menu-toggle" onclick="toggleSidebar()">
+                        <div class="menu-icon">
+                            <span class="menu-line"></span>
+                            <span class="menu-line"></span>
+                            <span class="menu-line"></span>
+                        </div>
+                    </button>
+                    <h1 class="header-title">Meshy AI 设计系统</h1>
+                    <div class="header-actions">
+                        <span class="tag primary">v1.0.0</span>
+                        <div class="status-indicator">
+                            <span class="status-dot success"></span>
+                            <span>深色主题</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 页面内容 -->
+            <div class="page-content">
+                <!-- 设计令牌基础 -->
+                <section id="design-tokens" class="content-section">
+                    <h2 class="section-title">设计令牌基础</h2>
+                    <p class="section-description">
+                        Meshy AI 设计系统的核心基础元素，定义了整个产品线的设计语言。包括颜色、字体、间距等原子级设计决策，确保所有产品在视觉上保持一致性。
+                    </p>
+
+                    <div class="components-grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">🎨 颜色系统</h3>
+                                <p class="card-description">基于品牌色的完整色彩体系</p>
+                            </div>
+                            <div class="card-content">
+                                支持深色/浅色主题，使用OKLCH色彩空间确保最佳的可访问性和视觉一致性。
+                            </div>
+                            <div class="card-footer">
+                                <span class="tag">6个主色</span>
+                                <span class="tag">语义化</span>
+                                <a href="#colors" class="btn btn-secondary">查看详情</a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">📝 排版系统</h3>
+                                <p class="card-description">现代字体栈和响应式排版</p>
+                            </div>
+                            <div class="card-content">
+                                使用Inter字体族，支持多语言，提供7个字号级别和可变字重系统。
+                            </div>
+                            <div class="card-footer">
+                                <span class="tag">Inter字体</span>
+                                <span class="tag">7个级别</span>
+                                <a href="#typography" class="btn btn-secondary">查看详情</a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">📏 间距系统</h3>
+                                <p class="card-description">基于8点网格的一致性规则</p>
+                            </div>
+                            <div class="card-content">
+                                确保所有元素之间的视觉和谐，提供从4px到48px的完整间距体系。
+                            </div>
+                            <div class="card-footer">
+                                <span class="tag">8点网格</span>
+                                <span class="tag">6个级别</span>
+                                <a href="#spacing" class="btn btn-secondary">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 颜色系统 -->
+                <section id="colors" class="content-section">
+                    <h2 class="section-title">颜色系统</h2>
+                    <p class="section-description">
+                        Meshy AI 的品牌色彩体系，以独特的渐变色为核心，支持深色主题和浅色主题的无缝切换。
+                    </p>
+
+                    <div class="color-palette">
+                        <div>
+                            <div class="color-swatch" style="background: var(--gradient-primary);">
+                                <div class="color-value">linear-gradient(45deg, #C5F955 0%, #FF97C2 100%)</div>
+                            </div>
+                            <div class="color-info">
+                                <div class="color-name">主渐变</div>
+                                <div class="color-usage">--gradient-primary</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-swatch" style="background: var(--gradient-secondary);">
+                                <div class="color-value">linear-gradient(45deg, #F9E855 0%, #E99430 100%)</div>
+                            </div>
+                            <div class="color-info">
+                                <div class="color-name">次要渐变</div>
+                                <div class="color-usage">--gradient-secondary</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-swatch" style="background: var(--gradient-tertiary);">
+                                <div class="color-value">linear-gradient(270deg, #96b3ff -1.16%, #b155f9 98.84%)</div>
+                            </div>
+                            <div class="color-info">
+                                <div class="color-name">第三渐变</div>
+                                <div class="color-usage">--gradient-tertiary</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-swatch" style="background: var(--s-color-brand-primary-default);">
+                                <div class="color-value">#0057ff</div>
+                            </div>
+                            <div class="color-info">
+                                <div class="color-name">品牌主色</div>
+                                <div class="color-usage">--s-color-brand-primary-default</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-swatch" style="background: var(--semi-color-bg-2);">
+                                <div class="color-value">#35363c</div>
+                            </div>
+                            <div class="color-info">
+                                <div class="color-name">深色背景</div>
+                                <div class="color-usage">--semi-color-bg-2</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="color-swatch" style="background: var(--semi-color-bg-3);">
+                                <div class="color-value">#43444a</div>
+                            </div>
+                            <div class="color-info">
+                                <div class="color-name">卡片背景</div>
+                                <div class="color-usage">--semi-color-bg-3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+/* 颜色变量使用示例 */<br>
+.btn-primary {<br>
+&nbsp;&nbsp;background: var(--s-color-brand-primary-default);<br>
+&nbsp;&nbsp;color: white;<br>
+}<br><br>
+.hero-title {<br>
+&nbsp;&nbsp;background: var(--gradient-primary);<br>
+&nbsp;&nbsp;-webkit-background-clip: text;<br>
+&nbsp;&nbsp;-webkit-text-fill-color: transparent;<br>
+}
+                    </div>
+                </section>
+
+                <!-- 按钮组件 -->
+                <section id="buttons" class="content-section">
+                    <h2 class="section-title">按钮组件</h2>
+                    <p class="section-description">
+                        完整的按钮系统，支持多种样式、尺寸和状态，为用户提供清晰的交互反馈。
+                    </p>
+
+                    <div class="button-showcase">
+                        <h3 style="font: var(--s-font-h3); margin-bottom: var(--spacing-lg); color: var(--semi-color-text-0);">按钮样式</h3>
+
+                        <div class="button-group">
+                            <button class="btn btn-primary">主要按钮</button>
+                            <button class="btn btn-secondary">次要按钮</button>
+                            <button class="btn btn-gradient">渐变按钮</button>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn btn-primary" disabled>禁用按钮</button>
+                            <button class="btn btn-secondary">中等尺寸</button>
+                            <button class="btn btn-primary" style="padding: var(--spacing-lg) var(--spacing-xl);">大尺寸按钮</button>
+                        </div>
+
+                        <h3 style="font: var(--s-font-h3); margin-bottom: var(--spacing-lg); margin-top: var(--spacing-xl); color: var(--semi-color-text-0);">按钮状态</h3>
+
+                        <div class="button-group">
+                            <button class="btn btn-primary">默认状态</button>
+                            <button class="btn btn-primary" style="background: var(--s-color-brand-primary-hover);">悬停状态</button>
+                            <button class="btn btn-primary" style="background: var(--s-color-brand-primary-pressed);">按下状态</button>
+                        </div>
+
+                        <div class="code-block">
+/* 按钮组件样式 */<br>
+.btn {<br>
+&nbsp;&nbsp;display: inline-flex;<br>
+&nbsp;&nbsp;align-items: center;<br>
+&nbsp;&nbsp;gap: var(--spacing-xs);<br>
+&nbsp;&nbsp;padding: var(--spacing-sm) var(--spacing-md);<br>
+&nbsp;&nbsp;border-radius: var(--s-radius-xxxl);<br>
+&nbsp;&nbsp;font: var(--s-font-small);<br>
+&nbsp;&nbsp;font-weight: 500;<br>
+&nbsp;&nbsp;transition: var(--transition-base);<br>
+}<br><br>
+.btn-primary {<br>
+&nbsp;&nbsp;background: var(--s-color-brand-primary-default);<br>
+&nbsp;&nbsp;color: white;<br>
+}<br><br>
+.btn-primary:hover {<br>
+&nbsp;&nbsp;background: var(--s-color-brand-primary-hover);<br>
+&nbsp;&nbsp;transform: translateY(-1px);<br>
+}
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 卡片组件 -->
+                <section id="cards" class="content-section">
+                    <h2 class="section-title">卡片组件</h2>
+                    <p class="section-description">
+                        灵活的卡片容器，支持多种内容模式、布局方式和交互状态，适用于各种信息展示场景。
+                    </p>
+
+                    <div class="components-grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">标准卡片</h3>
+                                <p class="card-description">基础卡片样式</p>
+                            </div>
+                            <div class="card-content">
+                                这是一个标准的卡片组件，包含标题、描述内容和操作区域。
+                            </div>
+                            <div class="card-footer">
+                                <span class="tag">默认</span>
+                                <button class="btn btn-secondary">查看详情</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">功能卡片</h3>
+                                <p class="card-description">带状态指示</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="status-indicator">
+                                    <span class="status-dot success"></span>
+                                    <span>服务正常运行</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="tag primary">活跃</span>
+                                <button class="btn btn-primary">管理</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">渐变卡片</h3>
+                                <p class="card-description">特殊样式</p>
+                            </div>
+                            <div class="card-content" style="background: var(--gradient-tertiary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                                使用渐变色的特殊卡片，用于重要功能或特色展示。
+                            </div>
+                            <div class="card-footer">
+                                <span class="tag">特色</span>
+                                <button class="btn btn-gradient">立即体验</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+/* 卡片组件样式 */<br>
+.card {<br>
+&nbsp;&nbsp;background: var(--semi-color-bg-1);<br>
+&nbsp;&nbsp;border: 1px solid var(--semi-color-border);<br>
+&nbsp;&nbsp;border-radius: var(--s-radius-l);<br>
+&nbsp;&nbsp;padding: var(--spacing-lg);<br>
+&nbsp;&nbsp;transition: var(--transition-base);<br>
+}<br><br>
+.card:hover {<br>
+&nbsp;&nbsp;transform: translateY(-2px);<br>
+&nbsp;&nbsp;box-shadow: var(--shadow-lg);<br>
+&nbsp;&nbsp;border-color: var(--s-color-brand-primary-default);<br>
+}
+                    </div>
+                </section>
+
+                <!-- 表单组件 -->
+                <section id="forms" class="content-section">
+                    <h2 class="section-title">表单组件</h2>
+                    <p class="section-description">
+                        完整的表单系统，包括输入控件、验证反馈和多种布局模式。
+                    </p>
+
+                    <div class="form-showcase">
+                        <h3 style="font: var(--s-font-h3); margin-bottom: var(--spacing-lg); color: var(--semi-color-text-0);">基础表单</h3>
+
+                        <div class="form-group">
+                            <label class="form-label">用户名</label>
+                            <input type="text" class="form-input" placeholder="请输入用户名">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">邮箱地址</label>
+                            <input type="email" class="form-input" placeholder="example@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">留言内容</label>
+                            <textarea class="form-input" rows="4" placeholder="请输入您的留言..."></textarea>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn btn-primary">提交</button>
+                            <button class="btn btn-secondary">取消</button>
+                        </div>
+
+                        <div class="code-block">
+/* 表单组件样式 */<br>
+.form-input {<br>
+&nbsp;&nbsp;width: 100%;<br>
+&nbsp;&nbsp;padding: var(--spacing-md);<br>
+&nbsp;&nbsp;background: var(--semi-color-bg-2);<br>
+&nbsp;&nbsp;border: 1px solid var(--semi-color-border);<br>
+&nbsp;&nbsp;border-radius: var(--s-radius-s);<br>
+&nbsp;&nbsp;color: var(--semi-color-text-0);<br>
+&nbsp;&nbsp;font: var(--s-font-base);<br>
+}<br><br>
+.form-input:focus {<br>
+&nbsp;&nbsp;outline: none;<br>
+&nbsp;&nbsp;border-color: var(--s-color-brand-primary-default);<br>
+&nbsp;&nbsp;box-shadow: 0 0 0 2px rgba(0, 87, 255, 0.2);<br>
+}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // 侧边栏切换功能
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 侧边栏导航激活状态
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.sidebar-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // 点击外部关闭侧边栏（移动端）
+        document.addEventListener('click', (e) => {
+            const sidebar = document.getElementById('sidebar');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+
+            if (window.innerWidth <= 1024 &&
+                !sidebar.contains(e.target) &&
+                !menuToggle.contains(e.target) &&
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // 响应式处理
+        window.addEventListener('resize', () => {
+            const sidebar = document.getElementById('sidebar');
+            if (window.innerWidth > 1024) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>

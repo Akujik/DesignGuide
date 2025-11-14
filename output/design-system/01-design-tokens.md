@@ -1,109 +1,123 @@
-# 设计令牌总览 (Design Tokens Overview)
+# 设计令牌 (Design Tokens)
 
-## 概述
+> Meshy AI 设计系统的核心基础元素
 
-本文档概述了从 Meshy.ai 网站系统中提取的完整设计令牌系统。Meshy.ai 使用了现代化的基于 CSS 变量的设计令牌体系，确保了设计一致性和可维护性。
+设计令牌是设计系统中最小的、原子化的设计决策元素。它们构成了整个Meshy AI产品线的设计基础，确保所有产品在视觉上保持一致性。
 
-## 设计令牌分类
+## 令牌分类
 
-### 1. 颜色系统 (Color System)
-- **主色调 (Primary Colors)**: 品牌标识色 #c5f955 (亮绿色)
-- **辅助色 (Support Colors)**: #ff3e8f (洋红色), #ff97c2 (粉色)
-- **背景色 (Background Colors)**: 深色主题背景 #181818, #1e1e1e, #303030
-- **文本色 (Text Colors)**: 从白色到灰色的层次化文本系统
-- **语义色 (Semantic Colors)**: 成功、错误、警告、信息状态色
+### 1. 颜色令牌 (Color Tokens)
+- **基础颜色 (Base Colors)**: 原始色彩定义
+- **语义颜色 (Semantic Colors)**: 具有特定含义的颜色
+- **主题颜色 (Theme Colors)**: 支持深色/浅色主题的颜色系统
 
-### 2. 字体系统 (Typography System)
-- **字体族**: Inter, Inter Tight, Figtree, 系统字体
-- **字号体系**: 基于 rem 的响应式字号系统 (0.75rem - 2rem)
-- **字重**: 300 (Light) 到 700 (Bold)
-- **行高**: 紧凑到宽松的行高变化
+### 2. 尺寸令牌 (Size Tokens)
+- **间距令牌 (Spacing)**: 基于8点网格的间距系统
+- **尺寸令牌 (Sizing)**: 组件和元素的尺寸定义
 
-### 3. 间距系统 (Spacing System)
-- **基础单位**: 0.25rem (4px)
-- **间距层级**: xs(0.25rem), sm(0.5rem), md(0.75rem), lg(1rem), 2xl(1.5rem)
+### 3. 排版令牌 (Typography Tokens)
+- **字体族 (Font Families)**: 系统字体栈定义
+- **字号 (Font Sizes)**: 响应式字号系统
+- **字重 (Font Weights)**: 字体粗细级别
+- **行高 (Line Heights)**: 文本行高定义
 
-### 4. 圆角系统 (Border Radius)
-- **尺寸范围**: 0.125rem - 2rem
-- **应用层级**: 从微小到超大圆角
+### 4. 效果令牌 (Effect Tokens)
+- **圆角 (Border Radius)**: 元素圆角半径
+- **阴影 (Shadows)**: 阴影效果定义
+- **动画 (Animations)**: 过渡和动画效果
 
-### 5. 动效系统 (Animation System)
-- **渐变动画**: mesh-gradient-rotation (5s 无限循环)
-- **滑入动画**: slide-down-and-fade, slide-up-and-fade
-- **脉冲动画**: pulse-quicker
-- **缓动函数**: cubic-bezier(.16,1,.3,1)
+## 使用原则
+
+### 1. 始终使用令牌
+不要使用硬编码值（如 `#ffffff`、`16px`），始终使用对应的设计令牌。
+
+### 2. 语义化优先
+当有语义颜色可用时，优先使用语义颜色（如 `--positive-color`）而不是基础颜色（如 `--green-500`）。
+
+### 3. 主题感知
+使用主题令牌（如 `--background-base-color`）而不是绝对颜色，以支持自动主题切换。
+
+### 4. 响应式设计
+使用响应式字号令牌，确保在不同设备上都有良好的阅读体验。
+
+## 令牌命名规范
+
+### 1. 分层命名
+```
+--{category}-{subcategory}-{property}-{state}
+```
+
+示例：
+- `--color-primary-base`: 主色基础色
+- `--spacing-md`: 中等间距
+- `--font-size-sm-plus`: 小号加粗字体
+
+### 2. 主题前缀
+- `--light-*`: 浅色主题专用
+- `--dark-*`: 深色主题专用
+- 无前缀: 当前主题（默认浅色）
+
+### 3. 状态后缀
+- `-hover`: 悬停状态
+- `-active`: 激活状态
+- `-focus`: 焦点状态
+- `-disabled`: 禁用状态
 
 ## 技术实现
 
-### CSS 变量命名规范
+### CSS变量 (Custom Properties)
+所有设计令牌都使用CSS自定义属性实现：
+
 ```css
-/* 颜色变量 */
---color-[类别]-[属性]: [值]
+:root {
+  --primary-color: #c5f955;
+  --spacing-md: 16px;
+  --font-size-base: 1rem;
+}
 
-/* 示例 */
---color-accent-base: #c5f955;
---color-bg-base: #181818;
---color-label-title: #ffffff;
-
-/* 字体变量 */
---font-[属性]: [值]
-
-/* 示例 */
---font-sans: ui-sans-serif, system-ui, sans-serif;
---text-base: 1rem;
-
-/* 间距变量 */
---spacing-[尺寸]: [值]
---radius-[尺寸]: [值]
-
-/* 动画变量 */
---animate-[名称]: [值]
+[data-theme="dark"] {
+  --primary-color: #a8e328;
+  --background-base-color: #0f0f0f;
+}
 ```
 
-### 使用原则
-1. **语义化命名**: 使用语义化的变量名而非直接颜色值
-2. **层级关系**: 保持设计令牌的层级结构
-3. **响应式设计**: 所有令牌都支持响应式场景
-4. **主题支持**: 令牌系统支持深色/浅色主题切换
+### 令牌引用
+令牌可以引用其他令牌：
 
-## 设计令牌映射表
+```css
+:root {
+  --button-primary-bg: var(--primary-color);
+  --button-primary-text: var(--background-inverse-color);
+}
+```
 
-| 类别 | 令牌前缀 | 用途 | 示例 |
-|------|----------|------|------|
-| 颜色 | `--color-` | 所有颜色定义 | `--color-accent-base` |
-| 字体 | `--font-`, `--text-` | 字体族和字号 | `--font-sans`, `--text-lg` |
-| 间距 | `--spacing-`, `--radius-` | 间距和圆角 | `--spacing-md` |
-| 动画 | `--animate-` | 动画效果 | `--animate-pulse-quicker` |
+## 维护指南
 
-## 预览系统
+### 1. 添加新令牌
+1. 确定令牌分类和用途
+2. 按照命名规范命名
+3. 在相应文档中记录
+4. 更新组件使用示例
 
-### 交互式预览
-查看所有设计令牌的实时预览和交互效果：
-- [设计令牌预览首页](../preview/index.html)
-- [颜色系统预览](../preview/colors.html)
-- [字体系统预览](../preview/typography.html)
-- [间距系统预览](../preview/spacing.html)
-- [布局系统预览](../preview/layout.html)
-- [动效系统预览](../preview/animations.html)
+### 2. 修改现有令牌
+1. 评估影响范围
+2. 测试所有使用场景
+3. 更新相关文档
+4. 通知开发团队
 
-### 功能特性
-- ✨ **实时预览** - 所有设计令牌的视觉效果
-- 🎨 **颜色复制** - 点击颜色块复制HEX值
-- 📋 **代码复制** - 一键复制所有令牌代码
-- 📱 **响应式** - 适配所有设备尺寸
-- ⚡ **交互演示** - 主题切换、动画效果
+### 3. 废弃令牌
+1. 标记为废弃但不立即删除
+2. 提供迁移建议
+3. 在下个主版本中移除
 
 ## 相关文档
 
-- [02-color-system.md](02-color-system.md) - 详细颜色系统规范
-- [03-typography.md](03-typography.md) - 字体系统规范
-- [04-spacing.md](04-spacing.md) - 间距系统规范
-- [05-layout.md](05-layout.md) - 布局系统规范
-- [06-animations.md](06-animations.md) - 动效系统规范
-- [组件库文档](../component-library/) - 完整组件库规范
+- [颜色系统](./02-color-system.md) - 详细的颜色使用指南
+- [排版系统](./03-typography.md) - 字体和文本样式
+- [间距系统](./04-spacing.md) - 布局和间距规范
+- [布局系统](./05-layout.md) - 网格和容器系统
+- [动画系统](./06-animations.md) - 动画和过渡效果
 
-## 版本信息
+---
 
-- **来源**: Meshy.ai 官方网站 (5个子页面综合分析)
-- **分析日期**: 2025-11-14
-- **设计版本**: 1.0.0
+*最后更新: 2025年11月14日*

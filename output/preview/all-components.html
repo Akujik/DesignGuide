@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark" style="color-scheme: dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meshy AI 完整组件库</title>
+    <style>
+        /* 基于实际源代码的完整CSS变量 */
+        :root {
+            /* Meshy AI 品牌色系 */
+            --s-color-brand-primary-default: #0057ff;
+            --s-color-brand-primary-hover: #004ad9;
+            --s-color-brand-primary-pressed: #003db3;
+            --meshy-500: #C5F955;
+            --meshy-300: #FF97C2;
+
+            /* 渐变特色色 */
+            --gradient-primary: linear-gradient(45deg, #C5F955 0%, #FF97C2 100%);
+            --gradient-primary-hover: linear-gradient(45deg, #B6FF19 0%, #FF6FAA 100%);
+            --gradient-secondary: linear-gradient(45deg, #F9E855 0%, #E99430 100%);
+            --gradient-tertiary: linear-gradient(270deg, #96b3ff -1.16%, #b155f9 98.84%);
+            --gradient-tier-free: linear-gradient(270deg, #edffc5 -1.16%, #c5f955 98.84%);
+            --gradient-tier-pro: linear-gradient(270deg, #76adff, #3a5aff);
+            --gradient-tier-max: linear-gradient(270deg, #96b3ff -1.16%, #b155f9 98.84%);
+
+            /* 深色主题背景 */
+            --semi-color-bg-0: #16161a;
+            --semi-color-bg-1: #232429;
+            --semi-color-bg-2: #35363c;
+            --semi-color-bg-3: #43444a;
+            --semi-color-bg-4: #4f5159;
+
+            /* 文本颜色 */
+            --semi-color-text-0: rgba(249, 249, 249, 1);
+            --semi-color-text-1: rgba(249, 249, 249, 0.8);
+            --semi-color-text-2: rgba(249, 249, 249, 0.6);
+            --semi-color-text-3: rgba(249, 249, 249, 0.35);
+
+            /* 边框颜色 */
+            --semi-color-border: rgba(255, 255, 255, 0.08);
+            --semi-color-border-strong: rgba(255, 255, 255, 0.12);
+
+            /* 语义颜色 */
+            --semi-color-success: #22c55e;
+            --semi-color-warning: #f59e0b;
+            --semi-color-danger: #ef4444;
+            --semi-color-info: #3b82f6;
+
+            /* 字体系统 */
+            --s-font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                             'SF Pro SC', 'SF Pro Display', 'SF Pro Icons',
+                             'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+                             'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+            /* 字体大小 */
+            --s-font-h1: 600 26px/36px var(--s-font-family);
+            --s-font-h2: 700 20px/32px var(--s-font-family);
+            --s-font-h3: 600 16px/24px var(--s-font-family);
+            --s-font-h4: 600 14px/22px var(--s-font-family);
+            --s-font-base: 400 16px/24px var(--s-font-family);
+            --s-font-base-strong: 500 16px/24px var(--s-font-family);
+            --s-font-small: 400 14px/22px var(--s-font-family);
+            --s-font-xs: 400 12px/18px var(--s-font-family);
+
+            /* 圆角系统 */
+            --s-radius-xxs: 4px;
+            --s-radius-xs: 8px;
+            --s-radius-s: 12px;
+            --s-radius-m: 16px;
+            --s-radius-l: 20px;
+            --s-radius-xl: 24px;
+            --s-radius-xxl: 32px;
+            --s-radius-xxxl: 36px;
+
+            /* 间距系统 */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-xxl: 48px;
+
+            /* 阴影系统 */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+            /* 过渡效果 */
+            --transition-base: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* 侧边栏宽度 */
+            --sidebar-width: 320px;
+
+            /* 容器 */
+            --container-sm: 640px;
+            --container-md: 768px;
+            --container-lg: 1024px;
+            --container-xl: 1280px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: var(--s-font-base);
+            color: var(--semi-color-text-0);
+            background-color: var(--semi-color-bg-0);
+            min-height: 100vh;
+        }
+
+        /* 布局系统 */
+        .app-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--semi-color-bg-1);
+            border-right: 1px solid var(--semi-color-border);
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            z-index: 40;
+        }
+
+        .sidebar-header {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--semi-color-border);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            font: var(--s-font-h2);
+            color: var(--semi-color-text-0);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: var(--s-radius-m);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--semi-color-bg-0);
+        }
+
+        .sidebar-content {
+            padding: var(--spacing-lg);
+        }
+
+        .sidebar-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .sidebar-title {
+            font: var(--s-font-xs);
+            color: var(--semi-color-text-2);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--spacing-md);
+            padding: 0 var(--spacing-sm);
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-item {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-sm);
+            color: var(--semi-color-text-1);
+            text-decoration: none;
+            border-radius: var(--s-radius-s);
+            font: var(--s-font-small);
+            transition: var(--transition-base);
+        }
+
+        .sidebar-link:hover {
+            color: var(--semi-color-text-0);
+            background-color: var(--semi-color-bg-3);
+        }
+
+        .sidebar-link.active {
+            color: var(--s-color-brand-primary-default);
+            background-color: rgba(0, 87, 255, 0.1);
+        }
+
+        .sidebar-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            background-color: var(--semi-color-bg-0);
+        }
+
+        /* 顶部导航栏 */
+        .top-header {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background-color: var(--semi-color-bg-1);
+            border-bottom: 1px solid var(--semi-color-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .top-header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-md) var(--spacing-lg);
+            height: 72px;
+        }
+
+        .header-title {
+            font: var(--s-font-h1);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        /* 页面内容 */
+        .page-content {
+            padding: var(--spacing-xxl);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .section-title {
+            font: var(--s-font-h2);
+            margin-bottom: var(--spacing-lg);
+            color: var(--semi-color-text-0);
+        }
+
+        .section-description {
+            font: var(--s-font-base);
+            color: var(--semi-color-text-1);
+            margin-bottom: var(--spacing-xl);
+            max-width: 800px;
+        }
+
+        /* Hero 区域组件 */
+        .hero {
+            background: var(--gradient-tertiary);
+            border-radius: var(--s-radius-xxl);
+            padding: var(--spacing-xxl);
+            text-align: center;
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(22, 22, 26, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font: 700 48px/56px var(--s-font-family);
+            color: white;
+            margin-bottom: var(--spacing-lg);
+            -webkit-text-fill-color: white;
+        }
+
+        .hero-subtitle {
+            font: var(--s-font-base);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* 导航组件 */
+        .nav-tabs {
+            display: flex;
+            background-color: var(--semi-color-bg-1);
+            border-radius: var(--s-radius-l);
+            padding: var(--spacing-xs);
+            margin-bottom: var(--spacing-xl);
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: none;
+            border: none;
+            border-radius: var(--s-radius-m);
+            color: var(--semi-color-text-1);
+            font: var(--s-font-base-strong);
+            cursor: pointer;
+            transition: var(--transition-base);
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            color: var(--semi-color-text-0);
+            background-color: var(--semi-color-bg-2);
+        }
+
+        .nav-tab.active {
+            background: var(--gradient-primary);
+            color: var(--semi-color-bg-0);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            font: var(--s-font-small);
+        }
+
+        .breadcrumb-item {
+            color: var(--semi-color-text-2);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item:hover {
+            color: var(--semi-color-text-0);
+        }
+
+        .breadcrumb-item.active {
+            color: var(--semi-color-text-0);
+            font-weight: 500;
+        }
+
+        .breadcrumb-separator {
+            color: var(--semi-color-text-2);
+        }
+
+        /* 分页组件 */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xs);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .page-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--semi-color-bg-1);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-s);
+            color: var(--semi-color-text-1);
+            text-decoration: none;
+            font: var(--s-font-small);
+            transition: var(--transition-base);
+        }
+
+        .page-btn:hover {
+            background: var(--semi-color-bg-2);
+            color: var(--semi-color-text-0);
+            border-color: var(--semi-color-border-strong);
+        }
+
+        .page-btn.active {
+            background: var(--s-color-brand-primary-default);
+            color: white;
+            border-color: var(--s-color-brand-primary-default);
+        }
+
+        /* 统计卡片 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .stat-card {
+            background: var(--semi-color-bg-1);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-l);
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .stat-number {
+            font: 700 32px/40px var(--s-font-family);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-label {
+            font: var(--s-font-small);
+            color: var(--semi-color-text-1);
+        }
+
+        /* 价格卡片 */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .pricing-card {
+            background: var(--semi-color-bg-1);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-xxl);
+            padding: var(--spacing-xl);
+            position: relative;
+            transition: var(--transition-base);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--meshy-500);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-tier-free);
+            border-radius: var(--s-radius-xxl) var(--s-radius-xxl) 0 0;
+        }
+
+        .pricing-tier {
+            font: var(--s-font-h3);
+            color: var(--semi-color-text-0);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .pricing-price {
+            font: 700 48px/56px var(--s-font-family);
+            color: var(--semi-color-text-0);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .pricing-period {
+            font: var(--s-font-small);
+            color: var(--semi-color-text-2);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font: var(--s-font-small);
+            color: var(--semi-color-text-1);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .pricing-feature::before {
+            content: '✓';
+            color: var(--semi-color-success);
+            font-weight: bold;
+        }
+
+        /* 步骤指示器 */
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: var(--spacing-xl) 0;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: var(--semi-color-border);
+            z-index: 1;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-indicator {
+            width: 40px;
+            height: 40px;
+            background: var(--semi-color-bg-2);
+            border: 2px solid var(--semi-color-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font: var(--s-font-base-strong);
+            color: var(--semi-color-text-1);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .step.completed .step-indicator {
+            background: var(--semi-color-success);
+            border-color: var(--semi-color-success);
+            color: white;
+        }
+
+        .step.active .step-indicator {
+            background: var(--s-color-brand-primary-default);
+            border-color: var(--s-color-brand-primary-default);
+            color: white;
+        }
+
+        .step-label {
+            font: var(--s-font-small);
+            color: var(--semi-color-text-1);
+            text-align: center;
+        }
+
+        /* 通知组件 */
+        .notification {
+            background: var(--semi-color-bg-1);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-l);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+        }
+
+        .notification.success {
+            border-left: 4px solid var(--semi-color-success);
+        }
+
+        .notification.warning {
+            border-left: 4px solid var(--semi-color-warning);
+        }
+
+        .notification.error {
+            border-left: 4px solid var(--semi-color-danger);
+        }
+
+        .notification.info {
+            border-left: 4px solid var(--semi-color-info);
+        }
+
+        .notification-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-title {
+            font: var(--s-font-base-strong);
+            color: var(--semi-color-text-0);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .notification-message {
+            font: var(--s-font-small);
+            color: var(--semi-color-text-1);
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            color: var(--semi-color-text-2);
+            cursor: pointer;
+            padding: var(--spacing-xs);
+            font-size: 18px;
+        }
+
+        /* 搜索框组件 */
+        .search-box {
+            position: relative;
+            max-width: 400px;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: var(--spacing-md) var(--spacing-lg) var(--spacing-md) 48px;
+            background: var(--semi-color-bg-1);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-xxxl);
+            color: var(--semi-color-text-0);
+            font: var(--s-font-base);
+            transition: var(--transition-base);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--s-color-brand-primary-default);
+            box-shadow: 0 0 0 2px rgba(0, 87, 255, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: var(--spacing-md);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--semi-color-text-2);
+            pointer-events: none;
+        }
+
+        /* 徽章组件 */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: var(--s-color-brand-primary-default);
+            color: white;
+            border-radius: var(--s-radius-xxxl);
+            font: var(--s-font-xs);
+            font-weight: 500;
+        }
+
+        .badge.secondary {
+            background: var(--semi-color-bg-2);
+            color: var(--semi-color-text-0);
+        }
+
+        .badge.success {
+            background: var(--semi-color-success);
+        }
+
+        .badge.warning {
+            background: var(--semi-color-warning);
+        }
+
+        .badge.error {
+            background: var(--semi-color-danger);
+        }
+
+        /* 加载状态 */
+        .loading {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--semi-color-border);
+            border-top-color: var(--s-color-brand-primary-default);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* 按钮组件（增强版） */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: var(--s-radius-xxxl);
+            font: var(--s-font-small);
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--s-color-brand-primary-default);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--s-color-brand-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background-color: var(--semi-color-bg-3);
+            color: var(--semi-color-text-0);
+            border: 1px solid var(--semi-color-border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--semi-color-bg-4);
+            border-color: var(--semi-color-border-strong);
+        }
+
+        .btn-gradient {
+            background: var(--gradient-primary);
+            color: var(--semi-color-bg-0);
+        }
+
+        .btn-gradient:hover {
+            background: var(--gradient-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-success {
+            background-color: var(--semi-color-success);
+            color: white;
+        }
+
+        .btn-warning {
+            background-color: var(--semi-color-warning);
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: var(--semi-color-danger);
+            color: white;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn-sm {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            font: var(--s-font-xs);
+        }
+
+        .btn-lg {
+            padding: var(--spacing-md) var(--spacing-lg);
+            font: var(--s-font-base);
+        }
+
+        /* 卡片组件（增强版） */
+        .card {
+            background-color: var(--semi-color-bg-1);
+            border: 1px solid var(--semi-color-border);
+            border-radius: var(--s-radius-l);
+            padding: var(--spacing-lg);
+            transition: var(--transition-base);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--s-color-brand-primary-default);
+        }
+
+        .card-header {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .card-title {
+            font: var(--s-font-h3);
+            color: var(--semi-color-text-0);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .card-subtitle {
+            font: var(--s-font-small);
+            color: var(--semi-color-text-1);
+        }
+
+        .card-content {
+            font: var(--s-font-base);
+            color: var(--semi-color-text-1);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--semi-color-border);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 300ms ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font: 700 32px/40px var(--s-font-family);
+            }
+
+            .stats-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: var(--spacing-lg);
+            }
+
+            .steps::before {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        /* 移动菜单按钮 */
+        .mobile-menu-toggle {
+            background: none;
+            border: none;
+            padding: var(--spacing-sm);
+            cursor: pointer;
+            color: var(--semi-color-text-0);
+        }
+
+        .menu-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-line {
+            width: 100%;
+            height: 2px;
+            background-color: currentColor;
+            transition: var(--transition-base);
+        }
+
+        /* 工具类 */
+        .text-center { text-align: center; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .gap-sm { gap: var(--spacing-sm); }
+        .gap-md { gap: var(--spacing-md); }
+        .gap-lg { gap: var(--spacing-lg); }
+        .mb-sm { margin-bottom: var(--spacing-sm); }
+        .mb-md { margin-bottom: var(--spacing-md); }
+        .mb-lg { margin-bottom: var(--spacing-lg); }
+        .mt-sm { margin-top: var(--spacing-sm); }
+        .mt-md { margin-top: var(--spacing-md); }
+        .mt-lg { margin-top: var(--spacing-lg); }
+    </style>
+</head>
+<body>
+    <div class="app-layout">
+        <!-- 侧边栏 -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">
+                    <div class="logo-icon">M</div>
+                    <span>Meshy AI</span>
+                </a>
+            </div>
+            <div class="sidebar-content">
+                <!-- 基础组件 -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">基础组件</h3>
+                    <nav class="sidebar-nav">
+                        <div class="sidebar-item">
+                            <a href="#hero" class="sidebar-link">
+                                <span class="sidebar-icon">🎭</span>
+                                <span>Hero 区域</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#navigation" class="sidebar-link">
+                                <span class="sidebar-icon">🧭</span>
+                                <span>导航组件</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#buttons" class="sidebar-link">
+                                <span class="sidebar-icon">🔘</span>
+                                <span>按钮组件</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#cards" class="sidebar-link">
+                                <span class="sidebar-icon">🃏</span>
+                                <span>卡片组件</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- 高级组件 -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">高级组件</h3>
+                    <nav class="sidebar-nav">
+                        <div class="sidebar-item">
+                            <a href="#forms" class="sidebar-link">
+                                <span class="sidebar-icon">📋</span>
+                                <span>表单组件</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#pricing" class="sidebar-link">
+                                <span class="sidebar-icon">💰</span>
+                                <span>价格卡片</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#stats" class="sidebar-link">
+                                <span class="sidebar-icon">📊</span>
+                                <span>统计卡片</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#steps" class="sidebar-link">
+                                <span class="sidebar-icon">📈</span>
+                                <span>步骤指示器</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-item">
+                            <a href="#notifications" class="sidebar-link">
+                                <span class="sidebar-icon">🔔</span>
+                                <span>通知组件</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 顶部导航栏 -->
+            <header class="top-header">
+                <div class="top-header-container">
+                    <button class="mobile-menu-toggle" onclick="toggleSidebar()">
+                        <div class="menu-icon">
+                            <span class="menu-line"></span>
+                            <span class="menu-line"></span>
+                            <span class="menu-line"></span>
+                        </div>
+                    </button>
+                    <h1 class="header-title">Meshy AI 完整组件库</h1>
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" class="search-input" placeholder="搜索组件...">
+                        </div>
+                        <span class="badge">v1.0.0</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 页面内容 -->
+            <div class="page-content">
+                <!-- Hero 区域 -->
+                <section id="hero" class="content-section">
+                    <div class="hero">
+                        <div class="hero-content">
+                            <h1 class="hero-title">重新定义 3D 创作</h1>
+                            <p class="hero-subtitle">
+                                Meshy AI 是最先进的 AI 3D 模型生成器，让您在几分钟内创建出令人惊叹的 3D 模型
+                            </p>
+                            <div class="hero-actions">
+                                <button class="btn btn-gradient btn-lg">免费开始创作</button>
+                                <button class="btn btn-secondary btn-lg">观看演示</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 导航组件 -->
+                <section id="navigation" class="content-section">
+                    <h2 class="section-title">导航组件</h2>
+                    <p class="section-description">
+                        多种导航模式，包括标签页、面包屑和分页导航等。
+                    </p>
+
+                    <!-- 面包屑导航 -->
+                    <div class="mb-lg">
+                        <h3 style="font: var(--s-font-h3); margin-bottom: var(--spacing-md);">面包屑导航</h3>
+                        <nav class="breadcrumb">
+                            <a href="#" class="breadcrumb-item">首页</a>
+                            <span class="breadcrumb-separator">›</span>
+                            <a href="#" class="breadcrumb-item">组件库</a>
+                            <span class="breadcrumb-separator">›</span>
+                            <span class="breadcrumb-item active">导航组件</span>
+                        </nav>
+                    </div>
+
+                    <!-- 标签页导航 -->
+                    <div class="mb-lg">
+                        <h3 style="font: var(--s-font-h3); margin-bottom: var(--spacing-md);">标签页导航</h3>
+                        <div class="nav-tabs">
+                            <button class="nav-tab active">概览</button>
+                            <button class="nav-tab">功能特性</button>
+                            <button class="nav-tab">使用指南</button>
+                            <button class="nav-tab">API 文档</button>
+                        </div>
+                    </div>
+
+                    <!-- 分页导航 -->
+                    <div>
+                        <h3 style="font: var(--s-font-h3); margin-bottom: var(--spacing-md);">分页导航</h3>
+                        <nav class="pagination">
+                            <a href="#" class="page-btn">←</a>
+                            <a href="#" class="page-btn active">1</a>
+                            <a href="#" class="page-btn">2</a>
+                            <a href="#" class="page-btn">3</a>
+                            <span style="color: var(--semi-color-text-2);">...</span>
+                            <a href="#" class="page-btn">10</a>
+                            <a href="#" class="page-btn">→</a>
+                        </nav>
+                    </div>
+                </section>
+
+                <!-- 按钮组件 -->
+                <section id="buttons" class="content-section">
+                    <h2 class="section-title">按钮组件</h2>
+                    <p class="section-description">
+                        完整的按钮系统，支持多种样式、尺寸和状态。
+                    </p>
+
+                    <div class="card">
+                        <h3 style="font: var(--s-font-h3); margin-bottom: var(--spacing-lg);">按钮样式</h3>
+
+                        <div class="mb-lg">
+                            <h4 style="font: var(--s-font-h4); margin-bottom: var(--spacing-md); color: var(--semi-color-text-0);">主要按钮</h4>
+                            <div class="flex gap-md mb-md">
+                                <button class="btn btn-primary">默认按钮</button>
+                                <button class="btn btn-primary">🚀 带图标</button>
+                                <button class="btn btn-primary" disabled>禁用状态</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-lg">
+                            <h4 style="font: var(--s-font-h4); margin-bottom: var(--spacing-md); color: var(--semi-color-text-0);">次要按钮</h4>
+                            <div class="flex gap-md mb-md">
+                                <button class="btn btn-secondary">次要按钮</button>
+                                <button class="btn btn-secondary">📝 带图标</button>
+                                <button class="btn btn-secondary" disabled>禁用状态</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-lg">
+                            <h4 style="font: var(--s-font-h4); margin-bottom: var(--spacing-md); color: var(--semi-color-text-0);">渐变按钮</h4>
+                            <div class="flex gap-md mb-md">
+                                <button class="btn btn-gradient">渐变按钮</button>
+                                <button class="btn btn-gradient">✨ 特殊效果</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-lg">
+                            <h4 style="font: var(--s-font-h4); margin-bottom: var(--spacing-md); color: var(--semi-color-text-0);">状态按钮</h4>
+                            <div class="flex gap-md mb-md">
+                                <button class="btn btn-success">成功</button>
+                                <button class="btn btn-warning">警告</button>
+                                <button class="btn btn-danger">危险</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 style="font: var(--s-font-h4); margin-bottom: var(--spacing-md); color: var(--semi-color-text-0);">尺寸变体</h4>
+                            <div class="flex gap-md items-center mb-md">
+                                <button class="btn btn-primary btn-sm">小按钮</button>
+                                <button class="btn btn-primary">默认按钮</button>
+                                <button class="btn btn-primary btn-lg">大按钮</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 卡片组件 -->
+                <section id="cards" class="content-section">
+                    <h2 class="section-title">卡片组件</h2>
+                    <p class="section-description">
+                        灵活的卡片容器，支持多种内容模式和交互状态。
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">标准卡片</h3>
+                                <p class="card-subtitle">基础信息展示</p>
+                            </div>
+                            <div class="card-content">
+                                这是一个标准的卡片组件，包含标题、副标题和内容区域。适用于各种信息展示场景。
+                            </div>
+                            <div class="card-footer">
+                                <span class="badge secondary">默认</span>
+                                <button class="btn btn-secondary btn-sm">查看详情</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">交互卡片</h3>
+                                <p class="card-subtitle">悬停有动画效果</p>
+                            </div>
+                            <div class="card-content">
+                                这个卡片在悬停时会有提升效果和阴影变化，提供更好的交互反馈。
+                            </div>
+                            <div class="card-footer">
+                                <span class="badge">可交互</span>
+                                <button class="btn btn-primary btn-sm">了解更多</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">状态卡片</h3>
+                                <p class="card-subtitle">带状态指示器</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="flex items-center gap-sm mb-md">
+                                    <div style="width: 8px; height: 8px; background: var(--semi-color-success); border-radius: 50%;"></div>
+                                    <span>系统运行正常</span>
+                                </div>
+                                <div class="loading">
+                                    <div class="spinner"></div>
+                                    <span>正在更新数据...</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="badge success">活跃</span>
+                                <button class="btn btn-success btn-sm">管理</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 表单组件 -->
+                <section id="forms" class="content-section">
+                    <h2 class="section-title">表单组件</h2>
+                    <p class="section-description">
+                        完整的表单系统，包括输入控件、验证反馈和布局模式。
+                    </p>
+
+                    <div class="card">
+                        <h3 style="font: var(--s-font-h3); margin-bottom: var(--spacing-lg);">基础表单</h3>
+
+                        <div class="mb-lg">
+                            <label style="display: block; font: var(--s-font-base-strong); color: var(--semi-color-text-0); margin-bottom: var(--spacing-sm);">用户名</label>
+                            <input type="text" style="width: 100%; padding: var(--spacing-md); background: var(--semi-color-bg-2); border: 1px solid var(--semi-color-border); border-radius: var(--s-radius-s); color: var(--semi-color-text-0); font: var(--s-font-base);" placeholder="请输入用户名">
+                        </div>
+
+                        <div class="mb-lg">
+                            <label style="display: block; font: var(--s-font-base-strong); color: var(--semi-color-text-0); margin-bottom: var(--spacing-sm);">邮箱地址</label>
+                            <input type="email" style="width: 100%; padding: var(--spacing-md); background: var(--semi-color-bg-2); border: 1px solid var(--semi-color-border); border-radius: var(--s-radius-s); color: var(--semi-color-text-0); font: var(--s-font-base);" placeholder="example@email.com">
+                        </div>
+
+                        <div class="mb-lg">
+                            <label style="display: block; font: var(--s-font-base-strong); color: var(--semi-color-text-0); margin-bottom: var(--spacing-sm);">选择计划</label>
+                            <select style="width: 100%; padding: var(--spacing-md); background: var(--semi-color-bg-2); border: 1px solid var(--semi-color-border); border-radius: var(--s-radius-s); color: var(--semi-color-text-0); font: var(--s-font-base);">
+                                <option>免费版</option>
+                                <option>专业版</option>
+                                <option>企业版</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-lg">
+                            <label style="display: block; font: var(--s-font-base-strong); color: var(--semi-color-text-0); margin-bottom: var(--spacing-sm);">留言内容</label>
+                            <textarea style="width: 100%; padding: var(--spacing-md); background: var(--semi-color-bg-2); border: 1px solid var(--semi-color-border); border-radius: var(--s-radius-s); color: var(--semi-color-text-0); font: var(--s-font-base); rows="4;" placeholder="请输入您的留言..."></textarea>
+                        </div>
+
+                        <div class="flex gap-md">
+                            <button class="btn btn-primary">提交表单</button>
+                            <button class="btn btn-secondary">重置</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 价格卡片 -->
+                <section id="pricing" class="content-section">
+                    <h2 class="section-title">价格卡片</h2>
+                    <p class="section-description">
+                        展示不同服务等级的价格卡片，支持特色标记和渐变背景。
+                    </p>
+
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="pricing-tier">免费版</div>
+                            <div class="pricing-price">¥0</div>
+                            <div class="pricing-period">/月</div>
+                            <ul class="pricing-features">
+                                <li class="pricing-feature">每月 100 个模型</li>
+                                <li class="pricing-feature">基础功能</li>
+                                <li class="pricing-feature">社区支持</li>
+                            </ul>
+                            <button class="btn btn-secondary" style="width: 100%;">开始使用</button>
+                        </div>
+
+                        <div class="pricing-card featured">
+                            <div class="pricing-tier">专业版</div>
+                            <div class="pricing-price">¥99</div>
+                            <div class="pricing-period">/月</div>
+                            <ul class="pricing-features">
+                                <li class="pricing-feature">无限模型生成</li>
+                                <li class="pricing-feature">高级功能</li>
+                                <li class="pricing-feature">优先支持</li>
+                                <li class="pricing-feature">API 访问</li>
+                            </ul>
+                            <button class="btn btn-gradient" style="width: 100%;">立即升级</button>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-tier">企业版</div>
+                            <div class="pricing-price">¥299</div>
+                            <div class="pricing-period">/月</div>
+                            <ul class="pricing-features">
+                                <li class="pricing-feature">团队协作</li>
+                                <li class="pricing-feature">定制功能</li>
+                                <li class="pricing-feature">专属支持</li>
+                                <li class="pricing-feature">高级 API</li>
+                            </ul>
+                            <button class="btn btn-secondary" style="width: 100%;">联系销售</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 统计卡片 -->
+                <section id="stats" class="content-section">
+                    <h2 class="section-title">统计卡片</h2>
+                    <p class="section-description">
+                        展示关键业务指标和数据统计的卡片组件。
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">100K+</div>
+                            <div class="stat-label">活跃用户</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1.2M</div>
+                            <div class="stat-label">模型创建</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">正常运行时间</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">技术支持</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 步骤指示器 -->
+                <section id="steps" class="content-section">
+                    <h2 class="section-title">步骤指示器</h2>
+                    <p class="section-description">
+                        引导用户完成多步骤流程的指示器组件。
+                    </p>
+
+                    <div class="steps">
+                        <div class="step completed">
+                            <div class="step-indicator">✓</div>
+                            <div class="step-label">注册账号</div>
+                        </div>
+                        <div class="step completed">
+                            <div class="step-indicator">✓</div>
+                            <div class="step-label">验证邮箱</div>
+                        </div>
+                        <div class="step active">
+                            <div class="step-indicator">3</div>
+                            <div class="step-label">选择计划</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-indicator">4</div>
+                            <div class="step-label">开始使用</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 通知组件 -->
+                <section id="notifications" class="content-section">
+                    <h2 class="section-title">通知组件</h2>
+                    <p class="section-description">
+                        向用户传递重要信息的反馈组件。
+                    </p>
+
+                    <div class="notification success">
+                        <span class="notification-icon">✓</span>
+                        <div class="notification-content">
+                            <div class="notification-title">操作成功</div>
+                            <div class="notification-message">您的设置已成功保存。</div>
+                        </div>
+                        <button class="notification-close">×</button>
+                    </div>
+
+                    <div class="notification warning">
+                        <span class="notification-icon">⚠</span>
+                        <div class="notification-content">
+                            <div class="notification-title">注意</div>
+                            <div class="notification-message">您的免费套餐即将到期，请及时升级。</div>
+                        </div>
+                        <button class="notification-close">×</button>
+                    </div>
+
+                    <div class="notification error">
+                        <span class="notification-icon">✕</span>
+                        <div class="notification-content">
+                            <div class="notification-title">错误</div>
+                            <div class="notification-message">上传失败，请检查文件格式和大小。</div>
+                        </div>
+                        <button class="notification-close">×</button>
+                    </div>
+
+                    <div class="notification info">
+                        <span class="notification-icon">ℹ</span>
+                        <div class="notification-content">
+                            <div class="notification-title">提示</div>
+                            <div class="notification-message">新功能已上线，快来体验吧！</div>
+                        </div>
+                        <button class="notification-close">×</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // 侧边栏切换功能
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 侧边栏导航激活状态
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.sidebar-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // 标签页切换
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // 通知关闭功能
+        document.querySelectorAll('.notification-close').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.closest('.notification').style.display = 'none';
+            });
+        });
+
+        // 点击外部关闭侧边栏（移动端）
+        document.addEventListener('click', (e) => {
+            const sidebar = document.getElementById('sidebar');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+
+            if (window.innerWidth <= 1024 &&
+                !sidebar.contains(e.target) &&
+                !menuToggle.contains(e.target) &&
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // 响应式处理
+        window.addEventListener('resize', () => {
+            const sidebar = document.getElementById('sidebar');
+            if (window.innerWidth > 1024) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>

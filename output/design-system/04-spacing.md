@@ -1,419 +1,545 @@
-# 间距系统规范 (Spacing System Specification)
+# 间距系统 (Spacing System)
+
+> Meshy AI 的布局、间距和网格系统指南
 
 ## 概述
 
-Meshy.ai 的间距系统基于 4px (0.25rem) 的基础单位，采用数学化的倍数关系，确保了设计的一致性和和谐性。系统支持组件内部间距、元素间距和布局间距的多层次应用。
+Meshy AI的间距系统基于8点网格原则，提供了一致、可预测的间距规则。系统确保所有元素之间保持和谐的视觉关系，支持响应式设计和多种布局需求。
 
-## 基础单位系统
+## 基础间距单位
 
-### 基础定义
+### 8点网格系统
+
 ```css
---spacing-unit: 0.25rem; /* 4px - 基础间距单位 */
+--spacing: 0.25rem;  /* 基础单位 = 4px */
 ```
 
-### 基础间距倍数
+所有间距都是基础单位的倍数，确保设计的一致性和可预测性。
+
+### 间距令牌
+
+#### 微间距 (Micro Spacing)
 ```css
---spacing-xs: calc(var(--spacing-unit) * 1);    /* 0.25rem = 4px */
---spacing-sm: calc(var(--spacing-unit) * 2);    /* 0.5rem = 8px */
---spacing-md: calc(var(--spacing-unit) * 3);    /* 0.75rem = 12px */
---spacing-lg: calc(var(--spacing-unit) * 4);    /* 1rem = 16px */
---spacing-xl: calc(var(--spacing-unit) * 5);    /* 1.25rem = 20px */
---spacing-2xl: calc(var(--spacing-unit) * 6);   /* 1.5rem = 24px */
---spacing-3xl: calc(var(--spacing-unit) * 8);   /* 2rem = 32px */
---spacing-4xl: calc(var(--spacing-unit) * 10);  /* 2.5rem = 40px */
---spacing-5xl: calc(var(--spacing-unit) * 12);  /* 3rem = 48px */
---spacing-6xl: calc(var(--spacing-unit) * 16);  /* 4rem = 64px */
---spacing-7xl: calc(var(--spacing-unit) * 20);  /* 5rem = 80px */
+--spacing-xs: 0.25rem;    /* 4px - 极小间距 */
+--spacing-sm: 0.5rem;     /* 8px - 小间距 */
 ```
 
-## 间距分类系统
-
-### 内间距 (Padding)
+#### 常用间距 (Common Spacing)
 ```css
-/* 内间距统一命名 */
---p-xs: var(--spacing-xs);    /* 4px */
---p-sm: var(--spacing-sm);    /* 8px */
---p-md: var(--spacing-md);    /* 12px */
---p-lg: var(--spacing-lg);    /* 16px */
---p-xl: var(--spacing-xl);    /* 20px */
---p-2xl: var(--spacing-2xl);  /* 24px */
---p-3xl: var(--spacing-3xl);  /* 32px */
---p-4xl: var(--spacing-4xl);  /* 40px */
+--spacing-md: 0.75rem;    /* 12px - 中等间距 */
+--spacing-lg: 1rem;       /* 16px - 大间距 */
+--spacing-xl: 1.25rem;    /* 20px - 特大间距 */
+--spacing-2xl: 1.5rem;    /* 24px - 超大间距 */
 ```
 
-### 外间距 (Margin)
+#### 扩展间距 (Extended Spacing)
 ```css
-/* 外间距统一命名 */
---m-xs: var(--spacing-xs);    /* 4px */
---m-sm: var(--spacing-sm);    /* 8px */
---m-md: var(--spacing-md);    /* 12px */
---m-lg: var(--spacing-lg);    /* 16px */
---m-xl: var(--spacing-xl);    /* 20px */
---m-2xl: var(--spacing-2xl);  /* 24px */
---m-3xl: var(--spacing-3xl);  /* 32px */
---m-4xl: var(--spacing-4xl);  /* 40px */
+--size-2xs: 2px;          /* 2px - 最小尺寸 */
+--size-xs: 4px;           /* 4px - 极小尺寸 */
+--size-sm: 8px;           /* 8px - 小尺寸 */
+--size-md: 16px;          /* 16px - 中等尺寸 */
+--size-ml: 24px;          /* 24px - 中大尺寸 */
+--size-lg: 32px;          /* 32px - 大尺寸 */
+--size-xl: 48px;          /* 48px - 特大尺寸 */
 ```
 
-### 组件间距 (Gap)
-```css
-/* 弹性布局和网格间距 */
---gap-xs: var(--spacing-xs);   /* 4px */
---gap-sm: var(--spacing-sm);   /* 8px */
---gap-md: var(--spacing-md);   /* 12px */
---gap-lg: var(--spacing-lg);   /* 16px */
---gap-xl: var(--spacing-xl);   /* 20px */
---gap-2xl: var(--spacing-2xl); /* 24px */
---gap-3xl: var(--spacing-3xl); /* 32px */
-```
+## 组件间距
 
-## 圆角系统 (Border Radius)
+### 内边距 (Padding)
 
-### 基础圆角
-```css
---radius-xs: 0.125rem;  /* 2px */
---radius-sm: 0.25rem;   /* 4px */
---radius-md: 0.375rem;  /* 6px */
---radius-lg: 0.5rem;    /* 8px */
---radius-xl: 0.75rem;   /* 12px */
---radius-2xl: 1rem;     /* 16px */
---radius-3xl: 1.5rem;   /* 24px */
---radius-4xl: 2rem;     /* 32px */
-```
-
-### 特殊圆角
-```css
---radius-full: 9999px;  /* 完全圆角 */
---radius-pill: 50px;    /* 胶囊形状 */
---radius-none: 0;       /* 无圆角 */
-```
-
-## 间距应用指南
-
-### 按钮组件间距
+#### 按钮内边距
 ```css
 /* 小按钮 */
-.button-small {
-  padding: var(--p-sm) var(--p-lg);
-  border-radius: var(--radius-md);
-  gap: var(--gap-sm);
+.button-sm {
+  padding: var(--spacing-sm) var(--spacing-md);
 }
 
-/* 中等按钮 */
-.button-medium {
-  padding: var(--p-md) var(--p-xl);
-  border-radius: var(--radius-lg);
-  gap: var(--gap-sm);
+/* 标准按钮 */
+.button {
+  padding: var(--spacing-md) var(--spacing-lg);
 }
 
 /* 大按钮 */
-.button-large {
-  padding: var(--p-lg) var(--p-2xl);
-  border-radius: var(--radius-xl);
-  gap: var(--gap-md);
+.button-lg {
+  padding: var(--spacing-lg) var(--spacing-xl);
 }
 ```
 
-### 卡片组件间距
+#### 卡片内边距
 ```css
+/* 紧凑卡片 */
+.card-compact {
+  padding: var(--spacing-md);
+}
+
+/* 标准卡片 */
 .card {
-  padding: var(--p-2xl);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--m-2xl);
+  padding: var(--spacing-lg);
 }
 
-.card-header {
-  margin-bottom: var(--m-lg);
-  padding-bottom: var(--p-md);
-}
-
-.card-content {
-  margin-bottom: var(--m-lg);
-}
-
-.card-footer {
-  padding-top: var(--p-md);
-  margin-top: var(--m-md);
+/* 宽松卡片 */
+.card-relaxed {
+  padding: var(--spacing-xl);
 }
 ```
 
-### 表单组件间距
+#### 表单控件内边距
 ```css
-.form-group {
-  margin-bottom: var(--m-lg);
+.input {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 1px solid var(--border-color);
 }
 
-.form-label {
-  margin-bottom: var(--p-sm);
-}
-
-.form-input {
-  padding: var(--p-md) var(--p-lg);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--p-sm);
-}
-
-.form-error {
-  margin-top: var(--p-xs);
-  padding: var(--p-sm) var(--p-md);
-  border-radius: var(--radius-sm);
+.textarea {
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-color);
 }
 ```
 
-### 导航组件间距
+### 外边距 (Margin)
+
+#### 元素间距
 ```css
-.nav-container {
-  padding: var(--p-lg) var(--p-3xl);
+/* 段落间距 */
+.paragraph {
+  margin-bottom: var(--spacing-lg);
 }
 
-.nav-item {
-  margin-right: var(--m-lg);
-  padding: var(--p-sm) var(--p-md);
-  border-radius: var(--radius-md);
+/* 标题间距 */
+.heading {
+  margin-bottom: var(--spacing-md);
 }
 
-.nav-dropdown {
-  gap: var(--gap-xs);
-  padding: var(--p-xs);
+/* 列表项间距 */
+.list-item {
+  margin-bottom: var(--spacing-sm);
 }
 ```
 
-## 布局间距系统
-
-### 页面布局
+#### 组件间距
 ```css
-/* 页面容器 */
-.page-container {
-  padding: var(--p-3xl) var(--p-4xl);
-  max-width: 1200px;
-  margin: 0 auto;
+/* 组件组间距 */
+.component-group {
+  margin-bottom: var(--spacing-xl);
 }
 
-/* 页面标题区域 */
-.page-header {
-  margin-bottom: var(--m-4xl);
-  padding-bottom: var(--p-2xl);
+/* 区块间距 */
+.section {
+  margin-bottom: var(--spacing-2xl);
 }
 
-/* 页面主要内容 */
-.page-main {
-  margin-bottom: var(--m-6xl);
-}
-
-/* 页面底部 */
-.page-footer {
-  margin-top: var(--m-6xl);
-  padding-top: var(--p-3xl);
+/* 页面间距 */
+.page-section {
+  margin-bottom: 3rem; /* 48px */
 }
 ```
 
-### 网格布局
+## 布局系统
+
+### 容器系统
+
 ```css
-/* 网格间距 */
-.grid-tight {
-  gap: var(--gap-sm);
-}
+/* 响应式容器 */
+.container-3xs { max-width: 16rem; }  /* 256px */
+.container-xs  { max-width: 20rem; }  /* 320px */
+.container-sm  { max-width: 24rem; }  /* 384px */
+.container-md  { max-width: 28rem; }  /* 448px */
+.container-lg  { max-width: 32rem; }  /* 512px */
+.container-xl  { max-width: 36rem; }  /* 576px */
+.container-2xl { max-width: 42rem; }  /* 672px */
+.container-3xl { max-width: 48rem; }  /* 768px */
+.container-4xl { max-width: 56rem; }  /* 896px */
+.container-5xl { max-width: 64rem; }  /* 1024px */
+.container-8xl { max-width: 90rem; }  /* 1440px */
+.container-9xl { max-width: 120rem; } /* 1920px */
+```
 
-.grid-normal {
-  gap: var(--gap-lg);
-}
+### 页面水平内边距
 
-.grid-loose {
-  gap: var(--gap-2xl);
-}
-
-/* 响应式网格间距 */
-@media (max-width: 768px) {
-  .grid-responsive {
-    gap: var(--gap-md);
-  }
-}
-
-@media (min-width: 769px) {
-  .grid-responsive {
-    gap: var(--gap-lg);
-  }
+```css
+.page-horizontal-padding {
+  padding-left: var(--size-md);
+  padding-right: var(--size-md);
 }
 ```
 
-### 弹性布局
+### 断点系统
+
 ```css
-/* 弹性容器间距 */
-.flex-row {
-  gap: var(--gap-md);
+/* 移动优先的响应式断点 */
+--breakpoint-sm: 640px;   /* 小屏幕 */
+--breakpoint-md: 768px;   /* 中等屏幕 */
+--breakpoint-lg: 1024px;  /* 大屏幕 */
+--breakpoint-xl: 1280px;  /* 超大屏幕 */
+--breakpoint-2xl: 1536px; /* 超超大屏幕 */
+```
+
+## 间距使用模式
+
+### 1. 元素内部间距
+
+```css
+/* 一致的内部间距 */
+.component {
+  padding: var(--spacing-lg);
 }
 
-.flex-column {
-  gap: var(--gap-lg);
-}
-
-.flex-wrap {
-  gap: var(--gap-lg);
+/* 非对称内边距 */
+.component-asymmetric {
+  padding: var(--spacing-md) var(--spacing-lg);
 }
 ```
 
-## 响应式间距
+### 2. 元素之间间距
 
-### 断点间距调整
 ```css
-/* 移动设备 */
-@media (max-width: 768px) {
-  :root {
-    --spacing-scale: 0.75;
-  }
+/* 垂直间距 */
+.vertical-spacing > * + * {
+  margin-top: var(--spacing-md);
 }
 
-/* 平板设备 */
-@media (min-width: 769px) and (max-width: 1024px) {
-  :root {
-    --spacing-scale: 0.875;
-  }
-}
-
-/* 桌面设备 */
-@media (min-width: 1025px) {
-  :root {
-    --spacing-scale: 1;
-  }
+/* 水平间距 */
+.horizontal-spacing > * + * {
+  margin-left: var(--spacing-md);
 }
 ```
 
-### 响应式间距计算
+### 3. 嵌套间距
+
 ```css
-.responsive-padding {
-  padding: calc(var(--spacing-lg) * var(--spacing-scale));
+/* 嵌套组件的间距管理 */
+.nested-component {
+  padding: var(--spacing-lg);
 }
 
-.responsive-margin {
-  margin: calc(var(--spacing-xl) * var(--spacing-scale)) 0;
+.nested-component .child {
+  margin-bottom: var(--spacing-md);
 }
 ```
 
 ## 特殊间距场景
 
-### 组件内部间距
+### 1. 最小触摸目标
+
 ```css
-/* 列表项间距 */
-.list-item {
-  padding: var(--p-md) var(--p-lg);
-  margin-bottom: var(--m-sm);
-}
-
-/* 标签间距 */
-.tag {
-  padding: var(--p-xs) var(--p-sm);
-  margin-right: var(--m-sm);
-  border-radius: var(--radius-pill);
-}
-
-/* 头像间距 */
-.avatar-group {
-  margin-right: calc(var(--m-lg) * -1); /* 负间距重叠 */
-}
-
-.avatar-item {
-  margin-right: var(--m-sm);
+/* 移动设备最小触摸目标 */
+.min-touch-target {
+  min-height: 2.75rem;  /* 44px */
+  min-width: 2.75rem;   /* 44px */
 }
 ```
 
-### 分隔间距
+### 2. 安全区域
+
 ```css
-/* 垂直分隔 */
-.divider-vertical {
-  margin: var(--m-2xl) 0;
-  height: 1px;
+/* 移动设备安全区域 */
+.mobile-nav-height {
+  height: env(safe-area-inset-bottom, 0);
 }
 
-/* 水平分隔 */
-.divider-horizontal {
-  margin: 0 var(--m-lg);
-  width: 1px;
+.safe-area-inset-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 ```
 
-### 悬停和焦点间距
+### 3. 滚动容器
+
 ```css
-/* 悬停状态 */
-:hover {
-  padding: var(--p-md);
-  margin: calc(var(--p-md) * -1);
+/* 页面内容高度 */
+.page-content-height {
+  height: calc(100dvh - var(--header-height));
 }
 
-/* 焦点状态 */
-:focus {
-  padding: calc(var(--p-md) - 2px);
-  border: 2px solid var(--color-accent-base);
+.page-content-height-without-header {
+  height: 100dvh;
 }
 ```
 
-## 间距计算工具
+## 应用程序特定间距
 
-### 复合间距
+### 1. 头部导航
+
 ```css
-/* 双倍间距 */
---spacing-2xs: calc(var(--spacing-xs) * 2);
+/* 头部高度 */
+.header-height {
+  height: 54px;
+}
 
-/* 1.5倍间距 */
---spacing-lg-half: calc(var(--spacing-lg) * 1.5);
-
-/* 间距组合 */
---spacing-complex: calc(var(--spacing-sm) + var(--spacing-md));
+/* 应用内头部高度 */
+.in-app-header-height {
+  height: 50px;
+}
 ```
 
-### 负间距
+### 2. 侧边栏
+
 ```css
-/* 负外间距 */
---m-negative-xs: calc(var(--spacing-xs) * -1);
---m-negative-sm: calc(var(--spacing-sm) * -1);
---m-negative-md: calc(var(--spacing-md) * -1);
---m-negative-lg: calc(var(--spacing-lg) * -1);
+/* 侧边栏宽度 */
+.sidebar-width {
+  width: 220px;
+}
+
+.sidebar-width-collapsed {
+  width: 90px;
+}
+
+.sidebar-default-width {
+  width: 72px;
+}
 ```
 
-## 间距使用原则
+### 3. 线程布局
 
-### 黄金比例应用
 ```css
-/* 基于黄金比例的间距 (1:1.618) */
---spacing-golden-sm: 8px;
---spacing-golden-md: 13px;  /* 8 * 1.618 ≈ 13 */
---spacing-golden-lg: 21px;  /* 13 * 1.618 ≈ 21 */
---spacing-golden-xl: 34px;  /* 21 * 1.618 ≈ 34 */
+/* 线程宽度 */
+.thread-width {
+  width: 1100px;
+}
+
+.thread-content-width {
+  width: 740px;
+}
+
+/* 线程视觉间距 */
+.thread-visual-spacing {
+  margin-bottom: var(--size-md);
+}
 ```
 
-### 3/4 比例系统
+### 4. 模态框和提示
+
 ```css
-/* 基于视觉和谐的 3/4 比例 */
---spacing-harmony-xs: 4px;
---spacing-harmony-sm: 6px;   /* 4 * 1.5 */
---spacing-harmony-md: 9px;   /* 6 * 1.5 */
---spacing-harmony-lg: 14px;  /* 9 * 1.5 */
---spacing-harmony-xl: 21px;  /* 14 * 1.5 */
+/* 轻提示边距 */
+.toast-v-margin {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.toast-h-margin {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+/* 输入框高度 */
+.thread-input-height-with-padding {
+  height: 130px;
+}
+
+.thread-attachments-height-with-padding {
+  height: 182px;
+}
 ```
 
-## 间距速查表
+## 响应式间距
 
-| 间距名称 | rem | px | CSS 变量 | 应用场景 |
-|----------|-----|----|----------|----------|
-| xs | 0.25 | 4 | `--spacing-xs` | 微小间距、图标间距 |
-| sm | 0.5 | 8 | `--spacing-sm` | 小组件内边距 |
-| md | 0.75 | 12 | `--spacing-md` | 表单元素内边距 |
-| lg | 1 | 16 | `--spacing-lg` | 标准间距、段落间距 |
-| xl | 1.25 | 20 | `--spacing-xl` | 按钮内边距 |
-| 2xl | 1.5 | 24 | `--spacing-2xl` | 卡片内边距 |
-| 3xl | 2 | 32 | `--spacing-3xl` | 大组件间距 |
-| 4xl | 2.5 | 40 | `--spacing-4xl` | 页面区域间距 |
-| 5xl | 3 | 48 | `--spacing-5xl` | 页面标题间距 |
-| 6xl | 4 | 64 | `--spacing-6xl` | 页面主区域间距 |
+### 移动优先策略
+
+```css
+/* 默认移动间距 */
+.responsive-spacing {
+  padding: var(--spacing-md);
+}
+
+/* 平板间距 */
+@media (min-width: 768px) {
+  .responsive-spacing {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* 桌面间距 */
+@media (min-width: 1024px) {
+  .responsive-spacing {
+    padding: var(--spacing-xl);
+  }
+}
+```
+
+### 流体间距
+
+```css
+/* 使用 clamp() 实现流体间距 */
+.fluid-spacing {
+  padding: clamp(
+    var(--spacing-sm),    /* 最小值 */
+    2vw,                 /* 首选值 */
+    var(--spacing-xl)     /* 最大值 */
+  );
+}
+```
+
+## 间距工具类
+
+### 内边距工具类
+
+```css
+/* 全方向内边距 */
+.p-xs { padding: var(--spacing-xs); }
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+.p-xl { padding: var(--spacing-xl); }
+
+/* 单方向内边距 */
+.pt-sm { padding-top: var(--spacing-sm); }
+.pr-sm { padding-right: var(--spacing-sm); }
+.pb-sm { padding-bottom: var(--spacing-sm); }
+.pl-sm { padding-left: var(--spacing-sm); }
+
+/* 水平和垂直内边距 */
+.px-sm {
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+}
+.py-sm {
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+}
+```
+
+### 外边距工具类
+
+```css
+/* 全方向外边距 */
+.m-xs { margin: var(--spacing-xs); }
+.m-sm { margin: var(--spacing-sm); }
+.m-md { margin: var(--spacing-md); }
+.m-lg { margin: var(--spacing-lg); }
+.m-xl { margin: var(--spacing-xl); }
+
+/* 单方向外边距 */
+.mt-sm { margin-top: var(--spacing-sm); }
+.mr-sm { margin-right: var(--spacing-sm); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.ml-sm { margin-left: var(--spacing-sm); }
+
+/* 外边距自动居中 */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+```
+
+### 间距重置
+
+```css
+/* 重置所有间距 */
+.m-0 { margin: 0; }
+.p-0 { padding: 0; }
+
+/* 重置单方向间距 */
+.mt-0 { margin-top: 0; }
+.mb-0 { margin-bottom: 0; }
+.ml-0 { margin-left: 0; }
+.mr-0 { margin-right: 0; }
+```
 
 ## 最佳实践
 
-### 间距选择指南
-1. **一致性**: 在同一类组件中使用相同的间距
-2. **层次性**: 使用不同的间距创建视觉层次
-3. **呼吸感**: 适当留白，避免过于拥挤
-4. **对齐**: 基于网格系统进行间距设计
+### 1. DO's ✅
 
-### 常见错误避免
-- 不要使用奇数的 px 值，保持 rem 对齐
-- 避免在一个组件中使用过多不同间距值
-- 不要在响应式设计中使用固定的 px 间距
-- 避免负间距的滥用，仅在必要时使用
+#### 使用间距令牌
+```css
+/* ✅ 正确 */
+.component {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ❌ 错误 */
+.component {
+  margin-bottom: 16px;
+}
+```
+
+#### 保持一致性
+```css
+/* ✅ 相同类型组件使用相同间距 */
+.card {
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.sidebar-item {
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+```
+
+#### 响应式设计
+```css
+/* ✅ 响应式间距 */
+.responsive-component {
+  padding: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .responsive-component {
+    padding: var(--spacing-lg);
+  }
+}
+```
+
+### 2. DON'Ts ❌
+
+#### 避免硬编码值
+```css
+/* ❌ 错误 */
+.component {
+  margin: 23px 17px;
+}
+
+/* ✅ 正确 */
+.component {
+  margin: var(--spacing-lg) var(--spacing-md);
+}
+```
+
+#### 避免不一致的间距
+```css
+/* ❌ 错误 - 间距不一致 */
+.component {
+  padding: 12px 16px 14px 13px;
+}
+
+/* ✅ 正确 - 使用一致的间距 */
+.component {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+```
+
+#### 避免过小的间距
+```css
+/* ❌ 错误 - 间距太小 */
+.component {
+  margin: 2px;
+}
+
+/* ✅ 正确 - 使用最小间距 */
+.component {
+  margin: var(--spacing-xs);
+}
+```
+
+## 测试指南
+
+### 视觉测试
+- [ ] 所有间距在8点网格上对齐
+- [ ] 不同屏幕尺寸下间距保持比例
+- [ ] 组件间距看起来和谐
+- [ ] 文本行间距合适
+
+### 功能测试
+- [ ] 最小触摸目标符合要求
+- [ ] 响应式间距正确工作
+- [ ] 安全区域间距正确
+- [ ] 滚动容器高度正确
+
+### 用户体验测试
+- [ ] 布局在不同设备上美观
+- [ ] 间距不会造成视觉混乱
+- [ ] 重要元素有足够的空间
+- [ ] 长文本内容可读性好
+
+---
+
+*最后更新: 2025年11月14日*

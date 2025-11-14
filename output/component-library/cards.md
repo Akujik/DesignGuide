@@ -1,519 +1,582 @@
-# 卡片组件分析 (Card Components Analysis)
+# 卡片组件 (Cards)
+
+> Meshy AI 的卡片组件库和使用指南
 
 ## 概述
 
-Meshy.ai 的卡片系统提供了灵活的内容容器，用于组织和展示相关信息。卡片设计遵循现代设计原则，具有良好的层次感和视觉分离效果，适用于多种内容展示场景。
+卡片是用于组织相关信息的容器组件，提供清晰的视觉边界和层次结构。Meshy AI的卡片系统支持多种布局模式、交互状态和内容类型。
 
-## 卡片类型与变体
+## 基础卡片
 
-### 1. 标准卡片 (Standard Card)
+### 标准卡片
+
+最常用的卡片类型，适用于一般内容展示。
+
 ```html
 <div class="card">
   <div class="card-header">
-    <h3 class="card-title">Card Title</h3>
+    <h3 class="card-title">卡片标题</h3>
   </div>
   <div class="card-content">
-    <p>Card content goes here. This is the main content area of the card.</p>
+    <p>卡片内容区域，用于放置文本、图片、列表等内容。</p>
   </div>
   <div class="card-footer">
-    <button class="button button-primary">Action</button>
+    <button class="button button-primary">操作</button>
   </div>
 </div>
 ```
 
-**样式特征**:
-- 背景: `--color-bg-sub` (#1e1e1e)
-- 边框: 1px solid `--color-bg-border` (#3f3f3f)
-- 圆角: `--radius-lg` (0.5rem)
-- 内边距: `--p-2xl` (1.5rem)
-- 阴影: 轻微阴影效果
-
-**CSS 实现**:
+#### 样式规格
 ```css
 .card {
-  background-color: var(--color-bg-sub);
-  border: 1px solid var(--color-bg-border);
+  background-color: var(--background-raised-color);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: var(--p-2xl);
-  transition: all var(--duration-fast) var(--ease-smooth);
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--default-transition-duration) var(--default-transition-timing-function);
 }
 
 .card:hover {
-  background-color: var(--color-bg-base-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-title {
+  margin: 0;
+  font-size: var(--text-lg-plus);
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground-color);
+}
+
+.card-content {
+  padding: var(--spacing-lg);
+}
+
+.card-footer {
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
 }
 ```
 
-### 2. 模型卡片 (Model Card) - Meshy 特有
+## 卡片变体
+
+### 1. 简洁卡片
+
+没有头部和底部的简单卡片。
+
 ```html
-<div class="card card-model">
-  <div class="card-media">
-    <div class="model-preview">
-      <img src="model-preview.jpg" alt="3D Model Preview" />
-      <div class="model-overlay">
-        <button class="button button-primary button-small">View 3D</button>
-      </div>
-    </div>
-  </div>
+<div class="card card-plain">
   <div class="card-content">
-    <h3 class="card-title">Fantasy Character</h3>
-    <p class="card-description">3D model of a fantasy character with detailed textures.</p>
-    <div class="card-meta">
-      <span class="tag">Character</span>
-      <span class="date">2 hours ago</span>
-    </div>
+    <h4>简洁卡片</h4>
+    <p>只有内容区域的简单卡片，适合展示基本信息。</p>
   </div>
 </div>
 ```
 
-**样式特征**:
-- 包含 3D 模型预览
-- 悬停时显示操作按钮
-- 底部元数据标签
-
-**CSS 实现**:
 ```css
-.card-model {
-  overflow: hidden;
+.card-plain {
+  padding: var(--spacing-lg);
 }
 
-.model-preview {
+.card-plain .card-content {
+  padding: 0;
+}
+```
+
+### 2. 无边框卡片
+
+没有边框和阴影的卡片，用于内嵌内容。
+
+```html
+<div class="card card-borderless">
+  <h4>无边框卡片</h4>
+  <p>没有边框和阴影，与背景融为一体的卡片。</p>
+</div>
+```
+
+```css
+.card-borderless {
+  background-color: var(--background-base-color);
+  border: none;
+  box-shadow: none;
+  padding: var(--spacing-lg);
+}
+```
+
+### 3. 可交互卡片
+
+可以点击的卡片，通常用于导航到详情页面。
+
+```html
+<a href="#" class="card card-clickable">
+  <div class="card-content">
+    <h4>可交互卡片</h4>
+    <p>点击此卡片可以跳转到相关页面。</p>
+  </div>
+  <div class="card-arrow">
+    <svg class="icon">→</svg>
+  </div>
+</a>
+```
+
+```css
+.card-clickable {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform var(--default-transition-duration) var(--ease-out),
+              box-shadow var(--default-transition-duration) var(--ease-out);
+}
+
+.card-clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-clickable:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.card-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--foreground-quiet-color);
+  transition: color var(--default-transition-duration);
+}
+
+.card-clickable:hover .card-arrow {
+  color: var(--primary-color);
+}
+```
+
+### 4. 强调卡片
+
+用于重要内容或特色展示。
+
+```html
+<div class="card card-featured">
+  <div class="card-featured-badge">推荐</div>
+  <div class="card-header">
+    <h3 class="card-title">特色卡片</h3>
+  </div>
+  <div class="card-content">
+    <p>用于突出显示重要内容或特色功能的卡片。</p>
+  </div>
+</div>
+```
+
+```css
+.card-featured {
+  border-color: var(--primary-color);
   position: relative;
-  aspect-ratio: 1;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
 }
 
-.model-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.model-overlay {
+.card-featured::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: var(--p-lg);
-  opacity: 0;
-  transition: opacity var(--duration-normal) var(--ease-smooth);
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
 }
 
-.card-model:hover .model-overlay {
-  opacity: 1;
+.card-featured-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-lg);
+  background-color: var(--primary-color);
+  color: var(--background-inverse-color);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
 }
 ```
 
-### 3. 博客卡片 (Blog Card)
+## 内容模式
+
+### 1. 媒体卡片
+
+包含图片或视频的卡片。
+
 ```html
-<article class="card card-blog">
-  <div class="card-media">
-    <img src="blog-image.jpg" alt="Blog post thumbnail" />
-    <div class="card-category">
-      <span class="category-tag">Tutorial</span>
+<div class="card card-media">
+  <div class="card-media-container">
+    <img src="image.jpg" alt="卡片图片" class="card-media-image">
+    <div class="card-media-overlay">
+      <h3 class="card-title">媒体卡片标题</h3>
     </div>
   </div>
   <div class="card-content">
-    <time class="card-date">November 14, 2025</time>
-    <h2 class="card-title">Getting Started with 3D Modeling</h2>
-    <p class="card-excerpt">Learn the basics of 3D modeling and create your first stunning 3D assets...</p>
-    <div class="card-author">
-      <img src="author-avatar.jpg" alt="Author" class="author-avatar" />
-      <span class="author-name">John Doe</span>
-    </div>
+    <p>卡片描述内容，支持长文本和多行内容。</p>
   </div>
-</article>
+</div>
 ```
 
-**样式特征**:
-- 特色图片展示
-- 分类标签
-- 作者信息
-- 阅读时间或发布日期
-
-**CSS 实现**:
 ```css
-.card-blog {
-  cursor: pointer;
+.card-media-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 }
 
-.card-blog:hover {
-  transform: translateY(-4px);
+.card-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
 }
 
-.card-category {
+.card-media:hover .card-media-image {
+  transform: scale(1.05);
+}
+
+.card-media-overlay {
   position: absolute;
-  top: var(--p-lg);
-  left: var(--p-lg);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: var(--spacing-lg);
+  color: white;
 }
 
-.category-tag {
-  background-color: var(--color-accent-base);
-  color: var(--color-bg-base);
-  padding: var(--p-xs) var(--p-sm);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-xs);
-  font-weight: var(--font-weight-semibold);
+.card-media-overlay .card-title {
+  color: white;
+  margin: 0;
+}
+```
+
+### 2. 统计卡片
+
+用于展示数据和统计信息。
+
+```html
+<div class="card card-stats">
+  <div class="card-stats-header">
+    <div class="card-stats-icon">
+      <svg class="icon">📊</svg>
+    </div>
+    <div class="card-stats-label">总用户数</div>
+  </div>
+  <div class="card-stats-value">12,345</div>
+  <div class="card-stats-change positive">
+    <span class="change-icon">↑</span>
+    <span class="change-text">12.5%</span>
+  </div>
+</div>
+```
+
+```css
+.card-stats {
+  text-align: center;
+  padding: var(--spacing-xl);
 }
 
-.card-date {
-  color: var(--color-label-soft);
-  font-size: var(--text-sm);
-  margin-bottom: var(--p-sm);
-}
-
-.card-title {
-  font-size: var(--text-xl);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--p-sm);
-  line-height: var(--leading-tight);
-}
-
-.card-excerpt {
-  color: var(--color-label-soft);
-  line-height: var(--leading-relaxed);
-  margin-bottom: var(--p-lg);
-}
-
-.card-author {
+.card-stats-header {
   display: flex;
   align-items: center;
-  gap: var(--gap-sm);
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
 }
 
-.author-avatar {
+.card-stats-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--spacing-md);
+}
+
+.card-stats-icon .icon {
   width: 24px;
   height: 24px;
-  border-radius: var(--radius-full);
+  color: white;
+}
+
+.card-stats-label {
+  font-size: var(--text-sm);
+  color: var(--foreground-quiet-color);
+  font-weight: var(--font-weight-medium);
+}
+
+.card-stats-value {
+  font-size: var(--text-3xl-plus);
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-stats-change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.card-stats-change.positive {
+  color: var(--positive-color);
+}
+
+.card-stats-change.negative {
+  color: var(--negative-color);
 }
 ```
 
-### 4. 职位卡片 (Job Card)
+### 3. 表单卡片
+
+包含表单元素的卡片。
+
 ```html
-<div class="card card-job">
+<div class="card card-form">
   <div class="card-header">
-    <div class="company-info">
-      <h3 class="job-title">Senior Frontend Developer</h3>
-      <p class="company-name">Meshy AI</p>
-    </div>
-    <div class="job-type">
-      <span class="tag tag-fulltime">Full-time</span>
-    </div>
+    <h3 class="card-title">用户信息</h3>
   </div>
   <div class="card-content">
-    <p class="job-description">We're looking for an experienced frontend developer to join our team...</p>
-    <div class="job-requirements">
-      <span class="requirement">React</span>
-      <span class="requirement">TypeScript</span>
-      <span class="requirement">3D Graphics</span>
-    </div>
+    <form class="form-vertical">
+      <div class="form-group">
+        <label class="form-label">姓名</label>
+        <input type="text" class="form-input" placeholder="请输入姓名">
+      </div>
+      <div class="form-group">
+        <label class="form-label">邮箱</label>
+        <input type="email" class="form-input" placeholder="请输入邮箱">
+      </div>
+    </form>
   </div>
   <div class="card-footer">
-    <div class="job-meta">
-      <span class="location">San Francisco, CA</span>
-      <span class="salary">$120k - $180k</span>
-    </div>
-    <button class="button button-primary">Apply Now</button>
+    <button class="button button-secondary">取消</button>
+    <button class="button button-primary">保存</button>
   </div>
 </div>
 ```
 
-**样式特征**:
-- 公司信息和职位类型
-- 技能要求标签
-- 地理位置和薪资信息
-- 申请操作按钮
-
-**CSS 实现**:
 ```css
-.card-job {
-  border-left: 4px solid var(--color-accent-base);
+.card-form .form-group {
+  margin-bottom: var(--spacing-lg);
 }
 
-.job-title {
-  font-size: var(--text-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-label-title);
-  margin-bottom: var(--p-xs);
-}
-
-.company-name {
-  color: var(--color-label-soft);
-  font-size: var(--text-sm);
-}
-
-.job-type {
-  flex-shrink: 0;
-}
-
-.tag-fulltime {
-  background-color: var(--color-semantic-success-base);
-  color: var(--color-bg-base);
-  padding: var(--p-xs) var(--p-sm);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-xs);
-  font-weight: var(--font-weight-semibold);
-}
-
-.job-requirements {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap-sm);
-  margin: var(--p-lg) 0;
-}
-
-.requirement {
-  background-color: var(--color-bg-translucent);
-  color: var(--color-label-soft);
-  padding: var(--p-xs) var(--p-sm);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-sm);
-}
-
-.job-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--p-lg);
-}
-
-.location {
-  color: var(--color-label-soft);
-  font-size: var(--text-sm);
-}
-
-.salary {
-  color: var(--color-accent-base);
-  font-weight: var(--font-weight-semibold);
-}
-```
-
-## 卡片尺寸变体
-
-### 小卡片
-```html
-<div class="card card-small">
-  <div class="card-content">
-    <h4 class="card-title">Small Card</h4>
-    <p>Compact content for small spaces.</p>
-  </div>
-</div>
-```
-
-**CSS**:
-```css
-.card-small {
-  padding: var(--p-lg);
-  border-radius: var(--radius-md);
-}
-
-.card-small .card-title {
-  font-size: var(--text-base);
-}
-```
-
-### 中等卡片（默认）
-```html
-<div class="card card-medium">
-  <!-- 标准卡片内容 -->
-</div>
-```
-
-**CSS**:
-```css
-.card-medium {
-  padding: var(--p-2xl);
-  border-radius: var(--radius-lg);
-}
-```
-
-### 大卡片
-```html
-<div class="card card-large">
-  <div class="card-header">
-    <h2 class="card-title">Large Card Title</h2>
-  </div>
-  <div class="card-content">
-    <p>More spacious content area for detailed information...</p>
-  </div>
-</div>
-```
-
-**CSS**:
-```css
-.card-large {
-  padding: var(--p-3xl);
-  border-radius: var(--radius-xl);
-}
-
-.card-large .card-title {
-  font-size: var(--text-2xl);
+.card-form .form-group:last-child {
+  margin-bottom: 0;
 }
 ```
 
 ## 卡片状态
 
-### 正常状态 (Normal State)
-- 标准外观
-- 基础交互
+### 1. 加载状态
 
-### 悬停状态 (Hover State)
-```css
-.card:hover {
-  background-color: var(--color-bg-base-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-color: var(--color-accent-base);
-}
-```
-
-### 激活状态 (Active State)
-```css
-.card:active {
-  transform: translateY(0);
-  transition-duration: var(--duration-instant);
-}
-```
-
-### 选中状态 (Selected State)
-```html
-<div class="card card-selected">
-  <div class="selected-indicator">
-    <svg class="icon">...</svg>
-  </div>
-  <!-- 卡片内容 -->
-</div>
-```
-
-**CSS**:
-```css
-.card-selected {
-  border-color: var(--color-accent-base);
-  background-color: var(--color-accent-bg);
-}
-
-.selected-indicator {
-  position: absolute;
-  top: var(--p-sm);
-  right: var(--p-sm);
-  color: var(--color-accent-base);
-}
-```
-
-### 加载状态 (Loading State)
 ```html
 <div class="card card-loading">
-  <div class="loading-skeleton">
-    <div class="skeleton-header"></div>
-    <div class="skeleton-content"></div>
-    <div class="skeleton-footer"></div>
+  <div class="card-loading-skeleton">
+    <div class="skeleton-line skeleton-title"></div>
+    <div class="skeleton-line skeleton-text"></div>
+    <div class="skeleton-line skeleton-text"></div>
   </div>
 </div>
 ```
 
-**CSS**:
 ```css
 .card-loading {
   pointer-events: none;
-  opacity: 0.7;
 }
 
-.skeleton-header,
-.skeleton-content,
-.skeleton-footer {
-  background: linear-gradient(90deg, var(--color-bg-shade) 25%, var(--color-bg-border) 50%, var(--color-bg-shade) 75%);
+.skeleton-line {
+  background: linear-gradient(90deg, var(--background-subtle-color) 25%, var(--background-subtler-color) 50%, var(--background-subtle-color) 75%);
   background-size: 200% 100%;
-  animation: loading-shimmer 1.5s infinite;
+  animation: loading-shimmer var(--duration-slow) ease-in-out infinite;
   border-radius: var(--radius-sm);
 }
 
-.skeleton-header {
+.skeleton-title {
   height: 24px;
   width: 60%;
-  margin-bottom: var(--p-sm);
+  margin-bottom: var(--spacing-md);
 }
 
-.skeleton-content {
+.skeleton-text {
   height: 16px;
-  width: 100%;
-  margin-bottom: var(--p-xs);
+  margin-bottom: var(--spacing-sm);
 }
 
-.skeleton-footer {
-  height: 32px;
-  width: 120px;
-  margin-top: var(--p-lg);
+.skeleton-text:last-child {
+  width: 80%;
 }
 
 @keyframes loading-shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 ```
 
-## 卡片布局系统
+### 2. 错误状态
 
-### 网格布局
 ```html
-<div class="card-grid">
-  <div class="card">Card 1</div>
-  <div class="card">Card 2</div>
-  <div class="card">Card 3</div>
-  <div class="card">Card 4</div>
+<div class="card card-error">
+  <div class="card-error-icon">
+    <svg class="icon">⚠️</svg>
+  </div>
+  <div class="card-error-content">
+    <h4 class="card-error-title">加载失败</h4>
+    <p class="card-error-message">无法获取卡片内容，请稍后重试。</p>
+  </div>
+  <div class="card-error-actions">
+    <button class="button button-primary">重试</button>
+  </div>
 </div>
 ```
 
-**CSS**:
+```css
+.card-error {
+  border-color: var(--negative-color);
+  background-color: var(--color-semantic-error-bg);
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.card-error-icon {
+  margin-bottom: var(--spacing-md);
+}
+
+.card-error-icon .icon {
+  width: 48px;
+  height: 48px;
+  color: var(--negative-color);
+}
+
+.card-error-title {
+  color: var(--negative-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-error-message {
+  color: var(--foreground-quiet-color);
+  margin-bottom: var(--spacing-lg);
+}
+```
+
+### 3. 空状态
+
+```html
+<div class="card card-empty">
+  <div class="card-empty-icon">
+    <svg class="icon">📭</svg>
+  </div>
+  <div class="card-empty-content">
+    <h4 class="card-empty-title">暂无数据</h4>
+    <p class="card-empty-message">还没有任何内容，点击按钮创建第一个项目。</p>
+  </div>
+  <div class="card-empty-actions">
+    <button class="button button-primary">创建项目</button>
+  </div>
+</div>
+```
+
+```css
+.card-empty {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.card-empty-icon .icon {
+  width: 64px;
+  height: 64px;
+  color: var(--foreground-subtle-color);
+  margin-bottom: var(--spacing-lg);
+}
+
+.card-empty-title {
+  color: var(--foreground-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-empty-message {
+  color: var(--foreground-quiet-color);
+  margin-bottom: var(--spacing-lg);
+}
+```
+
+## 布局模式
+
+### 1. 网格布局
+
+```html
+<div class="card-grid">
+  <div class="card">卡片 1</div>
+  <div class="card">卡片 2</div>
+  <div class="card">卡片 3</div>
+  <div class="card">卡片 4</div>
+</div>
+```
+
 ```css
 .card-grid {
   display: grid;
-  gap: var(--gap-xl);
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-@media (min-width: 768px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  gap: var(--spacing-lg);
 }
 ```
 
-### 瀑布流布局
+### 2. 列表布局
+
 ```html
-<div class="card-masonry">
-  <div class="card">Card 1</div>
-  <div class="card card-tall">Tall Card 2</div>
-  <div class="card">Card 3</div>
-  <div class="card card-wide">Wide Card 4</div>
+<div class="card-list">
+  <div class="card">卡片 1</div>
+  <div class="card">卡片 2</div>
+  <div class="card">卡片 3</div>
 </div>
 ```
 
-**CSS**:
+```css
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+```
+
+### 3. 瀑布流布局
+
+```html
+<div class="card-masonry">
+  <div class="card">短内容卡片</div>
+  <div class="card">这是一个较长的内容卡片，包含更多文字信息和描述。</div>
+  <div class="card">中等长度卡片</div>
+</div>
+```
+
 ```css
 .card-masonry {
   column-count: 3;
-  column-gap: var(--gap-xl);
+  column-gap: var(--spacing-lg);
 }
 
 .card-masonry .card {
   break-inside: avoid;
-  margin-bottom: var(--gap-xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 1024px) {
+  .card-masonry {
+    column-count: 2;
+  }
 }
 
 @media (max-width: 768px) {
@@ -521,317 +584,219 @@ Meshy.ai 的卡片系统提供了灵活的内容容器，用于组织和展示�
     column-count: 1;
   }
 }
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .card-masonry {
-    column-count: 2;
-  }
-}
-```
-
-### 水平滚动布局
-```html
-<div class="card-horizontal-scroll">
-  <div class="card">Card 1</div>
-  <div class="card">Card 2</div>
-  <div class="card">Card 3</div>
-  <div class="card">Card 4</div>
-</div>
-```
-
-**CSS**:
-```css
-.card-horizontal-scroll {
-  display: flex;
-  gap: var(--gap-lg);
-  overflow-x: auto;
-  padding: var(--p-lg) 0;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-bg-border) transparent;
-}
-
-.card-horizontal-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-
-.card-horizontal-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.card-horizontal-scroll::-webkit-scrollbar-thumb {
-  background: var(--color-bg-border);
-  border-radius: var(--radius-full);
-}
-
-.card-horizontal-scroll .card {
-  flex: 0 0 300px;
-}
-```
-
-## 特殊卡片组件
-
-### 统计卡片
-```html
-<div class="card card-stats">
-  <div class="stats-icon">
-    <svg class="icon">...</svg>
-  </div>
-  <div class="stats-content">
-    <div class="stats-value">12,543</div>
-    <div class="stats-label">Total Models</div>
-    <div class="stats-change positive">+12.5%</div>
-  </div>
-</div>
-```
-
-**CSS**:
-```css
-.card-stats {
-  display: flex;
-  align-items: center;
-  gap: var(--p-lg);
-}
-
-.stats-icon {
-  width: 48px;
-  height: 48px;
-  background-color: var(--color-accent-bg);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent-base);
-}
-
-.stats-value {
-  font-size: var(--text-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-label-title);
-}
-
-.stats-label {
-  color: var(--color-label-soft);
-  font-size: var(--text-sm);
-}
-
-.stats-change {
-  font-size: var(--text-sm);
-  font-weight: var(--font-weight-medium);
-}
-
-.stats-change.positive {
-  color: var(--color-semantic-success-base);
-}
-
-.stats-change.negative {
-  color: var(--color-semantic-error-base);
-}
-```
-
-### 功能卡片
-```html
-<div class="card card-feature">
-  <div class="feature-icon">
-    <svg class="icon">...</svg>
-  </div>
-  <h3 class="feature-title">AI-Powered Generation</h3>
-  <p class="feature-description">Generate high-quality 3D models from text descriptions using advanced AI technology.</p>
-  <a href="#" class="feature-link">Learn more →</a>
-</div>
-```
-
-**CSS**:
-```css
-.card-feature {
-  text-align: center;
-  padding: var(--p-3xl);
-}
-
-.feature-icon {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--color-accent-base), var(--color-accent-support-base));
-  border-radius: var(--radius-2xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--p-lg);
-  color: var(--color-bg-base);
-}
-
-.feature-title {
-  font-size: var(--text-xl);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--p-md);
-  color: var(--color-label-title);
-}
-
-.feature-description {
-  color: var(--color-label-soft);
-  line-height: var(--leading-relaxed);
-  margin-bottom: var(--p-lg);
-}
-
-.feature-link {
-  color: var(--color-accent-base);
-  text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  transition: color var(--duration-fast) var(--ease-smooth);
-}
-
-.feature-link:hover {
-  color: var(--color-accent-base-hover);
-}
-```
-
-## 可访问性考虑
-
-### 语义化标记
-```html
-<article class="card" role="article">
-  <header class="card-header">
-    <h3 class="card-title">Card Title</h3>
-  </header>
-  <div class="card-content">
-    <p>Card content...</p>
-  </div>
-  <footer class="card-footer">
-    <button class="button" aria-label="Learn more about this topic">Learn More</button>
-  </footer>
-</article>
-```
-
-### 键盘导航
-```css
-.card[tabindex="0"] {
-  cursor: pointer;
-}
-
-.card[tabindex="0"]:focus-visible {
-  outline: 2px solid var(--color-accent-base);
-  outline-offset: 2px;
-}
-```
-
-### 屏幕阅读器支持
-```html
-<div class="card" role="button" tabindex="0" aria-label="View details for 3D Model">
-  <h3 class="sr-only">3D Model Details</h3>
-  <!-- 卡片内容 -->
-</div>
 ```
 
 ## 响应式设计
 
-### 移动设备适配
+### 自适应卡片
+
 ```css
-@media (max-width: 768px) {
+.card-responsive {
+  padding: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .card-responsive {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-responsive {
+    padding: var(--spacing-xl);
+  }
+}
+```
+
+### 移动端优化
+
+```css
+@media (max-width: 767px) {
   .card {
-    padding: var(--p-lg);
     border-radius: var(--radius-md);
   }
 
   .card-grid {
     grid-template-columns: 1fr;
-    gap: var(--gap-lg);
+    gap: var(--spacing-md);
   }
 
-  .card-horizontal-scroll {
-    gap: var(--gap-md);
-  }
-
-  .card-horizontal-scroll .card {
-    flex: 0 0 280px;
-  }
-}
-```
-
-### 触摸设备优化
-```css
-@media (hover: none) {
-  .card:hover {
+  .card-clickable:hover {
     transform: none;
-    box-shadow: none;
   }
 
-  .card:active {
+  .card-clickable:active {
     transform: scale(0.98);
-    background-color: var(--color-bg-base-hover);
   }
 }
 ```
 
-## 卡片使用指南
+## 可访问性
 
-### 何时使用卡片
-- 组织相关内容
-- 创建内容网格
-- 展示可操作项目
-- 建立视觉层次
-- 响应式内容布局
+### 语义化结构
 
-### 卡片设计原则
-- 保持内容简洁
-- 使用清晰的视觉层次
-- 确保足够的间距
-- 提供明确的操作
-- 保持一致的样式
-
-### 最佳实践
-- 一个卡片聚焦一个主题
-- 使用有意义的图片
-- 保持卡片大小一致
-- 提供清晰的标签和描述
-- 考虑不同设备的使用体验
-
-## 预览系统
-
-### 交互式预览
-查看所有卡片组件的实时预览和交互效果：
-- [卡片组件预览页面](../preview/cards.html)
-
-### 功能特性
-- ✨ **实时预览** - 所有卡片类型和交互效果
-- 🎨 **颜色复制** - 点击颜色块复制HEX值
-- 📋 **代码复制** - 一键复制所有卡片代码
-- 📱 **响应式** - 适配所有设备尺寸
-- ⚡ **交互演示** - 悬停、点击、状态切换
-
-## 卡片变体速查表
-
-| 类型 | 用途 | 特殊元素 | 尺寸 | 预览链接 |
-|------|------|----------|------|-----------|
-| Standard | 通用内容 | 标题+内容+操作 | 可变 | [预览](../preview/cards.html) |
-| Model | 3D模型展示 | 预览图+悬停操作 | 固定比例 | [预览](../preview/cards.html) |
-| Blog | 文章预览 | 图片+分类+作者 | 标准 | [预览](../preview/cards.html) |
-| Job | 职位信息 | 技能标签+薪资 | 标准 | [预览](../preview/cards.html) |
-| Stats | 数据展示 | 图标+数值+趋势 | 固定 | [预览](../preview/cards.html) |
-| Feature | 功能介绍 | 图标+描述+链接 | 标准 | [预览](../preview/cards.html) |
-
-## 代码示例
-
-### 完整的博客卡片
 ```html
-<article class="card card-blog" role="article">
-  <div class="card-media">
-    <img src="blog-thumbnail.jpg" alt="Article thumbnail" loading="lazy" />
-    <div class="card-category">
-      <span class="category-tag">Tutorial</span>
-    </div>
-  </div>
+<article class="card">
+  <header class="card-header">
+    <h3 class="card-title">卡片标题</h3>
+  </header>
   <div class="card-content">
-    <time datetime="2025-11-14" class="card-date">November 14, 2025</time>
-    <h2 class="card-title">
-      <a href="#" class="title-link">Getting Started with 3D Modeling</a>
-    </h2>
-    <p class="card-excerpt">Learn the fundamentals of 3D modeling and create stunning 3D assets...</p>
-    <div class="card-author">
-      <img src="author-avatar.jpg" alt="John Doe" class="author-avatar" loading="lazy" />
-      <div class="author-info">
-        <span class="author-name">John Doe</span>
-        <span class="read-time">5 min read</span>
-      </div>
-    </div>
+    <p>卡片内容</p>
   </div>
+  <footer class="card-footer">
+    <button class="button">操作</button>
+  </footer>
 </article>
 ```
+
+### 可交互卡片
+
+```html
+<div class="card"
+     role="button"
+     tabindex="0"
+     aria-label="查看详情">
+  <div class="card-content">
+    <h4>可交互卡片</h4>
+  </div>
+</div>
+```
+
+```css
+.card[role="button"]:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+```
+
+## 使用指南
+
+### 1. 内容组织
+
+```html
+✅ 相关内容组织在一起
+<div class="card">
+  <h3>用户设置</h3>
+  <p>管理您的个人资料和偏好设置。</p>
+  <button>编辑设置</button>
+</div>
+
+✅ 清晰的信息层级
+<div class="card">
+  <h4>项目名称</h4>
+  <p class="card-description">项目描述...</p>
+  <div class="card-meta">更新于 2 小时前</div>
+</div>
+
+❌ 避免混合不相关内容
+<div class="card">
+  <h3>用户设置</h3>
+  <p>系统公告：明天将进行维护...</p>
+</div>
+```
+
+### 2. 视觉设计
+
+```html
+✅ 保持一致的间距和布局
+<div class="card">
+  <div class="card-header">...</div>
+  <div class="card-content">...</div>
+  <div class="card-footer">...</div>
+</div>
+
+✅ 使用适当的视觉层级
+<div class="card">
+  <h3 class="card-title">主标题</h3>
+  <h4 class="card-subtitle">副标题</h4>
+  <p class="card-text">正文内容</p>
+  <small class="card-meta">元信息</small>
+</div>
+
+❌ 避免过度装饰
+<div class="card">
+  <!-- 避免过多的边框、阴影和颜色 -->
+</div>
+```
+
+### 3. 交互设计
+
+```html
+✅ 明确的交互提示
+<a href="#" class="card card-clickable">
+  <h4>查看详情</h4>
+  <div class="card-arrow">→</div>
+</a>
+
+✅ 合理的操作按钮
+<div class="card">
+  <h4>文档</h4>
+  <div class="card-footer">
+    <button class="button button-secondary">编辑</button>
+    <button class="button button-primary">保存</button>
+  </div>
+</div>
+
+❌ 避免混淆的操作
+<div class="card">
+  <!-- 避免卡片本身可点击，内部又有其他可点击元素 -->
+</div>
+```
+
+## 工具类
+
+### 卡片变体
+```css
+.card-plain { /* 简洁卡片 */ }
+.card-borderless { /* 无边框卡片 */ }
+.card-clickable { /* 可点击卡片 */ }
+.card-featured { /* 特色卡片 */ }
+.card-media { /* 媒体卡片 */ }
+.card-stats { /* 统计卡片 */ }
+.card-form { /* 表单卡片 */ }
+```
+
+### 卡片状态
+```css
+.card-loading { /* 加载状态 */ }
+.card-error { /* 错误状态 */ }
+.card-empty { /* 空状态 */ }
+.card-disabled { /* 禁用状态 */ }
+```
+
+### 布局辅助
+```css
+.card-grid { /* 网格布局 */ }
+.card-list { /* 列表布局 */ }
+.card-masonry { /* 瀑布流布局 */ }
+```
+
+## 测试清单
+
+### 功能测试
+- [ ] 卡片内容正确显示
+- [ ] 可交互卡片点击正常
+- [ ] 表单卡片提交功能正常
+- [ ] 加载状态正确显示
+
+### 视觉测试
+- [ ] 卡片样式一致
+- [ ] 悬停效果正常
+- [ ] 焦点指示器清晰
+- [ ] 响应式布局正确
+
+### 可访问性测试
+- [ ] 键盘导航正常
+- [ ] 屏幕阅读器友好
+- [ ] 语义化结构正确
+- [ ] 颜色对比度符合标准
+
+### 性能测试
+- [ ] 卡片加载速度快
+- [ ] 动画流畅
+- [ ] 内存使用合理
+- [ ] 移动端性能良好
+
+---
+
+*最后更新: 2025年11月14日*
