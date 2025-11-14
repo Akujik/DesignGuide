@@ -839,6 +839,291 @@
             margin-bottom: var(--spacing-4);
         }
 
+        /* 响应式Header演示样式 */
+        .responsive-header-demo {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-bottom: var(--spacing-6);
+            box-shadow: var(--shadow-md);
+        }
+
+        .responsive-features {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-4);
+            margin-top: var(--spacing-4);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-4);
+            margin-top: var(--spacing-4);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-3);
+            padding: var(--spacing-3);
+            background-color: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-base);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--meshy-primary);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            flex-shrink: 0;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--meshy-primary), var(--meshy-secondary));
+            border-radius: var(--radius-md);
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text strong {
+            display: block;
+            margin-bottom: var(--spacing-1);
+            font-size: var(--text-sm);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+        }
+
+        /* 全宽演示卡片 */
+        .demo-card.full-width {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+            border: 1px solid var(--meshy-primary);
+            position: relative;
+        }
+
+        .demo-card.full-width::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--meshy-primary), var(--meshy-secondary));
+            opacity: 0.8;
+        }
+
+        /* 响应式Header Logo样式 */
+        .logo-box {
+            background: linear-gradient(135deg, var(--meshy-primary), var(--meshy-secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: auto;
+        }
+
+        .logo-small {
+            height: 32px;
+            padding: 0 12px;
+            font-size: 14px;
+        }
+
+        .logo-medium {
+            height: 40px;
+            padding: 0 16px;
+            font-size: 16px;
+        }
+
+        .logo-large {
+            height: 48px;
+            padding: 0 20px;
+            font-size: 18px;
+        }
+
+        .logo-xl {
+            height: 64px;
+            padding: 0 24px;
+            font-size: 20px;
+        }
+
+        /* 修复汉堡菜单显示 */
+        .meshy-header__menu-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            color: var(--meshy-text-secondary);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .meshy-header__menu-toggle:hover {
+            background: var(--meshy-bg-tertiary);
+            color: var(--meshy-text-primary);
+            border-color: var(--meshy-border-primary);
+        }
+
+        .meshy-header__menu-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* 响应式Header容器样式 */
+        .meshy-header--responsive .meshy-header__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            height: 64px;
+            background: var(--meshy-bg-secondary);
+            border-bottom: 1px solid var(--meshy-border-primary);
+        }
+
+        /* 桌面端导航样式 */
+        .desktop-nav .meshy-nav__list {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .desktop-nav .meshy-nav__link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            color: var(--meshy-text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .desktop-nav .meshy-nav__link:hover,
+        .desktop-nav .meshy-nav__link.active {
+            color: var(--meshy-primary);
+            background: rgba(197, 249, 85, 0.1);
+        }
+
+        /* 移动端菜单样式 */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--meshy-bg-secondary);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.is-open {
+            display: block !important;
+        }
+
+        .meshy-mobile-menu__container {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .meshy-mobile-menu__logo {
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .meshy-mobile-nav__list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meshy-mobile-nav__item {
+            margin-bottom: 4px;
+        }
+
+        .meshy-mobile-nav__link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--meshy-text-secondary);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .meshy-mobile-nav__link:hover,
+        .meshy-mobile-nav__link.active {
+            color: var(--meshy-text-primary);
+            background: var(--meshy-bg-tertiary);
+        }
+
+        .meshy-mobile-menu__actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        /* 按钮样式 */
+        .meshy-btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+
+        .meshy-btn--ghost {
+            background: transparent;
+            color: var(--meshy-text-secondary);
+            border: 1px solid var(--meshy-border-primary);
+        }
+
+        .meshy-btn--ghost:hover {
+            background: var(--meshy-bg-tertiary);
+            color: var(--meshy-text-primary);
+        }
+
+        .meshy-btn--primary-gradient {
+            background: linear-gradient(135deg, var(--meshy-primary), var(--meshy-secondary));
+            color: black;
+            font-weight: 600;
+        }
+
+        .meshy-btn--primary-gradient:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
         .color-swatch {
             display: flex;
             align-items: center;
@@ -1474,6 +1759,161 @@
                                 </div>
                             </div>
                         </header>
+                    </div>
+
+                    <div class="demo-card full-width">
+                        <h3 class="demo-title">📱 响应式Header (完整实现)</h3>
+                        <p class="demo-description">基于真实网站的完整响应式Header，包含汉堡菜单、Logo自适应、自定义断点等功能。请调整浏览器窗口大小查看响应式效果。</p>
+
+                        <!-- 响应式Header演示 -->
+                        <div class="responsive-header-demo">
+                            <header class="meshy-header meshy-header--responsive">
+                                <div class="meshy-header__container">
+                                    <!-- 汉堡菜单按钮 - 移动端显示 -->
+                                    <button
+                                        aria-label="Menu"
+                                        type="button"
+                                        class="meshy-header__menu-toggle md:hidden group/button"
+                                        onclick="toggleMobileMenu()"
+                                    >
+                                        <span class="meshy-header__menu-icon group-hover/button:scale-110 transition-transform">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M4 6h16"></path>
+                                                <path d="M4 12h16"></path>
+                                                <path d="M4 18h16"></path>
+                                            </svg>
+                                        </span>
+                                    </button>
+
+                                    <!-- Logo区域 - 响应式显示 -->
+                                    <div class="meshy-header__logo meshy-header__logo--responsive">
+                                        <!-- 移动端Logo (小尺寸) -->
+                                        <a href="/" class="meshy-logo-link mobile-logo" style="display: block;">
+                                            <div class="logo-box logo-small">
+                                                M
+                                            </div>
+                                        </a>
+
+                                        <!-- 桌面端Logo (标准尺寸) -->
+                                        <a href="/" class="meshy-logo-link tablet-logo" style="display: none;">
+                                            <div class="logo-box logo-medium">
+                                                M
+                                            </div>
+                                        </a>
+
+                                        <!-- 大屏幕Logo (更大尺寸) -->
+                                        <a href="/" class="meshy-logo-link desktop-logo" style="display: none;">
+                                            <div class="logo-box logo-large">
+                                                M
+                                            </div>
+                                        </a>
+
+                                        <!-- 超大屏幕Logo (最大尺寸) -->
+                                        <a href="/" class="meshy-logo-link large-logo" style="display: none;">
+                                            <div class="logo-box logo-xl">
+                                                M
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- 桌面端导航 -->
+                                    <nav class="meshy-header__nav desktop-nav" style="display: none;">
+                                        <ul class="meshy-nav__list">
+                                            <li class="meshy-nav__item">
+                                                <a href="#headers" class="meshy-nav__link active">首页</a>
+                                            </li>
+                                            <li class="meshy-nav__item">
+                                                <a href="#buttons" class="meshy-nav__link">功能</a>
+                                            </li>
+                                            <li class="meshy-nav__item">
+                                                <a href="#forms" class="meshy-nav__link">API</a>
+                                            </li>
+                                            <li class="meshy-nav__item">
+                                                <a href="#cards" class="meshy-nav__link">价格</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+
+                                    <!-- 操作按钮区域 - 响应式显示 -->
+                                    <div class="meshy-header__actions">
+                                        <!-- 桌面端按钮 -->
+                                        <button class="meshy-btn meshy-btn--ghost desktop-signin" style="display: none;">Sign In</button>
+                                        <button class="meshy-btn meshy-btn--primary-gradient">Get Started</button>
+                                    </div>
+                                </div>
+
+                                <!-- 移动端菜单 -->
+                                <nav class="meshy-mobile-menu mobile-menu" id="mobileMenu" style="display: none;">
+                                    <div class="meshy-mobile-menu__container">
+                                        <!-- 移动端Logo -->
+                                        <div class="meshy-mobile-menu__logo">
+                                            <a href="/" class="meshy-logo-link">
+                                                <div class="logo-box logo-small">
+                                                    M
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <!-- 移动端导航项 -->
+                                        <ul class="meshy-mobile-nav__list">
+                                            <li class="meshy-mobile-nav__item">
+                                                <a href="#headers" class="meshy-mobile-nav__link">首页</a>
+                                            </li>
+                                            <li class="meshy-mobile-nav__item">
+                                                <a href="#buttons" class="meshy-mobile-nav__link">功能</a>
+                                            </li>
+                                            <li class="meshy-mobile-nav__item">
+                                                <a href="#forms" class="meshy-mobile-nav__link">API</a>
+                                            </li>
+                                            <li class="meshy-mobile-nav__item">
+                                                <a href="#cards" class="meshy-mobile-nav__link">价格</a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- 移动端操作按钮 -->
+                                        <div class="meshy-mobile-menu__actions">
+                                            <button class="meshy-btn meshy-btn--ghost w-full mb-2">Sign In</button>
+                                            <button class="meshy-btn meshy-btn--primary-gradient w-full">Get Started</button>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </header>
+                        </div>
+
+                        <!-- 响应式特性说明 -->
+                        <div class="responsive-features">
+                            <h4 style="font-size: 1.125rem; font-weight: 600; color: var(--meshy-text-primary); margin-bottom: 0.75rem;">✨ 响应式特性：</h4>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">🍔</div>
+                                    <div class="feature-text">
+                                        <strong>汉堡菜单</strong>
+                                        <p style="font-size: 0.875rem; color: var(--meshy-text-secondary); margin: 0;">移动端自动显示，支持滑动手势</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">📏</div>
+                                    <div class="feature-text">
+                                        <strong>自适应Logo</strong>
+                                        <p style="font-size: 0.875rem; color: var(--meshy-text-secondary); margin: 0;">根据屏幕尺寸自动调整大小</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🎯</div>
+                                    <div class="feature-text">
+                                        <strong>自定义断点</strong>
+                                        <p style="font-size: 0.875rem; color: var(--meshy-text-secondary); margin: 0;">基于真实网站的精确断点设置</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">⌨️</div>
+                                    <div class="feature-text">
+                                        <strong>键盘导航</strong>
+                                        <p style="font-size: 0.875rem; color: var(--meshy-text-secondary); margin: 0;">支持Tab键和快捷键操作</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -2361,6 +2801,290 @@ CSS类名统计:
                 }
             });
         }
+
+        // ===== 响应式Header系统 =====
+
+        // 移动端菜单切换
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuToggle = document.querySelector('.meshy-header__menu-toggle');
+            const body = document.body;
+
+            if (!mobileMenu || !menuToggle) return;
+
+            // 检查菜单当前状态
+            const isOpen = mobileMenu.classList.contains('is-open');
+
+            if (isOpen) {
+                // 关闭菜单
+                mobileMenu.classList.remove('is-open');
+                mobileMenu.style.display = 'none';
+                menuToggle.classList.remove('is-active');
+                body.style.overflow = '';
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.focus();
+            } else {
+                // 打开菜单
+                mobileMenu.classList.add('is-open');
+                mobileMenu.style.display = 'block';
+                menuToggle.classList.add('is-active');
+                body.style.overflow = 'hidden';
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                menuToggle.setAttribute('aria-expanded', 'true');
+
+                // 将焦点移到菜单的第一个可聚焦元素
+                setTimeout(() => {
+                    const firstLink = mobileMenu.querySelector('.meshy-mobile-nav__link');
+                    if (firstLink) {
+                        firstLink.focus();
+                    }
+                }, 100);
+            }
+        }
+
+        // 完整的响应式更新函数
+        function updateResponsiveLayout() {
+            const width = window.innerWidth;
+
+            // Logo响应式
+            const logoElements = {
+                'mobile-logo': document.querySelector('.mobile-logo'),
+                'tablet-logo': document.querySelector('.tablet-logo'),
+                'desktop-logo': document.querySelector('.desktop-logo'),
+                'large-logo': document.querySelector('.large-logo')
+            };
+
+            // 隐藏所有Logo
+            Object.values(logoElements).forEach(logo => {
+                if (logo) logo.style.display = 'none';
+            });
+
+            // 导航和按钮元素
+            const menuToggle = document.querySelector('.meshy-header__menu-toggle');
+            const desktopNav = document.querySelector('.desktop-nav');
+            const desktopSignin = document.querySelector('.desktop-signin');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            // 根据窗口宽度调整布局
+            if (width < 768) {
+                // 移动端布局
+                if (logoElements['mobile-logo']) logoElements['mobile-logo'].style.display = 'block';
+                if (menuToggle) menuToggle.style.display = 'flex';
+                if (desktopNav) desktopNav.style.display = 'none';
+                if (desktopSignin) desktopSignin.style.display = 'none';
+                if (mobileMenu) mobileMenu.style.display = 'none'; // 默认隐藏
+            } else {
+                // 桌面端布局
+                if (width < 1024) {
+                    if (logoElements['tablet-logo']) logoElements['tablet-logo'].style.display = 'block';
+                } else if (width < 1280) {
+                    if (logoElements['desktop-logo']) logoElements['desktop-logo'].style.display = 'block';
+                } else {
+                    if (logoElements['large-logo']) logoElements['large-logo'].style.display = 'block';
+                }
+
+                if (menuToggle) menuToggle.style.display = 'none';
+                if (desktopNav) desktopNav.style.display = 'flex';
+                if (desktopSignin) desktopSignin.style.display = 'inline-flex';
+                if (mobileMenu) mobileMenu.style.display = 'none';
+            }
+        }
+
+        // 响应式Logo尺寸自动调整（保持向后兼容）
+        function updateLogoSize() {
+            updateResponsiveLayout();
+        }
+
+        // ESC键关闭菜单
+        function handleEscapeKey(e) {
+            if (e.key === 'Escape') {
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (mobileMenu && mobileMenu.classList.contains('is-open')) {
+                    toggleMobileMenu();
+                }
+            }
+        }
+
+        // Alt+M 快捷键打开菜单
+        function handleMenuShortcut(e) {
+            if (e.altKey && e.key === 'm') {
+                const menuToggle = document.querySelector('.meshy-header__menu-toggle');
+                if (menuToggle && !menuToggle.classList.contains('hidden')) {
+                    menuToggle.click();
+                }
+            }
+        }
+
+        // 初始化响应式Header
+        function initResponsiveHeader() {
+            const menuToggle = document.querySelector('.meshy-header__menu-toggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (menuToggle && mobileMenu) {
+                // 设置初始状态和事件监听器
+                menuToggle.setAttribute('aria-controls', 'mobileMenu');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenu.setAttribute('role', 'dialog');
+                mobileMenu.setAttribute('aria-label', 'Navigation menu');
+
+                // 绑定菜单切换事件
+                menuToggle.addEventListener('click', toggleMobileMenu);
+            }
+
+            // 初始化Logo尺寸
+            updateLogoSize();
+
+            // 监听窗口大小变化
+            window.addEventListener('resize', updateLogoSize);
+
+            // 键盘导航支持
+            document.addEventListener('keydown', handleEscapeKey);
+            document.addEventListener('keydown', handleMenuShortcut);
+
+            // 点击菜单外部关闭菜单
+            document.addEventListener('click', function(e) {
+                const mobileMenu = document.getElementById('mobileMenu');
+                const menuToggle = document.querySelector('.meshy-header__menu-toggle');
+
+                if (mobileMenu && mobileMenu.classList.contains('is-open') &&
+                    !mobileMenu.contains(e.target) &&
+                    !menuToggle.contains(e.target)) {
+                    toggleMobileMenu();
+                }
+            });
+        }
+
+        // 设备类型检测和优化
+        function getDeviceType() {
+            const width = window.innerWidth;
+
+            if (width < 640) return 'mobile';
+            if (width < 768) return 'mobile-large';
+            if (width < 1024) return 'tablet';
+            if (width < 1280) return 'desktop';
+            return 'desktop-large';
+        }
+
+        // 根据设备类型优化体验
+        function optimizeForDevice() {
+            const device = getDeviceType();
+            const body = document.body;
+
+            // 移除所有设备类
+            body.classList.remove('device-mobile', 'device-tablet', 'device-desktop', 'device-large');
+
+            // 添加当前设备类
+            switch(device) {
+                case 'mobile':
+                case 'mobile-large':
+                    body.classList.add('device-mobile');
+                    enableTouchGestures();
+                    break;
+                case 'tablet':
+                    body.classList.add('device-tablet');
+                    enableTouchGestures();
+                    enableHoverStates();
+                    break;
+                case 'desktop':
+                    body.classList.add('device-desktop');
+                    enableHoverStates();
+                    enableKeyboardNavigation();
+                    break;
+                case 'desktop-large':
+                    body.classList.add('device-large');
+                    enableHoverStates();
+                    enableKeyboardNavigation();
+                    enableAdvancedFeatures();
+                    break;
+            }
+        }
+
+        // 触摸手势支持
+        function enableTouchGestures() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (!mobileMenu) return;
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            mobileMenu.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            mobileMenu.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 100;
+                const diff = touchStartX - touchEndX;
+
+                // 从左向右滑动关闭菜单
+                if (diff > swipeThreshold) {
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu && mobileMenu.classList.contains('is-open')) {
+                        toggleMobileMenu();
+                    }
+                }
+            }
+        }
+
+        // 悬停状态启用
+        function enableHoverStates() {
+            // 桌面端启用悬停效果
+            document.querySelectorAll('.meshy-nav__link, .meshy-btn').forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    this.classList.add('hover');
+                });
+                element.addEventListener('mouseleave', function() {
+                    this.classList.remove('hover');
+                });
+            });
+        }
+
+        // 键盘导航增强
+        function enableKeyboardNavigation() {
+            // Tab键焦点管理
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
+            });
+
+            document.addEventListener('mousedown', () => {
+                document.body.classList.remove('keyboard-navigation');
+            });
+        }
+
+        // 高级功能启用（大屏幕）
+        function enableAdvancedFeatures() {
+            // 大屏幕特殊效果
+            const header = document.querySelector('.meshy-header');
+            if (header && !header.classList.contains('advanced-features')) {
+                header.classList.add('advanced-features');
+            }
+        }
+
+        // 监听设备类型变化
+        let lastDeviceType = getDeviceType();
+        window.addEventListener('resize', () => {
+            const currentDeviceType = getDeviceType();
+            if (currentDeviceType !== lastDeviceType) {
+                optimizeForDevice();
+                lastDeviceType = currentDeviceType;
+            }
+        });
+
+        // 初始化所有功能
+        document.addEventListener('DOMContentLoaded', function() {
+            initResponsiveHeader();
+            optimizeForDevice();
+            // 立即调用一次响应式布局更新，确保初始状态正确
+            updateResponsiveLayout();
+        });
 
         // 平滑滚动
         document.querySelectorAll('.nav-link').forEach(link => {

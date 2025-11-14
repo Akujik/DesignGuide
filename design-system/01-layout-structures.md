@@ -136,7 +136,7 @@
   gap: 12px;
 }
 
-/* 响应式设计 */
+/* 基础响应式设计 */
 @media (max-width: 768px) {
   .meshy-header__nav {
     display: none;
@@ -146,6 +146,441 @@
     display: none;
   }
 }
+
+/* ===== 完整响应式Header系统 ===== */
+
+### 响应式Header完整实现
+基于真实Meshy网站的Header响应式设计：
+
+#### 完整响应式Header结构
+```html
+<!-- 基于真实网站的完整响应式Header -->
+<header class="meshy-header meshy-header--responsive">
+  <div class="meshy-header__container">
+    <!-- 汉堡菜单按钮 - 移动端显示 -->
+    <button
+      aria-label="Menu"
+      type="button"
+      class="meshy-header__menu-toggle md:hidden group/button"
+      onclick="toggleMobileMenu()"
+    >
+      <span class="meshy-header__menu-icon group-hover/button:scale-110 transition-transform">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 18h16"></path>
+        </svg>
+      </span>
+    </button>
+
+    <!-- Logo区域 - 响应式显示 -->
+    <div class="meshy-header__logo meshy-header__logo--responsive">
+      <!-- 移动端Logo (小尺寸) -->
+      <a href="/" class="meshy-logo-link mobile:visible md:hidden">
+        <svg class="h-8 w-auto transition-all duration-300" viewBox="0 0 167 64">
+          <!-- Logo SVG内容 -->
+        </svg>
+      </a>
+
+      <!-- 桌面端Logo (标准尺寸) -->
+      <a href="/" class="meshy-logo-link hidden md:block lg:hidden">
+        <svg class="h-10 w-auto transition-all duration-300" viewBox="0 0 167 64">
+          <!-- Logo SVG内容 -->
+        </svg>
+      </a>
+
+      <!-- 大屏幕Logo (更大尺寸) -->
+      <a href="/" class="meshy-logo-link hidden lg:block xl:hidden">
+        <svg class="h-12 w-auto transition-all duration-300" viewBox="0 0 167 64">
+          <!-- Logo SVG内容 -->
+        </svg>
+      </a>
+
+      <!-- 超大屏幕Logo (最大尺寸) -->
+      <a href="/" class="meshy-logo-link hidden xl:block">
+        <svg class="h-16 w-auto transition-all duration-300" viewBox="0 0 167 64">
+          <!-- Logo SVG内容 -->
+        </svg>
+      </a>
+    </div>
+
+    <!-- 桌面端导航 -->
+    <nav class="meshy-header__nav hidden md:flex lg:justify-center">
+      <ul class="meshy-nav__list">
+        <li class="meshy-nav__item">
+          <a href="#" class="meshy-nav__link active">Home</a>
+        </li>
+        <li class="meshy-nav__item group">
+          <a href="#" class="meshy-nav__link">功能</a>
+          <!-- 下拉菜单 -->
+          <div class="meshy-nav__dropdown hidden group-hover:block">
+            <!-- 下拉内容 -->
+          </div>
+        </li>
+        <li class="meshy-nav__item">
+          <a href="#" class="meshy-nav__link">API</a>
+        </li>
+        <li class="meshy-nav__item">
+          <a href="#" class="meshy-nav__link">价格</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- 操作按钮区域 - 响应式显示 -->
+    <div class="meshy-header__actions">
+      <!-- 桌面端按钮 -->
+      <button class="meshy-btn meshy-btn--ghost hidden sm:block">Sign In</button>
+      <button class="meshy-btn meshy-btn--primary-gradient">Get Started</button>
+    </div>
+  </div>
+
+  <!-- 移动端菜单 -->
+  <nav class="meshy-mobile-menu md:hidden" id="mobileMenu">
+    <div class="meshy-mobile-menu__container">
+      <!-- 移动端Logo -->
+      <div class="meshy-mobile-menu__logo">
+        <a href="/" class="meshy-logo-link">
+          <svg class="h-8 w-auto" viewBox="0 0 167 64">
+            <!-- Logo SVG内容 -->
+          </svg>
+        </a>
+      </div>
+
+      <!-- 移动端导航项 -->
+      <ul class="meshy-mobile-nav__list">
+        <li class="meshy-mobile-nav__item">
+          <a href="#" class="meshy-mobile-nav__link">Home</a>
+        </li>
+        <li class="meshy-mobile-nav__item">
+          <a href="#" class="meshy-mobile-nav__link">功能</a>
+        </li>
+        <li class="meshy-mobile-nav__item">
+          <a href="#" class="meshy-mobile-nav__link">API</a>
+        </li>
+        <li class="meshy-mobile-nav__item">
+          <a href="#" class="meshy-mobile-nav__link">价格</a>
+        </li>
+      </ul>
+
+      <!-- 移动端操作按钮 -->
+      <div class="meshy-mobile-menu__actions">
+        <button class="meshy-btn meshy-btn--ghost w-full mb-2">Sign In</button>
+        <button class="meshy-btn meshy-btn--primary-gradient w-full">Get Started</button>
+      </div>
+    </div>
+  </nav>
+</header>
+```
+
+#### 响应式CSS实现
+```css
+/* 响应式Header核心样式 */
+.meshy-header--responsive {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 64px;
+  background: var(--meshy-bg-secondary);
+  border-bottom: 1px solid var(--meshy-border-primary);
+  backdrop-filter: blur(12px);
+}
+
+/* Logo响应式间距 - 基于真实网站实现 */
+.meshy-header__logo--responsive {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 自定义断点: min-[960px] - 介于md和lg之间 */
+@media (min-width: 960px) {
+  .meshy-header__logo--responsive {
+    margin-right: 64px; /* min-[960px]:mr-16 */
+  }
+}
+
+/* lg断点: 1024px */
+@media (min-width: 1024px) {
+  .meshy-header__logo--responsive {
+    margin-right: 8px; /* lg:mr-2 */
+  }
+
+  .meshy-header__nav {
+    justify-content: center;
+    flex-grow: 1;
+  }
+}
+
+/* xl断点: 1280px */
+@media (min-width: 1280px) {
+  .meshy-header__logo--responsive {
+    margin-right: 256px; /* xl:mr-64 */
+  }
+}
+
+/* Logo尺寸响应式变化 */
+.meshy-logo-link svg {
+  transition: all 0.3s ease;
+}
+
+/* 汉堡菜单按钮 */
+.meshy-header__menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--meshy-text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.meshy-header__menu-toggle:hover {
+  background: var(--meshy-bg-tertiary);
+  color: var(--meshy-text-primary);
+  border-color: var(--meshy-border-secondary);
+}
+
+.meshy-header__menu-toggle:focus {
+  outline: 2px solid var(--meshy-primary);
+  outline-offset: 2px;
+}
+
+.meshy-header__menu-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.meshy-header__menu-toggle.is-active svg {
+  transform: rotate(90deg);
+}
+
+/* 桌面端导航 */
+.meshy-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.meshy-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.meshy-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  color: var(--meshy-text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.meshy-nav__link:hover,
+.meshy-nav__link.active {
+  color: var(--meshy-primary);
+  background: rgba(197, 249, 85, 0.1);
+}
+
+/* 移动端菜单 - 基于真实网站的隐藏模式 */
+.meshy-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--meshy-bg-secondary);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 2000;
+  overflow-y: auto;
+}
+
+.meshy-mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+/* 移动端隐藏状态 - 基于真实网站实现 */
+.meshy-mobile-menu:not(.is-open) {
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.meshy-mobile-menu__container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.meshy-mobile-menu__logo {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.meshy-mobile-nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meshy-mobile-nav__link {
+  display: block;
+  padding: 12px 16px;
+  color: var(--meshy-text-secondary);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.meshy-mobile-nav__link:hover,
+.meshy-mobile-nav__link.active {
+  color: var(--meshy-text-primary);
+  background: var(--meshy-bg-tertiary);
+}
+
+/* 响应式显示规则 */
+@media (min-width: 640px) {
+  .meshy-header--responsive {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .meshy-header__menu-toggle {
+    display: none;
+  }
+
+  .meshy-mobile-menu {
+    display: none;
+  }
+
+  .meshy-header__nav {
+    display: flex;
+  }
+
+  .meshy-header__actions .meshy-btn--ghost {
+    display: inline-flex;
+  }
+}
+
+/* 大屏幕优化 */
+@media (min-width: 1280px) {
+  .meshy-header--responsive {
+    padding: 0 32px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .meshy-nav__list {
+    gap: 24px;
+  }
+
+  .meshy-nav__link {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
+```
+
+#### JavaScript交互功能
+```javascript
+// 移动端菜单切换
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuToggle = document.querySelector('.meshy-header__menu-toggle');
+  const body = document.body;
+
+  // 切换菜单状态
+  mobileMenu.classList.toggle('is-open');
+  menuToggle.classList.toggle('is-active');
+
+  // 防止页面滚动
+  if (mobileMenu.classList.contains('is-open')) {
+    body.style.overflow = 'hidden';
+    // 焦点管理
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    menuToggle.setAttribute('aria-expanded', 'true');
+  } else {
+    body.style.overflow = '';
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+}
+
+// ESC键关闭菜单
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu && mobileMenu.classList.contains('is-open')) {
+      toggleMobileMenu();
+    }
+  }
+});
+
+// 响应式Logo尺寸自动调整
+function updateLogoSize() {
+  const logo = document.querySelector('.meshy-logo-link svg');
+  if (!logo) return;
+
+  const width = window.innerWidth;
+  logo.classList.remove('h-8', 'h-10', 'h-12', 'h-16');
+
+  if (width < 640) {
+    logo.classList.add('h-8');
+  } else if (width < 1024) {
+    logo.classList.add('h-10');
+  } else if (width < 1280) {
+    logo.classList.add('h-12');
+  } else {
+    logo.classList.add('h-16');
+  }
+}
+
+// 监听窗口大小变化
+window.addEventListener('resize', updateLogoSize);
+window.addEventListener('load', updateLogoSize);
+
+// 无障碍支持
+function initHeaderAccessibility() {
+  const menuToggle = document.querySelector('.meshy-header__menu-toggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuToggle && mobileMenu) {
+    // 设置初始状态
+    menuToggle.setAttribute('aria-controls', 'mobileMenu');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    mobileMenu.setAttribute('role', 'dialog');
+    mobileMenu.setAttribute('aria-label', 'Navigation menu');
+  }
+}
+
+// 初始化
+document.addEventListener('DOMContentLoaded', initHeaderAccessibility);
+```
 ```
 
 ---
