@@ -566,6 +566,16 @@
             overflow-y: auto;
         }
 
+        /* 覆盖演示区域的sidebar样式，确保不会fixed定位覆盖导航 */
+        .demo-card .meshy-sidebar {
+            position: relative !important;
+            left: auto !important;
+            top: auto !important;
+            bottom: auto !important;
+            z-index: auto !important;
+            transform: none !important;
+        }
+
         .meshy-sidebar__section {
             margin-bottom: var(--spacing-6);
         }
